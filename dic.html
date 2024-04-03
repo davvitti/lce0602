@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> Estatística Experimental</div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="index.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <section class="atividade">
+                    <h2>Delineamento Inteiramente Casualizado</h2>
+                </section>
+                <div class="conteudo">
+                    <h3> Fundamentos</h3>
+                    <p>O delineamento inteiramente casualizado (DIC) é o mais simples dos delineamentos, pois considera apenas dois dos princípios básicos da experimentação: a repetição e a casualização. Neste, os tratamentos são aleatoriamente atribuídos ao material experimental, sem o esforço de se restringir os tratamentos a alguma porção de área, material ou espaço. Ainda como característica, como não há uso do controle local o número de repetições por tratamento pode variar.É geralmente utilizado quando a variação do material experimental é relativamente pequena, o que geralmente ocorre em laboratórios e casas de vegetação. </p>
+                    <p>Como vantagens de sua utilização temos que é um experimento de fácil planejamento e que permite o número máximo de graus de liberdade do Resíduo. Em termos de análise é a mais simples quando comparado aos demais delineamentos experimentais e não apresentará confundimento caso os tratamentos tenham números diferentes de repetições. Entretanto, como desvantagens temos que o delineamento inteiramente casualizado é adequado aos experimentos com baixo número de tratamentos e material experimental homogêneo, o que nem sempre se consegue. Quando um grande número de tratamentos é utilizado, há um crescimento no material experimental, que pode inflacionar a variação experimental. Nesses casos o Delineamento Inteiramente Casualizado não é indicado</p>
+                    <h3> Exemplo: vinhedo</h3>
+                    <figure>
+                        <img src="figs/CRD.jpg">
+                        <figcaption> Figura 1: Dois experimentos em DIC com quatro repetições de um tratamento (linhas amarelas) e de um controle (linhas azuis), sendo um em um vinhedo pequeno (A) e outro em um vinhedo médio (C). Fonte: Hemant Gohil.</figcaption>
+                    </figure>
+                    <p> Considerações: </p>
+                    
+                    <p>* Note que os exemplos consideram uma linha de bordadura entre as linhas</p>
+                    <p>* Em alguns casos o mesmo tratamento ocupa parcelas vizinhas </p>
+                    <p>* Os croquis para os ensaios mostrados em A e C são exibidos em B e D, respectivamente</p>
+                    <h3> Obtendo um croqui para DIC</h3>
+                    <p>Para obtermos um croqui para um experimento com <math> <mi> I </mi> </math>  tratamentos em um DIC, sendo o <math><mi>i</mi></math>-ésimo tratamento repetido ni vezes e o número total de parcelas \(n=\sum_{i=1}^I n_i\)</p>
+                    <p>I. Enumerar as parcelas 1, 2, . . . , \(n\) </p>
+                    <p>II. Criar o delineamento sistemático, ou seja, alocar o tratamento 1 às parcelas 1, 2, . . . , \(n_1\),
+                        alocar o tratamento 2 às parcelas \(n_1\)+1, \(n_1\)+2, ... , \(n_1 + n_2\), 
+                        e assim até as repetições do tratamento I. 
+                    </p>
+                    <p>III. Escolha uma permutação de 1, 2, . . . , \(n\) e aplique ao delineamento </p>
+                    <h3>Exemplo</h3>
+                    <p>Suponha que desejamos comparar a produtividade de três variedades de soja, com três, quatro e três repetições respectivamente. O plano de casualização para o delineamento sistemático é dado por: </p>
+                    <table> 
+                        <tr> 
+                            <th> Ordem padrão</th>
+                            <td> 1 </td>
+                            <td> 2 </td>
+                            <td> 3 </td>
+                            <td> 4 </td>
+                            <td> 5 </td>
+                            <td> 6 </td>
+                            <td> 7 </td>
+                            <td> 8 </td>
+                            <td> 9 </td>
+                            <td> 10 </td>
+
+                        </tr>
+                        <tr> 
+                            <th> Variedade</th>
+                            <td> A </td>
+                            <td> A </td>
+                            <td> A </td>
+                            <td> B </td>
+                            <td> B </td>
+                            <td> B </td>
+                            <td> B </td>
+                            <td> C </td>
+                            <td> C </td>
+                            <td> C </td>
+
+                        </tr>
+                    </table>
+                    <p> Uma permutação</p>
+                    <table> 
+                        <tr> 
+                            <th> Parcelas</th>
+                            <td> 7 </td>
+                            <td> 1 </td>
+                            <td> 8 </td>
+                            <td> 10 </td>
+                            <td> 3 </td>
+                            <td> 2 </td>
+                            <td> 4 </td>
+                            <td> 6 </td>
+                            <td> 9 </td>
+                            <td> 5 </td>
+
+                        </tr>
+                        <tr> 
+                            <th> Ordem padrão</th>
+                            <td> 1 </td>
+                            <td> 2 </td>
+                            <td> 3 </td>
+                            <td> 4 </td>
+                            <td> 5 </td>
+                            <td> 6 </td>
+                            <td> 7 </td>
+                            <td> 8 </td>
+                            <td> 9 </td>
+                            <td> 10 </td>
+
+                        </tr>
+                    </table>
+                    <p> E o plano de casualização é dado por:</p>
+                    <table> 
+                        <tr> 
+                            <th> Parcelas</th>
+                            <td> 1 </td>
+                            <td> 2 </td>
+                            <td> 3 </td>
+                            <td> 4 </td>
+                            <td> 5 </td>
+                            <td> 6 </td>
+                            <td> 7 </td>
+                            <td> 8 </td>
+                            <td> 9 </td>
+                            <td> 10 </td>
+
+                        </tr>
+                        <tr> 
+                            <th> Variedade</th>
+                            <td> B </td>
+                            <td> A </td>
+                            <td> C </td>
+                            <td> C </td>
+                            <td> A </td>
+                            <td> A </td>
+                            <td> B </td>
+                            <td> B </td>
+                            <td> C </td>
+                            <td> A </td>
+
+                        </tr>
+                    </table>
+                    <h3> Análise dos dados</h3>
+                    <p> 
+                        Entende-se como objetivo inicial de um experimento a verificação dos efeitos de tratamentos. Aqui será utilizada a Análise de Variância (ANOVA) para tal verificação. A ANOVA é utilizada na comparação de médias de dois ou mais tratamentos ou teste para a variância dos tratamentos, por meio do teste F (Fisher). Trata-se de uma extensão do teste t de Student, permitindo que o pesquisador compare qualquer número de médias, quando o efeito de tratamentos é fixo. 
+                    </p>
+                    <h3> Modelo estatístico</h3>
+                    <p> O modelo estatístico para a análise dos dados oriundos de um DIC com um único fator de tratamentos é dado pela Equação 2.</p>
+                    <p> $$ y_{ij} = \mu + \tau_i + e_{ij} = \mu_i + e_{ij}$$</p>
+                    <p> Em que: </p>
+                    <p> * \(y_{ij}\) é o valor observado na j-ésima repetição do i-ésimo tratamento</p>
+                    <p> * \(i = 1, ... , I\)</p>
+                    <p> * \(j = 1, ... , n_i\)</p>
+                    <p> * \(\mu\) é uma constante inerente a todas as observações geralmentea média geral</p>
+                    <p> * \(\tau_i\) é o efeito do i-ésimo tratamento</p>
+                    <p> * \(e_{ij}\) é o erro experimental, tal que \(e_{ij} \overset{iid}{\sim} N(0,\sigma^2)\)</p>
+                    <p> Realizando-se a ANOVA, testamos as hipóteses:</p>
+                    <p> $$H_0 : \tau_{1} = \tau_{2} = ... = \tau_{I} = 0$$ </p>
+                    <p> $$H_1 = H_a : \tau_{i} \neq 0$$ </p>
+                    <p> Havendo uma reparametrização do modelo apresentado na, tal que \( \mu + \tau_i = \alpha_i\) em que \(\alpha_i\) é a média do i-ésimo tratamento, é</p>
+                    <p>  $$y_{ij} = \alpha_i + e_{ij} \text{(3)}$$ </p>
+                    <p> As hipóteses de interesse passam a ser:</p>
+                    <p> $$H_0 : \alpha_1 = \alpha_2 = ... = \alpha_I = \mu$$ </p>
+                    <p> $$H_1 = Ha : \text{pelo um contraste de médias difere de zero}$$.</p>
+                    <p> Neste momento assumiremos que as pressuposições de normalidade e independência dos erros, bem a homogeneidade de suas variâncias garantidas. Assim, assumimos que \(e_{ij}\) corresponde a uma realização da variável \(E_{ij}\) , tal que \(e_{ij} \overset{iid}{\sim} N(0,\sigma^2)\) e os demais termos no [equação (3)]() são fixos. Cabe sailentar que o modelo citado é o modelo maximal, ou seja, aquele modelo mais complicado a ser considerado na análise.</p>
+                    <P> Desse modo, a esperança da variável aleatória \(Y_{ij}\) será: </P>
+                    <p> $$E(Y_{ij}) = E(\mu + \tau_i + E_{ij} ) = \mu + \tau_i + 0 = \mu + \tau_i \text(4)$$ </p>
+                                        
+                    <h3> Análise da variância</h3>
+                    <p>  A proposta da ANOVA consiste em decompor a variância total dos dados em parte atribuída aos efeitos de tratamentos e parte ao acaso.</p>
+                    
+                    <table class="tabela2">
+                        <caption> Tabela 1: Demonstração sobre fontes de variação e graus de liberdade </caption> 
+                        <tr>
+                            <th> Fontes de variação</th>
+                            <th> Graus de liberdade</th>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                            <td> n-1</td>
+                        </tr>
+                        <tr> 
+                            <td> tratamentos</td>
+                            <td> I-1</td>
+
+                        </tr>
+                        <tr> 
+                            <td> Resíduo</td>
+                            <td> n-I</td>
+                        </tr>
+
+                    </table>
+                    <p>  Sabemos que a variância dos dados é dada por</p>
+                    <p> $$\text{Variância} = \sum _{ij} \frac{(yij−\bar{y})^2}{(n−1)} (\text{expressão 1})$$</p>
+                    <p> $$\text{variância} = \displaystyle{\frac{\text{SQ}}{\text{gl}}}(\text{expressão 2})$$</p>
+                    <p> $$\text{F} = \displaystyle{\frac{\text{QM}_{\text{Trat}}}{\text{QM}_{\text{Resíduo}}}}$$</p>
+                    <p> Retomando as hipóteses</p>
+                    <p> \(H_0 : \mu_1 = \mu_2 = ... = \mu_I = 0\)</p>
+                    <p> \(H_1 = Ha\)pelo um contraste de médias difere de zero.Denotamos por Soma de Quadrados do Total (SQ Total) o numerador da expressão 2. Observe que a decomposição mencionada anteriormente será: </p>
+                    <p> $$\displaystyle{\sum_{i=1}^I\sum_{j=1}^Jy_{ij}^2\text-\frac{\left(\sum_{i=1}^I\sum_{j=1}^Jy_{ij}\right)^2}{I\times J}}(\text{expressão 3})$$</p>
+                    <p> Em que SQ Tratamentos e SQ Resíduo correspondem às Soma de Quadrados de Tratamentos e Soma de Quadrados de Resíduo, respectivamente. As expressões apresentadas em 4 e 5, podem ser reescritas conforme segue.</p>
+                    <p> $$\displaystyle{\frac{1}{J}\sum_{i=1}^I T_i^2 \text- \frac{\left(\sum_{i=1}^I\sum_{j=1}^Jy_{ij}\right)^2}{I\times J}}(\text{expressão 4})$$</p>
+
+                    <p> A SQ Resíduo pode ser obtida por diferença, ou seja, SQ Resíduo = SQ Total - SQ Tratamentos. </p>
+                    <p> Para encontrarmos a estatística apropriada para o teste F temos que obter as Esperanças dos Quadrados Médios relacionados a cada fonte de variação na ANOVA. Os quadrados médios, denotados usualmente por QM, são definidos pelo quociente entre a soma de quadrados e o respectivo número de graus de liberdade relacionados a uma fonte de varição, isto é: </p>
+                    <p> $$\text{QM}_{\text{Trat}} = \displaystyle{\frac{\text{SQ}_\text{Trat}}{\text{gl}_\text{Trat}}}$$ </p>
+                    <p> Rejeita-se \(H_0\) se \(F_{cal} \geq F_{tab_{(\alpha, I-1, I(J-1))}}\), em que \(\alpha\) é o nível de significância, \(I-1\) é o número de graus de liberdade do numerador e \(I(J-1)\) é o número de graus de liberdade do denominador.</p>
+                    </p>
+                    <p> Tabela F</p>
+                    <table>
+                        <caption>
+                            Tabela F ao nível de 5% do intervalo de confiança
+                        </caption>
+                        <tr>
+                            <td class="bordatab"> </td>
+                            <td class="bordatab"> </td>
+                            <th colspan="10"> Graus de liberdade do resíduo</th>
+
+                        </tr>
+                        <tr>
+                            <td class="bordatab"> </td>
+                            <td class="bordatab"> </td>
+                            <td> 2 </td>
+                            <td> 3 </td>
+                            <td> 4 </td>
+                            <td> 5 </td>
+                            <td> 6 </td>
+                            <td> 7 </td>
+                            <td> 8 </td>
+                            <td> 9 </td>
+                            <td> 10 </td>
+                            <td> 11</td>
+
+                        </tr>
+                        <tr>
+                            <th rowspan="10"> Graus de liberdade do tratamento</th>
+                            <td> 2</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        
+
+                    </table>
+                    <h3> Coeficiente de variação</h3>
+                    <p> O número de repetições pode estar associado ao número de graus de liberdade do resíduo ; </p>
+                    <p> O CV é adimensional, pode-se comparar a dispersão de variáveis com diferentes unidades de medida.</p>
+                    <p> $$\displaystyle{\text{CV}_{\%} = 100\frac{\hat{\sigma}}{\hat{\mu}} = 100\frac{\sqrt{\text{QM}_{\text{Res}}}}{\bar{y}}}$$</p>
+                    <p> * CV \(<\) 10% : baixo</p>
+                    <p> * 10% \(<\) CV \(>\) 20%: médio</p>
+                    <p> * 20% \(<\) CV \(>\) 30%: alto</p>
+                    <p> * CV \(>\) 30%: muito alto</p>                                        
+                    <h3> Exemplo</h3>
+                    <p> Considere os dados abaixo referentes à produtividade de milho (kg/100m2) de quatro diferentes variedades, em um experimento instalado segundo o delineamento inteiramente casualizado, com cinco repetições.</p>
+                    <table>
+                        <caption> Tabela 2: produtividade de milho (kg/100m2) de quatro diferentes variedades</caption>
+                        <tr>
+                            <th> Variedades</th>
+                            <th colspan="5">Repetições </th>
+                            <th> Total</th>
+                            <th> Média</th>
+                        </tr>
+                        <tr> 
+                            <td>  </td>
+                            <td> I </td>
+                            <td> II</td>
+                            <td> III</td>
+                            <td> IV </td>
+                            <td> V</td>
+                            <td> </td>
+                            <td> </td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> A </td>
+                            <td> 25 </td>
+                            <td> 26</td>
+                            <td> 20</td>
+                            <td> 23</td>
+                            <td> 21</td>
+                            <td> 115</td>
+                            <td> 23</td>
+                        </tr>
+                        <tr> 
+                            <td> B </td>
+                            <td> 31 </td>
+                            <td> 25</td>
+                            <td> 28</td>
+                            <td> 27</td>
+                            <td> 24</td>
+                            <td> 135</td>
+                            <td> 27</td>
+                        </tr>
+                        <tr> 
+                            <td> C </td>
+                            <td> 22 </td>
+                            <td> 26</td>
+                            <td> 28</td>
+                            <td> 25</td>
+                            <td> 29</td>
+                            <td> 130</td>
+                            <td> 26</td>
+                        </tr>
+                        <tr> 
+                            <td> D </td>
+                            <td> 33 </td>
+                            <td> 29</td>
+                            <td> 31</td>
+                            <td> 34</td>
+                            <td> 28</td>
+                            <td> 155</td>
+                            <td> 31</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <caption> Tabela 2: produtividade de milho (kg/100m2) de quatro diferentes variedades</caption>
+                        <tr>
+                            <th> Variedades</th>
+                            <th colspan="5">Repetições </th>
+                            <th> Total</th>
+                            
+                        </tr>
+                        <tr> 
+                            <td>  </td>
+                            <td> I </td>
+                            <td> II</td>
+                            <td> III</td>
+                            <td> IV </td>
+                            <td> V</td>
+                            <td> </td>
+                            
+                            
+                        </tr>
+                        <tr> 
+                            <td> V1 </td>
+                            <td> \(y_{11}\) </td>
+                            <td> \(y_{12}\)</td>
+                            <td> \(y_{13}\)</td>
+                            <td> \(y_{14}\)</td>
+                            <td> \(y_{15}\)</td>
+                            <td> \(y_{1.}=T1\)</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> V2 </td>
+                            <td> \(y_{21}\) </td>
+                            <td> \(y_{22}\)</td>
+                            <td> \(y_{23}\)</td>
+                            <td> \(y_{24}\)</td>
+                            <td> \(y_{25}\)</td>
+                            <td> \(y_{2.}=T2\)</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> V3 </td>
+                            <td> \(y_{31}\) </td>
+                            <td> \(y_{32}\)</td>
+                            <td> \(y_{33}\)</td>
+                            <td> \(y_{34}\)</td>
+                            <td> \(y_{35}\)</td>
+                            <td> \(y_{3.}=T3\)</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> V4 </td>
+                            <td> \(y_{41}\) </td>
+                            <td> \(y_{42}\)</td>
+                            <td> \(y_{43}\)</td>
+                            <td> \(y_{44}\)</td>
+                            <td> \(y_{45}\)</td>
+                            <td> \(y_{4.}=T4\)</td>
+                            
+                        </tr>
+                        
+                    </table>
+                    <h3> Análise descritiva</h3>
+                    <table>
+                        <caption> Tabela 2: produtividade de milho (kg/100m2) de quatro diferentes variedades</caption>
+                        <tr>
+                            <th> Análise</th>
+                            <th colspan="4">Variedades </th>
+                            
+                        </tr>
+                        <tr> 
+                            <td>  </td>
+                            <td> A </td>
+                            <td> B</td>
+                            <td> C</td>
+                            <td> D </td>
+                                                        
+                        </tr>
+                        <tr> 
+                            <td> soma </td>
+                            <td> 115 </td>
+                            <td> 135</td>
+                            <td> 130</td>
+                            <td> 155</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> média</td>
+                            <td> 23 </td>
+                            <td> 27</td>
+                            <td> 26</td>
+                            <td> 31</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> Variância </td>
+                            <td> 6,50 </td>
+                            <td> 7,50</td>
+                            <td> 7,50</td>
+                            <td> 6,50</td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> Desvio-padrão </td>
+                            <td> 2,55 </td>
+                            <td> 2,74 </td>
+                            <td> 2,74 </td>
+                            <td> 2,55</td>
+                            
+                        </tr>
+                    </table>
+                    <p> Soma de Quadrados total</p>
+                    <p> $$\text{SQ}_{\text{Total}} = \displaystyle{\sum_{i=1}^4\sum_{j=1}^5y_{ij}^2 \text{-} \frac{\left(\sum_{i=1}^4\sum_{j=1}^5y_{ij}\right)^2}{4\times5}}$$</p>
+                    <p> $$ = \displaystyle{25^2 + 26^2 + \ldots + 28^2 \text{-} \frac{535^2}{20}}= 275,75$$</p>
+                    <p> Soma de Quadrados de tratamentos</p>
+                    <p> $$\text{SQ}_{\text{Trat}} = \displaystyle{\frac{1}{5}\sum_{i=1}^4 T_i^2 \text{-} \frac{\left(\sum_{i=1}^4\sum_{j=1}^5y_{ij}\right)^2}{4\times5}}$$</p>
+                    <p> $$= \displaystyle{\frac{1}{5}\left(115^2 + 135^2 + 130^2 + 155^2\right) - \frac{535^2}{20}}= 163,75$$</p>
+                    <p> Soma de Quadrados do resíduo</p>
+                    <p> $$\text{SQ}_\text{Resíduo} = \text{SQ}_{\text{Total}} \text{-} \text{SQ}_{\text{Trat}}$$ $$= 275,75 - 163,75 = 112,00$$</p>
+                    <p> Quadrado médio do tratamento</p>
+                    <p>$$\text{QM}_{\text{Trat}} = \displaystyle{\frac{\text{SQ}_{\text{Trat}}}{\text{gl}_{\text{Trat}}}}
+                        = \displaystyle{\frac{163,75}{3}} = 54,5833$$
+                    </p>
+                    <p> Quadrado médio do resíduo</p>
+                    <p>$$\text{QM}_{\text{Resíduo}} = \displaystyle{\frac{\text{SQ}_{\text{Resíduo}}}{\text{gl}_{\text{Resíduo}}}}=\displaystyle{\frac{112,00}{16}}= 7,0000$$ </p>
+                    <p> F calculado</p>
+                    <p> $$\text{F} = \displaystyle{\frac{\text{QM}_{\text{Trat}}}{\text{QM}_{\text{Resíduo}}}}=\displaystyle{\frac{54,5833}{7,0000}}= 7,80$$</p>
+                    <table>
+                        <tr>
+                            <th> Fontes de variação</th>
+                            <th> gl</th>
+                            <th> Soma de quadrados</th>
+                            <th> Quadrado médio</th>
+                            <th> Fcal</th>
+                            <th> Ftab</th>
+                        </tr>
+                        <tr> 
+                            <td> Tratamentos </td>
+                            <td> 3</td>
+                            <td> 163,75</td>
+                            <td> 54,5833</td>
+                            <td> 7,80</td>
+                            <td> 3,28</td>
+                        </tr>
+                        <tr> 
+                            <td> 16 </td>
+                            <td> 112,00</td>
+                            <td> 7,00</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                            <td> 19</td>
+                            <td> 275,75</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+
+
+                    
+                    <figure>
+                        <img src="figs/dic_files/figure-html/unnamed-chunk-11-1.png">
+                        <figcaption> .</figcaption>
+                    </figure>
+                    <p> conclusão</p>
+                    <p>Como \(\text{F} = 7. 80 > 3. 24 = \text{FTab}\) \(($\alpha = 0. 05, 3, 16$)\), há evidências para rejeitarmos \(H_0\) ao nível de 5% de significância. Desse modo, não podemos afirmar que todas as médias são iguais. </p>
+
+
+                    
+                </div>   
+                <section class="atividade">
+                    <h2>Atividades</h2>
+                </section>
+                <form id="form" class="form">
+                    <div class="form-content">
+                        <label for="atividade1">Em um experimento de cana foram analisadas 3 variedades com 5 doses diferentes de vinhaça aplicada. Quantos graus de liberdade esse experimento terá no total?</label>
+                        <input 
+                          type="text"
+                          id="at1"
+                          placeholder="resposta"
+                        />
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <label for="atividade2">
+                            Em um experimento de competição de dez cultivares de arroz para avaliar a produtividade, instalado em um delineamento inteiramente casualizado, os resultados (parciais) para a ANOVA foram os seguintes:
+                            Complete a tabela abaixo                                              
+                                                     
+                        </label>
+                        <table class="table">
+                            <tr>
+                                <th> Fontes de variação</th>
+                                <th> gl</th>
+                                <th> SQ</th>
+                                <th> QM</th>
+                                <th> Fcal</th>
+                                <th> Ftab</th>
+                            </tr>
+                            <tr>
+                                <td> Cultivar</td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at2"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a> 
+                                </td>
+                                <td> 17564523</td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at3"
+                                        placeholder="resposta"
+                                    /> 
+                                    <a>mensagem</a>
+                                </td>
+                                <td>9.31</td>
+                                <td>2.39</td>
+                            </tr>
+                            <tr>
+                                <td> Resíduo </td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at4"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at5"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at6"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                
+                            </tr>
+                            <tr>
+                                <td> 29</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at7"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+
+                        </table>
+                       
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <label for="atividade3">Quais são as variáveis correspondentes?</label>
+                        <table>
+                            <tr>
+                                <td> variável resposta</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at8"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Tratamento</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Parcelas</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at10"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                        </table>
+                                
+                        
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <div class="at3">
+
+                           <label for="email">Qual a conclusão do experimento?</label>
+                           <div>Considerando que a estatística F <input type="radio" value="pertence"  id="at11" placeholder="resposta"> a região de rejeição de H0, há evidências para <input type="text" id="at12" placeholder="resposta"><a>mensagem</a> H0 ao nível de 5% de confiança.    </div>
+                                                   
+                        </div>
+                                
+                    </div>
+                    <button type ="submit"> enviar</button>
+        
+        
+                </form>
+        
+            </div>
+
+
+        </section>
+    
+              
+       
+    </section>
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>

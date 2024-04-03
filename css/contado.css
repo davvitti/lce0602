@@ -1,0 +1,99 @@
+.atras{
+    background-size: cover;
+    width: 100%;
+    height: 105vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-y: scroll;
+    padding: 50px;
+}
+
+.fundo{
+    background-color: rgb(210, 252, 217);
+    border-radius: 14px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: 0 3px 5px rgb(15, 15, 15);
+    overflow: hidden;
+    margin-top: 1cm;
+    align-items: center;
+}
+
+.atividade{
+    background: linear-gradient(120deg, rgb(83, 231, 140) 0%, rgb(2, 56, 18) 100%);
+    padding: 24px;
+    text-align: center;
+    color: azure;
+}
+
+.form{
+    padding: 18px;
+}
+
+.form-content{
+    margin-bottom: 8px ;
+    padding-bottom: 18px;
+    position: relative;
+    text-align: justify;
+    align-items: center;
+
+}
+
+.form-content label{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.form-content input {
+    display: block;
+    width: 100%;
+    border-radius: 8px ;
+    padding: 8px;
+    border: 2px solid rgb(2,56,18);
+
+}
+
+.form-content a {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button {
+    background-color: rgb(83, 231, 140);
+    color: rgb(2, 56, 18);
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.contact-form input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.contact-form input[type=text] {
+    height: 100px;
+}
+
+.contact-form button {
+    background-color: rgb(83, 231, 140);
+    color: rgb(2, 56, 18);
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-weight: bold;
+}

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> Estatística Experimental</div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="sobre.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <section class="atividade">
+                    <h2>Delineamento em blocos casualizados </h2>
+                </section>
+                <div class="conteudo">
+                    <h3> Fundamentos </h3>
+                    <p> O delineamento casualizado em blocos (dbc) leva em consideração os três princípios básicos da experimentação: repetição, casualização e controle local.
+                        Para realizar o dcb deve-se repartir a área experimental heterogênea e sub áreas homogêneas.
+                        Se cada bloco receber todos os tratamentos chama-se de blocos completos, caso algum bloco não receba todos os tratamentos chama-se de blocos imcompletos
+                    </p>
+                    <h3> Exemplo>: granja de suínos</h3>
+                    <p> Com o objetivo de avaliar o efeito de quatro rações, A, B, C e D, sobre o ganho de peso de animais um pesquisador dispunha do 12 animais com pesos diferentes. </p>
+                    <h3> Análise dos dados</h3>
+                    <h3> Modelo estátistico</h3>
+                    <h4> Estimadores</h4>
+                    <h3> Análise da variância</h3>
+                    <h4> Exemplo</h4>
+                    <table>
+                        <caption>
+                            Tabela F
+                        </caption>
+                        <tr>
+                            <td class="bordatab"> </td>
+                            <td class="bordatab"> </td>
+                            <th colspan="10"> Graus de liberdade do resíduo</th>
+
+                        </tr>
+                        <tr>
+                            <td class="bordatab"> </td>
+                            <td class="bordatab"> </td>
+                            <td> 2 </td>
+                            <td> 3 </td>
+                            <td> 4 </td>
+                            <td> 5 </td>
+                            <td> 6 </td>
+                            <td> 7 </td>
+                            <td> 8 </td>
+                            <td> 9 </td>
+                            <td> 10 </td>
+
+                        </tr>
+                        <tr>
+                            <th rowspan="10"> Graus de liberdade do tratamento</th>
+                            <td> 2</td>
+                            <td> </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        <tr>
+                            <td> 3</td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                        
+
+                    </table>
+                    
+
+
+                </div>
+                <section class="atividade">
+                    <h2>Atividades</h2>
+                </section>
+                <form id="form" class="form">
+                    <div class="form-content">
+                        <label for="atividade1">Em um experimento de cana foram analisadas 3 variedades com 5 doses diferentes de vinhaça aplicada. Quantos graus de liberdade esse experimento terá no total?</label>
+                        <input 
+                          type="text"
+                          id="at1"
+                          placeholder="resposta"
+                        />
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <label for="atividade2">
+                            Em um experimento de competição de dez cultivares de arroz para avaliar a produtividade, instalado em um delineamento inteiramente casualizado, os resultados (parciais) para a ANOVA foram os seguintes:
+                            Complete a tabela abaixo                                              
+                                                     
+                        </label>
+                        <table class="table">
+                            <tr>
+                                <th> Fontes de variação</th>
+                                <th> gl</th>
+                                <th> SQ</th>
+                                <th> QM</th>
+                                <th> Fcal</th>
+                                <th> Ftab</th>
+                            </tr>
+                            <tr>
+                                <td> Cultivar</td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at2"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a> 
+                                </td>
+                                <td> 17564523</td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at3"
+                                        placeholder="resposta"
+                                    /> 
+                                    <a>mensagem</a>
+                                </td>
+                                <td>9.31</td>
+                                <td>2.39</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at4"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at5"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text"
+                                        id="at6"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td> 29</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at7"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                            </tr>
+
+                        </table>
+                       
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <label for="atividade3">Quais são as variáveis correspondentes?</label>
+                        <table>
+                            <tr>
+                                <td> variável resposta</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at8"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Tratamento</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Parcelas</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at10"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                        </table>
+                                
+                        
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <div class="at3">
+
+                           <label for="email">Qual a conclusão do experimento?</label>
+                           <div>Considerando que a estatística F <input type="text" id="at11" placeholder="resposta"> a região de rejeição de H0, há evidências para <input type="text" id="at12" placeholder="resposta"><a>mensagem</a> H0 ao nível de 5% de confiança.    </div>
+                                                   
+                        </div>
+                                
+                    </div>
+                    <button type ="submit"> enviar</button>
+        
+        
+                </form>
+        
+            </div>
+
+
+        </section>
+    
+              
+       
+    </section>
+
+
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>

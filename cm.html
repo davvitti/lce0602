@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> Estatística Experimental</div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="sobre.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <section class="atividade">
+                    <h2>Comparação de médias</h2>
+                </section>
+                <div class="conteudo">
+                    <h3>Fundamentos</h3>
+                    <p> Considere o conjunto de dados para o experimento balanceado, com cinco genótipos de milho e quatro repetições, seguindo um delineamento inteiramente casualizado, tendo-se observado o peso das espigas de cada parcela, conforme apresentado a seguir:</p>
+                    <table>
+                        <caption> Tabela 2: produtividade de milho (kg/100m2) de quatro diferentes variedades</caption>
+                        <tr>
+                            <th> Variedades</th>
+                            <th colspan="5">Repetições </th>
+                            <th> Total</th>
+                            <th> Média</th>
+                        </tr>
+                        <tr> 
+                            <td>  </td>
+                            <td> I </td>
+                            <td> II</td>
+                            <td> III</td>
+                            <td> IV </td>
+                            <td> V</td>
+                            <td> </td>
+                            <td> </td>
+                            
+                        </tr>
+                        <tr> 
+                            <td> A </td>
+                            <td> 25 </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> A </td>
+                            <td> 25 </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> A </td>
+                            <td> 25 </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> A </td>
+                            <td> 25 </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+
+                    </table>
+                    <p>Anteriormente trabalhamos com parte do conjunto de dados da Tabela 1. Assumindo-se que todas as pressuposições para a realização da ANOVA foram atendidas, o teste para as hipóteses: </p>
+                    <p> Apresentou o seguinte resultado:</p>
+                    <table class="table">
+                        <tr>
+                            <th> Fontes de variação</th>
+                            <th> gl</th>
+                            <th> SQ</th>
+                            <th> QM</th>
+                            <th> Fcal</th>
+                            <th> Ftab</th>
+                        </tr>
+                        <tr>
+                            <td> Cultivar</td>
+                            <td>
+                                
+                            </td>
+                            <td> 17564523</td>
+                            <td>
+                               
+                            </td>
+                            <td>9.31</td>
+                            <td>2.39</td>
+                        </tr>
+                        <tr>
+                            <td> Resíduo </td>
+                            <td>
+                               
+                            </td>
+                            <td>
+                               
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td></td>
+                            <td></td>
+                            
+                        </tr>
+                        <tr>
+                            <td> 29</td>
+                            <td> 
+                                
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                    </table>
+                    <figure>
+                        <img src="figs/dic_files/figure-html/unnamed-chunk-11-1.png">
+                        <figcaption> .</figcaption>
+                    </figure>
+                    <p> conclusão</p>
+                    <p> Considerando-se um nível de 5% de significância, p-valor = 0.0164 menor que 0,05, há evicências para rejeitarmos H0, desse modo, não podemos afirmar que todas as médias são iguais.</p>
+                    <p>  Aqui estudaremos algumas técnicas de comparações múltiplas das médias: duas a duas, média de cada tratamento comparada com a média de um controle e testes (t e F) para contrastes ortogonais.</p>
+                    <p> Um teste de comparações múltiplas pode ser classificado como protegido ou não protegido. O teste é dito protegido se realizado somente mediante rejeição de H0 para o teste F (ANOVA). E, um teste é dito não protegido quando realizado independentemente do resultado para o teste F (ANOVA). Todo teste de comparações múltiplas é realizado para contrastes entre médias (ou totais)</p>
+                    <h3> Contrastes</h3>
+                    <p> Definição: Um contraste de médias é definido pela combinação linear das mesmas, ou seja:</p>
+                    <p>tal que, ∑Ii=1ai=0
+                        , para o caso em que todos os tratamentos apresentam o mesmo número de repetições J
+                        . | Generalizando, L=a1μ1+a2μ2+...+aIμI
+                         ,tal que, ∑Ii=1niaj=0
+                        , é um contraste, em que ni
+                         é o número de repetições do i
+                        −ésimo tratamento. 
+                    </p>
+                    <p> São exemplos de contrastes</p>
+                    <h3> Comparação de duas médias</h3>
+                    <p> A comparação de todas as médias duas a duas, implica na realização de testes para hipóteses do tipo:</p>
+                    <h3> Teste t-Student ou LSD de Fisher</h3>
+                    <p> Os valores absolutos das estimativas dos contrastes são:</p>
+                    <table> 
+                        <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
+                        <tr>
+                            <th> médias</th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                    </table>
+                    <p> Outro modo de apresentarmos os resultados para as comparações das médias duas a duas é o que segue. Inicialmente, ordenamos as médias em ordem decrescente e acrescentamos as letras de tal modo que médias seguidas da mesma letra não apresentam diferença siginificativa.</p>
+                    <table>
+                        <tr>
+                            <th> Genótipo</th>
+                            <th> média estimada</th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p> Logo, considerando-se o nível de 5% de significância, há evidências para afirmarmos que os genótipos 1 e 3 não apresentam, em média, a mesma produtividade. Há evidências para afirmarmos que os genéticos 1 e 4, assim como os genótipo 2 e 4, não apresentam, em média, amesma produtividade. O mesmo não se pode afirmar a respeito das demais comparações. </p>
+                    <h3> Teste t com correção de Bonferroni</h3>
+                    <p> Entretanto o teste t como realizado, apresenta alguns problemas. Suponha que sejam 10 os tratamentos em análise. </p>
+                    <p> Quantas seriam as comparações duas a duas? Quarenta e cinco.
+                        Supondo o nível de significância 0,05 para cada comparação, qual será o nível de significância conjunto, assumindo que as comparações sejam independentes? 
+                    </p>
+                    <p>O que nos leva a refletir sobre o nível de significância por comparação e conjunto. Nível de significância por comparação (comparisonwise): controla a taxa de erro tipo I por comparação. Nível de significância por experimento (experimentwise): controla a taxa de erro tipo I considerando todo o conjunto de comparações. </p>
+                    <p> No teste t, podemos controlar a taxa de erro máxima por experimento usando a taxa de erro por comparação dada por α/c, em que c corresponde ao número de comparações de duas médias. Assim definimos acorreção de Bonferroni.</p>
+                    <p> Para o exemplo de produtividade de milho com a correção de Bonferroni temos a nova diferença mínima significativa,</p>
+                    <p> Resultando em apenas uma diferença significativa, entre a média de produtividade dos genótipos 1 e 4, como pode ser observado a seguir.</p>
+                    <table> 
+                        <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
+                        <tr>
+                            <th> médias</th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Genótipo</th>
+                            <th> média estimada</th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <h3> Teste de Tukey</h3>
+                    <table> 
+                        <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
+                        <tr>
+                            <th> médias</th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Genótipo</th>
+                            <th> média estimada</th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <h3> Teste de Duncan</h3>
+                    <table> 
+                        <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
+                        <tr>
+                            <th> médias</th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Genótipo</th>
+                            <th> média estimada</th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <h3> Teste de Dunnett</h3>
+                    <table> 
+                        <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
+                        <tr>
+                            <th> médias</th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                            <th> 1 </th>
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                        <tr> 
+                            <th> 1</th>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+                            <td> 2</td>
+
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Genótipo</th>
+                            <th> média estimada</th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <h3> Contrastes Ortogonais</h3>
+                    
+                    <h3> Teste t e F para constrastes ortogonais</h3>
+
+                    
+                </div>
+                <section class="atividade">
+                    <h2>Atividades</h2>
+                </section>
+                <form id="form" class="form">
+                    <div class="form-content">
+                        <label for="atividade1">
+                            Um experimento foi instalado de acordo com o delineamento inteiramente casualizado para avaliar o número de cochonilhas mortas em cada parcela (média de 3 plantas), 8 dias após a aplicação de 5 inseticidas e um controle: A – FOLIDOL ;  B – MALATOL;  C – TRIONA;  D – DIMETOATO;  E – CYPROLANE; O tratamento F corresponde a um controle (sem aplicação de inseticida). A seguir são apresentadas as médias observadas por tratamento.
+                            <table>
+                                <tr>
+                                    <td>A </td>
+                                    <td> B</td>
+                                    <td>C </td>
+                                    <td> D</td>
+                                    <td>E</td>
+                                    <td> F</td>
+
+                                </tr>
+                                <tr>
+                                    <td>37,22 </td>
+                                    <td> 24,30</td>
+                                    <td>29,65</td>
+                                    <td> 23,75</td>
+                                    <td>33,23</td>
+                                    <td> 6,57</td>
+
+                                </tr>
+                            </table>
+                            Quais são as hipóteses do teste F para comparar a média do tratamento controle com a média das médias dos demais tratamentos, ou seja, a média do controle versus a média do grupo tratado?
+                        </label>
+                        <input 
+                          type="text"
+                          id="at1"
+                          placeholder="resposta"
+                        />
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    
+        
+                    <div class="form-content">
+                        <label for="atividade3">Sabendo-se que o coeficiente de variação foi 8.70% e que o valor tabelado de referência é F(5%,1,18)=4.41
+                            .</label>
+                        <table>
+                            <tr>
+                                <td>Qual é o número de repetições por tratamento? </td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at8"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Calcule a média geral </td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Calcule o Quadrado Médio do Resíduo.</td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at10"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                        </table>
+                                
+                        
+                        <a>mensagem</a>
+        
+                    </div>
+                    <div class="form-content">
+                        <label for="atividade3">Apresente a estimativa do contraste de interesse e verifique se a diferença é significativa</label>
+                        <table>
+                            <tr>
+                                <td>Estimativa do contraste </td>
+                                <td>SQ do contraste </td>
+                                <td> QM do contraste</td>
+                                <td>F</td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                                <td> 
+                                    <input 
+                                        type="text"
+                                        id="at9"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                                
+                        
+                        <a>mensagem</a>
+        
+                    </div>
+        
+                    <div class="form-content">
+                        <div class="at3">
+
+                           <label for="email">Considerando o valor tabelado de  F(5%,1,18)=4.41
+                            , há evidências para rejeitar a hipótese nula considerando o nível de 5% de significância?</label>
+                           <input type="text" id="at11" placeholder="resposta">                                             
+                        </div>
+                                
+                    </div>
+                    <div class="form-content">
+                        <div class="at3">
+
+                           <label for="email">Qual grupo você indicaria?</label>
+                           <input type="text" id="at11" placeholder="resposta">                                             
+                        </div>
+                                
+                    </div>
+                    <button type ="submit"> enviar</button>
+        
+        
+                </form>
+        
+            </div>
+
+
+        </section>
+    
+              
+       
+    </section>
+
+
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>

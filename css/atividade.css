@@ -1,0 +1,224 @@
+
+.atras{
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-y:hidden;
+    padding: 50px;
+}
+
+.fundo{
+    background-color: rgb(210, 252, 217);
+    border-radius: 14px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: 0 5px 5px rgb(15, 15, 15);
+    overflow-y: scroll;
+    margin-top: 2cm;
+    height: 80vh;
+    
+}
+
+.fundo::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+.fundo::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+.fundo::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+.atividade{
+    background: linear-gradient(120deg, rgb(83, 231, 140) 0%, rgb(2, 56, 18) 100%);
+    padding: 24px;
+    text-align: center;
+    color: azure;
+    border-radius: 14px;
+
+}
+
+.form{
+    padding: 18px;
+}
+
+.form-content{
+    margin-bottom: 8px ;
+    padding-bottom: 18px;
+    position: relative;
+    text-align: justify;
+
+}
+
+.form-content label{
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.form-content input {
+    display: block;
+    width: 100%;
+    border-radius: 8px ;
+    padding: 8px;
+    border: 2px solid rgb(2,56,18);
+
+}
+
+.form-content a {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    visibility: hidden;
+}
+
+.form button {
+    background-color: rgb(83, 231, 140);
+    color: rgb(2, 56, 18);
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.form-content.true input{
+    border-color: rgb(9, 158, 34);
+
+}
+
+.form-content.true a{
+    color: rgb(9, 158, 34);
+    font-weight: bold;
+    visibility: visible;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    margin: 16px;
+    border-radius: 14px;
+   
+}
+
+.tabela2{
+    margin: auto;
+}
+
+.bordatab{
+    border: none;
+}
+
+table, th, td {
+    border: 1px solid rgb(2, 56, 18);
+}
+
+th, td{
+    padding: 10px 10px;
+    text-align: center;
+    width: 120px;
+}
+    
+th {
+    background-color: rgb(83, 231, 140);
+    font-weight: normal;
+}
+
+
+.form-content.error input{
+    border-color: darkred;
+}
+
+.form-content.error a{
+    color: darkred;
+    font-weight: bold;
+    visibility: visible;
+
+}
+
+.contact-form input{
+    width: 100%;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+.contact-form input[type=text] {
+    height: 100px;
+}
+
+.contact-form button {
+    background-color: rgb(83, 231, 140);
+    color: rgb(2, 56, 18);
+    width: 100%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.form-content.true .table input{
+    border-color: rgb(9, 158, 34);
+
+}
+
+.form-content.true .table a{
+    color: rgb(9, 158, 34);
+    font-weight: bold;
+    visibility: visible;
+}
+
+.form-content.error .table input{
+    border-color: darkred;
+}
+
+.form-content.error .table  a{
+    color: darkred;
+    font-weight: bold;
+    visibility: visible;
+
+}
+
+.form-content .at3 input {
+    display: inline;
+    width: 30%;
+    border-radius: 8px ;
+    padding: 8px;
+    border: 2px solid rgb(2,56,18);
+
+}
+
+.form-content.true .at3 input{
+    border-color: rgb(9, 158, 34);
+
+}
+
+.form-content.true .at3 a{
+    color: rgb(9, 158, 34);
+    font-weight: bold;
+    visibility: visible;
+}
+
+.form-content.error .at3 input{
+    border-color: darkred;
+}
+
+.form-content.error .at3  a{
+    color: darkred;
+    font-weight: bold;
+    visibility: visible;
+
+}
+
+.form-content table{
+    margin: auto;
+}
