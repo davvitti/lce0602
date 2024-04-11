@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"><a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +42,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -58,6 +80,316 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
+                <section class="atividade">
+                    <h2>Pressuposições da ANOVA</h2>
+                </section>
+                <div class="conteudo">
+                    <h3>Fundamentos </h3>
+                    <p> Quais são as pressuposições para a realização da Análise de Variância?
+
+                        * Os erros devem seguir uma distribuição normal;
+                        * Os erros devem ser independentes;
+                        * Os erros devem apresentar variância constante, ou seja, homogeneidade de variâncias;
+                        * O modelo deve ser aditivo
+                    </p>
+                    <h4> Exemplo</h4>
+                    <p> Um pesquisador pretende comparar quatro variedades de pêssego quanto ao enraizamento de estacas. Para tanto, realizou um experimento de acordo com o delineamento inteiramente casualizado com cinco repetições, sendo cada parcela um vaso com vinte estacas. Passado o tempo necessário, o pesquisador anotou o número de estacas enraizadas, apresentado na Tabela a seguir. </p>
+                    <table>
+                        <caption> Tabela 1: Número de estacas enraizadas por variedade de pêssego.</caption>
+                        <tr>
+                            <th> Variedades </th>
+                            <th colspan="5">Repetições</th>
+                            <th> Total</th>
+                            <th> média</th>
+                            <th> Variancia</th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p>  Esse experimento seguiu um delineamento inteiramente casualuzado, portanto segue o seguinte modelo:
+
+                        \begin{equation}
+                        y_{ij} = \mu + \tau_i + e_{ij} = \mu_i + e_{ij} 
+                        
+                        \end{equation}
+                    </p>
+                    <p>em que:
+
+                        - $y_{ij}$ é o valor observado na j-ésima repetição do iésimo tratamento, com: 
+                         - $i = 1, ... , I$ e 
+                         - $j = 1, ... , n_i$
+                          
+                        - $\mu$ é uma constante inerente a todas as observações, geralmente a média geral,
+                        
+                        - $\tau_i$ é o efeito do iésimo tratamento,
+                        
+                        - $e_{ij}$ é o erro experimental, tal que $e_{ij} \overset{iid}{\sim}  N(0,\sigma^2)$.
+                    </p>
+                    <h3>Análise dos resíduos </h3>
+                    <p>Para obter o valor predito do resíduo.
+
+                        \begin{equation}
+                        y_{ij} = \mu_i + e_{ij}  
+                        
+                        \end{equation}
+                        
+                        $$ e_{ij} = \mu_i - y_{ij} $$ 
+                        Resíduos Padronizados ($z_{ij}$) e Resíduos estudentizados ($d_{ij}$) 
+                    </p>
+                    <p>Observações discrepantes e aparente
+                        homogeneidade/heterogeneidade de variâncias.
+                        
+                        $$z_{ij} = \displaystyle{\frac{e_{ij}}{\sqrt{\text{QM}_{\text{Resíduo}}}}}$$
+                        
+                        $$d_{ij} = \displaystyle{\frac{e_{ij}}{\sqrt{(1-1/J)\text{QM}_{\text{Resíduo}}}}}$$ 
+                    </p>
+                    <h3> Observações discrepantes (atípicas)</h3>
+                    <p>Observações discrepantes são valores que se afastam muito do esperado para a variável.
+                    </p>
+                    <p> Alguns possíveis gráficos:
+
+                        * Resíduos estudentizados (ou padronizados) versus Tratamentos
+                        * Gráfico de caixas dos resíduos estudentizados (ou padronizados)
+                        
+                    </p>
+                    <p>Observações:
+
+                        * 95% dos resíduos devem pertencer ao intervalo (-2,2);
+                        
+                        * Valores não pertencentes ao intervalo (-3,3) podem ser classificados como discrepantes;
+                        
+                        * Não podemos excluir observações discrepantes antes de conversar com o pesquisador, pois pode ter ocorrido algum erro de tabulação ou a observação pode indicar uma característica importante associada ao respectivo tratamento; 
+                    </p>
+                    <h4> Boxplot resíduos estudentizados</h4>
+                    <p>São observados dois valores discrepantes para os resíduos, quando esperada a normalidade dos erros. Logo, não se observa 95% dos resíduos entre -2 e 2, entretanto 100% destes estão entre -3 e 3.
+
+                    </p>
+                    <h4> Gráfico de pontos</h4>
+                    <p>Observa-se que os dois valores discrepantes estão relacionados às
+                        variedades C e D. A dispersão dos resíduos por tratamento será
+                        discutida posteriormente. 
+                    </p>
+                    <h3> Independencia dos erros</h3>
+                    <p>Até certo ponto, a independência dos erros é garantida pelo princípio da casualização. Entretanto, devemos “verificá-la” nos casos em que poderiam existir correlações entre as observações;
+
+                        * observações no mesmo indivíduos/parcela ao longo do tempo;
+                        
+                        * observações na mesma parcela em profundidades diferentes;
+                        
+                        * observações de indivíduos agrupados, como por exemplo cobaias em uma mesma gaiola. 
+                        
+                    </p>
+                    <h3> homogeneidade de variâncias</h3>
+                    <p> * A pressuposição de homogeneidade de variâncias é a mais importante a ser atendida.
+
+                        Gráficos
+                        
+                        * Resíduos estudentizados versus Tratamentos
+                        * Resíduos estudentizados versus Valores preditos (y˜ij)
+                        
+                        Testes de hipóteses
+                        
+                        * Teste de Hartley (F máximo)
+                        * Teste de Levene
+                        
+                        grafico pontos homogeneidade 
+                    </p>
+                    <p>Observa-se que as dispersões dos resíduos estudentizados associados
+                        às variedades A e B são menores do que as dispersões dos resíduos
+                        estudentizados associados às variedades C e D, aparentemente.
+                        
+                        
+                        Gráfico dos Resíduos versus Valores Preditos 
+                    </p>
+                    <h3>Teste de hipóteses: Teste de Hartley </h3>
+                    <p>$$H0 : \text{Há homogeneidade de variâncias}$$
+                        $$Ha : \text{Não há homogeneidade de variâncias}$$
+                        
+                        Estatística do teste:
+                        $$F\text{max} = \frac{S^2_{max}}{S^2_{min}}$$ 
+                    </p>
+                    <p>Rejeita-se H0, ao nível 100 × α% de significância, se Fmax ≥ Fmaxtab(α,ν1,ν2), em que ν1 é o número de graus de liberdade do numerador e ν2 é o número de graus de liberdade do denominador da estatística Fmax .
+                    </p>
+                    <h3>Teste de hipóteses: Teste de Levene (1960) </h3>
+                    <p> $$H0 : \text{Há homogeneidade de variâncias}$$
+                        $$Ha : \text{Não há homogeneidade de variâncias}$$
+                    </p>
+                    <p>Estatística do teste:
+
+                        1. Ajusta-se o modelo yij = µ + τi + eij = µi + eij e obtêm-se os valores preditos para os erros, ˜eij .
+                        
+                        2. Realiza-se a ANOVA para |˜eij |, de acordo com o modelo |˜eij | = ν + γi + ij .
+                        
+                        3. Em caso de efeito significativo de tratamentos, ao nível 100 × α% de significância, há evidências de heterogeneidade de variâncias.
+                    </p>
+                    <p>Como o valor-p = 0,06786 > 0,05 = α, considerando-se o nível de
+                        5% de significância não rejeitamos H0. Logo, não há evidências para afirmarmos que as variâncias não são homogêneas. 
+                    </p>
+                    <h3> Normalidade dos erros</h3>
+                    <p> Assim como para a verificação da homogeneidade de variâncias, podem ser utilizados gráficos e testes para a verificação da pressuposição a respeito da normalidade dos erros.
+
+                        Gráficos: 
+                        
+                        * Gráfico quantil-quantil
+                        * Half normal plot (hnp) com envelope de simulação
+                        * Histograma
+                        * Gráfico de caixas
+                        
+                        Testes de hipóteses:
+                        
+                        * Shapiro-Wilk
+                        * Kolmogorov-Smirnov
+                        * Qui-quadrado
+                        * entre outros
+                        
+                    </p>
+                    <h4>Gráfico quantil-quantil </h4>
+                    <p>
+                        Observa-se o afastamento de dois pontos da reta que passa pelos pontos (Q1esp , Q1obs ) e (Q3esp , Q3obs ). Desse modo, espera-se que os erros não sigam uma distribuição normal.
+
+                       Gráfico half normal plot com envelope de simulação
+
+                       Atkinson (1985) propôs a adição de um envelope simulado, a partir dos seguintes passos: 
+
+                        1. Ajuste um modelo a um conjunto de dados e obtenha d(i), valores absolutos ordenados de uma certa estatística de diagnóstico (resíduos, hii, etc.);
+
+                     2. Simule 19 amostras da variável resposta usando as estimativas obtidas após o ajuste do modelo e os mesmos valores para as variáveis explanatórias;
+
+                     3. Ajuste o modelo a cada uma das 19 amostras e calcule os valores absolutos ordenados da estatística de diagnóstico de  interesse, d∗j(i), j = 1, . . . , 19, i = 1, . . . , n.
+
+                       4. Para cada i, calcule a média, o mínimo e o máximo d∗j(i)
+
+                     5. Construa um gráfico para as quantidades calculadas no item anterior e d(i) versus zi (quantil esperado).
+
+                    </p>
+                    <h4>Gráfico quantil-quantil com envelope simulado </h4>
+                    <p>É aceitável que pelo menos 95% dos pontos pertençam ao intervalo
+                        de confiança gerado. Para o exemplo, tem-se 30% destes foram do
+                        intervalo. Assim, é esperado que os erros não sigam uma
+                        distribuiçãonormal. 
+                    </p>
+                    <h3>Teste de hipóteses: Shapiro-Wilk (1965)</h3>
+                    <p>$$H0 : \text{Os erros seguem uma distribuição normal}$$
+                        $$Ha : \text{Os erros não seguem uma distribuição normal}$$
+                        
+                        $$ W = \frac{(\sum_{i=1}^n a_iy_{(i)})^2}{\sum_{i=1}^n(y_i-y)^2} $$ 
+                    </p>
+                    <p>em que y(i) representa a i-ésima estatística de ordem e os coeficientes ai são pesos ótimos para o estimador de mínimos quadrados ponderados dos desvios-padrões para uma população normal. 
+
+                    </p>
+                    <p>Como o valor-p = 0,02209 < 0,05 = α, considerando-se o nível de 5% de significância, rejeitamos H0. Logo, há evidências para afirmarmos que os erros não seguem uma distribuição normal. </p>
+                    <h3> Transformação dos dados</h3>
+                    <p>Se alguma pressuposição nao for atendida é possivel realizar a transformação dos dados. 
+
+                        Como visto, uma alternativa para os casos em que alguma(s) das pressuposições não é(são) atendida(s) é a transformação dos dados. 
+                        Vejamos, agora, possíveis casos para o gráfico dos resíduos versus os valores preditos y˜ij , como ferramenta para diagnóstico preliminar. 
+                    </p>
+                    <h3> Transformação Box-Cox (1964)</h3>
+                    <p> y*= logy se $\lambda$=0
+
+                        * y*= $y^\lambda$ se $\lambda$ $\neq$ 0
+                    </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th> </th>
+                            <th> </th>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p>Após realizar a transformação dos dados, deve-se verificar novamente as pressuposições da análise de variância. Caso sejam atendidas, pode-se prosseguir com a análise, lembrando de realizar a transformação inversa ao final. </p>
+                    <p>Observe que o valor 1 não pertence ao intervalo de confiança a 95% para λ, porém, o valor 0,5 pertence, sendo este o valor indicado de λ.
+                    </p>
+                    <h4> Análise dos dados transformados</h4>
+                    <h4> Normalidade dos erros</h4>
+                    <p> 
+                        Com os dados transformados e novo modelo ajustado, tem-se que 95% dos resíduos encontram-se entre -2 e 2 e, os pontos não apresentam grande afastamento da reta, o que indica possível normalidade dos erros.
+                    </p>
+                    <p> Com os dados transformados e novo modelo ajustado, tem-se que a maioria dos pontos pertencem ao envelope simulado, indicando possível normalidade dos erros. </p>
+                    <p>Como o valor-p = 0,8943 > 0,05 = α, considerando-se o nível de 5% de significância, não rejeitamos H0. Logo, há evidências para afirmarmos que os erros seguem uma distribuição normal.
+                    </p>
+                    <h4> Homogeneidade de variâncias</h4>
+                    <p>Aparentemente, as dispersões dos resíduos por tratamento são semelhantes. </p>
+                    <p>Como o valor-p = 0,9258 > 0,05 = α, considerando-se o nível de 5% de significância, não rejeitamos H0. Logo, há evidências para afirmarmos que há homogeneidade de variâncias dos erros. </p>
+                    <p>Agora, aparentemente, há um leve aumento na dispersão dos resíduos conforme o valor predito aumenta. </p>
+                    <p>Quando utilizados os dados transformados, verifica-se que o valor 1 pertence ao intervalo de confiança para λ. Desse modo, nova transformação não é indicada.
+
+                        Atendidas as pressuposiões para a realização da análise de variância, considerando-se os dados transformados, temos: 
+                    </p>
+                    <p> Como o valor-p = 4, 623 × 10−9 < 0, 05 = α, considerando o nível de 5% de significância, rejeitamos H0. Desse modo, há evidências para afirmarmos que pelo menos um contraste de médias difere de zero.</p>
+                    <p>A partir do teste de Tukey, ao nível de 5% de significância, há evidências para afirmarmos que as médias para as variedades C e D diferem das médias paras as variedades A e B, e as demais médias não diferem entre si. </p>
+
+
+
+
+
+                </div>
                 
                 <section class="atividade">
                     <h2>Atividade</h2>

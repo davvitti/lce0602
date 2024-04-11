@@ -77,6 +77,12 @@ body{
 
 }
 
+.header .logo > a{
+    color: aliceblue;
+    text-decoration: none;  
+    
+}
+
 
 .header .menu > ul > .dropdown > a{
     padding-right: 15px;
@@ -109,11 +115,12 @@ body{
     transform: scaleY(0);
     visibility: hidden ;
     opacity: 0;
-
+     
 }
 
 .header .menu .sub-menu a{
     padding: 6px 24px;
+   
 }
 
 .header .menu li:hover> .sub-menu{

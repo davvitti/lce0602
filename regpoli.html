@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"><a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +41,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -61,10 +82,30 @@
                 <section class="atividade">
                     <h2>Regressão Polinomial</h2>
                 </section>
-                <div>
+                <div class="conteudo">
                     <h3> Fundametos</h3>
                     <p> Quando os tratamentos forem quantitativos e continuos será possivel realizar a análise dos dados a partir de uma regressão polinomial, em outras palavras estabelecer uma função para explicar o comportamento dos dados.</p>
                     <h3> Relação funcional</h3>
+                    <p> Fatores quantitativos $\Rightarrow$ Relação funcional entre a variável resposta ($y$) e os níveis desses fatores ($X$).</p>
+                    <p> Modelo </p>
+                    <p>$$y = f(X) + \epsilon$$ </p>
+                    <p>em que $f(X)$ é uma função desconhecida.
+
+                        **Objetivos**:
+                        
+                        -   Obter uma função que represente $f(X)$, aproximadamente;
+                        
+                        -   Obter o nível de $x$ que leva à máxima/mínima resposta;
+                        
+                        -   Obter a dose econômica (é necessário conhecer a equação de lucro e o
+                            preço do nutriente); 
+                    </p>
+                    <h3>Função Polinomial de grau "p" </h3>
+                    <p> $$y = \beta_0 + \beta_1 X + \beta_2X^2 + \ldots + \beta_pX^p + \epsilon$$</p>
+                    <p>-   Fácil ajuste;
+
+                        -   Interpretação limitada ao intervalo de estudo;
+                    </p>
                     <h3> Exemplo</h3>
                     <p> Ragazzi (1979) utilizou um experimento inteiramente casualizado com quatro repetições para estudar o efeito de 7 doses de gesso: 0, 50, 100, 150, 200, 250 e 300 kg/ha sobre diversas características do feijoeiro. </p>
                     <table>
@@ -132,7 +173,409 @@
                         </tr>
 
                     </table>
-                    
+                    <p> Grafico</p>
+                    <h3>Quadro da Anova</h3>
+                    <table class="tabela2">
+                        <tr>
+                            <th> Fontes de variação</th>
+                            <th> gl</th>
+                            <th> Soma de quadrados</th>
+                            <th> Quadrado médio</th>
+                            <th> Fcal</th>
+                            <th> Ftab</th>
+                        </tr>
+                        <tr> 
+                            <td> Tratamentos </td>
+                            <td> 3</td>
+                            <td> 163,75</td>
+                            <td> 54,5833</td>
+                            <td> 7,80</td>
+                            <td> 3,28</td>
+                        </tr>
+                        <tr> 
+                            <td> 16 </td>
+                            <td> 112,00</td>
+                            <td> 7,00</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                            <td> 19</td>
+                            <td> 275,75</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p>$$H_0: \text{Não há efeito de dose}$$
+
+                        $$H_1: \mbox{Há efeito de dose.}$$ 
+                    </p>
+                    <p>Assumindo-se o nível de 5% de significância, como F = 7,67 \> 2,57 (ou em termos das probabilidades, valor-p = 0,00018763 \< 0,05 = $\alpha$), rejeita-se $H_0$. Logo há evidências para afirmar que há efeito de Dose. </p>
+                    <h3>Polinômio </h3>
+                    <p>Se $I$ é o número de níveis do fator quantitativo $$\Downarrow$$ Ajuste
+                        de um polinômio de no máximo grau ($I-1$) 
+                    </p>
+                    <p>No exemplo: $I = 7$ doses de gesso, 0, 50, 100, 150, 200, 250 e 300. </p>
+                    <p>Logo podemos ajustar um polinômio de grau no máximo 6 </p>
+                    <h3> Sem efeito de dose</h3>
+                    <p> Grafico</p>
+                    <p>Polinômio de grau 1 </p>
+                    <p> $$\underbrace{\beta_0 + \beta_1X } + \underbrace{{\beta_{2}X^{2} + \beta_{3}X^{3} + \beta_{4}X^{4} + \beta_{5}X^{5} + \beta_{6}X^{6}}}$$</p>
+                    <table> 
+                        <tr>
+                            <th> Fontes de Variação</th>
+                            <th> gl</th>
+                        </tr>
+                        <tr> 
+                            <td> Doses</td>
+                            <td> 6</td>
+                        </tr>
+                        <tr> 
+                            <td> Regressão linear</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Desvios de regressão</td>
+                            <td> 5</td>
+                        </tr>
+                        <tr> 
+                            <td>Resíduo </td>
+                            <td> 21</td>
+                        </tr>
+                        <tr> 
+                            <td>Total </td>
+                            <td> 27</td>
+                        </tr>
+                    </table> 
+                    <h4> Hipóteses: desvios de regressão</h4>
+                    <p>$$H_0: \beta_2,\beta_3,\beta_4,\beta_5,\beta_6=0 | \beta_0, \beta_1 \mbox{ estão no modelo}$$ </p> 
+                    <p>$$H_1: \beta_k\neq0 | \beta_0,\beta_1 \mbox{ estão no modelo, para algum } k=2,\ldots,6$$ </p>
+                    <h4> Hipóteses: Regressão linear</h4>
+                    <p>$$H_0: \beta_1=0 | \beta_0 \mbox{ está no modelo}$$
+
+                        $$H_1: \beta_1\neq0 | \beta_0 \mbox{ está no modelo}$$ 
+                    </p>
+                    <h3> Polinômio de grau 2</h3>
+                    <p> Grafico</p>
+                    <p>$$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}} + \underbrace{|{\beta_{3}X^{3} + \beta_{4}X^{4} + \beta_{5}X^{5} + \beta_{6}X^{6}}}$$ </p>
+                    <table> 
+                        <tr>
+                            <th> Fontes de Variação</th>
+                            <th> gl</th>
+                        </tr>
+                        <tr> 
+                            <td> Doses</td>
+                            <td> 6</td>
+                        </tr>
+                        <tr> 
+                            <td> Regressão linear</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Termo quadrático</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Desvios de regressão</td>
+                            <td> 4</td>
+                        </tr>
+                        <tr> 
+                            <td>Resíduo </td>
+                            <td> 21</td>
+                        </tr>
+                        <tr> 
+                            <td>Total </td>
+                            <td> 27</td>
+                        </tr>
+                    </table>
+                    <p> Hipóteses</p>
+                    <p> $$H_0: \beta_3,\beta_4,\beta_5,\beta_6=0 | \beta_0,\beta_1,\beta_2 \mbox{ estão no modelo}$$
+
+                        $$H_1: \beta_k\neq0 | \beta_0,\beta_1,\beta_2 \mbox{ estão no modelo, para algum } k=3,\ldots,6$$
+                    </p>
+                    <p>
+                        $$H_0: \beta_2=0 | \beta_0,\beta_1 \mbox{ estão no modelo}$$
+
+                       $$H_1: \beta_2\n eq0 | \beta_0,\beta_1 \mbox{ estão no modelo}$$
+                    </p>
+                    <p>Se Desvios de Regressão for não significativo $\Rightarrow$ verificar a
+                        significância da Regressão Quadrática;
+                        
+                        Se Desvios de Regressão for significativo $\Rightarrow$ continuar
+                        "procurando'' pelo modelo. 
+                    </p>
+                    <h3> Polinômio de grau 3</h3> 
+                    <p> $$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}+\beta_{3}X^{3}} + \underbrace{|{\beta_{4}X^{4} + \beta_{5}X^{5} + \beta_{6}X^{6}}}$$</p>
+                    <table class="tabela2"> 
+                        <tr>
+                            <th> Fontes de Variação</th>
+                            <th> gl</th>
+                        </tr>
+                        <tr> 
+                            <td> Doses</td>
+                            <td> 6</td>
+                        </tr>
+                        <tr> 
+                            <td> Regressão linear</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Termo quadrático</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Termo quadrático</td>
+                            <td>1 </td>
+                        </tr>
+                        <tr> 
+                            <td> Desvios de regressão</td>
+                            <td> 4</td>
+                        </tr>
+                        <tr> 
+                            <td>Resíduo </td>
+                            <td> 21</td>
+                        </tr>
+                        <tr> 
+                            <td>Total </td>
+                            <td> 27</td>
+                        </tr>
+                    </table>
+                    <p>$$H_0: \beta_4,\beta_5,\beta_6=0 | \beta_0,\beta_1,\beta_2, \beta_3 \mbox{ estão no modelo}$$
+
+                        $$H_1: \beta_k\neq0 | \beta_0,\beta_1,\beta_2,\beta_3 \mbox{ estão no modelo, para algum } k=4,5,6$$ 
+                    </p>
+                    <p>
+                        $$H_0: \beta_3=0 | \beta_0,\beta_1,\beta_2 \mbox{ estão no modelo}$$
+
+                        $$H_1: \beta_3\neq0 | \beta_0,\beta_1,\beta_2 \mbox{ estão no modelo}$$ 
+                    </p>
+                    <h3> Polinômio de grau 4</h3>
+                    <p> grafico</p>
+                    <p>$$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}+\beta_{3}X^{3}+\beta_{4}X^{4}} + \underbrace{|{\beta_{5}X^{5} + \beta_{6}X^{6}}}$$
+                    </p>
+                    <h3> Polinômio de grau 5</h3>
+                    <p>
+                        $$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}+\beta_{3}X^{3}+\beta_{4}X^{4}+\beta_{5}X^{5}} + \underbrace{|{\beta_{6}X^{6}}}$$
+                    </p>
+                    <h3> Polinômio de grau 6</h3>
+                    <p> $$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}+\beta_{3}X^{3}+\beta_{4}X^{4}+\beta_{5}X^{5}+\beta_{6}X^{6}}$$ </p>
+                    <h3> Generalizando</h3>
+                    <p>$$
+                        H_0: \mbox{Não há falta de ajuste no modelo}$$
+                        
+                        $$H_1: \mbox{Há falta de ajuste no modelo}
+                        $$
+                        
+                        $$
+                        H_0: \beta_1 = 0 | \beta_0 \mbox{ está no modelo}$$
+                        
+                        $$H_1: \beta_1 \neq 0 | \beta_0 \mbox{ está no modelo} 
+                        $$ 
+                    </p>
+                    <p> $$
+                        H_0: \mbox{Não há falta de ajuste no modelo}$$
+                        
+                        $$H_1: \mbox{Há falta de ajuste no modelo}
+                        $$
+                        
+                        $$
+                        H_0: \beta_2 = 0 | \beta_0, \beta_1 \mbox{ estão no modelo}$$
+                        
+                        $$H_1: \beta_2 \neq 0 | \beta_0, \beta_1 \mbox{ estão no modelo} 
+                        $$
+                        
+                        Hipóteses:
+                        
+                        $$
+                        H_0: \mbox{Não há falta de ajuste no modelo}$$
+                        
+                        $$H_1: \mbox{Há falta de ajuste no modelo}
+                        $$
+                    </p>
+                    <p>$$
+                        H_0: \beta_3 = 0 | \beta_0, \beta_1, \beta_2 \mbox{ estão no modelo}$$
+                        
+                        $$H_1: \beta_3 \neq 0 | \beta_0, \beta_1, \beta_2 \mbox{ estão no modelo}$$ 
+                    </p>
+                    <table class="tabela2">
+                        <tr>
+                            <th>Fontes de Variação</th>
+                            <th>gl</th>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Tratamentos</td>
+                            <td> </td>
+                        </tr>
+
+                    </table>
+                    <p>  Aumentamos, progressivamente, o grau do polinômio ajustado ($p$) até que a falta de ajuste do modelo seja não significativa e que a conclusão do teste da hipótese:</p>
+                    <p>$$H_0: \beta_p = 0 | \beta_0, \beta_1, \ldots, \beta_{p-1} \mbox{ estão no modelo}$$
+
+                        $$H_1: \beta_p \neq 0 | \beta_0, \beta_1, \ldots, \beta_{p-1} \mbox{ estão no modelo}$$ 
+                    </p>
+                    <p>seja pela rejeição de $H_0$.
+
+                        Dado o modelo de regressão polinomial, 
+                    </p>
+                    <p>$$y_{ij} = \beta_0 + \beta_1X_{i} + \beta_2X_i^2 + \beta_3X_i^3 + \ldots + \beta_{I_1}X_i^{I-1} + \epsilon_{ij},$$ </p>
+                    <p>tem-se que: existe dependência entre
+                        $X_i, \; X_i^2, \; X_i^3, \; \ldots, X_i^{I-1}$, o que dificulta a
+                        obtenção dos parâmetros
+                        ($\beta_0, \; \beta_1, \; \beta_2, \; \beta_3, \ldots, \beta_{I-1}$) e,
+                        consequentemente, o cálculo das respectivas somas de quadrados.
+                    </p>
+                    <p> Uma alternativa consiste em utilizar uma transformação da variável $X$, de tal modo que os novos parâmetros do modelo sejam independentes. Tal alternativa é denominada Polinômios Ortogonais.
+                    </p>
+                    <p>Desse modo, quando se tem níveis equidistantes de tratamentos, com a variável transformada, $x_i = \frac{X_i-\bar{X}}{q}$,com $q$ sendo a distância entre dois níveis consecutivos, o modelo fica</p>
+                    <p> $$y_{ij} = b_0P_{0i} + b_1P_{1i} + b_2P_{2i} + \ldots + b_{I-1}P_{(I-1)i} + \epsilon_{ij},$$</p>
+                    <p>em que, $b_0, b_1, b_2, \ldots, b_{I-1}$ são parâmetros a serem
+                        estimados, $P_{0i}, P_{1i}, P_{2i}, \ldots, P_{(I-1)i}$ são polinômios
+                        ortogonais, desde que atendam as condições: 
+                    </p>
+                    <p>$P_{0i} = 1$,
+
+                        -   $\sum_iP_{ki} = 0, \quad k=1,\ldots,{I-1}$,
+                        
+                        -   $\sum_iP_{ki}P_{k'i} = 0$, para $k\neq k'$. 
+                    </p>
+                    <p>Coeficientes Ao utilizarmos polinômios ortogonais fazemos uso dos contrastes ortogonais. Os coeficientes para a obtenção de tais contrastas podem ser deduzidos, porém, nesta disciplinas, serão obtidos em tabelas. Por exemplo,
+                    </p>
+                    <p> $$\underbrace{\beta_0 + \beta_1X } + \underbrace{|{\beta_{2}X^{2} + \beta_{3}X^{3} + \beta_{4}X^{4} + \beta_{5}X^{5} + \beta_{6}X^{6}}}$$</p>
+                    <p>$$ SQ\_{Termo ; Linear} =
+                        \frac{\left(J\times \sum_i{a_{1i}\hat{\mu}_i}\right)^2}{J \times \sum_i a_{1i}^2}
+                        = \frac{\left(\sum_i{a_{1i}T_i}\right)^2}{K_1\times J} =
+                        (-3\times 554,4 -2\times 614,4 - 658,1 + 0\times 659,7
+                          \quad + 634,9 + 2\times 639,9 + 3\times 617,7)\^2 /
+                        \left(28\times 4\right)  =  423,15 $$
+                        
+                        $$SQ\_{Falta ; Aj} = SQ\_{Trat} -
+                        SQ\_{Termo ; Linear}  =  1941,83 - 423,15  =  1518,68$$
+                        
+                        $$QM_{Falta \; Aj} = \frac{SQ_{Falta \; Aj}}{gl_{Falta \; Aj}}
+                                 =  \frac{1518,68}{5}
+                                 =  303,74$$
+                        
+                        $$F_{Falta \; Aj} = \frac{QM_{Falta \; Aj}}{QM_{Res}}
+                                 =  \frac{303,74}{42,21}
+                                 =  7,20$$
+                        
+                        $$F_{Tab_{(5\%, 5,21)}} = 2,68$$ 
+                    </p>
+                    <p> $$H_0: \beta_2, \beta_3, \ldots, \beta_6 = 0|\beta_0, \beta_1 \text{ no modelo}$$
+
+                        $$H_a: \beta_k\neq 0|\beta_0, \beta_1 \text{ no modelo, para algum } k=2,\ldots,6$$
+                    </p>
+                    <p>Como F = 7,20 \> 2,68 = Ftab (valor-p = 0,00046 \< 0,05 = $\alpha$), rejeitamos $H_0$ ao nível de 5% de significância. Logo, há evidências para afirmarmos que o modelo de regressão linear não é sufciente para explicar o comportamento do peso de 1000 semestes (em média) em função das doses de gesso. </p>
+                    <p>$$\underbrace{\beta_0 + \beta_1X +\beta_{2}X^{2}} + \underbrace{|{\beta_{3}X^{3} + \beta_{4}X^{4} + \beta_{5}X^{5} + \beta_{6}X^{6}}}$$ </p>
+                    <p>$$SQ_{Termo;Quad} = \frac{(J \times \sum_i{a_{2i}\hat{\mu}_i})^2}{J \times \sum_i a_{2i}^2} = 
+                        \frac{( \sum_i{a_{2i}T_i})^2}{J \times K_2}= (5\times 554,4 +0\times 614,4 - 3\times 658,1 -4 \times 659,7 -3\times 634,9 + 0\times 639,9 + 5\times 617,7)^2 (84\times 4)=  1285,84$$
+                        
+                        $$SQ_{Falta \; Aj} = SQ_{Trat} - SQ_{Termo \; Linear} - SQ_{Termo \; Quad}
+                                 =  1941,83 - 423,15 - 1285,84
+                                 =  232,83$$
+                        
+                        $$QM_{Falta; Aj} = \frac{SQ_{Falta; Aj}}{gl_{Falta; Aj}}
+                                     =  \frac{232,83}{4}
+                                     =  58,21$$
+                        
+                        $$F_{Falta \; Aj} = \frac{QM_{Falta \; Aj}}{QM_{Res}}
+                                     =  \frac{58,21}{42,21}
+                                     =  1,38$$
+                        
+                        $$F_{Tab_{(5\%, 4,21)}} = 2,84$$ 
+                    </p>
+                    <p> $$QM_{Termo ; Quad} = \frac{SQ_{Termo \; Quad}}{gl_{Termo \; Quad}} =  \frac{1285,84}{1}
+                        =  1285,84$$
+           
+                        $$F_{Termo ; Quad} = \frac{QM_{Termo; Quad}}{QM_{Res}}
+                        =  \frac{1285,84}{42,21}
+                        =  30,47$$
+           
+                        $$F_{Tab_{(5\%, 1,21)}} = 4,32$$
+                    </p>
+                    <p>$$H_0: \beta_3,\beta_4\ldots,\beta_6 = 0| \beta_0,\beta_1,\beta_2\text{ no modelo}$$
+
+                        $$H_1: \beta_k \neq 0 | \beta_0,\beta_1,\beta_2\text{ no modelo, para algum } k=3,\ldots,6$$ 
+                    </p>
+                    <p> Como F = 1,38 \< 2,84 = Ftab (valor-p = 0,27505 \> 0,05 = $\alpha$), não rejeitamos $H_0$, ao nível de 5% de significância. Logo, não há evidências para afirmarmos que há falta de ajuste do modelo de regressão quadrática. </p>
+                    <p>$$H_0: \beta_2 = 0| \beta_0,\beta_1\text{ no modelo}$$
+
+                        $$H_1: \beta_2 \neq 0 | \beta_0,\beta_1\text{ no modelo}$$ 
+                    </p>
+                    <p>Como F = 30,47 \> 4,32 = Ftab (valor-p = $2\times10^{-5} < 0,05 = \alpha$), rejeitamos $H_0$, ao nível de 5% de significância. Logo, há evidências para afirmarmos $\beta_2$ difere de zero, dado que $\beta_0$ e $\beta_1$ estão no modelo, ou seja, selecionamos o modelo de regressão quadrática para representar o comportamento do peso de 1000 sementes (em média) em função das doses de gesso </p>
+                    <h4> Estimação dos parâmetros</h4>
+                    <p> Obter $\beta_0$, $\beta_1$, $\ldots$, $\beta_p$, tais que
+
+                        $$\mbox{SQ} = \sum_i\big[y_i - (\beta_0 + \beta_1X_i + \beta_2X_i^2 + \ldots + \beta_pX_i^p)\big]^2$$
+                        seja mínima.
+                        
+                        Ou seja,
+                    </p>
+                    <p>$$.
+                        \frac{\partial{SQ}}{\partial \beta_0} = 0   
+                        \frac{\partial \mbox{SQ}}{\partial \beta_1} = 0  
+                        \ldots  
+                        \frac{\partial \mbox{SQ}}{\partial \beta_p} = 0  
+                        \Rightarrow \hat{\beta}_0, \hat{\beta}_1, \ldots, \hat{\beta}_p $$ 
+                    </p>
+                    <p>O modelo ajustado ainda pode ser dado por:
+
+                        $$\hat{y}_{ij} = \bar{y} + B_1M_1P_{1i} + B_2M_2P_{2i} + \ldots + B_kM_kP_{ki},$$
+                        
+                        em que $B$ e $M$ são obtidos na tabela,
+                        
+                        $$B_p = \frac{\sum_{i=1}^{I}c_{pi}Ti}{K_p\times J},$$ 
+                    </p>
+                    <p>$$P_{1i} = x, \; P_{2i} = X_i^2-\frac{I^2-1}{12}, \; P_{3i} = X_i^3-\frac{3I^2-7}{20}, ...$$
+
+                        $x_i = \frac{X_i-\bar{X}}{q}$, em que $q$ é a distância entre os níveis
+                        (devem ser equidistantes) e $I$ é o número de níveis (Pimentel-Gomes,
+                        2000).
+                    </p>
+                    <p>Modelo ajustado
+
+                        $${\hat{y} = 140,7839286 + 0,2736250x - 0,0007825X^2}$$ 
+                    </p>
+                    <h3> Coeficiente de determinação</h3>
+                    <p>$$R^2 = \frac{\mbox{SQ Modelo}}{\mbox{SQ Tratamentos}} = 1 - \frac{\mbox{SQ Falta de Ajuste}}{\mbox{SQTratamentos}}$$
+
+                        $$0\leq R^2 \leq 1$$ 
+                    </p>
+                    <p>Proporção da variabilidade devida a tratamentos que é explicada pelo
+                        modelo de regressão;
+                        
+                        Quão maior o grau do polinômio, maior será o coeficiente de
+                        determinação. 
+                    </p>
+                    <p>$$R^2 = \frac{\mbox{SQ Modelo}}{\mbox{SQ Tratamentos}} = \frac{\mbox{SQ TL + SQ TQ}}{\mbox{SQ Tratamentos}} = \frac{423,15 + 1285,84}{1941,83} = 0,8801.$$ 
+
+                    </p>
+                    <p>Desse modo, aproximadamente 88% da variabilidade relacioanda aos tratamentos é explicada pelo modelo quadrático ajustado. </p>
+                
+                
 
                 </div>
                 <section class="atividade">

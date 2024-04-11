@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"><a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +41,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -59,10 +80,158 @@
         <section class="atras">
             <div class="fundo">
                 <section class="atividade">
-                    <h2>Delineamento Inteiramente Casualizado</h2>
+                    <h2>Parcelas subdivididas</h2>
                 </section>
-                <div>
-                    TEXTOS
+                <div class="conteudo">
+                    <h3> Fundamentos</h3>
+                    <p> Considere o seguinte experimento instalado de acordo com o delineamento casualizado em blocos, sendo os fatores de tratamento variedades de soja, com 4 níveis e formas de adubação, com 3 níveis.
+
+                        $$\mbox{2 fatores} \left\{\begin{array}{l}
+                        \mbox{Variedades:} V_1, V_2, V_3, V_4\\
+                        \mbox{Formas}: F_1, F_2, F_3\\
+                        \end{array} \right.$$
+                        
+                        $$\Downarrow$$ 
+                        $$\mbox{12 combinações}  ⬄ \mbox{12 tratamentos}$$
+                    </p>
+                    <p>$$V_1F_1 \; V_1F_2 \; V_1F_3\\
+                        V_2F_1 \; V_2F_2 \; V_2F_3\\
+                        V_3F_1 \; V_3F_2 \; V_3F_3\\
+                        V_4F_1 \; V_4F_2 \; V_4F_3$$
+                    </p>
+                    <h3> Ensaio fatorial</h3>
+                    <p>$$y_{jik} = \mu + b_j + \alpha_{i} + \gamma_k + (\alpha\gamma)_{ik} + e_{jik}.$$ </p>
+                    <h3> Ensaio em Parcelas Subdivididas</h3>
+                    <h3>Ensaio em faixas </h3>
+                    <h3> Exemplo de um Delineamento Casualizado em Blocos com parcelas subdivididas</h3>
+                    <p> O vírus da batata Y (PVY) é uma séria ameaça à produção de batata devido aos efeitos no rendimento e na qualidade dos tubérculos, em particular, devido à indução de doença de mancha anelar necrótica do tubérculo da batateira (PTNRD), tipicamente associada com cepas recombinantes de PVY.</p>
+                    <p>Essas cepas recombinantes têm se espalhado nos Estados Unidos nos últimos anos, embora as razões para essa disseminação contínua permaneçam obscuras. Para documentar e avaliar esta propagação entre 2011 e 2015, a composição da cepa de isolados de PVY que circulam na área de produção de batata da Columbia Basin foi determinada a partir de centenas de lotes de sementes de vários cultivares. Para abordar ainda mais a mudança na abundância de cepas, experimentos em casa de vegetação foram conduzidos (Funke et al, 2017, Plant Disease 101:20-28) </p>
+                    <p> A cor de sombreamento designa a cepa do virus de batata Y (PVY) usada para inoculação: verde significa PVY O (isolado Tb60), azul significa PVY N-Wi (isolado N1), rosa significa PVY NTN (isolado HR1) e sem sombreamento significa não inoculado. </p>
+                    <p>Ensaios em parcelas subdivididas podem ser instalados em qualquer delineamento experimental (DIC, DBC,DQL); assim como os fatoriais, também envolvem as combinações dos níveis dos fatores de tratamento. </p>
+                    <h3> Análise dos dados</h3>
+                    <h4> Modelo estatístico</h4>
+                    <p>Supondo um experimento instalado de acordo com o delineamento casualizado em blocos, sendo $r$ o número de blocos, e esquema de tratamento em parcelas subdivididas, com o fator primário $A$, com $a$ níveis e o fator secundário $B$, com $b$ níveis.
+
+                        $$y_{jik} = \mu + b_j + \alpha_i + e_{ji} + \gamma_k + (\alpha\gamma)_{ik} + \epsilon_{jik}, \; j=1,\ldots, r, \; i=1,\ldots, a, \; k=1,\ldots, b,$$
+                    </p>
+                    <h3> Anova</h3>
+                    <p> Considere um experimento instalado de acordo com o delineamento casualizado em blocos com três repetições, em um esquema de tratamentos em parcelas subdivididas, sendo o fator primário formas de adubação, com três níveis, e o fator secundário variedades de soja, com 4 níveis.
+                    </p>
+                    <table>
+                        <tr> 
+                            <th> </th>
+                            <th> </th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr> 
+                            <th> </th>
+                            <th> </th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+
+                    
+                    </table>
+                    <p>Supondo um experimento instalado de acordo com o delineamento casualizado em blocos, sendo $r$ o número de blocos, e esquema de tratamento em parcelas subdivididas, com o fator primário $A$, com $a$ níveis e o fator secundário $B$, com $b$ níveis. </p>
+                    <p> __Soma de quadrados do Total__
+
+                        $$\displaystyle{SQ_{\text{Total}} = \sum_j\sum_i\sum_k y_{jik}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
+                        
+                        __Soma de quadrados da Parcela__
+                        
+                        $$\displaystyle{SQ_{\text{Parcela}} = \frac{1}{b}\sum_j\sum_i y_{ji.}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
+                        
+                        __Soma de quadrados do Fator $A$__
+                        
+                        $$\displaystyle{SQ_{\text{Fator A}} = \frac{1}{rb}\sum_i T_{A_i}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
+                    </p>
+                    <p>
+                        Soma de quadrados do Resíduo (a)__
+
+                         $$\displaystyle{SQ_{\text{Res (a)}} = SQ_\text{Parcela} - SQ_\text{Blocos} - SQ_\text{Fator A}}.$$
+
+                         __Soma de quadrados do Fator B__
+
+                         $$\displaystyle{SQ_{\text{Fator B}} = \frac{1}{ra}\sum_k T_{B_k}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
+
+                         __Soma de quadrados da combinação $A,B$ (Tratamentos)__
+
+                        $$\displaystyle{SQ_{A,B} = \frac{1}{r}\sum_i\sum_k y_{.ij}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
+                    </p>
+                    <p>Soma de quadrados da Interação $A\#B$__
+
+                        $$\displaystyle{SQ_{A\#B} = SQ_{A,B} - SQ_\text{Fator A} - SQ_\text{FAtor B}}.$$
+                        
+                        __Soma de quadrados do Resíduo (b)__
+                        
+                        $$\displaystyle{SQ_\text{Res (b)} = SQ_\text{Total} - SQ_\text{Parcela} - SQ_\text{Fator B} - SQ_{A\#B}}.$$
+                    </p>
+                    <h3> Exemplo</h3>
+                    <p> Banzatto e Kronka (1992), apresentaram o ensaio citado por Steel e Torrie (1980), no qual são comparadas 4 variedades de aveia e 4 tratamentos de sementes quanto aos efeitos sobre a produção. As variedades foram casualizadas às parcelas de cada um dos quatro blocos do ensaio. Os tratamentos de sementes foram casualizados às quatro subparcelas de cada parcela.
+                    </p>
+                    <p> $$SQBlocos = \frac{1}{ab}\sum_{j}y_{j\cdot\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} \\ \nonumber
+                        =  \frac{1}{16}\Big({965,3}^2 + {936,8}^2 + {733,8}^2 + {743,9}^2 \Big) - \frac{{3379,8}^2}{64} \\
+                        = 2842,87$$
+                    
+                
+                
+                         $$SQParcelas = \frac{1}{b}\sum_{ji}y_{ji\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab}\\ \nonumber
+                        = \frac{1}{4}\Big({190,6}^2 + {234,8}^2 + \ldots + {209,6}^2\Big) - \frac{{3379,8}^2}{64} \\ \nonumber
+                        = 6309,19 $$
+                    
+                    
+                
+                          $$SQA = \frac{1}{rb}\sum_{i}y_{\cdot i\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} \\ \nonumber
+                        = \frac{1}{16}\Big({679,3}^2+{854,5}^2+{868,9}^2+{977,1}^2\Big) - \frac{{3379,8}^2}{64}  \\ \nonumber
+                        = 2848,02 $$
+                    </p>
                 </div>
                 <section class="atividade">
                     <h2>Atividades</h2>

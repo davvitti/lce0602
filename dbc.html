@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"><a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +42,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -67,13 +89,243 @@
                         Para realizar o dcb deve-se repartir a área experimental heterogênea e sub áreas homogêneas.
                         Se cada bloco receber todos os tratamentos chama-se de blocos completos, caso algum bloco não receba todos os tratamentos chama-se de blocos imcompletos
                     </p>
-                    <h3> Exemplo>: granja de suínos</h3>
+                    <h3> Exemplo: granja de suínos</h3>
                     <p> Com o objetivo de avaliar o efeito de quatro rações, A, B, C e D, sobre o ganho de peso de animais um pesquisador dispunha do 12 animais com pesos diferentes. </p>
+                    <h3> Exemplo: área experimental Esalq</h3>
+                    <h3> Croqui: Comparação entre DIC e DBC</h3>
                     <h3> Análise dos dados</h3>
-                    <h3> Modelo estátistico</h3>
+                    <h4> Modelo estátistico</h4>
+                    <p> $$y_{ij} = \mu + b_j + \tau_i + e_{ij}\text{(1)}$$ </p>
+                    <p> em que:</p>
+                    <p> \(y_{ij}\) é a observação referente ao tratamento $i$ no bloco $j$;
+ 
+                        - $\mu$ é a constante comum a todas as observações (média geral);
+                        
+                        - $b_j$ é o efeito do $j$-ésimo bloco, com $j = 1, 2, \ldots, J$;
+                        
+                        - $\tau_i$ é o efeito do $i$-ésimo tratamento, com $i = 1, 2, \ldots, I$;
+                        
+                        - $e_{ij}$ é o erro experimental, tal que $e_{ij}\sim \mbox{NID} (0; \sigma^2)$.</p>
                     <h4> Estimadores</h4>
+                    <p> As soluções de mínimos quadrados para os parâmetros $\mu$, $b_j$ e $\tau_i$, com $j=1, \ldots, J$ e $i = 1, \ldots, I$, assumindo-se as restrições usuais, 
+
+                        $\sum_{i}\hat{\tau}_i = 0$ e $\sum_{j}\hat{b}_j = 0$, são:
+                    </p>
+                    <p>$$\hat{\mu} = \bar{Y},$$ 
+                        $$\hat{b_j} = \bar{Y}_j - \bar{Y}$$ 
+                        $$\hat{\tau}_i = \bar{Y}_i - \bar{Y}$$
+                    </p>
                     <h3> Análise da variância</h3>
+                    <p>$H_0:\mu_1 = \mu_2 = \ldots = \mu_I$ </p>
+                    <p> $H_1:$ pelo menos duas médias de tratamentos diferem entre si</p>
+                    <table> 
+                        <caption>Tabela 1. ANOVA </caption>
+                        <tr> 
+                            <th> Fontes de Variação</th>
+                            <th> g.l.</th>
+                            <th> SQ</th>
+                            <th> QM</th>
+                            <th> Fcal</th>
+                        </tr>
+                        <tr> 
+                            <td> Blocos</td>
+                            <td> \(J-1\)</td>
+                            <td> SQ Blocos</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Tratamentos</td>
+                            <td> \(I-1\)</td>
+                            <td> SQ trat</td>
+                            <td> QM trat</td>
+                            <td> Fcal</td>
+                        </tr>
+                        <tr> 
+                            <td> Resíduo</td>
+                            <td> \((I-1)(J-1)\)</td>
+                            <td> SQ res</td>
+                            <td> Qm res</td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                           
+                            <td> \(IJ-1\)</td>
+                            <td> SQ total</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        
+                    </table>
+                    <p>  Rejeita-se $H_0$ se $F_{cal} \geq F_{tab_{(\alpha, I-1, (I-1)(J-1))}}$, em que $\alpha$ é o nível de significância, $I-1$ é o número de graus de liberdade do numerador e $(I-1)(J-1)$ é o número de graus de liberdade do denominador.</p>
                     <h4> Exemplo</h4>
+                    <p>Os dados apresentados a seguir foram coletados de um experimento instalado no delineamento casualizado em blocos, cujo objetivo é comparar nove porta-enxertos para laranjeira Valência. Cada parcela era constituída por duas plantas e as produções de laranja (número médio de frutos por planta) tomadas dois anos após a instalação do experimento são: </p>
+                    <table> 
+                        <caption>Tabela 2. Numero médio de frutos por porta enxerto </caption>
+                        <tr>
+                            <th>Enxertos </th>
+                            <th colspan="3">Blocos</th>
+                            <th> Totais</th>
+                            <th> Médias</th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td>I </td>
+                            <td> II</td>
+                            <td> III</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Tangerina sunki </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Limão rugoso nacional </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Limão rugoso da Flórida </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Tangerina Cleópatra </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Citranger-troyer </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Trifoliata </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Tangerina cravo </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Laranja caipira</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>Limão cravo </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Totais</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        
+                    </table>
+                    <p> Soma de quadrado do Total
+
+                        $$\text{SQ Total} =  \sum_{ij} y_{ij}^2 - \frac{G^2}{IJ}
+                                         =  145^2 + 155^2 + \ldots + 193^2 - \frac{4929^2}{27}
+                                         =  27042,67 $$
+                        
+                    </p>
+                    <p> Soma de quadrado de Blocos
+
+                        $$\text{SQ Blocos} =  \frac{1}{I} \sum_{j} B_{j}^2 - \frac{G^2}{IJ}
+                                         =  \frac{1}{9}\Big(1648^2 + 1652^2 + 1629^2 \Big) - \frac{4929^2}{27}
+                                         =  33,55 $$
+                    </p>
+                    <p>
+                        Soma de quadrado de Tratamento
+                        $$\text{SQ Tratamentos}  =  \frac{1}{J}\sum_{i} T_{i}^2 - \frac{G^2}{IJ}
+                            =  \frac{1}{3}\Big(466^2 + 580^2 + \ldots + 547^2 \Big) - \frac{4929^2}{27}
+                            =  22981,33$$
+                    </p>
+                    <p> Soma de quadrado do Resíduo
+
+                        $$\text{SQ Resíduo} = \text{SQ Total} - \text{SQ Blocos} - \text{SQ Tratamentos}
+                                         =  27042,67 - 33,55 - 22981,33\\
+                                         =  4027,79$$
+                                         
+                    </p>
+                    <table> 
+                        <caption>Tabela 3. ANOVA </caption>
+                        <tr> 
+                            <th> Fontes de Variação</th>
+                            <th> g.l.</th>
+                            <th> SQ</th>
+                            <th> QM</th>
+                            <th> Fcal</th>
+                        </tr>
+                        <tr> 
+                            <td> Blocos</td>
+                            <td> 2</td>
+                            <td> 33,55</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Tratamentos</td>
+                            <td> \(I-1\)</td>
+                            <td> SQ trat</td>
+                            <td> QM trat</td>
+                            <td> Fcal</td>
+                        </tr>
+                        <tr> 
+                            <td> Resíduo</td>
+                            <td> \((I-1)(J-1)\)</td>
+                            <td> SQ res</td>
+                            <td> Qm res</td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                           
+                            <td> \(IJ-1\)</td>
+                            <td> SQ total</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        
+                    </table>
+                    <p> Imagem grafico da distribuição F</p>
                     <table>
                         <caption>
                             Tabela F

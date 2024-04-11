@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"><a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +42,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -59,10 +81,67 @@
         <section class="atras">
             <div class="fundo">
                 <section class="atividade">
-                    <h2>Delineamento Inteiramente Casualizado</h2>
+                    <h2>Introdução</h2>
                 </section>
-                <div>
-                    TEXTOS
+                <div class="conteudo">
+                    <p> A partir de uma observação dos fenômenos naturais, o instinto curioso dos seres humanos é tentar entender como e por que ocorre tal fenômeno. Ao longo das décadas diversos mecanismos foram utilizados para responder essas perguntas. Nos dias atuais tendo observado algo cria-se hipóteses que respondam alguma dessas perguntas, essas hipóteses devem ser testadas e interpretadas para que seja possivel chegar àlguma conclusão.
+
+                        |     Na experimentação o objetivo principal é criar um mecanismo capaz de testar suas hipóteses, logo é fundamental que a interferencia nos resuldados seja majoritariamente pelos tratamentos utilizados. 
+                        
+                        |    Após a realização de um experimento e de sua comprovação estatística os resultados podem ser novamente confrontados em outro experimento com outros tratamentos, seguindo a mesma lógica da dialética hegeliana. 
+                    </p>
+                    <p>experimento de Park Grass (Broadbalk) foi instalado em 1856 na Estação Experimental de Rothamsted.
+
+                        Delineado para avaliar os efeitos de fertilizantes na produção de grama permanente cortada para feno. É considerado como o experimento ecológico de longo prazo mais importante do mundo 
+                    </p>
+                    <p> Suponha que tenha sido avaliada a altura de cada uma de cinco plantas de milho, que vieram da mesma variedade e foram cultivadas sob as mesmas condições. Tem-se que o valor da altura $y_j$ será dado por:
+
+                        $$y_j = \mu + \epsilon_j,$$
+                    
+                         em que $\mu$ corresponde à média da altura das plantas e $\epsilon_j$ corresponde à variação do acaso, ou seja, a variação devida aos fatores não controláveis.
+                    </p>
+                    <p>Variação do Acaso
+
+                        Trata-se da variação entre unidades tratadas como similares decorrentes de pequenas diferenças que não são possíveis de serem controladas.
+                            
+                            
+                        Como medir a variação do acaso?
+                        
+                        
+                        $$S^2 = \displaystyle{\frac{\sum_{j=1}^n(y_j-\hat{\mu})^2}{n-1}}$$		
+                    </p>
+                    <p>Não se consegue eliminar a variação do acaso mas podem-se adotar estratégias que permitem a convivência com ela.
+                    </p>
+                    <p> Objetivo do planejamento: 
+                        Tornar mínima a variação do acaso!
+                        Tornar possível a comparação de tratamentos diferentes
+                        com a mínima influência possível da variação do acaso.
+                    </p>
+                    <p>Estudo observacional
+		
+                        Consiste em observar fenômenos na natureza, sem submeter os indivíduos, plantas, animais, ... , a condições específicas.
+                        
+                        $$\Downarrow$$
+                        
+                        Planejamento de um estudo observacional
+                        
+                        $$\Downarrow$$ 
+                    </p>
+                    <p>As observações são geradas, comumente sob { condições controladas pelo pesquisador}, de tal modo que os indivíduos avaliados (plantas, animais, etc) sejam submetidos às condições específicas, denominadas { tratamentos}.
+		
+                        |		 Representa uma técnica muito importante para a aquisição do conhecimento científico. 
+                    </p>
+                    <p> 
+                        O vírus da batata Y (PVY) é uma séria ameaça à produção de batata devido aos efeitos no rendimento e na qualidade dos tubérculos, em particular, devido à indução de doença de mancha anelar necrótica do tubérculo da batateira (PTNRD), tipicamente associada com cepas recombinantes de PVY. Essas cepas recombinantes têm se espalhado nos Estados Unidos nos últimos anos, embora as razões para essa disseminação contínua permaneçam obscuras. Para documentar e avaliar esta propagação entre 2011 e 2015, a composição da cepa de isolados de PVY que circulam na área de produção de batata da  Columbia Basin  foi determinada a partir de centenas de lotes de sementes de vários cultivares.
+                        Para abordar ainda mais a mudança na abundância de cepas, experimentos em casa de vegetação foram conduzidos (Funke et al, 2017, Plant Disease 101:20-28,
+                        (https://doi.org/10.1094/PDIS-06-16-0901-RE).
+                    </p>
+                    <p>A, Croqui do experimento em casa de vegetação, mostrando as dimensões das parcelas e o delineamento casualizado em blocos.
+                        As letras indicam plantas de batata individuais: B = Russet Burbank, U = Umatilla Russet, R = Ranger Russet e A = Alturas.
+                        A cor de sombreamento designa a cepa do virus de batata Y (PVY) usada para inoculação: verde significa PVY O (isolado Tb60), azul significa PVY N-Wi (isolado N1), laranja significa PVY NTN (isolado HR1) e sem sombreamento significa não inoculado.
+                        B, Imagem da casa de vegetação antes da inoculação com isolados de PVY. 
+                    </p>
+
                 </div>
                 <section class="atividade">
                     <h2>Atividades</h2>

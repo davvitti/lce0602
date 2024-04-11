@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <div class="logo"> Estatística Experimental</div>
+            <div class="logo"> <a href="sobre.html"><span>Estatística experimental</span></a></div>
             <nav class="menu">
                 <div class="head">
                     <div class="logo"> </div>
@@ -38,7 +42,25 @@
 
                         </ul>
                     </li>
-                    <li><a href="#"><span> Vamos praticar?</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>    
+                    
                     <li><a href="contato.html"><span>Dúvidas?</span></a></li>
                 </ul>
 
@@ -59,10 +81,238 @@
         <section class="atras">
             <div class="fundo">
                 <section class="atividade">
-                    <h2>Delineamento Inteiramente Casualizado</h2>
+                    <h2>Grupos de experimentos</h2>
                 </section>
-                <div>
-                    TEXTOS
+                <div class="conteudo">
+                    <h3> Exemplo (Barbin, 1994)</h3>
+                    <p>Os dados que se seguem referem-se a alturas (em metros, médias de 25 plantas/parcela) de plantas Eucaliptus grandis, com 7 anos de idade (em 1980) de três ensaios em blocos ao acaso, sob 6 tratamentos (progênies). </p>
+                    <table>
+                        <tr>
+                            <th> Tratamentos</th>
+                            <th colspan="4"> Blocos</th>
+                            <th> Totais</th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Tratamentos</th>
+                            <th colspan="4"> Blocos</th>
+                            <th> Totais</th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        
+                    </table>
+                    <table>
+                        <tr>
+                            <th> Tratamentos</th>
+                            <th colspan="4"> Blocos</th>
+                            <th> Totais</th>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        
+                    </table>
+                    <p>T1: Pretoria (Procedente da África do Sul), T2: 637 (Progênie de Rio Claro), T3: 2093 (Progênie de Rio Claro), T4: 2094 (Progênie de Rio Claro), T5: 9559 (Procedente da Austrália) e T6: 9575 (Procedente da Austrália). 
+
+                    </p>
+                    <p> Observação: Os dados foram cedidos pelo Engenheiro Agrônomo Luiz Carlos Costa Coelho do Horto Florestal de Tupi, SP.</p>
+                    <p>- Os experimentos são instalados em locais distintos ou em tempos distintos (repetição do experimento);
+ 
+                        - De modo geral, em casos completos e balanceados, os mesmos tratamentos são avaliados em cada um dos experimentos, seguindo o mesmo delineamento e o mesmo número de repetições. 
+                    </p>
+                    <p>Quando podemos agrupar os dados para a análise? </p>
+                    <p>Em caso de homogeneidade de variâncias! </p>
+                    <p> Vantagens*: 
+ 
+                        - Avaliar o efeito da interação Local\#Tratamento (ou Repetição\#Tratamento - **Cuidado!**)
+                        
+                        - Maior número de graus de liberdade do resíduo.
+                    </p>
+                    <h4> Procedimento</h4>
+                    <p> Realizar a análise de variância individual;
+                        - Obter o coeficiente de variação;
+                        - Avaliar os efeitos de interesse (efeitos de interação e efeitos principais).
+                    </p>
+                    <h4>ANOVA Local 1: Araraquara </h4>
+                    <p>$H_0: \mu_1 = \mu_2 = \ldots = \mu_6$ *vs* $H_1$: pelo menos duas médias diferem entre si
+                    </p>
+                    <p> Ao nível de 5\% de significância, não há evidências para rejeitarmos $H_0$. Logo, não há efeito significativo de progênie quando avaliado em Araraquara.
+
+                    </p>
+                    <h4>ANOVA Local 2: Bento Quirino </h4>
+                    <p>$H_0: \mu_1 = \mu_2 = \ldots = \mu_6$ *vs* $H_1$: pelo menos duas médias diferem entre si
+                    </p>
+                    <p>Ao nível de 5\% de significância, não há evidências para rejeitarmos $H_0$. Logo, não há efeito significativo de progênie quando avaliado em Bento Quirino. </p>
+                    <h4> ANOVA Local 3: Mogi-Guaçu</h4>
+                    <p>$H_0: \mu_{T1} = \mu_{T2} = \ldots = \mu_{T6}$ *vs* $H_1$: pelo menos duas médias diferem entre si
+                    </p>
+                    <p> Ao nível de 5\% de significância, há evidências para rejeitarmos $H_0$. Logo,  há efeito significativo de progênie quando avaliado em Mogi-Guaçu.</p>
                 </div>
                 <section class="atividade">
                     <h2>Atividades</h2>
