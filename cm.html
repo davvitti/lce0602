@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>LCE0602</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
@@ -69,21 +69,20 @@
                     <h3>Fundamentos</h3>
                     <p> Considere o conjunto de dados para o experimento balanceado, com cinco genótipos de milho e quatro repetições, seguindo um delineamento inteiramente casualizado, tendo-se observado o peso das espigas de cada parcela, conforme apresentado a seguir:</p>
                     <table class="tabela2">
-                        <caption> Tabela 1: Peso ad espiga de milho delimitado por diferentes genótipos</caption>
+                        <caption> Tabela 1: Dados de produtividade de milho delimitado por diferentes genótipos</caption>
                         <tr>
-                            <th> Tratamentos</th>
+                            <th rowspan="2"> Tratamentos</th>
                             <th colspan="4">Repetições </th>
-                            <th> Total</th>
-                            <th> Média</th>
+                            <th rowspan="2"> Total</th>
+                            <th rowspan="2"> Média</th>
                         </tr>
                         <tr> 
-                            <td>  </td>
-                            <td> I </td>
-                            <td> II</td>
-                            <td> III</td>
-                            <td> IV </td>
-                            <td> </td>
-                            <td> </td>
+                            
+                            <th> I </th>
+                            <th> II</th>
+                            <th> III</th>
+                            <th> IV </th>
+                            
                             
                             
                         </tr>
@@ -189,25 +188,26 @@
                         </tr>
 
                     </table>
+                    <p> Gráfico 1: Distribuição F </p>
                     <figure>
-                        <img src="figs/dic_files/figure-html/unnamed-chunk-11-1.png">
-                        <figcaption> .</figcaption>
+                        <img src="figs/cm_files/figure-html/unnamed-chunk-4-1.png">
+                        <figcaption> A região em verde corresponde a hipótese H0. </figcaption>
                     </figure>
-                    <p> conclusão</p>
+                    <h4> conclusão</h4>
                     <p> Considerando-se um nível de 5% de significância, p-valor = 0.0164 \(<\) 0,05, há evicências para rejeitarmos \(H0\), desse modo, não podemos afirmar que todas as médias são iguais.</p>
                     <p>  Aqui estudaremos algumas técnicas de comparações múltiplas das médias: duas a duas, média de cada tratamento comparada com a média de um controle e testes (t e F) para contrastes ortogonais.</p>
-                    <p> Um teste de comparações múltiplas pode ser classificado como protegido ou não protegido. O teste é dito protegido se realizado somente mediante rejeição de H0 para o teste F (ANOVA). E, um teste é dito não protegido quando realizado independentemente do resultado para o teste F (ANOVA). Todo teste de comparações múltiplas é realizado para contrastes entre médias (ou totais)</p>
+                    <p> Um teste de comparações múltiplas pode ser classificado como protegido ou não protegido. O teste é dito protegido se realizado somente mediante rejeição de H0 para o teste F (ANOVA). E, um teste é dito não protegido quando realizado independentemente do resultado para o teste F (ANOVA). Todo teste de comparações múltiplas é realizado para contrastes entre médias (ou totais).</p>
                     <h3> Contrastes</h3>
-                    <p> Definição: Um contraste de médias é definido pela combinação linear das mesmas, ou seja:</p>
+                    <p> <strong> Definição</strong>: Um contraste de médias é definido pela combinação linear das mesmas, ou seja:</p>
                     <p> $$\text{L} = a_{1}\mu_{1} + a_{2}\mu_{2} + . . . + a_{I}\mu_{I}$$</p>
-                    <p> tal que, \(\sum^I_{i=1} a_i = 0\), para o caso em que todos os tratamentos apresentam o mesmo número de repetições \(J\).
-                        |      Generalizando, \(\text{L} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\) ,tal que, \(\sum^I_{i=1} n_ia_j = 0\), é um contraste, em que \(n_i\) é o número de repetições do i−ésimo tratamento.</p>
+                    <p> tal que, \(\sum^I_{i=1} a_i = 0\), para o caso em que todos os tratamentos apresentam o mesmo número de repetições \(J\).</p>
+                    <p>Generalizando, \(\text{L} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\) ,tal que, \(\sum^I_{i=1} n_ia_j = 0\), é um contraste, em que \(n_i\) é o número de repetições do i−ésimo tratamento.</p>
                     <p> São exemplos de contrastes</p>
                     <p> $$\text{L}_1 = \mu_{1} − \mu_{2}$$
                         $$\text{L}_2 = 2\mu_{1} − \mu_{2} − \mu_{3}$$
                         $$\text{L}_3 = \mu_{3} − \mu_{4}$$
                     </p>
-                    <p>Dado um contraste \(\text{L} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\), sua estimativa é dada por \(\text{L} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\). </p>
+                    <p>Dado um contraste \(\text{L} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\), sua estimativa é dada por \(\hat{\text{L}} = a_1\mu_{1} + a_2\mu_{2} + . . . + a_I\mu_{I}\). </p>
                     <p>Assim, para o caso específico:
                         $$\text{L} = \mu_1 - \mu_2 \Rightarrow \hat{L} = \hat{\mu}_1 - \hat{\mu}_2 = \bar{y}_1-\bar{y}_2$$ 
                     </p>
@@ -226,7 +226,7 @@
                     </p>
                     <p>em que: </p>
                     <p> * \(e_{ij} \stackrel{iid}{\sim}  N(0, \sigma^2)\).</p>
-                    <p> * \(i = 1, . . . , I$  e $j = 1, . . . , n_i\)</p>
+                    <p> * \(i = 1, . . . , I\)  e \(j = 1, . . . , n_i\)</p>
                     <p> Seja o contraste \(\text{L} = \mu_i - \mu_{i'}\) então:</p>
                     <p> $$\hat{L} = \hat{\mu}_i - \hat{\mu}_{i'}.$$
                         $$\text{E}(\hat{L}) = \mu_i-\mu_{i'}$$
@@ -268,10 +268,10 @@
                         <caption> Tabela 2: Contrastes de médias dos diferentes genótipos de milho</caption>
                         <tr>
                             <th> médias</th>
-                            <th> \(\mu_1\) </th>
                             <th> \(\mu_2\) </th>
-                            <th>\(\mu_3\)  </th>
+                            <th> \(\mu_3\) </th>
                             <th>\(\mu_4\)  </th>
+                            <th>\(\mu_5\)  </th>
                         </tr>
                         <tr> 
                             <th> \(\mu_1\)</th>
@@ -313,15 +313,15 @@
                         $$d.m.s. = t(\alpha/2, \text{gl}_\text{Res})\sqrt{\frac{2\times \text{QMRes}}{J}}$$
                     </p>
                     <p>$$d.m.s. = 2.13\sqrt{\frac{2\times 0.3212}{4}}= 0.8536$$ </p>
-                    <p>As diferenças significativas, assumindo $\alpha = 0, 05$ estão sinalizadas com ∗ </p>
+                    <p>As diferenças significativas, assumindo \(\alpha\) = 0, 05 estão sinalizadas com ∗ </p>
                     <table class="tabela2"> 
                         <caption> Tabela 3: Denotando as diferenças minimas significativas sobre os contrastes </caption>
                         <tr>
                             <th> médias</th>
-                            <th> \(\mu_1\) </th>
                             <th> \(\mu_2\) </th>
-                            <th>\(\mu_3\)  </th>
+                            <th> \(\mu_3\) </th>
                             <th>\(\mu_4\)  </th>
+                            <th>\(\mu_5\)  </th>
                         </tr>
                         <tr> 
                             <th> \(\mu_1\)</th>
@@ -358,6 +358,7 @@
                     </table>
                     <p> Outro modo de apresentarmos os resultados para as comparações das médias duas a duas é o que segue. Inicialmente, ordenamos as médias em ordem decrescente e acrescentamos as letras de tal modo que médias seguidas da mesma letra não apresentam diferença siginificativa.</p>
                     <table class="tabela2">
+                        <caption> Tabela 4. Classificação das médias dos genótipos.</caption>
                         <tr>
                             <th> Genótipo</th>
                             <th> média estimada</th>
@@ -386,8 +387,8 @@
                     <p> Logo, considerando-se o nível de 5% de significância, há evidências para afirmarmos que os genótipos 1 e 3 não apresentam, em média, a mesma produtividade. Há evidências para afirmarmos que os genéticos 1 e 4, assim como os genótipo 2 e 4, não apresentam, em média, amesma produtividade. O mesmo não se pode afirmar a respeito das demais comparações. </p>
                     <h3> Teste t com correção de Bonferroni</h3>
                     <p> Entretanto o teste t como realizado, apresenta alguns problemas. Suponha que sejam 10 os tratamentos em análise. </p>
-                    <p> Quantas seriam as comparações duas a duas? Quarenta e cinco.
-                        Supondo o nível de significância 0,05 para cada comparação, qual será o nível de significância conjunto, assumindo que as comparações sejam independentes? 
+                    <p> Quantas seriam as comparações duas a duas? Quarenta e cinco.</p>
+                    <p> Supondo o nível de significância 0,05 para cada comparação, qual será o nível de significância conjunto, assumindo que as comparações sejam independentes? 
                     </p>
                     <p>$$1-(1-\alpha)^{c} = 1 - (1 - 0,05)^{45} = 0,9006$$ </p>
                     <p> em que c corresponde ao número de comparações.</p>
@@ -399,13 +400,13 @@
                     <p> $$= 3.29 \sqrt{\frac{2\times 0.3212}{4}} = 1.3185$$</p>
                     <p>Resultando em apenas uma diferença significativa, entre a média de produtividade dos genótipos 1 e 4, como pode ser observado a seguir </p>
                     <table class="tabela2"> 
-                        <caption> Tabela 3: Denotando as diferenças minimas significativas sobre os contrastes </caption>
+                        <caption> Tabela 5: Denotando as diferenças minimas significativas sobre os contrastes </caption>
                         <tr>
                             <th> médias</th>
-                            <th> \(\mu_1\) </th>
                             <th> \(\mu_2\) </th>
-                            <th>\(\mu_3\)  </th>
+                            <th> \(\mu_3\) </th>
                             <th>\(\mu_4\)  </th>
+                            <th>\(\mu_5\)  </th>
                         </tr>
                         <tr> 
                             <th> \(\mu_1\)</th>
@@ -441,6 +442,7 @@
                         </tr>
                     </table>
                     <table class="tabela2">
+                        <caption> Tabela 6. Classificação das médias</caption>
                         <tr>
                             <th> Genótipo</th>
                             <th> média estimada</th>
@@ -492,13 +494,13 @@
                     <p> $$ = 3.29\sqrt{\frac{0.3212}{5}}=1.2375.$$</p>
                     <p> Resultando em duas diferença significativas, entre as médias de produtividade dos genótipos 1 e 4, e entre as médias de produtividade dos genótipos 2 e 4, como pode ser observado a seguir.</p>
                     <table class="tabela2"> 
-                        <caption> Tabela 3: Denotando as diferenças minimas significativas sobre os contrastes </caption>
+                        <caption> Tabela 7: Denotando as diferenças minimas significativas sobre os contrastes </caption>
                         <tr>
                             <th> médias</th>
-                            <th> \(\mu_1\) </th>
                             <th> \(\mu_2\) </th>
-                            <th>\(\mu_3\)  </th>
+                            <th> \(\mu_3\) </th>
                             <th>\(\mu_4\)  </th>
+                            <th>\(\mu_5\)  </th>
                         </tr>
                         <tr> 
                             <th> \(\mu_1\)</th>
@@ -534,6 +536,8 @@
                         </tr>
                     </table>
                     <table class="tabela2">
+                        <caption> Tabela 8. Classificação das médias pelo teste de Tukey.</caption>
+
                         <tr>
                             <th> Genótipo</th>
                             <th> média estimada</th>
@@ -575,7 +579,7 @@
                     <p> No primeiro estágio o teste a ser realizado é entre a maior e a menor média, nesse caso o número de médias abrangidas será igual ao número de tratamentos, $I$. Caso não haja evidências para a rejeição de H0 não são realizados outros testes e conclui-se que as médias não diferem entre si, duas a duas. Caso haja evidências para rejeição de $H_0$ o teste é realizado entre a maior e a segunda menor média, abrangendo $I − 1$ médias, e assim por diante.</p>
                     <p> Diferentemente do teste de Tukey, que controla a taxa de erro tipo I por experimento, este controla a taxa de erro tipo I por comparação, e por este motivo é um teste menos rigoroso que o teste de Tukey, ou seja, pode rejeitar $H_0$ com maior facilidade.</p>
                     <p>  Cabe salientar que também é um teste baseado na amplitude total estudentizada, operando com suas potências.</p>
-                    <p> O critério de decisão consiste em rejeitar $H_0$ se
+                    <p> O critério de decisão consiste em rejeitar /(H_0/) se
 
                         $$\displaystyle{|\hat{\mu}_i - \hat{\mu}_{i'}| \geq D_i},$$
                         
@@ -584,10 +588,11 @@
                         $$\displaystyle{D_i =  z_{(\alpha, k, \text{glRes})}\sqrt{\frac{\text{QMRes}}{J}}
                         }$$ 
                     </p>
-                    <p> e $k$ é o número de médias envolvidas.</p>
+                    <p> e /(k/) é o número de médias envolvidas.</p>
                     <p> exemplo </p>
                     <p> Para o exemplo de produtividade de milho as médias ordenadas são: </p>
                     <table class="tabela2">
+                        <caption> Tabela 9. Classificação das médias pelo teste de Duncan</caption>
                         <tr>
                             <th> Genótipo</th>
                             <th> média estimada</th>
@@ -634,14 +639,14 @@
                     <p> Assim: </p>
                     <p>$$\displaystyle{D_4 =  z_{(0.05,I-1, glRes)}\sqrt{\frac{QMRes}{J}}}$$ </p>
                     <p>$$ =  3.25\sqrt{\frac{0.3212}{4}}=0.9210$$ </p>
-                    <p> Como |\(\mu_1 - \mu_{3}\)| = 0, 9025 \(<\) 0, 9210 = D4 não há evidências para rejeitarmos a hipótese $H_0$ . Desse modo, concluímos que as médias de produtividade para os genótipos 1, 2, 3 e 5 não diferem entre si.
+                    <p> Como |\(\mu_1 - \mu_{3}\)| = 0, 9025 \(<\) 0, 9210 = D4 não há evidências para rejeitarmos a hipótese /(H_0/) . Desse modo, concluímos que as médias de produtividade para os genótipos 1, 2, 3 e 5 não diferem entre si.
                     </p>
                     <p>O próximo teste será para as hipóteses: </p>
                     <p> $$H_0: \mu_2 = \mu_{4} \Leftrightarrow \mu_2 - \mu_{4} = 0 \qquad \text{ vs} \qquad
                         H_1: \mu_2 \neq \mu_{4} \Leftrightarrow \mu_2 - \mu_{4} \neq 0.$$
                     </p>
                     <p>que abrange quatro médias. Assim, usamos a diferença mínima significativa D4. </p>
-                    <p> Como |$\mu_2 - \mu_{4}$| = 1, 3100 > 0, 9210 = D4 há evidências para rejeitarmos a hipótese $H_{0}$. 
+                    <p> Como \(\mu_2 - \mu_{4}\) = 1, 3100 > 0, 9210 = D4 há evidências para rejeitarmos a hipótese $H_{0}$. 
                         Desse modo, concluímos que a produtividade para o genótipo 2 difere da produtividade para o genótipo 4, em média.
                     </p>
                     <p> O próximo teste será para as hipóteses
@@ -652,7 +657,7 @@
                         $$\displaystyle{D_3 =  z_{(0.05,I-2, glRes)}\sqrt{\frac{\text{QMRes}}{J}}}$$
                     </p>
                     <p>$$ =  3.16\sqrt{\frac{0.3212}{4}}=0.8954$$ </p>
-                    <p>  Como |$\mu_2 - \mu_{4}$| = 0, 8400 < 0, 8954 = D3 não há evidências para rejeitarmos a hipótese $H_0$. 
+                    <p>  Como \(\mu_2 - \mu_{4}\) = 0, 8400 /(</) 0, 8954 = D3 não há evidências para rejeitarmos a hipótese $H_0$. 
                         Desse modo, concluímos que as médias de produtividade para os genótipos 3, 4
                         e 5 não diferem entre si.
                     </p>
@@ -692,24 +697,24 @@
                         
                         $$H_1: \mu_i \neq \mu_{c} \Leftrightarrow \mu_i - \mu_{c} \neq 0$$
                     </p>
-                    <p> ou seja, serve para comparar duas médias de tratamentos, sendo uma delas a média de um tratamento referência (controle). O teste de Dunnett controla a taxa máxima de erro tipo I, não  excedendo $\alpha$. 
+                    <p> ou seja, serve para comparar duas médias de tratamentos, sendo uma delas a média de um tratamento referência (controle). O teste de Dunnett controla a taxa máxima de erro tipo I, não  excedendo \(\alpha\). 
 
                     </p>
                     <p>O critério de decisão consiste em rejeitar H0 se </p>
                     <p>$$\displaystyle{|\hat{\mu}_i - \hat{\mu}_{c}| \geq d_{(\alpha, I-1, glRes)}\sqrt{\frac{2\times \text{QMRes}}{J}}}.$$ </p>
                     <p> Para o exemplo dos cinco genótipos de milho. Assumindo o segundo genótipo como sendo o controle, temos as seguintes hipóteses de interesse: </p>
                     <p> 
-                        $H_0: \mu_1 = \mu_{2} \Leftrightarrow \mu_1 - \mu_{2} = 0$ vs
-                        $H_1: \mu_1 \neq \mu_{2} \Leftrightarrow \mu_1 - \mu_{2} \neq 0$
+                        $$H_0: \mu_1 = \mu_{2} \Leftrightarrow \mu_1 - \mu_{2} = 0$$ vs
+                        $$H_1: \mu_1 \neq \mu_{2} \Leftrightarrow \mu_1 - \mu_{2} \neq 0$$
 	
-                        $H_0: \mu_3 = \mu_{2} \Leftrightarrow \mu_3 - \mu_{2} = 0$ vs
-                        $H_1: \mu_3 \neq \mu_{2} \Leftrightarrow \mu_3 - \mu_{2} \neq 0$
+                        $$H_0: \mu_3 = \mu_{2} \Leftrightarrow \mu_3 - \mu_{2} = 0$$ vs
+                        $$H_1: \mu_3 \neq \mu_{2} \Leftrightarrow \mu_3 - \mu_{2} \neq 0$$
 	
-                        $H_0: \mu_4 = \mu_{2} \Leftrightarrow \mu_4 - \mu_{2} = 0$ vs
-                        $H_1: \mu_4 \neq \mu_{2} \Leftrightarrow \mu_4 - \mu_{2} \neq 0$
+                        $$H_0: \mu_4 = \mu_{2} \Leftrightarrow \mu_4 - \mu_{2} = 0$$ vs
+                        $$H_1: \mu_4 \neq \mu_{2} \Leftrightarrow \mu_4 - \mu_{2} \neq 0$$
 	
-                        $H_0: \mu_5 = \mu_{2} \Leftrightarrow \mu_5 - \mu_{2} = 0$ vs
-                        $H_1: \mu_5 \neq \mu_{2} \Leftrightarrow \mu_5 - \mu_{2} \neq 0$	
+                        $$H_0: \mu_5 = \mu_{2} \Leftrightarrow \mu_5 - \mu_{2} = 0$$ vs
+                        $$H_1: \mu_5 \neq \mu_{2} \Leftrightarrow \mu_5 - \mu_{2} \neq 0$$	
 
                     </p>
                     <p> A diferença mínima significativa é dada por:
@@ -720,13 +725,13 @@
                         $$dms= d_{0.05, 4, 15)}\sqrt{\frac{2\times \text{QMRes}}{J}}= 2.73\sqrt{\frac{2\times 0.3212}{4}}= 1.0940$$
                     </p>
                     <p>As diferenças observadas </p>
-                    <p> $|\hat{\mu}_1 - \hat{\mu}_{2}| = 0, 1300 ns$
+                    <p> $$|\hat{\mu}_1 - \hat{\mu}_{2}| = 0, 1300 ns$$
 
-                        $|\hat{\mu}_3 - \hat{\mu}_{2}| = 0, 7725 ns$
+                        $$|\hat{\mu}_3 - \hat{\mu}_{2}| = 0, 7725 ns$$
                         
-                        $|\hat{\mu}_4 - \hat{\mu}_{2}| = 1, 3100 ∗$
+                        $$|\hat{\mu}_4 - \hat{\mu}_{2}| = 1, 3100 ∗$$
                         
-                        $|\hat{\mu}_5 - \hat{\mu}_{2}| = 0, 4700 ns$
+                        $$|\hat{\mu}_5 - \hat{\mu}_{2}| = 0, 4700 ns$$
                     </p>
                     <p>Há evidências para rejeitarmos a igualdade entre as médias apenas quando comparadas asmédias de produtividade para os genótipos 2 e 4, ao nível de 5% de significância, pelo teste de Dunnett.
                     </p>
@@ -863,13 +868,13 @@
                         Teste F: apresentação da decomposição do número de graus de liberdade de tratamentos em um grau de liberdade associado a cada contraste;
                         Os contrastes devem ser estabelecidos antes da realização da análise. 
                     </p>
-                    <p> em que $\hat{L} = a_1\hat{\mu}_1 + a_2\hat{\mu}_2 + \ldots + a_I\hat{\mu}_I$, $\displaystyle{\widehat{\text{Var}}(\hat{L}) = \frac{\sum_{i=1}^I a_i^2}{J}QMRes}$ e todos os tratamentos apresentam o mesmo número de repetições, $J$.</p>
+                    <p> em que \(\hat{L} = a_1\hat{\mu}_1 + a_2\hat{\mu}_2 + \ldots + a_I\hat{\mu}_I\), \(\displaystyle{\widehat{\text{Var}}(\hat{L}) = \frac{\sum_{i=1}^I a_i^2}{J}QMRes}\) e todos os tratamentos apresentam o mesmo número de repetições, \(J\).</p>
                     <p>  Suponha um experimento instalado para avaliar a eficiência de fungicidas na produção de batatas. Foram utilizados quatro fungicidas + controle (sem aplicação de fungicida), sendo que os dois primeiros usam um modo de ação (modo A) e os dois últimos fungicidas outro modo de ação (modo B). Forme um grupo de contrastes ortogonais.</p>
                     <p>Com o objetivo de comparar a média do controle com a média das médias dos demais tratamentos, pode-se ter a seguinte hipótese: </p>
                     <p>$$\displaystyle{H_0: \mu_c = \frac{\mu_{A_1} + \mu_{A_2} + \mu_{B_1} + \mu_{B_2}}{4}},$$ </p>
                     <p>que, em termos de contraste é dada por </p>
                     <p> $$\displaystyle{H_0: 4\mu_c - \mu_{A_1} - \mu_{A_2} - \mu_{B_1} - \mu_{B_2} = 0}.$$</p>
-                    <p>Com o objetivo de comparar a média dos dois diferentes modos de ação, a média das médias dos fungicidas $A_1$ e $A_2$ com a média das médias dos fungicidas $B_1$ e $B_2$,  pode-se ter a seguinte hipótese: </p>
+                    <p>Com o objetivo de comparar a média dos dois diferentes modos de ação, a média das médias dos fungicidas \(A_1\) e \(A_2\) com a média das médias dos fungicidas \(B_1\) e \(B_2\),  pode-se ter a seguinte hipótese: </p>
                     <p>$$\displaystyle{H_0: \frac{\mu_{A_1} + \mu_{A_2}}{2} = \frac{ \mu_{B_1} + \mu_{B_2}}{2}},$$ </p>
                     <p>que, em termos de contraste é dada por
 
@@ -881,7 +886,7 @@
                         
                         $$\displaystyle{H_0: \mu_{A_1} - \mu_{A_2} = 0}.$$
                             
-                        |     Comparar as médias dos dois diferentes fungicidas com modo de ação B. Tem-se:
+                        Comparar as médias dos dois diferentes fungicidas com modo de ação B. Tem-se:
                             
                         $$\displaystyle{H_0: \mu_{B_1} = \mu_{B_2}},$$ 
                     </p>
@@ -892,7 +897,7 @@
                     </p>
                     <p>  Fazendo a soma dos produtos dos coeficientes dos pares de contrastes será possível verificar que são ortogonais dois a dois.</p>
                     <p>Exemplo: Produtividade de milho </p>
-                    <p>Os dados da Tabela 14 referem-se à produtividade de milho (kg/100m$^2$) de quatro variedades diferentes ($I = 4$), em um experimento instalado segundo o delineamento inteiramente casualizado (DIC) com cinco repetições ($J = 5$). 
+                    <p>Os dados da Tabela 14 referem-se à produtividade de milho (kg/100m\(^2\)) de quatro variedades diferentes (\(I = 4\)), em um experimento instalado segundo o delineamento inteiramente casualizado (DIC) com cinco repetições (\(J = 5\)). 
                     </p>
                     <table class="tabela2">
                         <caption>Tabela 14: Produtividade do milho em 4 variedades diferentes </caption>
@@ -910,7 +915,43 @@
                             <td>5</td>
                             <td> </td>
                         </tr>
-                        <tr> </tr>
+                        <tr>
+                            <td> A</td>
+                            <td> 25</td>
+                            <td> 26</td>
+                            <td> 20</td>
+                            <td> 23</td>
+                            <td> 21</td>
+                            <td> 23</td>
+                        </tr>
+                        <tr>
+                            <td> B</td>
+                            <td> 31</td>
+                            <td> 25</td>
+                            <td> 28</td>
+                            <td> 27</td>
+                            <td> 24</td>
+                            <td> 27</td>
+                        </tr>
+                        <tr>
+                            <td> C</td>
+                            <td> 22</td>
+                            <td> 26</td>
+                            <td> 28</td>
+                            <td> 25</td>
+                            <td> 29</td>
+                            <td> 26</td>
+                        </tr>
+                        <tr>
+                            <td> D</td>
+                            <td> 33</td>
+                            <td> 29</td>
+                            <td> 31</td>
+                            <td> 34</td>
+                            <td> 28</td>
+                            <td> 31</td>
+                        </tr>
+                        
                     </table>
 
 
