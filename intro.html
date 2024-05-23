@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>LCE0602</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
@@ -68,24 +68,63 @@
                 </section>
                 <div class="conteudo">
                     <p> A partir de uma observação dos fenômenos naturais, o instinto curioso dos seres humanos é tentar entender como e por que ocorre tal fenômeno. Ao longo das décadas diversos mecanismos foram utilizados para responder essas perguntas. Nos dias atuais tendo observado algo cria-se hipóteses que respondam alguma dessas perguntas, essas hipóteses devem ser testadas e interpretadas para que seja possivel chegar àlguma conclusão.
-
-                        |     Na experimentação o objetivo principal é criar um mecanismo capaz de testar suas hipóteses, logo é fundamental que a interferencia nos resuldados seja majoritariamente pelos tratamentos utilizados. 
-                        
-                        |    Após a realização de um experimento e de sua comprovação estatística os resultados podem ser novamente confrontados em outro experimento com outros tratamentos, seguindo a mesma lógica da dialética hegeliana. 
                     </p>
-                    <p>experimento de Park Grass (Broadbalk) foi instalado em 1856 na Estação Experimental de Rothamsted.
-
-                        Delineado para avaliar os efeitos de fertilizantes na produção de grama permanente cortada para feno. É considerado como o experimento ecológico de longo prazo mais importante do mundo 
+                    <figure>
+                        <img src="figs/figs/circ_mc.jpg">
+                        <figcaption> Figura 1: Ciclo do método científico</figcaption>
+                    </figure>
+                    <p>Na experimentação o objetivo principal é criar um mecanismo capaz de testar suas hipóteses, logo é fundamental que a interferencia nos resuldados seja majoritariamente pelos tratamentos utilizados. 
+                    </p>    
+                    <p> Após a realização de um experimento e de sua comprovação estatística os resultados podem ser novamente confrontados em outro experimento com outros tratamentos, seguindo a mesma lógica da dialética hegeliana. 
                     </p>
-                    <p> Suponha que tenha sido avaliada a altura de cada uma de cinco plantas de milho, que vieram da mesma variedade e foram cultivadas sob as mesmas condições. Tem-se que o valor da altura $y_j$ será dado por:
+                    <figure>
+                        <img src="figs/figs/charge.png">
+                        <figcaption>Figura 2. Charge retratando ciclo de ideias</figcaption>
+                    </figure>
+                    <h3> Exemplos</h3>
+                    <h4> Animais musicistas</h4>
+                    <p> https://doi.org/10.36440/recmvz.v14i3.34684</p>
+                    <figure> 
+                        <img src="figs/intro/musicanimal.jpg">
+                    </figure>
+                    <h4> Casa de vegetação</h4>
+                    <figure>
+                        <img src="figs/figs/casadevegetacao.jpg">
+                    </figure>
+                    <h4> Herbicida</h4>
+                    <figure>
+                        <img src="figs/figs/herbicida.jpg">
+                    </figure>
+                    <h3> Definições importantes</h3>
+                    <p><strong>Planejamento</strong></p> 
+                    <p> Fase mais importante do experimento</p>
+                    <p> A partir do planejamento teremos orientações para a instalação, condução, coleta de dados e análise estatística.</p>
+                    <p> Um pouco de história </p>
+                    <figure>
+                        <img src="figs/figs/BroadbalkExp.jpg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/BroadbalkExp2.jpg">
+                    </figure>
+                                       
+                    <p> O experimento de Park Grass (Broadbalk) foi instalado em 1856 na Estação Experimental de Rothamsted.
+                    </p>
+                    <p> Delineado para avaliar os efeitos de fertilizantes na produção de grama permanente cortada para feno. É considerado como o experimento ecológico de longo prazo mais importante do mundo.
+                    </p>
+                    <h3>Exemplo:</h3>
+                    <figure>
+                        <img src="figs/figs/Milho.jpg">
+                    </figure>
+                    <p> Suponha que tenha sido avaliada a altura de cada uma de cinco plantas de milho, que vieram da mesma variedade e foram cultivadas sob as mesmas condições. Tem-se que o valor da altura \(y_j\) será dado por:
 
                         $$y_j = \mu + \epsilon_j,$$
                     
-                         em que $\mu$ corresponde à média da altura das plantas e $\epsilon_j$ corresponde à variação do acaso, ou seja, a variação devida aos fatores não controláveis.
+                         em que \(\mu\) corresponde à média da altura das plantas e \(\epsilon_j\) corresponde à variação do acaso, ou seja, a variação devida aos fatores não controláveis.
                     </p>
-                    <p>Variação do Acaso
+                    
+                    <h3> Variação do acaso</h3>
 
-                        Trata-se da variação entre unidades tratadas como similares decorrentes de pequenas diferenças que não são possíveis de serem controladas.
+                    <p>Trata-se da variação entre unidades tratadas como similares decorrentes de pequenas diferenças que não são possíveis de serem controladas.
                             
                             
                         Como medir a variação do acaso?
@@ -93,37 +132,277 @@
                         
                         $$S^2 = \displaystyle{\frac{\sum_{j=1}^n(y_j-\hat{\mu})^2}{n-1}}$$		
                     </p>
+                    <figure>
+                        <img src="figs/figs/variacao_acaso01.jpeg">
+                    </figure>
                     <p>Não se consegue eliminar a variação do acaso mas podem-se adotar estratégias que permitem a convivência com ela.
                     </p>
-                    <p> Objetivo do planejamento: 
-                        Tornar mínima a variação do acaso!
-                        Tornar possível a comparação de tratamentos diferentes
-                        com a mínima influência possível da variação do acaso.
+                    <h4> Objetivo do planejamento: </h4>
+                    <p>  Tornar mínima a variação do acaso!</p>
+                    <p>  Tornar possível a comparação de tratamentos diferentes com a mínima influência possível da variação do acaso.
                     </p>
-                    <p>Estudo observacional
+                    <h3>Estudo observacional</h3>
 		
-                        Consiste em observar fenômenos na natureza, sem submeter os indivíduos, plantas, animais, ... , a condições específicas.
+                    <p>Consiste em observar fenômenos na natureza, sem submeter os indivíduos, plantas, animais, ... , a condições específicas.
                         
                         $$\Downarrow$$
                         
                         Planejamento de um estudo observacional
                         
                         $$\Downarrow$$ 
+                        Uso de técnicas de amostragem
                     </p>
-                    <p>As observações são geradas, comumente sob { condições controladas pelo pesquisador}, de tal modo que os indivíduos avaliados (plantas, animais, etc) sejam submetidos às condições específicas, denominadas { tratamentos}.
+                    <h3> Estudo observacional</h3>
+                    
+                    <figure>
+                        <img src="figs/figs/floresta_nativa01.jpg">
+                    </figure>
+                    <p>As observações são geradas, comumente sob condições controladas pelo pesquisador, de tal modo que os indivíduos avaliados (plantas, animais, etc) sejam submetidos às condições específicas, denominadas tratamentos. </p>
+                    <p>Representa uma técnica muito importante para a aquisição do conhecimento científico</p>
+                    <figure>
+                        <img src="figs/figs/experimento01.jpg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/experimento02.jpg">
+                    </figure>
+                    <h3>Fator</h3>
+                    
+                    <p>Uma variável explanatória manipulada ou definida pelo pesquisador, que pode ser qualitativa ou quantitativa. 
+                    </p>
+                    <h3>Níveis de um fator</h3>
+                    
+                    <p>Os valores que um fator individual pode tomar.
+                    </p>
+                    <h3>Tratamentos</h3>
+                    <p>São variações de um ou mais fatores de interesse no estudo.
+                    </p>
+                    <p>São exemplos de tratamentos:</p>
+
+                    <p>*		 Variedades de soja, cana-de-açúcar, café, ...</p>
+                    <p>*		 Raças de gado</p>
+                    <p>*		 Linhagens de frango</p>
+                    <p>*		 Inseticida para controle de determinada praga</p>
+                    <p>*		 Espaçamento entre linhas</p>
+                    <p>*		 Doses de um determinado nutriente</p>
+                    	
+                    <h3>Tratamento controle ou testemunha</h3>	
+                    <p>Caracterizado pela ausência de tratamento (controle negativo) ou por um tratamento padrão (controle positivo).</p>
 		
-                        |		 Representa uma técnica muito importante para a aquisição do conhecimento científico. 
+
+                    <p>Os exemplos apresentados correspondem aos casos em que se tem apenas um FATOR de tratamento, com diferentes níveis. Entretanto, os tratamentos podem ser compostos pelas combinações dos níveis de vários fatores.</p>
+
+                    <p>Qual tipo de armadilha captura mais insetos considerando diferentes ambientes que podem ser claros ou escuros?
+	
+                       $$A_{1C}  A_{2C}  A_{3C}$$
+                       $$A_{1E}  A_{2E}  A_{3E}$$
+
                     </p>
-                    <p> 
-                        O vírus da batata Y (PVY) é uma séria ameaça à produção de batata devido aos efeitos no rendimento e na qualidade dos tubérculos, em particular, devido à indução de doença de mancha anelar necrótica do tubérculo da batateira (PTNRD), tipicamente associada com cepas recombinantes de PVY. Essas cepas recombinantes têm se espalhado nos Estados Unidos nos últimos anos, embora as razões para essa disseminação contínua permaneçam obscuras. Para documentar e avaliar esta propagação entre 2011 e 2015, a composição da cepa de isolados de PVY que circulam na área de produção de batata da  Columbia Basin  foi determinada a partir de centenas de lotes de sementes de vários cultivares.
-                        Para abordar ainda mais a mudança na abundância de cepas, experimentos em casa de vegetação foram conduzidos (Funke et al, 2017, Plant Disease 101:20-28,
-                        (https://doi.org/10.1094/PDIS-06-16-0901-RE).
+                    <p> Como se comporta a produtividade média de três variedades de cana-de-açúcar considerando-se quatro doses de N?
+	
+                    $$V_1D_0  V_1D_1  V_1D_2  V_1D_3$$
+                    $$V_2D_0  V_2D_1  V_2D_2  V_2D_3$$
+                    $$V_3D_0  V_3D_1  V_3D_2  V_3D_3$$</p>
+
+                    <h3>Variável resposta ou variável em análise	</h3>
+
+                    <p>Característica medida ou observada no experimento \(\Rightarrow\) objetivo da pesquisa. São exemplos:</p>
+
+                    <p>*		 peso</p>
+                    <p>*		 produtividade</p>
+                    <p>*		 altura</p>
+                    <p>*		 DAP</p>
+                    <p>*		 BRIX</p>
+                    <p>*		 número de insetos mortos em amostras de $n$ insetos</p>
+                    <p>*		 peso de matéria seca</p>
+                    <p>*		 altura de inserção da primeira espiga (milho)</p>
+
+
+                    <h4>Unidade Observacional ou de Observação</h4>
+
+                    <p>Entidade física ou biológica que produzirá um único valor da variável resposta.</p>
+	
+	
+                    <h4>Unidades Experimentais ou Parcelas	</h4>
+		
+                    <p>A menor unidade que irá receber aleatoriamente um único tratamento. Pode coincidir com a unidade observacional ou corresponder a um grupo destas.</p>
+		            <figure>
+                        <img src="figs/figs/experimento03.jpg">
+                    </figure>
+                    <p>Exemplos:</p>
+	
+                    <p>*			 um animal</p>
+                    <p>*			 um vaso com uma planta</p>
+                    <p>*			 um vaso com três plantas</p>
+                    <p>*			 cana-de-açúcar: cinco linhas de 10 metros</p>
+                    <p>*			 5 galinhas</p>
+                    <p>*			 duas mangueiras</p>
+
+                    <h4>Planejamento de Experimentos: Unidades Experimentais ou Parcelas</h4>
+
+                    <p>* uma parcela no campo;</p>
+
+                    <p>* um vaso com uma planta ou três plantas, ou um grupo de vasos;</p>
+
+                    <p>* uma placa de Petri com dez sementes;
                     </p>
-                    <p>A, Croqui do experimento em casa de vegetação, mostrando as dimensões das parcelas e o delineamento casualizado em blocos.
-                        As letras indicam plantas de batata individuais: B = Russet Burbank, U = Umatilla Russet, R = Ranger Russet e A = Alturas.
-                        A cor de sombreamento designa a cepa do virus de batata Y (PVY) usada para inoculação: verde significa PVY O (isolado Tb60), azul significa PVY N-Wi (isolado N1), laranja significa PVY NTN (isolado HR1) e sem sombreamento significa não inoculado.
-                        B, Imagem da casa de vegetação antes da inoculação com isolados de PVY. 
-                    </p>
+                    <p>* um paciente em um hospital (denominado sujeito);</p>
+                    <figure>
+                        <img src="figs/figs/soja.jpg">
+
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/PetriDish2.jpg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/pot.jpg">
+                    </figure>
+                    <p><strong>Observação</strong></p>
+                    <p> As parcelas em um experimento devem apresentar mesmo tamanho e mesma forma!</p>
+                    <p>	 "+" de um indivíduo por parcela \(\Rightarrow\) < risco de perda de parcela \(\Rightarrow\) trabalhar com a média observada na parcela</p>
+                    <p> "+"  de um indivíduo por parcela \(\Rightarrow\) medida de precisão do experimento \(\Rightarrow\) Tamanho da parcela</p>
+                                    
+                    <p>  Variabilidade dentro da parcela \(\leq\)  Variabilidade entre as parcelas</p>
+                    <figure>
+                        <img src="figs/figs/expU1.jpg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/expU2.jpg">
+                    </figure>
+                    <h4>Bordadura</h4>
+
+                    <p> Deve ser utilizada quando um tratamento atribuído a uma parcela pode influenciar a resposta observada na parcela vizinha. São comuns em vários experimentos:</p>
+	
+                    <p>*	 cana-de-açúcar</p>
+                    <p>*		 fungicidas</p>
+                    <p>*		 variedades que apresentam alturas diferentes \(\Rightarrow\)  evitar sombreamento</p>
+                    <figure>
+                        <img src="figs/figs/bordadura.jpg">
+                    </figure>
+                    	
+                    
+                    <h4>Métodos para determinar o tamanho ótimo da parcela</h4>
+
+                    <p>Método da máxima curvatura: São observadas várias parcelas pequenas de tamanho \(x\). Tais parcelas são combinadas de tal modo a formar novas parcelas de vários tamanhos. As respectivas médias e variâncias são calculadas, com o objetivo de se calcularem os correspondentes coeficientes de variação. Faz-se um gráfico dos coeficientes de variação \(\it versus\) os respectivos tamanhos e, por inspeção, é obtido o ponto ótimo que é aquela com máxima curvatura.</p>
+		
+                    <h4>Método da máxima curvatura</h4>
+		
+                    <figure>
+                        <img src="figs/figs/metododacurvaturamaxima.jpg">
+                    </figure>
+                    <p><strong>Aspectos negativos:</strong></p>
+
+                    <p>O custo relativo o ponto de curvatura máxima não é independente do menor tamanho da parcela, \(x\).</p>
+		
+                    <h4> Lei da variância de Fairfield Smith (também desenvolvida por Mahalanobis):</h4>
+
+                    <p>	$$V_x = V_1 x^{-b} \Rightarrow \log V_x = \log V_1 - b \log x,$$</p>
+
+                    <p> 	em que \(V_x\) denota a variância da resposta por unidade de área entre parcelas de tamanho \(x\); \(V_1\) denota a variância entre parcelas de tamanho unitário e \(b\) é o coeficiente de regressão.</p>
+                    <p>	 Tal lei pode ser relacionada com uma função custo e assim se obter o tamanho ótimo da parcela.</p>
+	
+                    <h4>Objetivos de um experimento</h4>
+	
+                    <p>	*	 Fornecer uma comparação válida dos efeitos de tratamentos;</p>
+                    <p>	*	 Fornecer informações válidas a respeito do relacionamento entre as variáveis de interesse.</p>
+
+
+                    <h4>Exigências básicas</h4>
+
+                    <p>	As condições experimentais devem representar as condições do problema de interesse.</p>
+                    <p>	As comparações dos tratamentos devem estar livres de outras possíveis explicações devido à presença de outras variáveis ( confundimento).</p>
+                    <p>	 A comparação dos tratamentos deve ser feita com a menor influência de variação aleatória quanto possível.</p>
+                    <p>	O nível de incerteza nas conclusões deve ser acessível.</p>
+                    <p>	O experimento deve ser tão simples quanto possível.</p>
+                    <p>* Resultado da colaboração entre Pesquisador e Estatístico.</p>
+                    <p>* Deve ocorrer com um bom tempo antes da instalação do experimento.</p>
+                    <p>* Trabalho de investigação do estatístico.</p>
+                    <p>* Claro entendimento do problema a ser estudado.</p> 
+                    <p>* Por quê o experimento será realizado?</p>
+                    <p>* Estimação? Desejam-se estimadores não viesados e de variância mínima.</p>
+                    <p>* Teste de hipóteses? Desejam-se testes poderosos.</p>
+
+                    <h4>Escolha do delineamento experimental	</h4>
+
+                    <p><u>Depende</u></p>
+                    <p>* do material experimental</p>
+                    <p>* da área experimental</p>
+                    <p>* das condições de coleta dos dados</p>
+
+                    <p><u>Relacionados aos Princípios Básicos da Experimentação, introduzidos por Fisher em 1935, são eles:</u></p>
+                    <p>.	Repetição</p>
+                    <p>.	Casualização</p>
+                    <p>.	Controle local</p>
+
+                    <p>Justificativa: diminuir a variação não controlada e obter uma estimativa válida para tal.</p>
+                    <h4>Repetição</h4>
+                    <p>Consiste da aplicação de cada tratamento a várias unidades experimentais, fornecendo assim uma medida da variação não controlada.</p>
+                    <p>Número de repetições</p>
+	
+                    <p>.	grau de precisão</p>
+                    <p>.	quantidade de variabilidade presente no material experimental</p>
+                    <p>.	fontes/material disponível</p>
+                    <p>.	tamanho e forma da parcela</p>
+                    <figure>
+                        <img src="figs/intro/repet.jpeg">
+                    </figure>
+	
+                    <h4>Casualização</h4>
+
+                    <p>	Consiste em atribuir os tratamentos às unidades experimentais de tal modo que toda unidade tem a mesma probabilidade de receber cada tratamento.</p>
+                    <p>Motivos:</p>
+
+                    <p>Evitar efeitos sistemáticos.</p>
+                    <p>Exemplo: Vasos com uma variedade recebem sol da manhã e vasos de outra variedade recebem sol da tarde.</p>
+                    <p>Evitar viés de seleção.</p>
+                    <p>Exemplo: Parcelas com maior fertilidade recebem os melhores tratamentos.</p>
+                    <p>Evitar viés acidental.	</p>
+                    <figure>
+                        <img src="figs/intro/casua.jpeg">
+                    </figure>
+         
+                    <p>  Os princípios da repetição e da casualização devem estar presentes em todos os experimentos. Entretanto, o princípio do controle local está presente apenas em experimentos que apresentam condições heterogêneas (ambiente, material, pessoal, etc.)</p>
+
+	
+                    <p>	Repetição + Casualização + Controle do ambiente </p>
+                    <h4>Exemplo de um Delineamento Casualizado em Blocos</h4>
+
+                    <p>    O vírus da batata Y (PVY) é uma séria ameaça à produção de batata devido aos efeitos no rendimento e na qualidade dos tubérculos, em particular, devido à indução de doença de mancha anelar necrótica do tubérculo da batateira (PTNRD), tipicamente associada com cepas recombinantes de PVY. Essas cepas recombinantes têm se espalhado nos Estados Unidos nos últimos anos, embora as razões para essa disseminação contínua permaneçam obscuras. Para documentar e avaliar esta propagação entre 2011 e 2015, a composição da cepa de isolados de PVY que circulam na área de produção de batata da  Columbia Basin  foi determinada a partir de centenas de lotes de sementes de vários cultivares.</p>
+                    <p>  Para abordar ainda mais a mudança na abundância de cepas, experimentos em casa de vegetação foram conduzidos (Funke et al, 2017, Plant Disease 101:20-28,</p>
+                    <p>[acesse aqui](https://doi.org/10.1094/PDIS-06-16-0901-RE).
+    
+                    <p>A, Croqui do experimento em casa de vegetação, mostrando as dimensões das parcelas e o delineamento casualizado em blocos.</p>
+                    <p>As letras indicam plantas de batata individuais: B = Russet Burbank, U = Umatilla Russet, R = Ranger Russet e A = Alturas.</p>
+                    <p>A cor de sombreamento designa a cepa do virus de batata Y (PVY) usada para inoculação: verde significa PVY O (isolado Tb60), azul significa PVY N-Wi (isolado N1), laranja significa PVY NTN (isolado HR1) e sem sombreamento significa não inoculado.</p>
+                    <p>B, Imagem da casa de vegetação antes da inoculação com isolados de PVY.</p>
+                    <figure>
+                        <img src="figs/figs/RCBD4.jpg">
+                    </figure>
+                    <p>O processo experimental: fase de planejamento (BRIEN, 2019)
+	
+                    <p>		 Claro entendimento do problema a ser estudado e dos objetivos do experimento.</p>
+                    <p>Identificação das variáveis de interesse, incluindo a variável resposta (dependente), a variável explanatória (independente) e outras variáveis a serem controladas.</p>
+                    <p>Identificação das unidades de observação a serem utilizadas e a amostragem a ser feita para obtê-las.</p>
+                    <p>Identificação dos tratamentos a serem avaliados e do protocolo de aplicação dos mesmos.</p>
+                    <p>Alocação dos tratamentos às unidades experimentais por meio de um delineamento experimental.</p>
+                    <p>Identificação do processo de medida a ser utilizado</p>
+                    <p>Identificação do ambiente experimental e como este será controlado.</p>
+
+
+                    <p>O processo experimental: condução, coleta de dados e conclusões</p>
+	
+                    <p>*		 Instalação do experimento;</p>
+
+                    <p>*		 Condução (memória);</p>
+
+                    <p>*		 Coleta dos dados (pessoal treinado);</p>
+
+                    <p>*		 Análise dos dados;</p>
+
+                    <p>*	 Interpretação dos resultados (pesquisador).</p>
+
+                
+
+
 
                 </div>
                 <section class="atividade">
@@ -131,7 +410,7 @@
                 </section>
                 <form id="form" class="form">
                     <div class="form-content">
-                        <label for="atividade1">Em um experimento de cana foram analisadas 3 variedades com 5 doses diferentes de vinhaça aplicada. Quantos graus de liberdade esse experimento terá no total?</label>
+                        <label for="atividade1">Quais são os prinipios básicos da experimentação?</label>
                         <input 
                           type="text"
                           id="at1"
@@ -141,147 +420,6 @@
         
                     </div>
         
-                    <div class="form-content">
-                        <label for="atividade2">
-                            Em um experimento de competição de dez cultivares de arroz para avaliar a produtividade, instalado em um delineamento inteiramente casualizado, os resultados (parciais) para a ANOVA foram os seguintes:
-                            Complete a tabela abaixo                                              
-                                                     
-                        </label>
-                        <table class="table">
-                            <tr>
-                                <th> Fontes de variação</th>
-                                <th> gl</th>
-                                <th> SQ</th>
-                                <th> QM</th>
-                                <th> Fcal</th>
-                                <th> Ftab</th>
-                            </tr>
-                            <tr>
-                                <td> Cultivar</td>
-                                <td>
-                                    <input 
-                                        type="text"
-                                        id="at2"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a> 
-                                </td>
-                                <td> 17564523</td>
-                                <td>
-                                    <input 
-                                        type="text"
-                                        id="at3"
-                                        placeholder="resposta"
-                                    /> 
-                                    <a>mensagem</a>
-                                </td>
-                                <td>9.31</td>
-                                <td>2.39</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input 
-                                        type="text"
-                                        id="at4"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td>
-                                    <input 
-                                        type="text"
-                                        id="at5"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td>
-                                    <input 
-                                        type="text"
-                                        id="at6"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td> 29</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at7"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                            </tr>
-
-                        </table>
-                       
-                        <a>mensagem</a>
-        
-                    </div>
-        
-                    <div class="form-content">
-                        <label for="atividade3">Quais são as variáveis correspondentes?</label>
-                        <table>
-                            <tr>
-                                <td> variável resposta</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at8"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Tratamento</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Parcelas</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at10"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                        </table>
-                                
-                        
-                        <a>mensagem</a>
-        
-                    </div>
-        
-                    <div class="form-content">
-                        <div class="at3">
-
-                           <label for="email">Qual a conclusão do experimento?</label>
-                           <div>Considerando que a estatística F <input type="text" id="at11" placeholder="resposta"> a região de rejeição de H0, há evidências para <input type="text" id="at12" placeholder="resposta"><a>mensagem</a> H0 ao nível de 5% de confiança.    </div>
-                                                   
-                        </div>
-                                
-                    </div>
                     <button type ="submit"> enviar</button>
         
         

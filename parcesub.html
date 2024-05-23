@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>LCE0602</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
@@ -77,144 +77,1146 @@
                         $$\Downarrow$$ 
                         $$\mbox{12 combinações}  ⬄ \mbox{12 tratamentos}$$
                     </p>
-                    <p>$$V_1F_1 \; V_1F_2 \; V_1F_3\\
-                        V_2F_1 \; V_2F_2 \; V_2F_3\\
-                        V_3F_1 \; V_3F_2 \; V_3F_3\\
-                        V_4F_1 \; V_4F_2 \; V_4F_3$$
+                    <p>$$V_1F_1 \; V_1F_2 \; V_1F_3$$
+                       $$V_2F_1 \; V_2F_2 \; V_2F_3$$
+                       $$V_3F_1 \; V_3F_2 \; V_3F_3$$
+                        $$V_4F_1 \; V_4F_2 \; V_4F_3$$
                     </p>
                     <h3> Ensaio fatorial</h3>
+                    <figure>
+                        <img src="figs/figs/psub1.jpeg">
+                    </figure>
                     <p>$$y_{jik} = \mu + b_j + \alpha_{i} + \gamma_k + (\alpha\gamma)_{ik} + e_{jik}.$$ </p>
                     <h3> Ensaio em Parcelas Subdivididas</h3>
+                    <figure>
+                        <img src="figs/figs/psub2.jpeg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/psub3.1.jpeg">
+                    </figure>
                     <h3>Ensaio em faixas </h3>
+                    <figure>
+                        <img src="figs/figs/psub3.jpeg">
+                    </figure>
                     <h3> Exemplo de um Delineamento Casualizado em Blocos com parcelas subdivididas</h3>
                     <p> O vírus da batata Y (PVY) é uma séria ameaça à produção de batata devido aos efeitos no rendimento e na qualidade dos tubérculos, em particular, devido à indução de doença de mancha anelar necrótica do tubérculo da batateira (PTNRD), tipicamente associada com cepas recombinantes de PVY.</p>
                     <p>Essas cepas recombinantes têm se espalhado nos Estados Unidos nos últimos anos, embora as razões para essa disseminação contínua permaneçam obscuras. Para documentar e avaliar esta propagação entre 2011 e 2015, a composição da cepa de isolados de PVY que circulam na área de produção de batata da Columbia Basin foi determinada a partir de centenas de lotes de sementes de vários cultivares. Para abordar ainda mais a mudança na abundância de cepas, experimentos em casa de vegetação foram conduzidos (Funke et al, 2017, Plant Disease 101:20-28) </p>
+                    <p> Acesse o artigo completo: https://doi.org/10.1094/PDIS-06-16-0901-RE </p>
+                    <figure>
+                        <img src="figs/figs/RCBD4.jpg">
+                        
+                    </figure>
+                    <p> A letra <strong>A</strong> da figura representa o croqui do experimento em casa de vegetação, mostrando as dimensões das parcelas e o delineamento casualizado em blocos.</p>
+                    <p> As letras indicam plantas de batatas individuais:</p>
+                    <p> B = Russet Burbank </p>
+                    <p> U = Umatilla Russet</p>
+                    <p> R = Ranger Russet </p>
+                    <p> A = Alturas</p>
                     <p> A cor de sombreamento designa a cepa do virus de batata Y (PVY) usada para inoculação: verde significa PVY O (isolado Tb60), azul significa PVY N-Wi (isolado N1), rosa significa PVY NTN (isolado HR1) e sem sombreamento significa não inoculado. </p>
+                    <p> A letra <strong>B</strong> representa a imagem da casa de vegetação antes da inoculação com isolados de PVY.</p>
                     <p>Ensaios em parcelas subdivididas podem ser instalados em qualquer delineamento experimental (DIC, DBC,DQL); assim como os fatoriais, também envolvem as combinações dos níveis dos fatores de tratamento. </p>
+                    <figure>
+                        <img src="figs/figs/subdiv3.jpg">
+                    </figure>
+                    <p> * Fator primário: casualizado às parcelas; </p>
+                    <p> * Fator secundário: casualizado às subparcelas.</p>
+                    <p> Observações: </p>
+                    <p> *   Os níveis do fator secundário são mais sorteados $arrow$ maior precisão; </p>
+                    <p> * Deve-se, preferencialmente, alocar os níveis do fator de maior interesse na subparcela; </p>
+                    <p> * A ANOVA terá dois resíduos, um para parcelas e outro para subparcelas; </p>
+                    <p> * Teremos dois coeficientes de variação, um ao nível de parcela, e outro ao nível de subparcela. </p>
                     <h3> Análise dos dados</h3>
                     <h4> Modelo estatístico</h4>
-                    <p>Supondo um experimento instalado de acordo com o delineamento casualizado em blocos, sendo $r$ o número de blocos, e esquema de tratamento em parcelas subdivididas, com o fator primário $A$, com $a$ níveis e o fator secundário $B$, com $b$ níveis.
+                    <p>Supondo um experimento instalado de acordo com o delineamento casualizado em blocos, sendo \(r\) o número de blocos, e esquema de tratamento em parcelas subdivididas, com o fator primário \(A\), com \(a\) níveis e o fator secundário \(B\), com \(b\) níveis.
 
-                        $$y_{jik} = \mu + b_j + \alpha_i + e_{ji} + \gamma_k + (\alpha\gamma)_{ik} + \epsilon_{jik}, \; j=1,\ldots, r, \; i=1,\ldots, a, \; k=1,\ldots, b,$$
+                        $$y_{jik} = \mu + b_j + \alpha_i + e_{ji} + \gamma_k + (\alpha\gamma)_{ik} + \epsilon_{jik}$$ 
+                        $$j=1,\ldots, r, \; i=1,\ldots, a, \; k=1,\ldots, b,$$
+                    </p>
+                    <p>em que \(y_{jik}\), é o valor observado no \(j\)-ésimo bloco, \(i\)-ésimo nível do fator \(A\) e \(k\)-ésimo nível do fator \(B\), </p>
+                    
+                    <p>    * \(\mu\) é uma constante,</p>
+                    <p> * \(b_j\) é o efeito do \(j\)-ésimo bloco,</p>
+                    <p>  * \(\alpha_i\) é o efeito do \(i\)-ésimo nível do fator \(A\),</p> 
+                    <p>* \(e_{ji}\) é o erro experimental associado às parcelas, tais que \(e_{ji}\sim N(0, \sigma^2_P)\),</p> 
+                    <p> * \(\gamma_k\) é o efeito do $k$-ésimo nível do fator \(B\), </p>
+                    <p>* \((\alpha\gamma)_{ik}\) é o efeito da interação entre o \(i\)-ésimo nível do fator \(A\) e o \(k\)-ésimo nível do fator \(B\), \(\epsilon_{jik}\) é o erro experimental associado às subparcelas, tais que \(\epsilon_{jik} \sim N(0, \sigma^2)\).</p>
+
                     </p>
                     <h3> Anova</h3>
                     <p> Considere um experimento instalado de acordo com o delineamento casualizado em blocos com três repetições, em um esquema de tratamentos em parcelas subdivididas, sendo o fator primário formas de adubação, com três níveis, e o fator secundário variedades de soja, com 4 níveis.
                     </p>
-                    <table>
+                    
+                    <table class="tabela2">
                         <tr> 
-                            <th> </th>
-                            <th> </th>
+                            <th>Fonte de variação </th>
+                            <th>graus de liberdade </th>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Blocos </td>
+                            <td> 2</td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Fator A </td>
+                            <td> 2</td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Resíduo (a) </td>
+                            <td>4 </td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>(Parcelas) </td>
+                            <td>8 </td>
                         </tr>
                     </table>
-                    <table>
+                    <p>Entretanto, os níveis de Variedade foram casualizados às subparcelas </p>
+                    <table class="tabela2">
                         <tr> 
-                            <th> </th>
-                            <th> </th>
+                            <th> Fonte de variação</th>
+                            <th>Graus de liberdade </th>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td> Blocos</td>
+                            <td> 2</td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Forma </td>
+                            <td> 2</td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Resíduo (a) </td>
+                            <td>4 </td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>(Parcelas)</td>
+                            <td>8 </td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Variedade </td>
+                            <td>3 </td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Forma#Variedade</td>
+                            <td> 6</td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td>Resíduo (b) </td>
+                            <td>18 </td>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
+                            <td> Total (subparcelas) </td>
+                            <td>35 </td>
                         </tr>
 
                     
                     </table>
                     <p>Supondo um experimento instalado de acordo com o delineamento casualizado em blocos, sendo $r$ o número de blocos, e esquema de tratamento em parcelas subdivididas, com o fator primário $A$, com $a$ níveis e o fator secundário $B$, com $b$ níveis. </p>
-                    <p> __Soma de quadrados do Total__
+                    <p>Soma de quadrados do Total
 
                         $$\displaystyle{SQ_{\text{Total}} = \sum_j\sum_i\sum_k y_{jik}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
                         
-                        __Soma de quadrados da Parcela__
+                       Soma de quadrados da Parcela
                         
                         $$\displaystyle{SQ_{\text{Parcela}} = \frac{1}{b}\sum_j\sum_i y_{ji.}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
                         
-                        __Soma de quadrados do Fator $A$__
+                        Soma de quadrados do Fator \(A\)
                         
                         $$\displaystyle{SQ_{\text{Fator A}} = \frac{1}{rb}\sum_i T_{A_i}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
                     </p>
                     <p>
-                        Soma de quadrados do Resíduo (a)__
+                        Soma de quadrados do Resíduo (a)
 
                          $$\displaystyle{SQ_{\text{Res (a)}} = SQ_\text{Parcela} - SQ_\text{Blocos} - SQ_\text{Fator A}}.$$
 
-                         __Soma de quadrados do Fator B__
+                         Soma de quadrados do Fator B
 
                          $$\displaystyle{SQ_{\text{Fator B}} = \frac{1}{ra}\sum_k T_{B_k}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
 
-                         __Soma de quadrados da combinação $A,B$ (Tratamentos)__
+                         Soma de quadrados da combinação \(A,B\) (Tratamentos)
 
                         $$\displaystyle{SQ_{A,B} = \frac{1}{r}\sum_i\sum_k y_{.ij}^2 - \frac{(\sum_j\sum_i\sum_k y_{jik})^2}{rab}}.$$
                     </p>
-                    <p>Soma de quadrados da Interação $A\#B$__
+                    <p>Soma de quadrados da Interação \(A\#B\)
 
                         $$\displaystyle{SQ_{A\#B} = SQ_{A,B} - SQ_\text{Fator A} - SQ_\text{FAtor B}}.$$
                         
-                        __Soma de quadrados do Resíduo (b)__
+                        Soma de quadrados do Resíduo (b)
                         
                         $$\displaystyle{SQ_\text{Res (b)} = SQ_\text{Total} - SQ_\text{Parcela} - SQ_\text{Fator B} - SQ_{A\#B}}.$$
                     </p>
+                    <p>Interação não significativa </p>
+                    <p> *Avaliar efeito principal do Fator A;</p>
+                    <p> * Avaliar efeito principal do Fator B;</p>
+                    <p>Caso algum efeito seja significativo, realizar teste de comparações múltiplas e/ou estudo de regressão. </p>
+                    <p> Interação significativa</p>
+                    <p>* Avaliar efeito do Fator B dentro de cada nível do Fator A $arrow$ QMRes (b);<p>
+
+                    <p> * Avaliar efeito do Fator A dentro de cada nível do Fator B $arrow$ QMRes Composto; </p>
+
                     <h3> Exemplo</h3>
                     <p> Banzatto e Kronka (1992), apresentaram o ensaio citado por Steel e Torrie (1980), no qual são comparadas 4 variedades de aveia e 4 tratamentos de sementes quanto aos efeitos sobre a produção. As variedades foram casualizadas às parcelas de cada um dos quatro blocos do ensaio. Os tratamentos de sementes foram casualizados às quatro subparcelas de cada parcela.
                     </p>
-                    <p> $$SQBlocos = \frac{1}{ab}\sum_{j}y_{j\cdot\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} \\ \nonumber
-                        =  \frac{1}{16}\Big({965,3}^2 + {936,8}^2 + {733,8}^2 + {743,9}^2 \Big) - \frac{{3379,8}^2}{64} \\
-                        = 2842,87$$
-                    
-                
-                
-                         $$SQParcelas = \frac{1}{b}\sum_{ji}y_{ji\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab}\\ \nonumber
-                        = \frac{1}{4}\Big({190,6}^2 + {234,8}^2 + \ldots + {209,6}^2\Big) - \frac{{3379,8}^2}{64} \\ \nonumber
-                        = 6309,19 $$
-                    
-                    
-                
-                          $$SQA = \frac{1}{rb}\sum_{i}y_{\cdot i\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} \\ \nonumber
-                        = \frac{1}{16}\Big({679,3}^2+{854,5}^2+{868,9}^2+{977,1}^2\Big) - \frac{{3379,8}^2}{64}  \\ \nonumber
-                        = 2848,02 $$
+                    <p>Variedades de aveia:</p>
+                    <table class="tabela2">
+                        <tr>
+                            <td> \(A_1\)</td>
+                            <td> Vicland 1 infectada com o fungo (Helminthosporium victoriae)</td>
+                        </tr>
+                        <tr>
+                            <td> \(A_2\)</td>
+                            <td> Vicland 2 não infectada</td>
+                        </tr>
+                        <tr>
+                            <td> \(A_3\)</td>
+                            <td> Clinton resistente a  H. victoriae</td>
+                        </tr>
+                        <tr>
+                            <td> \(A_4\)</td>
+                            <td>Branch resistente a  H. victoriae </td>
+                        </tr>
+                    </table>
+                    <p> Tratamento de sementes:</p>
+                    <table class="tabela2">
+                        <tr>
+                            <td>\(B_1)</td>
+                            <td> Testemunha</td>
+                        </tr>  
+                        <tr>
+                            <td>\(B_2)</td>
+                            <td> Ceresan M</td>
+                        </tr> 
+                        <tr>
+                            <td>\(B_3)</td>
+                            <td> Panogem</td>
+                        </tr> 
+                        <tr>
+                            <td>\(B_4)</td>
+                            <td> Agros</td>
+                        </tr>                  
+
+                    </table>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2"> Variedades (A) </th>
+                            <th rowspan="2"> Tratamento de sementes (B)</th>
+                            <th colspan="4"> Blocos </th>
+                            <th rowspan="2">Totais</th>
+                            <th rowspan="2">Médias</th>
+                        </tr>
+                        <tr> 
+                            <th> I</th>
+                            <th> II</th>
+                            <th> III</th>
+                            <th> IV</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="4"> \(A_1\)</td>
+                            <td> \(B_1\)</td>
+                            <td>42,9 </td>
+                            <td>41,6 </td>
+                            <td>28,9 </td>
+                            <td>30,8 </td>
+                            <td>144,2 </td>
+                            <td>36,050 </td>
+
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_2\)</td>
+                            <td>53,8 </td>
+                            <td>58,5 </td>
+                            <td>43,9 </td>
+                            <td>46,3 </td>
+                            <td>202,5  </td>
+                            <td>50,625 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_3\)</td>
+                            <td> 49,5 </td>
+                            <td>53,8 </td>
+                            <td>40,7 </td>
+                            <td>39,4 </td>
+                            <td>183,4 </td>
+                            <td>45,850 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_4\)</td>
+                            <td> 44,4 </td>
+                            <td>41,8 </td>
+                            <td> 28,3 </td>
+                            <td>34,7 </td>
+                            <td> 149,2</td>
+                            <td>37,300 </td>
+                            
+                        </tr>
+                        <tr>
+                            <td rowspan="4"> \(A_2\)</td>
+                            <td> \(B_1\)</td>
+                            <td> 53,3 </td>
+                            <td>69,6  </td>
+                            <td> 45,4</td>
+                            <td>35,1 </td>
+                            <td>203,4 </td>
+                            <td>50,850 </td>
+
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_2\)</td>
+                            <td>57,6 </td>
+                            <td> 69,6 </td>
+                            <td>42,4 </td>
+                            <td>51,9  </td>
+                            <td>221,5 </td>
+                            <td>55,375 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_3\)</td>
+                            <td> 59,8</td>
+                            <td>65,8 </td>
+                            <td>41,4 </td>
+                            <td>45,4 </td>
+                            <td> 212,4 </td>
+                            <td>53,100  </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_4\)</td>
+                            <td> 64,1</td>
+                            <td>57,4 </td>
+                            <td> 44,1 </td>
+                            <td>51,6  </td>
+                            <td>217,2  </td>
+                            <td>54,300 </td>
+                            
+                        </tr>
+                        <tr>
+                            <td rowspan="4"> \(A_3\)</td>
+                            <td> \(B_1\)</td>
+                            <td>62,3</td>
+                            <td>58,5 </td>
+                            <td>44,6 </td>
+                            <td>50,3 </td>
+                            <td>215,7 </td>
+                            <td>53,925 </td>
+
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_2\)</td>
+                            <td>63,4  </td>
+                            <td>50,4 </td>
+                            <td> 45,0 </td>
+                            <td>46,7 </td>
+                            <td>205,5 </td>
+                            <td>51,375 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_3\)</td>
+                            <td>64,5 </td>
+                            <td>46,1 </td>
+                            <td> 62,6 </td>
+                            <td> 50,3</td>
+                            <td>223,5  </td>
+                            <td>55,875 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_4\)</td>
+                            <td>63,6 </td>
+                            <td>56,1 </td>
+                            <td>52,7 </td>
+                            <td>51,8 </td>
+                            <td>224,2 </td>
+                            <td>56,050 </td>
+                            
+                        </tr>
+                        <tr>
+                            <td rowspan="4"> \(A_4\)</td>
+                            <td> \(B_1\)</td>
+                            <td>75,4 </td>
+                            <td>65,6  </td>
+                            <td> 54,0 </td>
+                            <td>52,7 </td>
+                            <td>247,7 </td>
+                            <td>61,925 </td>
+
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_2\)</td>
+                            <td>70,3 </td>
+                            <td> 67,3 </td>
+                            <td>57,6 </td>
+                            <td>58,5 </td>
+                            <td>253,7 </td>
+                            <td>63,425 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_3\)</td>
+                            <td>68,8 </td>
+                            <td>65,3  </td>
+                            <td>45,6 </td>
+                            <td>51,0  </td>
+                            <td>230,7  </td>
+                            <td>57,675 </td>
+                            
+                        </tr>
+                        <tr>
+                            
+                            <td> \(B_4\)</td>
+                            <td>71,6 </td>
+                            <td>69,4 </td>
+                            <td> 56,6</td>
+                            <td>47,4 </td>
+                            <td>245,0 </td>
+                            <td>61,250 </td>
+                            
+                        </tr>
+                        <tr>
+                            <td> Totais</td>
+                            <td> </td>
+                            <td>965,3 </td>
+                            <td> 936,8</td>
+                            <td>733,8 </td>
+                            <td> 743,9</td>
+                            <td>3379,8 </td>
+                            <td>52,809 </td>
+                        </tr>
+                        
+                        
+                    </table>
+                    <h4> Efeitos principais</h4>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2"> Variedade </th>
+                            <th colspan="4"> Tratamento de sementes </th>
+                            <th rowspan="2"> Médias</th>
+                        </tr>
+                        <tr>
+                            <th> B1</th>
+                            <th> B2</th>
+                            <th> B3</th>
+                            <th> B4</th>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td>36,050 </td>
+                            <td>50,625 </td>
+                            <td>45,850 </td>
+                            <td>37,30 </td>
+                            <td>42,456 </td>
+                        </tr>
+                        <tr> 
+                            <th> A2</th>
+                            <td>50,850 </td>
+                            <td>55,375 </td>
+                            <td> 53,100</td>
+                            <td>54,30  </td>
+                            <td>53,406 </td>
+                        </tr>
+                        <tr> 
+                            <th> A3</th>
+                            <td> 53,925  </td>
+                            <td>51,375 </td>
+                            <td>55,875 </td>
+                            <td>56,05 </td>
+                            <td>54,306 </td>
+                        </tr>
+                        <tr> 
+                            <th> A4</th>
+                            <td>61,925 </td>
+                            <td>63,425 </td>
+                            <td>57,675 </td>
+                            <td>61,25 </td>
+                            <td>61,069 </td>
+                        </tr>
+                        <tr> 
+                            <th> médias</th>
+                            <td>50,688 </td>
+                            <td>55,200 </td>
+                            <td>53,125 </td>
+                            <td>52,225 </td>
+                            <td>52,809  </td>
+                        </tr>
+                    </table> 
+                    <p>Tabela auxiliar: Envolve a repetição (ou blocos) e o tratamento de parcela. </p>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2"> Variedade </th>
+                            <th colspan="4"> Blocos </th>
+                            <th rowspan="2"> Totais</th>
+                        </tr>
+                        <tr>
+                            <th> I</th>
+                            <th> II</th>
+                            <th> III</th>
+                            <th> IV</th>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td>190,6(4) </td>
+                            <td>195,7(4) </td>
+                            <td>141,8(4) </td>
+                            <td>151,2(4) </td>
+                            <td>679,3(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> A2</th>
+                            <td>234,8(4) </td>
+                            <td> 262,4(4)</td>
+                            <td>173,3(4)  </td>
+                            <td> 184,0(4)</td>
+                            <td>854,5(16)  </td>
+                        </tr>
+                        <tr> 
+                            <th> A3</th>
+                            <td>253,8(4) </td>
+                            <td>211,1(4) </td>
+                            <td>204,9(4) </td>
+                            <td>199,1(4) </td>
+                            <td>868,9(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> A4</th>
+                            <td>286,1(4) </td>
+                            <td>267,6(4) </td>
+                            <td>213,8(4) </td>
+                            <td>209,6(4) </td>
+                            <td>977,1(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> Totais</th>
+                            <td>965,3(16) </td>
+                            <td>936,8(16) </td>
+                            <td>733,8(16) </td>
+                            <td>743,9(16) </td>
+                            <td>3.379,8(64) </td>
+                        </tr>
+                    </table> 
+                    <p> 
+                        $$SQTotal = \sum_{jik}y_{jik}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} \\ \nonumber
+                        = {42,9}^2 + {53,8}^2 + \ldots + {47,4}^2 - \frac{{3379,8}^2}{64} = 7797,39 $$ 
                     </p>
+                    <p> $$SQBlocos = \frac{1}{ab}\sum_{j}y_{j\cdot\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} $$
+                        $$\frac{1}{16}\Big({965,3}^2 + {936,8}^2 + {733,8}^2 + {743,9}^2 \Big) - \frac{{3379,8}^2}{64}$$
+                        $$2842,87$$
+                    
+                
+                
+                         $$SQParcelas = \frac{1}{b}\sum_{ji}y_{ji\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab}$$
+                        $$\frac{1}{4}\Big({190,6}^2 + {234,8}^2 + \ldots + {209,6}^2\Big) - \frac{{3379,8}^2}{64}$$
+                        $$= 6309,19 $$
+                    
+                    
+                
+                          $$SQA = \frac{1}{rb}\sum_{i}y_{\cdot i\cdot}^2 - \frac{y_{\cdot\cdot\cdot}^2}{rab} $$
+                        $$= \frac{1}{16}\Big({679,3}^2+{854,5}^2+{868,9}^2+{977,1}^2\Big) - \frac{{3379,8}^2}{64} $$
+                        $$= 2848,02 $$
+
+                        $$SQRes(a) = SQParcelas - SQBlocos - SQA 
+                          =6309,19-2842,87-2848,02 = 618,30$$
+                    </p>
+                    <p>Tabela auxiliar: Envolve o tratamento de parcela e de subparcela</p>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2"> Variedade </th>
+                            <th colspan="4"> Tratamento de sementes </th>
+                            <th rowspan="2"> Totais</th>
+                        </tr>
+                        <tr>
+                            <th> B1</th>
+                            <th> B2</th>
+                            <th> B3</th>
+                            <th> B4</th>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td>144,2(4) </td>
+                            <td>202,5(4) </td>
+                            <td> 183,4(4) </td>
+                            <td>149,2(4) </td>
+                            <td>679,3(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> A2</th>
+                            <td>203,4(4) </td>
+                            <td>221,5(4) </td>
+                            <td>212,4(4) </td>
+                            <td>217,2(4) </td>
+                            <td>854,5(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> A3</th>
+                            <td>215,7(4) </td>
+                            <td>205,5(4) </td>
+                            <td>223,5(4) </td>
+                            <td>224,2(4) </td>
+                            <td>868,9(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> A4</th>
+                            <td> 247,7(4)</td>
+                            <td>253,7(4) </td>
+                            <td>230,7(4) </td>
+                            <td>245,0(4) </td>
+                            <td>977,1(16) </td>
+                        </tr>
+                        <tr> 
+                            <th> Totais</th>
+                            <td>811,0(16) </td>
+                            <td>883,2(16) </td>
+                            <td>850,0(16) </td>
+                            <td> 835,6(16)</td>
+                            <td> 3.379,8(64) </td>
+                        </tr>
+                    </table> 
+                    <p> 
+                        $$SQB = \frac{1}{ra}\sum_ky_{\cdot \cdot k^2} - \frac{y_{\cdot\cdot\cdot^2}}{rab} \\ 
+                        = \frac{1}{16}\Big({811,0}^2 + {883,2}^2+{850,0}^2+{835,6}^2\Big) - \frac{{3379,8}^2}{64} \\ \nonumber
+                        = 170,53 $$\\ \nonumber
+
+
+                        $$SQA,B = \frac{1}{r}\sum_{ik} y_{\cdot ik^2} - \frac{y_{\cdot\cdot\cdot^2}}{rab} \\ \nonumber
+                        = \frac{1}{4}\Big({144,2}^2 + {203,4}^2+ \ldots +{245,0}^2\Big) - \frac{{3379,8}^2}{64} \\ \nonumber
+                        = 3605,02 \\$$ \nonumber
+                    </p>
+                    <p> 
+                        $$  SQA\#B = SQA,B - SQA - SQB\\ \nonumber
+                        = 3605,02 - 2848,02 - 170,53 = 586,47 \\ \nonumber
+                        SQRes(b) = SQTotal - SQParcelas - SQB - SQA\#B \\ \nonumber
+                        = 7797,39 - 6309,19 - 170,53 - 586,47 = 731,20$$ \\ \nonumber 
+                    </p>
+                    
+                    <table class="tabela2">
+                        <tr>
+                            <th> Fontes de Variação</th>
+                            <th> Gl</th>
+                            <th> SQ</th>
+                            <th>QM</th>
+                            <th> Fcal</th>
+                        </tr>
+                        <tr> 
+                            <td> Blocos</td>
+                            <td>3 </td>
+                            <td>2842,87 </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> A</td>
+                            <td> 3</td>
+                            <td> 2848,02</td>
+                            <td>949,34 </td>
+                            <td>13,82 </td>
+                        </tr>
+                        <tr> 
+                            <td> Resíduo (a)</td>
+                            <td> 9</td>
+                            <td>618,30 </td>
+                            <td>68,70 </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td>(Parcelas)</td>
+                            <td>15 </td>
+                            <td>(6309,19) </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B</td>
+                            <td>3 </td>
+                            <td>170,53  </td>
+                            <td>56,84 </td>
+                            <td>2,80 </td>
+                        </tr>
+                        <tr> 
+                            <td> A\(#\)B</td>
+                            <td> 9</td>
+                            <td>586,47 </td>
+                            <td>65,16 </td>
+                            <td>3,21 </td>
+                        </tr>
+                        <tr> 
+                            <td> Resíduo (b)</td>
+                            <td>36 </td>
+                            <td>731,20  </td>
+                            <td> 20,31</td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total</td>
+                            <td>63 </td>
+                            <td>7797,39 </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p> Hipóteses: </p>
+                    <p> $H_0:$ Não há efeito da interação </p>
+                    <p> $H_1:$ Há efeito da interação.} 
+                    </p>
+                    <p>Como \(F = 3,21 > 2,15 = F_\text{tab}(\alpha = 0,05)\), com nível de 5% de significância, rejeita-se $H_0$. Desse modo, há evidências para afirmarmos que há efeito da interação entre os fatores. Sendo assim,
+                        serão avaliados os efeitos simples. 
+                    </p>
+                    <p>Efeito de Tratamento de Sementes dentro de cada Variedade </p>
+                    <p> $$H_0: \mu_{A1{B1}} = \mu_{A1{B2}} = \mu_{A1{B3}} = \mu_{A1{B4}}$$
+                        $$H_1: \text{Pelo menos duas médias diferente entre si}$$
+                    </p>
+                    <p> 
+                        $$SQ B d.A1= \frac{1}{4}\Big({144,2}^2+{202,5}^2+{183,4}^2+{149,2}^2\Big)- \frac{{679,3}^2}{16}=583,49$$\\
+
+                    </p>
+                    <p>
+                        Exemplo: Efeito de Tratamento de Sementes dentro de cada
+                         Variedade}
+
+                        $H_0: \mu_{A2{B1}} = \mu_{A2{B2}} = \mu_{A2{B3}} = \mu_{A2{B4}}$
+                        $H_1: \text{Pelo menos duas médias diferente entre si}$
+
+
+                        $$SQ B d.A2=\frac{1}{4}\Big({ 203,4}^2+{221,5}^2+{212,4}^2+{217,2}^2\Big)- \frac{{854,5}^2}{16}=45,21$\\
+
+                        Exemplo: Efeito de Tratamento de Sementes dentro de cada Variedade
+
+                       $H_0: \mu_{A3{B1}} = \mu_{A3{B2}} = \mu_{A3{B3}} = \mu_{A3{B4}}$
+                       $H_1: \text{Pelo menos duas médias diferente entre si}$
+
+
+                      $SQ B d.A3=\frac{1}{4}\Big({215,7}^2+{205,5}^2+{223,5}^2+{224,2}^2\Big)- \frac{{868,9}^2}{16}=56,96$\\
+
+
+
+                      Exemplo: Efeito de Tratamento de Sementes dentro de cada Variedade}
+
+                      $H_0: \mu_{A4{B1}} = \mu_{A4{B2}} = \mu_{A4{B3}} = \mu_{A4{B4}}$
+                      $H_1: \text{Pelo menos duas médias diferentes entre si}$
+
+       
+
+                     $$SQ B d.A4=\frac{1}{4}\Big({247,7}^2+{253,7}^2+{230,7}^2+{245,0}^2\Big)- \frac{{977,1}^2}{16}=71,34$$\\
+
+
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Fontes de Variação </th>
+                            <th> Gl</th>
+                            <th> SQ</th>
+                            <th>QM</th>
+                            <th> Fcal</th>
+                            <th> Ftab</th>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p>Ao nível de 5% de significância, há efeito de tratamentos de sementes dentro da variedade A1. Considerando-se as demais variedades, não há efeito significativo de tratamento de sementes.
+                    </p>
+                    <h3> Teste de Tukey</h3>
+                    <p>$$\Delta = q_{(5\%, b, \text{gl Res (b)})}\sqrt{\frac{QMRes(b)}{r}} = 3,81\sqrt{\frac{20,31}{4}} = 8,585$$ </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2"> Variedade </th>
+                            <th colspan="4"> Tratamento de sementes </th>
+                            <th rowspan="2"> Totais</th>
+                        </tr>
+                        <tr>
+                            <th> I</th>
+                            <th> II</th>
+                            <th> III</th>
+                            <th> IV</th>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <th> A1</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <th> Média</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>    
+                    <h4> Teste de Tukey para tratamentos de sementes dentro da variedade A1</h4>
+                    <p>$$\Delta = q_{(5\%, b, \text{gl Res (b)})}\sqrt{\frac{QMRes(b)}{r}} = 3,81\sqrt{\frac{20,31}{4}} = 8,585$$ </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <p>De acordo com o teste de Tukey, ao nível de 5% de significância, há evidências para afirmar que a produção média para o tratamento de sementes B2 difere da produção média para os tratamentos de sementes B1 e B4, sendo B2 o que apresentou maior produção. Ainda, há evidências para afirmar que a produção média para o tratamento de sementes B3 difere da produção média para o tratamento de sementes B1 e as demais médias não apresentaram diferença significativa. </p>
+                    <p>$H_0: \mu_{{A1}B1} = \mu_{{A2}B1} = \mu_{{A3}B1} = \mu_{{A4}B1}$\\
+                        $H_1: \text{Pelo menos duas médias diferem entre si}$
+                        
+                             
+                        
+                        $$SQ A d.B1=\frac{1}{4}\Big({144,2}^2+{203,4}^2+{215,7}^2+{247,7}^2\Big)- \frac{{811,0}^2}{16}=1.404,18$$
+                        
+                        
+                        
+                        $H_0: \mu_{{A1}B2} = \mu_{{A2}B2} = \mu_{{A3}B2} = \mu_{{A4}B2}$\\
+                        $H_1: \text{Pelo menos duas médias diferem entre si}$
+                        
+                               
+                        
+                        $$SQ A d.B2=\frac{1}{4}\Big({202,5}^2+{221,5}^2+{205,5}^2+{253,7}^2\Big)- \frac{{883,2}^2}{16}=412,97$$ 
+                    </p>
+                    <p>
+                        $H_0: \mu_{{A1}B3} = \mu_{{A2}B3} = \mu_{{A3}B3} = \mu_{{A4}B3}$\\
+                        $H_1: \text{Pelo menos duas médias diferem entre si}$
+                        
+                        $$SQ A d.B3=\frac{1}{4}\Big({183,4}^2+{212,4}^2+{223,5}^2+{230,7}^2\Big)-\frac{{850,0}^2}{16}=324,77$$\\ 
+                    </p>
+                    <p>
+                        $H_0: \mu_{{A1}B4} = \mu_{{A2}B4} = \mu_{{A3}B4} = \mu_{{A4}B4}$\\
+                        $H_1: \text{Pelo menos duas médias diferem entre si}$
+
+
+                        $$SQ A d.B4=\frac{1}{4}\Big({149,2}^2+{217,2}^2+{224,2}^2+{245,0}^2\Big)-\frac{{835,6}^2}{16}=1.292,57$$
+                    </p>
+                    <p> 
+                        $$QM*\text{Resíduo Composto} \|=\|
+                       frac{QM \text{Resíduo (a)}+(b-1)QM \text{Resíduo (b)}}{b} \\ \nonumber
+                       \|=\| \frac{68,70+(4-1)20,31}{4}=32,41$$
+
+                        $$\nu \|=\|\frac{[QM \text{Resíduo (a)}+(b-1)QM \text{Resíduo (b)}]^2}{\frac{[QM \text{Resíduo (a)}]^2}{gl \text{Resíduo (a)}}+ \frac{[(b-1)QM \text{Resíduo (b)}]^2}{gl \text{Resíduo (b)}}}
+                        \\ \nonumber \|=\|
+                        \frac{[68,70+(4-1)20,31]^2}{[68,70]^2/9+[(4-1)20,31]^2/36}
+                         \approx26,78\approx27 gl$$
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Fontes de Variação </th>
+                            <th> Gl</th>
+                            <th> SQ</th>
+                            <th>QM</th>
+                            <th> Fcal</th>
+                            <th> Ftab</th>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> B d. A1</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </table>
+                    <p> De acordo com o teste F, ao nível de 5% de significância, há efidências para afirmar que há efeito significativa de Variedades dentro de cada um dos tratamentos de sementes.</p>
+                    <p> 
+                        $$\Delta=q_{(5\%, a, gl \text{Res Composto})}\sqrt{\frac{\text{QM Resíduo Composto}}{r}}=3,88\sqrt{\frac{32,41}{4}}=11,0$$
+                    </p>
+                    <p> 
+                        Variedades dentro de B1 (Testemunha)}
+
+                        $\hat{\mu}_{A_3B_1} = 53,925$ | $\hat{\mu}_{A_2B_1} = 50,850$ | $\hat{\mu}_{A_1B_1} = 36,050$ \\ 
+
+                        $\hat{\mu}_{A_4B_1} = 61,925$ \| 8,000 \| {11,075} \|
+                        {25,875} \\\
+                        $\hat{\mu}_{A_3B_1} = 53,925$ \| \| 3,075 \| {17,875} \\
+                        $\hat{\mu}_{A_2B_1} = 50,850$ \| \| \| {14,800} \\
+                    </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <p> 
+                        $$\Delta=q_{(5\%, a, gl \text{Res Composto})}\sqrt{\frac{\text{QM Resíduo Composto}}{r}}=3,88\sqrt{\frac{32,41}{4}}=11,0$$
+                    </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <p>
+                        $$\Delta=q_{(5\%, a, gl \text{Res Composto})}\sqrt{\frac{\text{QM Resíduo Composto}}{r}}=3,88\sqrt{\frac{32,41}{4}}=11,0$$
+                    </p>
+                    <p>Variedades dentro de B3 (Panogen)}
+
+       
+                        $hat{mu}_{A_3B_3} = 55,875$ | $hat{mu}_{A_2B_3} = 53,100$ | $hat{mu}_{A_1B_3} = 45,850$  
+                        
+                        $hat{mu}_{A_4B_3} = 57,675$ | 1,800 | 4,575 |
+                        {11,825} 
+                        $hat{mu}_{A_3B_3} = 55,875$ | | 2,775 | 10,025 
+                        $\hat{mu}_{A_2B_3} = 53,100$ | | | 7,250 
+                    </p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <p> $$\Delta=q_{(5\%, a, gl \text{Res Composto})}\sqrt{\frac{\text{QM Resíduo Composto}}{r}}=3,88\sqrt{\frac{32,41}{4}}=11,0$$</p>
+                    <table class="tabela2">
+                        <tr> 
+                            <th>Médias </th>
+                            <th> Classificação</th>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_2}=50,625\) </td>
+                            <td> a</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_3}=45,850\) </td>
+                            <td> ab</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_4}=37,300\) </td>
+                            <td> bc</td>
+                        </tr>
+                        <tr> 
+                            <td>\(\hat{\mu}_{A_1B_1}=36,050\) </td>
+                            <td>c </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th rowspan="2"> Variedades</th>
+                            <th colspan="4">Tratamento de sementes </th>
+                        </tr>
+                        <tr> 
+                            <th> B1 Testemunha</th>
+                            <th> B2 Ceresan M</th>
+                            <th> B3 Panogen </th>
+                            <th> B4 Agros</th>
+                        </tr>
+                        <tr> 
+                            <th> A1 Vicland 1</th>
+                            <td>36,1 c </td>
+                            <td>50,6 b  </td>
+                            <td> 45,9 b </td>
+                            <td>  37,3 b</td>
+                        </tr>
+                        <tr> 
+                            <th> A2 Vicland 2</th>
+                            <td>50,9 b </td>
+                            <td>55,4 ab </td>
+                            <td> 53,1 ab </td>
+                            <td>  54,3 a</td>
+                        </tr>
+                        <tr> 
+                            <th> A3 Clinton</th>
+                            <td>53,9 ab </td>
+                            <td> 51,4 b </td>
+                            <td> 55,9 ab </td>
+                            <td> 56,1 a  </td>
+                        </tr>
+                        <tr> 
+                            <th> A4 Branch</th>
+                            <td>61,9 a </td>
+                            <td>63,4 a </td>
+                            <td>57,7 a </td>
+                            <td> 61,3 a </td>
+                        </tr>
+                    </table>
+
+                
+
+
+
                 </div>
                 <section class="atividade">
                     <h2>Atividades</h2>

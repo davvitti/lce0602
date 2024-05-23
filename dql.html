@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>LCE0602</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
@@ -69,16 +69,16 @@
                 <div class="conteudo">
                     <h3> Fundamentos</h3>
                     <p> O delineamento quadrado latino considera o controle local em dois sentidos e, portanto, assim como o delineamento em blocos, considera os três princípios básicos da experimentação: a repetição, a casualização e o controle local. Um dos sentidos da blocagem é denominado linhas e outro colunas</p>
-                    <p> Características importantes</p>
-                    <p> * O número de linhas ($I$) é igual ao número de colunas ($J$) e igual ao número de tratamento ($K$).  $I \;=\; J \;=\; K$
+                    <p><strong> Características importantes</strong></p>
+                    <p> * O número de linhas (\(I\)) é igual ao número de colunas (\(J\)) e igual ao número de tratamento (\(K\)).  \(I \;=\; J \;=\; K\)
                     </p>
-                    <p> * O número de parcelas no experimento é dado por $I^2$.
+                    <p> * O número de parcelas no experimento é dado por \(I^2\).
                     </p>
                     <p> * Cada tratamento ocorre uma única vez em cada linha e uma única vez em cada coluna.
                     </p>
                     <p> * O tamanho do experimento cresce rapidamente à medida que aumenta o número de tratamentos.
                     </p>
-                    <p> * Os mais comumente encontrados são 5 $\times$ 5, 6 $\times$ 6, 7 $\times$ 7 e 8 $\times$ 8.
+                    <p> * Os mais comumente encontrados são 5 \(\times\) 5, 6 \(\times\) 6, 7 \(\times\) 7 e 8 \(\times\) 8.
                     </p>
                     <h4> Exemplos</h4>
                     <p>* Em ensaios de campo, um terreno (área experimental) pode apresentar declive em dois sentidos, perpendiculares.
@@ -89,51 +89,58 @@
                     <p> O primeiro experimento de campo no mundo a usar um delineamento experimental aleatório estabelecido pela Comissão Florestal em março de 1929, em uma encosta perto da floresta de Beddgelert, planejado por Fisher.
                         (The Forestry Commission)
                     </p>
+                    <p>[KERR, 2014](https://academic.oup.com/forestscience/article/60/6/1194/4583920) </p>
+                    <figure>
+                        <figcaption> Experimento em delineamento quadrado latino</figcaption>
+                        <img src="figs/figs/LatinSquareFisher.jpg">
+                    </figure>
                     <h3> Croqui: comparação entre delineamentos</h3>
+                    <figure>
+                        <img src="figs/dql_files/figure-html/unnamed-chunk-3-1.png">
+                    </figure>
                     <h3> Análise dos dados</h3>
                     <h4> Modelo estatístico</h4>
-                    <p> $$y_{ij(k)} = \mu + l_i + c_j + \tau_{k(ij)} + e_{ij(k)}, \quad i=1, \ldots, I; j=1, \ldots, I, k=1, \ldots, I,$$</p>
+                    <p> $$y_{ij(k)} = \mu + l_i + c_j + \tau_{k(ij)} + e_{ij(k)}$$
+                        $$\quad i=1, \ldots, I; j=1, \ldots, I, k=1, \ldots, I$$</p>
                     <p> 
-                        em que:
+                        em que:</p>
 
-                       * $y_{ij(k)}$ é o valor observação na $i-$ésima linha e na $j$-ésima coluna (que recebeu o $k$-ésimo tratamento);
-                       * $\mu$ é uma constante comum a todas as observações;
-                       * $l_i$ é o efeito da $i-$ésima linha;
-                       * $c_j$ é o efeito da $j$-ésima coluna;
-                       * $\tau_{k(ij)}$ é o efeito do $k$-ésimo tratamento, e
-                       * $e_{ijk}$ é o erro experimental, tal que $e_{ijk} \sim N(0, \sigma^2)$.
+                        <p>    * \(y_{ij(k)}\) é o valor observação na \(i-\)ésima linha e na \(j\)-ésima coluna (que recebeu o \(k\)-ésimo tratamento);</p>
+                            <p>    * \(\mu\) é uma constante comum a todas as observações;</p>
+                                <p>   * \(l_i\) é o efeito da \(i\)-ésima linha;</p>
+                                    <p>   * \(c_j\) é o efeito da \(j\)-ésima coluna;</p>
+                                        <p>   * \(\tau_{k(ij)}\) é o efeito do \(k\)-ésimo tratamento, e</p>
+                                            <p>   * \(e_{ijk}\) é o erro experimental, tal que \(e_{ijk} \sim N(0, \sigma^2)\).
                     </p>
                     <p>
-                        DQL: Restrições usuais e estimadores de mínimos quadrados__
-
-                        Restrições
+                        <strong>Restrições</strong></p>
                         
-                        $\sum_{k=1}^{I} \hat{\tau}_k = 0$
+                        <p>\(\sum_{k=1}^{I} \hat{\tau}_k = 0\)</p>
                         
-                        $\sum_{i=1}^{I} \hat{l}_i = 0$
+                        <p>\(\sum_{i=1}^{I} \hat{l}_i = 0\)</p>
                         
-                        $\sum_{j=1}^{I} \hat{c}_j = 0$
+                        <p>\(\sum_{j=1}^{I} \hat{c}_j = 0\)</p>
                                 
                                 
-                        Soluções de mínimos quadrados
+                        <strong>Soluções de mínimos quadrados</strong>
                         
                         
-                        $\hat{\mu} = \bar{y}$
+                        <p>\(\hat{\mu} = \bar{y}\)</p>
                         
-                        $\hat{\tau}_k = \bar{y}_k - \bar{y}$
+                            <p>\(\hat{\tau}_k = \bar{y}_k - \bar{y}\)</p>
                         
-                        $\hat{l}_i = \bar{y}_i - \bar{y}$
+                                <p> \(\hat{l}_i = \bar{y}_i - \bar{y}\)</p>
                         
-                        $\hat{c}_j = \bar{y}_j - \bar{y}$
+                                    <p>\(\hat{c}_j = \bar{y}_j - \bar{y}\)</p>
                             
-                        Hipóteses de interesse
+                       <h4>Hipóteses de interesse</h4>
                         
-                        $H_0:$ $\mu_{Trat_1} = \mu_{Trat_2} = \ldots = \mu_{Trat_I}$
+                        <p>$$H_0: \mu_{Trat_1} = \mu_{Trat_2} = \ldots = \mu_{Trat_I}$$
                         
-                        $H_1:$ $\text{pelo menos duas médias diferem entre si}$
+                        $$H_1:\text{pelo menos duas médias diferem entre si}$$</p>
                              
                     </p>
-                    <table>
+                    <table class="tabela2">
                         <caption> Anova</caption>
                         <tr> 
                             <th> Fontes de var</th>
@@ -144,36 +151,37 @@
                         </tr>
                         <tr> 
                             <td> Linhas</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> \(I-1\)</td>
+                            <td> SQL</td>
+                            <td> SQL/glL</td>
+                            <td> QML/QMres</td>
                         </tr>
                         <tr> 
                             <td> Colunas</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(I-1\) </td>
+                            <td> SQC</td>
+                            <td> SQC/glC</td>
+                            <td> QMC/QMres</td>
+                            
                         </tr>
                         <tr> 
                             <td> Tratamentos</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(I-1\) </td>
+                            <td>SQtrat </td>
+                            <td>SQtrat/glTrat </td>
+                            <td>QMTrat/QMRes </td>
                         </tr>
                         <tr> 
                             <td> Resíduo</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>\((I-1)(I-2)\) </td>
+                            <td> SQres</td>
+                            <td> QMres</td>
                             <td> </td>
                         </tr>
                         <tr> 
                             <td> Total</td>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(I²-1\) </td>
+                            <td>SQtotal </td>
                             <td> </td>
                             <td> </td>
                         </tr>
@@ -181,142 +189,142 @@
 
                     <h4> Exemplo</h4>
                     <p>  Considere os dados de um experimento instalado de acordo com o delineamento quadrado latino, para avaliar a produção de cana-de-açúcar em kg/parcela, de cinco variedades, A = CO290, B = CO294, C = CO297, D = CO299 e E = CO295. O controle feito por meio dos blocos horizontais e verticais teve por objetivo eliminar influências devidas a diferenças de fertilidade em duas direções.</p>
-                    <table>
+                    <table class="tabela2">
                         <tr>
-                            <th>Linhas </th>
+                            <th rowspan="2">Linhas </th>
                             <th colspan="5"> Colunas</th>
-                            <th> Totais</th>
+                            <th rowspan="2"> Totais</th>
                         </tr>
                         <tr> 
-                            <th> </th>
+                            
                             <th> 1</th>
                             <th> 2</th>
                             <th> 3</th>
                             <th> 4</th>
                             <th> 5</th>
-                            <th> </th>
-                        </tr>
-                        <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>1 </td>
+                            <td>432(D) </td>
+                            <td>518 (A) </td>
+                            <td>458 (B) </td>
+                            <td>583 (C) </td>
+                            <td>331 (E) </td>
+                            <td> 2322 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 2</td>
+                            <td> 724 (C)</td>
+                            <td>478 (E) </td>
+                            <td>524 (A) </td>
+                            <td>550 (B) </td>
+                            <td>400 (D) </td>
+                            <td>2676 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 3</td>
+                            <td>489 (E) </td>
+                            <td>384 (B) </td>
+                            <td>556 (C) </td>
+                            <td> 297 (D)</td>
+                            <td>420 (A) </td>
+                            <td>2146 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 4</td>
+                            <td>494 (B) </td>
+                            <td>500 (D) </td>
+                            <td>313 (E) </td>
+                            <td>486 (A) </td>
+                            <td>501 (C) </td>
+                            <td> 2294 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 5</td>
+                            <td>515 (A) </td>
+                            <td>660 (C) </td>
+                            <td> 438 (D)</td>
+                            <td> 394 (E)</td>
+                            <td>318 (B) </td>
+                            <td>2325  </td>
+                            
+                        </tr>
+                        <tr> 
+                            <td>Totais </td>
+                            <td>2654 </td>
+                            <td> 2540  </td>
+                            <td>  2289 </td>
+                            <td>2310 </td>
+                            <td> 1970 </td>
+                            <td>11763 </td>
                             
                         </tr>
                     </table>
-                    <p> $T_A = 2463 \quad T_B = 2204 \quad T_C = 3024 \quad T_D = 2067 \quad T_E = 2005$</p>
+                    $$T_A = 2463 \quad T_B = 2204 \quad T_C = 3024 \quad T_D = 2067 \quad T_E = 2005$$
                     <p>
                         Soma de quadrados total : 
 
-                        $$SQ_{Total} = \sum_{ij} y_{ij(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}\\
-                        = 432^2 + 518^2 + \ldots + 318^2 - \frac{11763^2}{25}\\
-                        = 257724,20$$
+                        $$SQ_{Total} = \sum_{ij} y_{ij(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}$$
+                       $$ = 432^2 + 518^2 + \ldots + 318^2 - \frac{11763^2}{25}$$
+                       $$= 257724,20$$
                         
                         
                         Soma de quadrados linhas:
                         
-                        $$SQ_{Linhas} = \frac{1}{I}\sum_{i} y_{i.(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}\\
-                            = \frac{1}{5}\left(2322^2 + 2676^2 + 2146^2 + 2294^2 + 2325^2\right) - \frac{11763^2}{25}\\
-                            = 30480,64$$
+                        $$SQ_{Linhas} = \frac{1}{I}\sum_{i} y_{i.(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}$$
+                           $$ = \frac{1}{5}\left(2322^2 + 2676^2 + 2146^2 + 2294^2 + 2325^2\right) - \frac{11763^2}{25}$$
+                           $$= 30480,64$$
                         
                         Soma de quadrados de colunas
                         
-                        $$SQ_{Colunas} = \frac{1}{I}\sum_{j} y_{.j(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}\\
-                            = \frac{1}{5}\left(2654^2 + 2540^2 + 2289^2 + 2310^2 + 1970^2\right) - \frac{11763^2}{25}\\
-                            = 55640,64$$
+                        $$SQ_{Colunas} = \frac{1}{I}\sum_{j} y_{.j(k)}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}$$
+                           $$ = \frac{1}{5}\left(2654^2 + 2540^2 + 2289^2 + 2310^2 + 1970^2\right) - \frac{11763^2}{25}$$
+                            $$= 55640,64$$
                         
                         Soma de quadrados de tratamentos
                         
-                        $$SQ_{Tratamentos} = \frac{1}{I}\sum_{k} y_{..k}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}\\
-                            = \frac{1}{5}\left(2463^2 + 2204^2 + 3024^2 + 2067^2 + 2005^2\right) - \frac{11763^2}{25}\\
-                            = 137488,20$$
+                        $$SQ_{Tratamentos} = \frac{1}{I}\sum_{k} y_{..k}^2 - \frac{\left(\sum_{ij} y_{ij(k)}\right)^2}{I^2}$$
+                           $$ = \frac{1}{5}\left(2463^2 + 2204^2 + 3024^2 + 2067^2 + 2005^2\right) - \frac{11763^2}{25}$$
+                           $$= 137488,20$$
                         
                         Soma de quadrados de resíduos
                         
-                        $$SQ_{\text{Residuo}} = SQ_{\text{Total}} - SQ_{\text{Linhas}} - SQ_{Colunas} - SQ_{Trat} \\
-                            = 257724,20 - 30480,64 - 55640,64 - 137488,20\\
-                            = 34114,72$$
+                        $$SQ_{\text{Residuo}} = SQ_{\text{Total}} - SQ_{\text{Linhas}} - SQ_{Colunas} - SQ_{Trat}$$
+                          $$  = 257724,20 - 30480,64 - 55640,64 - 137488,20$$
+                          $$ = 34114,72$$
                         
                         Quadrado médio da linha 
                         
-                        $$QM_{Linhas} = \frac{SQ_{Linhas}}{gl_{Linhas}} \\
-                            = \frac{30480,64}{4} \\
-                            = 7620,16$$
+                        $$QM_{Linhas} = \frac{SQ_{Linhas}}{gl_{Linhas}}$$
+                          $$  = \frac{30480,64}{4} $$
+                          $$ = 7620,16$$
                         
                         Quadrado médio da coluna
                         
-                        $$QM_{Colunas} = \frac{SQ_{Colunas}}{gl_{Colunas}} \\
-                            = \frac{55640,64}{4}\\
-                            = 13910,16\\$$
+                        $$QM_{Colunas} = \frac{SQ_{Colunas}}{gl_{Colunas}} $$
+                           $$ = \frac{55640,64}{4}$$
+                           $$= 13910,16\\$$
                         
                         Quadrado médio do tratamento
                         
-                        $$QM_{Tratamentos} = \frac{SQ_{Tratamentos}}{gl_{Tratamentos}} \\
-                            = \frac{137488,20}{4} \\
-                            = 34372,06\\$$
+                        $$QM_{Tratamentos} = \frac{SQ_{Tratamentos}}{gl_{Tratamentos}} $$
+                          $$  = \frac{137488,20}{4} $$
+                          $$= 34372,06$$
                         
                         Quadrado médio do resíduo
                         
-                        $$QM_{Residuo} = \frac{SQ_{Residuo}}{gl_{Residuo}} \\
-                            = \frac{34114,72}{12}\\
-                            = 2842,89\\$$
+                        $$QM_{Residuo} = \frac{SQ_{Residuo}}{gl_{Residuo}} $$
+                           $$ = \frac{34114,72}{12}$$
+                           $$= 2842,89$$
                              
                     </p>
 
-                    <table>
+                    <table class="tabela2">
                         <tr>
                             <th> Fontes de variação</th>
                             <th> gl</th>
@@ -327,40 +335,40 @@
                         </tr>
                         <tr> 
                             <td> Linhas </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr> 
-                            <td> Linhas </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 4</td>
+                            <td>30480,64 </td>
+                            <td>7620,16 </td>
                             <td> </td>
                             <td> </td>
                         </tr>
                         <tr> 
-                            <td> Linhas </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                        <tr> 
-                            <td> Linhas </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> Colunas </td>
+                            <td>4 </td>
+                            <td>55640,64 </td>
+                            <td>13910,16 </td>
                             <td> </td>
                             <td> </td>
                         </tr>
                         <tr> 
-                            <td> Linhas </td>
+                            <td> Tratamentos </td>
+                            <td>4 </td>
+                            <td>137488,20 </td>
+                            <td>34372,06 </td>
+                            <td> 12,09</td>
+                            <td>3,26 </td>
+                        </tr>
+                        <tr> 
+                            <td> Resíduos </td>
+                            <td>12 </td>
+                            <td>34114,72 </td>
+                            <td>2842,89 </td>
                             <td> </td>
                             <td> </td>
+                        </tr>
+                        <tr> 
+                            <td> Total </td>
+                            <td>4 </td>
+                            <td>257724,20 </td>
                             <td> </td>
                             <td> </td>
                             <td> </td>
@@ -371,38 +379,38 @@
                     </p>
                     <h4> Teste de Tukey</h4>
                     <p> 
-                        Hipóteses:
+                        Hipóteses: </p>
 	
-                      *	$H_0$: $\mu_k = \mu_{k'} \Rightarrow \mu_k - \mu_{k'} = 0$\\
-                      *	$H_1$: $\mu_k \neq \mu_{k'} \Rightarrow\mu_k - \mu_{k'} \neq 0$\\
+                        <p> *	\(H_0: \mu_k = \mu_{k'} \Rightarrow \mu_k - \mu_{k'} = 0\)</p>
+                            <p> *	\(H_1: \mu_k \neq \mu_{k'} \Rightarrow\mu_k - \mu_{k'} \neq 0\)</p>
 	
-                      $$\Delta = q_{(\alpha, I, glRes)}\sqrt{\frac{\mbox{QM Resíduo}}{J}} = 4,51\sqrt{\frac{2842,89}{5}} = 107,54$$
+                                <p>  $$\Delta = q_{(\alpha, I, glRes)}\sqrt{\frac{\mbox{QM Resíduo}}{J}} = 4,51\sqrt{\frac{2842,89}{5}} = 107,54$$
                     </p>
                     <p> A partir do teste de Tukey, ao nível de 5% de significância, podemos afirmar que a produção média de cana-de-açúcar da variedade C difere das demais produções médias, sendo a da variedade C maior, e as demais produções médias não apresentam diferença significativa. Letras diferentes indicam diferenças significativas.</p>
-                    <table>
+                    <table class="tabela2">
                         <tr>
                             <th> Médias </th>
                             <th> classificação</th>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(\hat{\mu}_C = 604,8\) </td>
+                            <td> a</td>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(\hat{\mu}_A = 492,6\) </td>
+                            <td> b</td>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(\hat{\mu}_B = 440,8\) </td>
+                            <td> b</td>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(\hat{\mu}_D = 413,4\) </td>
+                            <td> b</td>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
+                            <td>\(\hat{\mu}_E = 401,0\)  </td>
+                            <td>b </td>
                         </tr>
                     </table>
                 </div>

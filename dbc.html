@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade</title>
+    <title>LCE0602</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
@@ -74,34 +74,49 @@
                     </p>
                     <h3> Exemplo: granja de suínos</h3>
                     <p> Com o objetivo de avaliar o efeito de quatro rações, A, B, C e D, sobre o ganho de peso de animais um pesquisador dispunha do 12 animais com pesos diferentes. </p>
+                    <figure>
+                        <img src="figs/figs/pig01.png">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/pig02.jpg">
+                    </figure>
+                    <figure>
+                        <img src="figs/figs/pig03.jpg">
+                    </figure>
                     <h3> Exemplo: área experimental Esalq</h3>
+                    <figure>
+                        <img src="figs/figs/ambiencia.jpg">
+                    </figure>
                     <h3> Croqui: Comparação entre DIC e DBC</h3>
+                    <figure>
+                        <img src="figs/dbc_files/figure-html/unnamed-chunk-3-1.png">
+                    </figure>
                     <h3> Análise dos dados</h3>
                     <h4> Modelo estátistico</h4>
                     <p> $$y_{ij} = \mu + b_j + \tau_i + e_{ij}\text{(1)}$$ </p>
                     <p> em que:</p>
-                    <p> \(y_{ij}\) é a observação referente ao tratamento $i$ no bloco $j$;
+                    <p> \(y_{ij}\) é a observação referente ao tratamento i no bloco j;</p>
  
-                        - $\mu$ é a constante comum a todas as observações (média geral);
+                        <p>   - \(\mu\) é a constante comum a todas as observações (média geral);</p>
                         
-                        - $b_j$ é o efeito do $j$-ésimo bloco, com $j = 1, 2, \ldots, J$;
+                            <p>  - \(b_j\) é o efeito do \(j-ésimo\) bloco, com \(j = 1, 2, \ldots, J\);</p>
                         
-                        - $\tau_i$ é o efeito do $i$-ésimo tratamento, com $i = 1, 2, \ldots, I$;
+                                <p>  - \(\tau_i\) é o efeito do \(i-ésimo\) tratamento, com \(i = 1, 2, \ldots, I\);</p>
                         
-                        - $e_{ij}$ é o erro experimental, tal que $e_{ij}\sim \mbox{NID} (0; \sigma^2)$.</p>
+                                    <p>  - \(e_{ij}\) é o erro experimental, tal que \(e_{ij}\sim \mbox{NID} (0; \sigma^2)\).</p>
                     <h4> Estimadores</h4>
-                    <p> As soluções de mínimos quadrados para os parâmetros $\mu$, $b_j$ e $\tau_i$, com $j=1, \ldots, J$ e $i = 1, \ldots, I$, assumindo-se as restrições usuais, 
+                    <p> As soluções de mínimos quadrados para os parâmetros \(\mu\), \(b_j\) e \(\tau_i\), com \(j=1, \ldots, J\) e \(i = 1, \ldots, I\), assumindo-se as restrições usuais, 
 
-                        $\sum_{i}\hat{\tau}_i = 0$ e $\sum_{j}\hat{b}_j = 0$, são:
+                        $$\sum_{i}\hat{\tau}_i = 0$$ e $$\sum_{j}\hat{b}_j = 0$$ são:
                     </p>
                     <p>$$\hat{\mu} = \bar{Y},$$ 
                         $$\hat{b_j} = \bar{Y}_j - \bar{Y}$$ 
                         $$\hat{\tau}_i = \bar{Y}_i - \bar{Y}$$
                     </p>
                     <h3> Análise da variância</h3>
-                    <p>$H_0:\mu_1 = \mu_2 = \ldots = \mu_I$ </p>
-                    <p> $H_1:$ pelo menos duas médias de tratamentos diferem entre si</p>
-                    <table> 
+                    <p>$$H_0:\mu_1 = \mu_2 = \ldots = \mu_I$$ </p>
+                    <p> $$H_1: \text{pelo menos duas médias diferem entre si}$$</p>
+                    <table class="tabela2"> 
                         <caption>Tabela 1. ANOVA </caption>
                         <tr> 
                             <th> Fontes de Variação</th>
@@ -141,11 +156,11 @@
                         </tr>
                         
                     </table>
-                    <p>  Rejeita-se $H_0$ se $F_{cal} \geq F_{tab_{(\alpha, I-1, (I-1)(J-1))}}$, em que $\alpha$ é o nível de significância, $I-1$ é o número de graus de liberdade do numerador e $(I-1)(J-1)$ é o número de graus de liberdade do denominador.</p>
+                    <p>  Rejeita-se \(H_0\) se \(F_{cal} \geq F_{tab_{(\alpha, I-1, (I-1)(J-1))}}\), em que \(\alpha\) é o nível de significância, \(I-1\) é o número de graus de liberdade do numerador e \((I-1)(J-1)\) é o número de graus de liberdade do denominador.</p>
                     <h4> Exemplo</h4>
                     <p>Os dados apresentados a seguir foram coletados de um experimento instalado no delineamento casualizado em blocos, cujo objetivo é comparar nove porta-enxertos para laranjeira Valência. Cada parcela era constituída por duas plantas e as produções de laranja (número médio de frutos por planta) tomadas dois anos após a instalação do experimento são: </p>
-                    <table> 
-                        <caption>Tabela 2. Numero médio de frutos por porta enxerto </caption>
+                    <table class="tabela2"> 
+                        <caption>Tabela 2. Número médio de frutos por porta enxerto </caption>
                         <tr>
                             <th>Enxertos </th>
                             <th colspan="3">Blocos</th>
@@ -162,113 +177,113 @@
                         </tr>
                         <tr> 
                             <td>Tangerina sunki </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>145 </td>
+                            <td>155 </td>
+                            <td>166 </td>
+                            <td>466 </td>
+                            <td>155,33 </td>
                         </tr>
                         <tr> 
                             <td>Limão rugoso nacional </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>200 </td>
+                            <td>190 </td>
+                            <td>190 </td>
+                            <td>580 </td>
+                            <td>193,33 </td>
                         </tr>
                         <tr> 
                             <td>Limão rugoso da Flórida </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>183 </td>
+                            <td>186 </td>
+                            <td>208 </td>
+                            <td>577 </td>
+                            <td>192,33 </td>
                         </tr>
                         <tr> 
                             <td>Tangerina Cleópatra </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>190 </td>
+                            <td>175 </td>
+                            <td> 186</td>
+                            <td>551 </td>
+                            <td>183,16 </td>
                         </tr>
                         <tr> 
                             <td>Citranger-troyer </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>180 </td>
+                            <td>160 </td>
+                            <td> 156</td>
+                            <td> 496</td>
+                            <td>165,33 </td>
                         </tr>
                         <tr> 
                             <td>Trifoliata </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>130 </td>
+                            <td>160 </td>
+                            <td>130 </td>
+                            <td>420 </td>
+                            <td>140,00 </td>
                         </tr>
                         <tr> 
                             <td>Tangerina cravo </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>206 </td>
+                            <td>165 </td>
+                            <td>170 </td>
+                            <td>541 </td>
+                            <td>180,33 </td>
                         </tr>
                         <tr> 
                             <td> Laranja caipira</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>250 </td>
+                            <td>271 </td>
+                            <td>230 </td>
+                            <td>751 </td>
+                            <td> 250,33</td>
                         </tr>
                         <tr> 
                             <td>Limão cravo </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>164 </td>
+                            <td>190 </td>
+                            <td>193 </td>
+                            <td>547 </td>
+                            <td>182,33 </td>
                         </tr>
                         <tr> 
                             <td> Totais</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td> 1648</td>
+                            <td> 1652</td>
+                            <td> 1629</td>
+                            <td> 4929</td>
                             <td> </td>
                         </tr>
                         
                     </table>
                     <p> Soma de quadrado do Total
 
-                        $$\text{SQ Total} =  \sum_{ij} y_{ij}^2 - \frac{G^2}{IJ}
-                                         =  145^2 + 155^2 + \ldots + 193^2 - \frac{4929^2}{27}
-                                         =  27042,67 $$
+                        $$\text{SQ Total} =  \sum_{ij} y_{ij}^2 - \frac{G^2}{IJ}$$
+                                $$ =  145^2 + 155^2 + \ldots + 193^2 - \frac{4929^2}{27}
+                                    =  27042,67 $$
                         
                     </p>
                     <p> Soma de quadrado de Blocos
 
-                        $$\text{SQ Blocos} =  \frac{1}{I} \sum_{j} B_{j}^2 - \frac{G^2}{IJ}
-                                         =  \frac{1}{9}\Big(1648^2 + 1652^2 + 1629^2 \Big) - \frac{4929^2}{27}
+                        $$\text{SQ Blocos} =  \frac{1}{I} \sum_{j} B_{j}^2 - \frac{G^2}{IJ}$$
+                                        $$ =  \frac{1}{9}\Big(1648^2 + 1652^2 + 1629^2 \Big) - \frac{4929^2}{27}
                                          =  33,55 $$
                     </p>
                     <p>
                         Soma de quadrado de Tratamento
-                        $$\text{SQ Tratamentos}  =  \frac{1}{J}\sum_{i} T_{i}^2 - \frac{G^2}{IJ}
-                            =  \frac{1}{3}\Big(466^2 + 580^2 + \ldots + 547^2 \Big) - \frac{4929^2}{27}
+                        $$\text{SQ Tratamentos}  =  \frac{1}{J}\sum_{i} T_{i}^2 - \frac{G^2}{IJ}$$
+                            $$=  \frac{1}{3}\Big(466^2 + 580^2 + \ldots + 547^2 \Big) - \frac{4929^2}{27}
                             =  22981,33$$
                     </p>
                     <p> Soma de quadrado do Resíduo
 
-                        $$\text{SQ Resíduo} = \text{SQ Total} - \text{SQ Blocos} - \text{SQ Tratamentos}
-                                         =  27042,67 - 33,55 - 22981,33\\
+                        $$\text{SQ Resíduo} = \text{SQ Total} - \text{SQ Blocos} - \text{SQ Tratamentos}$$
+                                        $$ =  27042,67 - 33,55 - 22981,33\\
                                          =  4027,79$$
                                          
                     </p>
-                    <table> 
+                    <table class="tabela2"> 
                         <caption>Tabela 3. ANOVA </caption>
                         <tr> 
                             <th> Fontes de Variação</th>
@@ -281,37 +296,39 @@
                             <td> Blocos</td>
                             <td> 2</td>
                             <td> 33,55</td>
-                            <td> </td>
+                            <td>16,78 </td>
                             <td> </td>
                         </tr>
                         <tr> 
                             <td> Tratamentos</td>
-                            <td> \(I-1\)</td>
-                            <td> SQ trat</td>
-                            <td> QM trat</td>
-                            <td> Fcal</td>
+                            <td> 8</td>
+                            <td> 22981,33</td>
+                            <td> 2872,67</td>
+                            <td> 11,41</td>
                         </tr>
                         <tr> 
                             <td> Resíduo</td>
-                            <td> \((I-1)(J-1)\)</td>
-                            <td> SQ res</td>
-                            <td> Qm res</td>
+                            <td> 16</td>
+                            <td> 4027,79</td>
+                            <td> 251,74</td>
                             <td> </td>
                         </tr>
                         <tr> 
                             <td> Total</td>
                            
-                            <td> \(IJ-1\)</td>
-                            <td> SQ total</td>
+                            <td> 26</td>
+                            <td> 27042,67</td>
                             <td> </td>
                             <td> </td>
                         </tr>
                         
                     </table>
-                    <p> Imagem grafico da distribuição F</p>
+                    <figure>
+                        <img src="figs/dbc_files/figure-html/unnamed-chunk-5-1.png">
+                    </figure>
                     <table>
                         <caption>
-                            Tabela F
+                            Tabela F ao nível de 5% do intervalo de confiança
                         </caption>
                         <tr>
                             <td class="bordatab"> </td>
@@ -331,143 +348,146 @@
                             <td> 8 </td>
                             <td> 9 </td>
                             <td> 10 </td>
+                            <td> 11</td>
 
                         </tr>
                         <tr>
                             <th rowspan="10"> Graus de liberdade do tratamento</th>
                             <td> 2</td>
-                            <td> </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 19,00</td>
+                            <td> 19,16</td>
+                            <td> 19,25</td>
+                            <td> 19,30</td>
+                            <td>  19,33</td>
+                            <td> 19,35 </td>
+                            <td> 19,37 </td>
+                            <td>  19,38</td>
+                            <td> 19,40 </td>
+                            <td> 19,40 </td>
                         </tr>
                         <tr>
                             <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 9,55 </td>
+                            <td>  9,28</td>
+                            <td> 9,12 </td>
+                            <td> 9,01 </td>
+                            <td> 8,94 </td>
+                            <td> 8,89 </td>
+                            <td> 8,85 </td>
+                            <td> 8,81 </td>
+                            <td>  8,79</td>
+                            <td>  8,76</td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 4</td>
+                            <td> 6,94 </td>
+                            <td> 6,59 </td>
+                            <td> 6,39 </td>
+                            <td> 6,26 </td>
+                            <td> 6,16 </td>
+                            <td> 6,09 </td>
+                            <td> 6,04 </td>
+                            <td> 6,00 </td>
+                            <td> 5,96 </td>
+                            <td> 5,93 </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 5</td>
+                            <td> 5,79 </td>
+                            <td> 5,41 </td>
+                            <td> 5,19 </td>
+                            <td> 5,05 </td>
+                            <td> 4,95 </td>
+                            <td> 4,88 </td>
+                            <td> 4,82 </td>
+                            <td> 4,77 </td>
+                            <td> 4,74 </td>
+                            <td> 4,70 </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 6</td>
+                            <td>5,99  </td>
+                            <td>5,14  </td>
+                            <td>4,76  </td>
+                            <td>4,53  </td>
+                            <td>4,39  </td>
+                            <td>4,28  </td>
+                            <td>4,21  </td>
+                            <td>4,15  </td>
+                            <td>4,10  </td>
+                            <td>4,06  </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 7</td>
+                            <td> 5,59 </td>
+                            <td>4,74  </td>
+                            <td>4,35  </td>
+                            <td>4,12  </td>
+                            <td>3,97  </td>
+                            <td>3,87  </td>
+                            <td> 3,79 </td>
+                            <td>3,73  </td>
+                            <td>3,68  </td>
+                            <td>3,64  </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 8</td>
+                            <td>5,32  </td>
+                            <td>4,46  </td>
+                            <td>4,07  </td>
+                            <td>3,84  </td>
+                            <td>3,69  </td>
+                            <td>3,58  </td>
+                            <td>3,50  </td>
+                            <td>3,44  </td>
+                            <td>3,39  </td>
+                            <td>3,35  </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 9</td>
+                            <td>5,12  </td>
+                            <td>4,26  </td>
+                            <td>3,86  </td>
+                            <td>3,63  </td>
+                            <td>3,48  </td>
+                            <td>3,37  </td>
+                            <td>3,29  </td>
+                            <td>3,23  </td>
+                            <td>3,18  </td>
+                            <td>3,14  </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 10</td>
+                            <td>4,96  </td>
+                            <td>4,10  </td>
+                            <td>3,71  </td>
+                            <td>3,48  </td>
+                            <td>3,33  </td>
+                            <td>3,22  </td>
+                            <td>3,14  </td>
+                            <td>3,07  </td>
+                            <td>3,02  </td>
+                            <td>2,98  </td>
                         </tr>
                         <tr>
-                            <td> 3</td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <td> 11</td>
+                            <td>4,84  </td>
+                            <td>3,98  </td>
+                            <td>3,59  </td>
+                            <td>3,36  </td>
+                            <td>3,20  </td>
+                            <td>3,09  </td>
+                            <td>3,01  </td>
+                            <td>2,95  </td>
+                            <td>2,90  </td>
+                            <td>2,85  </td>
                         </tr>
                         
 
                     </table>
                     
+                    <p> <strong> conclusão</strong></p>
+                    <p>Como Fcal>Ftab em um intervalo de 5% de confiança, pode-se afirmar que há diferença significativa entre os tratamentos.</p>
 
 
                 </div>
