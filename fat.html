@@ -79,18 +79,18 @@
                     <p>Lê-se: fatorial dois por dois por dois ou fatorial dois ao cubo. </p>
                     <p> Tratamentos</p>
                     <p> * \(N_0P_0K_0\) </p>
-                        <p>   * \(N_0P_0K_1\) </p>
-                            <p>* \(N_0P_1K_0\) </p>
-                                <p>* \(N_0P_1K_1\) </p>
-                                    <p>* \(N_1P_0K_0\) </p>
-                                        <p>* \(N_1P_0K_1\) </p>
-                                            <p>* \(N_1P_1K_0\) </p>
-                                                <p> * \(N_1P_1K_1\) 
+                    <p>   * \(N_0P_0K_1\) </p>
+                    <p>* \(N_0P_1K_0\) </p>
+                    <p>* \(N_0P_1K_1\) </p>
+                    <p>* \(N_1P_0K_0\) </p>
+                    <p>* \(N_1P_0K_1\) </p>
+                    <p>* \(N_1P_1K_0\) </p>
+                    <p> * \(N_1P_1K_1\) 
                     </p>
                     <p>Exemplo 2: Avaliação da Temperatura e da Umidade sobre o tempo de consevação de um produto.
                     </p>
                     <figure>
-                        <img src="figs/figs/fatorial32.jpg">
+                        <img src="figs/fat/fatorial32.jpg">
                     </figure>
                     <p>$$3 \times 2 = \mbox{6 tratamentos}$$ </p>  
                     <p> Lê-se: fatorial três por dois</p> 
@@ -125,7 +125,7 @@
                         O planejamento pode seguir qualquer um dos delineamentos vistos anteriormente
                     </p>
                     <figure>
-                        <img src="figs/fat_files/figure-html/unnamed-chunk-3-1.png">
+                        <img src="figs/fat/unnamed-chunk-3-1.png">
                     </figure> 
                     <h3>Vantagens e Desvantagens dos esquemas fatoriais de tratamentos </h3>
                     <p><strong>Vantagens</strong> : Permitem estudar os efeitos simples e principais dos fatores, bem como o efeito da interação envolvendo os mesmos</p>    
@@ -139,23 +139,22 @@
                     </p>
                     <h3> Análise dos dados</h3>
                     <h4> Modelo estatístico</h4>
-                    <p>  O modelo estatístico, considerando-se um experimento seguindo o delineamento inteiramente casualizado com $r$ repetições, dois fatores de tratamento, $A$ com $a$ níveis e $B$ com $b$, é dado por:
+                    <p>  O modelo estatístico, considerando-se um experimento seguindo o delineamento inteiramente casualizado com \(r\) repetições, dois fatores de tratamento, $A$ com \(a\) níveis e \(B\) com \(b\), é dado por:
 
                         $$y_{ikj} = \mu + \alpha_i + \gamma_k + (\alpha\gamma)_{ik} + e_{ikj},$$
                     </p>
                     <p> em que: 
 
-                        <p>   * \(y_{ikj}\) é o valor observado no \(i\)-ésimo nível do fator \(A\) e \(k\)-ésimo nível do fator \(B\) na \(j\)-ésima repetição; </p>
+                    <p>   * \(y_{ikj}\) é o valor observado no \(i\)-ésimo nível do fator \(A\) e \(k\)-ésimo nível do fator \(B\) na \(j\)-ésima repetição; </p>
                         
-                            <p> * \(\mu\) é uma constante, comum a todas as observações; </p>
+                    <p> * \(\mu\) é uma constante, comum a todas as observações; </p>
+                    <p> * \(\alpha_i\) é o efeito do \(i\)-ésimo nível do fator \(A\);</p> 
                         
-                                <p> * \(\alpha_i\) é o efeito do \(i\)-ésimo nível do fator \(A\);</p> 
+                    <p> * \(\gamma_k\) é o efeito do \(k\)-ésimo nível do fator \(B\);</p>
                         
-                                    <p> * \(\gamma_k\) é o efeito do \(k\)-ésimo nível do fator \(B\);</p>
+                    <p>* \((\alpha\gamma)_{ik}\) é o efeito da interação entre  entre o \(i\)-ésimo nível do fator \(A\) e o \(k\)-ésimo nível do fator \(B\)</p>
                         
-                                        <p>* \((\alpha\gamma)_{ik}\) é o efeito da interação entre  entre o \(i\)-ésimo nível do fator \(A\) e o \(k\)-ésimo nível do fator \(B\)</p>
-                        
-                                            <p>* \(e_{ikj}\) é o efeito do acaso.
+                    <p>* \(e_{ikj}\) é o efeito do acaso.
                     </p>
                     <h4>Estimadores dos parâmetros pelo método dos mínimos quadrados </h4>    
                     <p>Dado o modelo
@@ -177,7 +176,7 @@
                         $$\hat{(\alpha\gamma)}_{ik} = \bar{Y}_{ik} - \bar{Y}_i - \bar{Y}_k + \bar{Y}.$$
                     </p>
                     <h3> Quadro da Anova</h3>
-                    <p> Para um experimento seguindo o delineamento inteiramente casualizado com $r$ repetições, dois fatores de tratamento, $A$ com $a$ níveis e $B$ com $b$, o esquema da tabela ANOVA que considera apenas os $ab$ Tratamentos é dado por: </p>     
+                    <p> Para um experimento seguindo o delineamento inteiramente casualizado com \(r\) repetições, dois fatores de tratamento, \(A\) com \(a\) níveis e \(B\) com \(b\), o esquema da tabela ANOVA que considera apenas os \(ab\) Tratamentos é dado por: </p>     
                     <table class="tabela2">
                         <caption>Tabela1: Anova</caption>
                         <tr>
@@ -220,7 +219,7 @@
                         </tr>
                         <tr>
                             <td>(Tratamentos) </td>
-                            <td>\(ab-1\) </td>
+                            <td>\((ab-1)\) </td>
                         </tr>
                         <tr>
                             <td>Resíduos </td>
@@ -251,64 +250,189 @@
                         $$H_0: \mu_{B_1} = \mu_{B_2} = \ldots= \mu_{B_b} = \mu$$ 
                         $$H_1: \text{Pelo menos duas médias diferem entre si.}$$
                     </p>
-                    <p>Efeito de $B$ dentro de cada nível de $A$ ($A + B[A]$) </p>
-	
-                     <p>  Efeito de $A$ dentro de cada nível de $B$ ($B + A[B]$) 
+                    <p><strong> Efeito de \(B\) dentro de cada nível de \(A\) (\(A + B[A]\))</strong> </p>
+	                <table class="tabela2">
+                        <tr>
+                            <th rowspan="2" colspan="2"> </th>
+                            <th colspan="4">Fator B </th>
+                            <th rowspan="2"></th>
+                            
+                        </tr>
+                        <tr>
+                            <th> B1</th>
+                            <th> B2</th>
+                            <th> ...</th>
+                            <th> Bb</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="4"> Fator A</th>
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+
+                    </table>
+                    <p><strong>Efeito de \(A\) dentro de cada nível de \(B\) (\(B + A[B]\))</strong>
                     </p>
+                    <table class="tabela2">
+                        <tr>
+                            <th rowspan="2" colspan="2"> </th>
+                            <th colspan="4">Fator B </th>
+                            <th rowspan="2"></th>
+                            
+                        </tr>
+                        <tr>
+                            <th> B1</th>
+                            <th> B2</th>
+                            <th> ...</th>
+                            <th> Bb</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="4"> Fator A</th>
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+                        <tr>
+                            
+                            <th> A1 </th>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+                            <td> \(\mu_{11}\)</td>
+
+                        </tr>
+
+                    </table>
                     <h3> Exemplo - Fatorial 2X2</h3>
                     <p>  Os dados da Tabela 1 foram obtidos em um experimento fatorial \(2\times2\) segundo o delineamento inteiramente casualizado com três repetições, para analisar o efeito da calagem e da irrigação sobre o peso de plantas.
                     </p>
                     <table class="tabela2"> 
                         <caption> Tabela1: Peso de plantas cultivadas segundo o tratamento</caption>
                         <tr>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
+                            <td rowspan="4"> </td>
+                            <th> \(I_0C_0\)</th>
+                            <th> \(I_0C_1\)</th>
+                            <th> \(I_1C_0\)</th>
+                            <th> \(I_1C_1\)</th>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td>25 </td>
+                            <td>35 </td>
+                            <td>41 </td>
+                            <td>60 </td>
+                        </tr>
+                        <tr>
+                            <td>32 </td>
+                            <td>28 </td>
+                            <td>35 </td>
+                            <td>67 </td>
+                        </tr>
+                        <tr>
+                            <td>27 </td>
+                            <td>33 </td>
+                            <td>38 </td>
+                            <td>59 </td>
+                        </tr>
+                        <tr>
+                            <td> Totais</td>
+                            <td>84 </td>
+                            <td> 96</td>
+                            <td>114 </td>
+                            <td>282 </td>
                         </tr>
                     </table>
-                    <table> 
-                        <caption> Tabela1: Peso de plantas cultivadas segundo o tratamento</caption>
+                    <p> Fonte: Vieira, Sônia (2006)</p>
+                    <table>
+                        <caption> Tabela x. Quadro auxiliar de totais dos níveis dos fatores</caption>
                         <tr>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
+                            <th rowspan="2">Irrigação </th>
+                            <th colspan="2"> Calagem</th>
+                            <th rowspan="2"> Totais </th>
                         </tr>
                         <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <th> \(C_0\)</th>
+                            <th> \(C_1\)</th>
                         </tr>
-                    </table>
-                    <table> 
-                        <caption> Tabela1: Peso de plantas cultivadas segundo o tratamento</caption>
-                        <tr>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
-                            <th> </th>
+                        <tr> 
+                            <th>\(I_0) </th>
+                            <td> 84 (3)</td>
+                            <td> 96 (3)</td>
+                            <td> 180 (6)</td>
                         </tr>
-                        <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                        <tr> 
+                            <th>\(I_1) </th>
+                            <td> 114 (3)</td>
+                            <td> 186 (3)</td>
+                            <td> 300 (6)</td>
+                        </tr>
+                        <tr> 
+                            <th>Totais </th>
+                            <td> 198 (6)</td>
+                            <td> 282 (6)</td>
+                            <td> 480 (12)</td>
                         </tr>
                     </table>
+                    <p> Fonte: Vieira, Sônia (2006)</p>
                     <p> 
                         Soma de quadrados do Total
 
@@ -349,7 +473,7 @@
 
                          $$\displaystyle{SQ_{\text{I#C}} = SQ_{\text{I,C}} - SQ_{\text{I}} - SQ_{\text{C}}}$$ 
                     </p>
-                    <p> $$SQ_{\text{I\#C}} = 2088 - 1200 - 588 = 300$$
+                    <p> $$SQ_{\text{I#C}} = 2088 - 1200 - 588 = 300$$
 
 
 
@@ -360,52 +484,45 @@
                     </p>
                     <table>
                         <tr>
-                            <th> fv</th>
-                            <th></th>
-                            <th> </th>
-                            <th></th>
-                            <th> </th>
+                            <th> Fontes de variação</th>
+                            <th>Graus de liberdade</th>
+                            <th>SQ </th>
+                            <th>QM</th>
+                            <th>F </th>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Irrigação </td>
+                            <td>1</td>
+                            <td>1200 </td>
+                            <td>1200</td>
+                            <td> 88,89</td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Calagem </td>
+                            <td>1</td>
+                            <td>588 </td>
+                            <td>588</td>
+                            <td>43,56 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Interação </td>
+                            <td>1</td>
+                            <td>300 </td>
+                            <td>300</td>
+                            <td>22,22 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            
-                        </tr>
-                        <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
+                            <td>Resíduos </td>
+                            <td>8</td>
+                            <td>108 </td>
+                            <td>13,5</td>
                             <td> </td>
                             
                         </tr>
+                        
                     </table>
                     <p>$$F_{\text{tab}(5\%,1,8)} = 5,32$$ </p>
                     <p>Como \(\displaystyle{F = \frac{300}{13,5} = 22,22 > 5,32 = F_{tab}}\), ao nível de 5\% de significância, rejeita-se \(H_0\). Logo, há evidências para afirmar que há efeito da interação entre Irrigação e Calagem, não sendo os mesmos independentes.
@@ -423,52 +540,45 @@
                     </p>
                     <table>
                         <tr>
-                            <th> fv</th>
-                            <th></th>
-                            <th> </th>
-                            <th></th>
-                            <th> </th>
+                            <th> Fonte de variação</th>
+                            <th>Graus de liberdade</th>
+                            <th>SQ </th>
+                            <th>QM</th>
+                            <th>F </th>
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Calagem </td>
+                            <td>1</td>
+                            <td>588 </td>
                             <td></td>
                             <td> </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Irrigação dentro de \(C_0) </td>
+                            <td>1</td>
+                            <td>150 </td>
+                            <td>150</td>
+                            <td>11,11 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Irrigação dentro de \(C_1) </td>
+                            <td>1</td>
+                            <td>1350 </td>
+                            <td>1350</td>
+                            <td>100,00 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            
-                        </tr>
-                        <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
+                            <td>Resíduo </td>
+                            <td>8</td>
+                            <td>108 </td>
+                            <td>13,5</td>
                             <td> </td>
                             
                         </tr>
+                        
                     </table>
                     <p>$$H_0: \mu_{I_0C_0} = \mu_{I_1C_0}$$ 
 
@@ -483,12 +593,6 @@
                         $$H_0: \mu_{I_0C_0} = \mu_{I_1C_0}$$ 
                         $$H_a: \mu_{I_0C_0} \neq \mu_{I_1C_0}$$ 
                     </p>
-                    <table>
-                        <tr> 
-                            <th> </th>
-                            <th> </th>
-                        </tr>
-                    </table>
                     <p> $$F_{\text{tab}(5\%,1,8)} = 5,32$$</p>
                     <p>Como \(\displaystyle{F = \frac{150}{13,5} = 11,11 > 5,32 = F_{tab}}\), ao nível de 5\% de significância rejeita-se \(H_0\). Assim as médias de peso de plantas na ausência e na presença de irrigação são diferentes, quando avaliadas na ausência de Calcário.
                     </p>
@@ -515,49 +619,41 @@
                     </p>
                     <table>
                         <tr>
-                            <th> fv</th>
-                            <th></th>
-                            <th> </th>
-                            <th></th>
-                            <th> </th>
+                            <th> Fontes de Variação</th>
+                            <th>Graus de liberdade</th>
+                            <th>SQ </th>
+                            <th>QM</th>
+                            <th>F </th>
                         </tr>
                         <tr> 
+                            <td>Irrigação </td>
+                            <td>1 </td>
+                            <td>1200 </td>
                             <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
                             <td> </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td> Calagem dentro de \(I_0)</td>
+                            <td> 1</td>
+                            <td> 24</td>
+                            <td>24</td>
+                            <td>1,78 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
+                            <td>Calagem dentro de \(I_1) </td>
+                            <td>1</td>
+                            <td>864 </td>
+                            <td>864</td>
+                            <td>64,00 </td>
                             
                         </tr>
                         <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            
-                        </tr>
-                        <tr> 
-                            <td> </td>
-                            <td></td>
-                            <td> </td>
-                            <td></td>
+                            <td>Resíduo </td>
+                            <td>8</td>
+                            <td>108 </td>
+                            <td>13,5</td>
                             <td> </td>
                             
                         </tr>
@@ -575,44 +671,221 @@
                     </p>
                     <table>
                         <tr>
-                            <td> classi</td>
-                            <td> </td>
+                            <th rowspan="2"> Irrigação</th>
+                            <th colspan="2">Calagem</th>
+
+                        </tr>
+                        <tr>
+                            <th>\(C_0\)</th>
+                            <th> \(C_1\)</th>
+                        </tr>
+                        <tr>
+                            <th>\(I_0\) </th>
+                            <td>28 aB </td>
+                            <td>32 aB</td>
+                        </tr>
+                        <tr>
+                            <th>\(I_1\) </th>
+                            <td>38 bA </td>
+                            <td> 62 aA</td>
                         </tr>
                     </table>
                     <p>Letras minúsculas representam a comparação das médias de Calagem dentro de cada nível de Irrigação e letras maiúsculas representam a comparação das médias de Irrigação dentro de cada nível de Calagem. </p>
-                    <h3> Outro Exemplo </h3>
-                    <p> Os dados da Tabela 1 foram obtidos a partir de um experimento  usando o delineamento casualizado em blocos com três repetições e tratamentos no esquema fatorial $2\times4$. Teve como objetivo analisar o efeito de dois espaçamentos de plantio e de quatro espécies de Eucalipto sobre o diâmetro médio de plantas com cinco anos. O experimento foi conduzido por H. A. Mello e colaboradores em Mogi-Guaçu (1966-1971).</p>
-                    <table class="tabela2">
+                    <h3>Exemplo: Experimento com dois fatores qualitativos  </h3>
+                    <p> Teste de variâncias (anova) procede-se normalmente, porém, existem dois casos possíveis:</p>
+                    <p><strong>Efeito da interação ser significativo</strong></p>
+                    <p>Para cada nível de B, comparar as médias sob os diferentes níveis de A
+                    </p>
+                    <p>Ou seja, para B = Bx, comparar:</p>
+                    <p> $$ \mu_{A1Bx}, \mu_{A2Bx}, \mu_{A3Bx}, \ldots $$</p>
+                    <p>Para cada nível de A, comparar as médias sob os diferentes níveis de B
+                    </p>
+                    <p>Ou seja, para A = Ax, comparar:</p>
+                    <p> $$ \mu_{AxB1}, \mu_{AxB2}, \mu_{AxB3}, \ldots $$</p>
+                    <p><strong>Efeito da interação não significativo</strong></p>
+                    <p>Comparar médias em diferentes níveis de A ou B isoladamente</p>
+                    <h3> Exemplo: Um fator quantitativo outro qualitativo</h3>
+                    <p> Seja o fator A= doses de nitrogênio em kg/ha e o fator B variedade</p>
+                    <table>
+                        <caption>Os dados que se seguem referem-se à produção (kg/ha) de milho de um experimento no esquema fatorial 3x5 no delineamento casualizado em blocos (adaptação).
+                        </caption>
                         <tr>
-                            <th rowspan="2"> Espécies </th>
-                            <th colspan="2"> Bloco 1</th>
-                            <th colspan="2"> Bloco 2</th>
-                            <th colspan="2"> Bloco 3</th>
-                        </tr>
-                        <tr> 
-                            <th> 3x1,5</th>
-                            <th> 3x2</th>
-                            <th> 3x1,5</th>
-                            <th> 3x2</th>
-                            <th> 3x1,5</th>
-                            <th> 3x2</th>
-                        </tr>
-                        <tr>
-                            <td> E. saligna</td>
-                             
+                            <th rowspan="2">Doses de N </th>
+                            <th rowspan="2">Variedade</th>
+                            <th colspan="5"> Blocos </th>
+                            <th rowspan="2">Totais</th>
 
                         </tr>
                         <tr>
-                            
-                            <td> E. grandis</td>
-                           
+                            <th> 1 </th>
+                            <th> 2 </th>
+                            <th> 3 </th>
+                            <th> 4 </th>
+                            <th> 5 </th>
                         </tr>
                         <tr>
-                           
-                            <td> E. alba</td>
-                            
-
+                            <th rowspan="5"> 0</th>
+                            <td> V1 </td>
+                            <td>2625 </td>
+                            <td>2350 </td>
+                            <td>3100 </td>
+                            <td>2270 </td>
+                            <td>1830 </td>
+                            <td>12175 </td>
                         </tr>
+                        <tr>
+                            
+                            <td> V2 </td>
+                            <td>3400 </td>
+                            <td>4370 </td>
+                            <td>3780 </td>
+                            <td>4120 </td>
+                            <td>4170 </td>
+                            <td>19840 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V3 </td>
+                            <td> 3660</td>
+                            <td>5300 </td>
+                            <td>5140 </td>
+                            <td>3980 </td>
+                            <td>3190 </td>
+                            <td>21270 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V4 </td>
+                            <td>3720 </td>
+                            <td>4150 </td>
+                            <td>3480 </td>
+                            <td>3930 </td>
+                            <td>3240 </td>
+                            <td>18520 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V5 </td>
+                            <td>5600 </td>
+                            <td>5870 </td>
+                            <td>4910 </td>
+                            <td>5850 </td>
+                            <td>4690 </td>
+                            <td>26920 </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5"> 30</th>
+                            <td> V1 </td>
+                            <td>2950 </td>
+                            <td>3150 </td>
+                            <td>2840 </td>
+                            <td>3430 </td>
+                            <td>2640 </td>
+                            <td>15010 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V2 </td>
+                            <td>3100 </td>
+                            <td>2560 </td>
+                            <td>3870 </td>
+                            <td>3060 </td>
+                            <td>2780 </td>
+                            <td>15370 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V3 </td>
+                            <td>5620 </td>
+                            <td>6030 </td>
+                            <td>5650 </td>
+                            <td>4950 </td>
+                            <td>4890 </td>
+                            <td>27140 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V4 </td>
+                            <td>4900 </td>
+                            <td>5560 </td>
+                            <td>4720 </td>
+                            <td>5120 </td>
+                            <td>5190 </td>
+                            <td>25490 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V5 </td>
+                            <td>5420 </td>
+                            <td>5880 </td>
+                            <td>5260 </td>
+                            <td>5270 </td>
+                            <td>5720 </td>
+                            <td>27550 </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5"> 60</th>
+                            <td> V1 </td>
+                            <td>2600 </td>
+                            <td>2380 </td>
+                            <td> 3130</td>
+                            <td>2620 </td>
+                            <td>2490 </td>
+                            <td>13220 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V2 </td>
+                            <td>3140 </td>
+                            <td>3480 </td>
+                            <td>3350 </td>
+                            <td>3260 </td>
+                            <td>2870 </td>
+                            <td>16100 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V3 </td>
+                            <td>3620 </td>
+                            <td>4010 </td>
+                            <td>4230 </td>
+                            <td>3740 </td>
+                            <td>3930 </td>
+                            <td>19530 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V4 </td>
+                            <td>3870 </td>
+                            <td>3640 </td>
+                            <td>3760 </td>
+                            <td>2480 </td>
+                            <td>2280 </td>
+                            <td>16030 </td>
+                        </tr>
+                        <tr>
+                            
+                            <td> V5 </td>
+                            <td>5040 </td>
+                            <td>6170 </td>
+                            <td>5680 </td>
+                            <td>5190 </td>
+                            <td>4630 </td>
+                            <td>26710 </td>
+                        </tr>
+                        <tr>
+                            <th> Totais</th>
+                            <td> </td>
+                            <td>59265 </td>
+                            <td>64900 </td>
+                            <td>62900 </td>
+                            <td>59270 </td>
+                            <td>54540 </td>
+                            <td>300875 </td>
+                        </tr>
+
+
+
                     </table>
                 </div>
                 <section class="atividade">
