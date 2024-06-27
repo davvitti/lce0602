@@ -222,3 +222,11 @@ th {
 .form-content table{
     margin: auto;
 }
+
+code{
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 8px;
+    
+
+}
+

@@ -311,7 +311,7 @@ body{
 }
 
 img {
-    width: 80%;
+    width: 50%;
     align-items: center;
 }
 
@@ -322,3 +322,8 @@ figcaption {
 p{
     text-indent: 40px;
 }
+
+.imagem{
+    margin-top: 8px;
+}
+
