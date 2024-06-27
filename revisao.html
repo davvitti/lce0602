@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/question.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -71,7 +72,7 @@
                     <p>  Segundo o dicionário Michaelis a estatística é o ramo da matemática responsável pela coleção, análise e interpretação de dados numéricos a respeito de fenômenos coletivos ou de massa. Realizar a representação numérica e comparativa, em tabelas ou gráficos, dos resultados da análise desses fenômenos.</p>
                     <p> Nesse sentido, é necessário entender que, para se obter bons resultados pressupõe-se um bom planejamento, boa coleta e organização dos dados com descrição detalhada de todos os acontecimentos que envolvem esses dados. </p>
                     <figure>
-                        <img src="figs/figs/estatistica3.jpg">
+                        <img src="figs/revis/estatistica3.jpg">
                     </figure>
                     <p> - <u>Levantamento:</u> Observa-se o fenômeno como ele é na natureza. Exemplo: Dados climáticos</p>
 
@@ -114,14 +115,14 @@
                         
                     <p><strong> Construção de um gráfico de caixas </strong></p>
                         
-                    <p>   -   Calcular o primeiro quartil (\(Q_1\)), a mediana (Md) e o terceiro quartil (\(Q_3\));
-                        <p>    -   Calcular a distância interquartílica: \(AIQ = Q_3 - Q_1\);
-                            <p>  -   Verificar a existência de observações atípicas, ou seja, valores menores do que \(Q_1-1,5\mbox{AIQ}\) ou maiores do que     \(Q_3+1,5\mbox{AIQ}\), representados individualmente no gráfico de  caixas por \(\ast\);
-                                <p> -   Calcular os limites inferior e superior dos dados sem considerar as observações atípicas;
-                                    <p>-   Construir o gráfico seguindo o esquema a seguir: 
+                    <p>   -   Calcular o primeiro quartil (\(Q_1\)), a mediana (Md) e o terceiro quartil (\(Q_3\));</p>
+                    <p>    -   Calcular a distância interquartílica: \(AIQ = Q_3 - Q_1\);</p>
+                    <p>  -   Verificar a existência de observações atípicas, ou seja, valores menores do que \(Q_1-1,5\mbox{AIQ}\) ou maiores do que     \(Q_3+1,5\mbox{AIQ}\), representados individualmente no gráfico de  caixas por \(\ast\);</p>
+                    <p> -   Calcular os limites inferior e superior dos dados sem considerar as observações atípicas;</p>
+                    <p>-   Construir o gráfico seguindo o esquema a seguir: 
                     </p>
                     <figure>
-                        <img src="figs/revisao_files/figure-html/unnamed-chunk-3-1.png">
+                        <img src="figs/revis/unnamed-chunk-3-1.png">
                     </figure>
                     <h3> Estimadores intervalares</h3>
                     <h4> Intervalo de confiança</h4>
@@ -158,187 +159,34 @@
                 <section class="atividade">
                     <h2>Atividades</h2>
                 </section>
-                <form id="form" class="form">
-                    <div class="form-content">
-                        <label for="atividade1">
-                            <p>1- Os pesos ao nascer de 12 bezerros machos da raça Charolesa são os seguintes, em kg:</p>
-                            <table>
-                                <tr> 
-                                    <td> 47 </td>
-                                    <td>41 </td>
-                                    <td>34 </td>
-                                    <td> 45</td>
-                                </tr>
-                                <tr> 
-                                    <td> 45</td>
-                                    <td>46 </td>
-                                    <td>25 </td>
-                                    <td>48 </td>
-                                </tr>
-                                <tr> 
-                                    <td>37 </td>
-                                    <td>47 </td>
-                                    <td>40 </td>
-                                    <td>40 </td>
-                                </tr>
+                <p> Com base na tabela a abaixo referente a massa do bezerro ao nascer (kg), responda:</p>
+                <table class="tabela2">
+                    <tr> 
+                        <td> 47 </td>
+                        <td>41 </td>
+                        <td>34 </td>
+                        <td> 45</td>
+                    </tr>
+                    <tr> 
+                        <td> 45</td>
+                        <td>45 </td>
+                        <td>32 </td>
+                        <td>48 </td>
+                    </tr>
+                    <tr> 
+                        <td>37 </td>
+                        <td>47 </td>
+                        <td>40 </td>
+                        <td>40 </td>
+                    </tr>
 
-                            </table>
-                        </label>
-                        <p> Faça uma análise descritiva dos dados.</p>
-                        <table>
-                            <tr>
-                                <th> Média</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Mediana</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Moda</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Variância</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Desvio-padrão</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Quartil 1</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> Quartil 3</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th> AIQ</th>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at1"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                        </table>
-                        
-        
-                    </div>       
-                            
-                    <div class="form-content">
-                        <label for="atividade2">Responda sobre o tipo de variável.</label>
-                        <table>
-                            <tr>
-                                <td> Número de funcionários de uma empresa</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at8"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Nível de escolaridade</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Diferentes doses de Nitrogênio</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at10"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Estado civil</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at10"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                        </table>
-                                
-                        
-                        <a>mensagem</a>
-        
-                    </div>
-        
-                    
-                    <button type ="submit"> enviar</button>
-        
-        
-                </form>
-        
+                </table>
+                <div class="quiz-container">
+                    <div id="quiz"></div>
+                    <button onclick="submitQuiz()">Ver respostas</button>
+                    <div id="result" class="result"></div>
+                </div>
+                
             </div>
 
 
@@ -351,5 +199,6 @@
 
     <script src="java/atividade.js"></script>
     <script src="java/navbar.js"></script>
+    <script src="java/rev.js"></script>
 </body>
 </html>

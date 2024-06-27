@@ -297,6 +297,9 @@
                         <figcaption>Análise exploratória dos dados</figcaption>
                         <img src="figs/grups_files/figure-html/unnamed-chunk-4-1.png">
                     </figure>
+                    <figure>
+                        <img src="figs/grupos/unnamed-chunk-10-1.png">
+                    </figure>
                     <p>- Os experimentos são instalados em locais distintos ou em tempos distintos (repetição do experimento);</p>
  
                     <p> - De modo geral, em casos completos e balanceados, os mesmos tratamentos são avaliados em cada um dos experimentos, seguindo o mesmo delineamento e o mesmo número de repetições. 
@@ -314,6 +317,7 @@
                        <p>- Obter o coeficiente de variação;</p>
                         <p>- Avaliar os efeitos de interesse (efeitos de interação e efeitos principais).
                     </p>
+                    
                     <h4>ANOVA Local 1: Araraquara </h4>
                     <table class="tabela2">
                         <tr>
@@ -430,10 +434,28 @@
                         </tr>
                     </table>
                     <p> Ao nível de 5% de significância, há evidências para rejeitarmos \(H_0\). Logo,  há efeito significativo de progênie quando avaliado em Mogi-Guaçu.</p>
+                    <h3>Análise conjunta: modelo estatístico</h3>
+                    <p> $$y_{kji}= \mu + \alpha_k + \beta_{j(k)}+ \tau_i + (\alpha l)_{ik} + e_{ijk}$$</p>
+                    <p> Em que: </p>
+                    <p>* \(y_{ijk}\) é o valor observado referente a i-ésima variedade no bloco j do k-ésimo local; </p>
+                    <p>* \(\mu\) é uma constante</p>
+                    <p>* \(\alpha_1\) é o efeito da i-ésimo tratamento</p>
+                    <p>* \(\beta_{j(k)}\) é o efeito do j-ésimo bloco no k-ésimo local; </p>
+                    <p>* \(\alpha l_{ik}\) é o efeio da interação d0 i-ésimo tratamento com k-ésimo local;</p>
+                    <p>$$ SQ_{trat}= \frac{1}{JK}\sum_i{y_i^2}\ldots-\frac{y^2}{IJK}$$</p>
+                    <p>$$ SQ_{Local}= \frac{1}{JK}\sum_i{y_k^2}\ldots-\frac{y^2}{IJK}$$</p>
+                    <p>$$ SQ_{LocaisxTrat}= SQ_{Locais, trat} - SQ_{trat} - SQ_{local}$$</p>
+                    <p>$$ SQ_{Locais, trat} = \frac{1}{J}\sum\sum{y^2}-\frac{y^2}{IJK}$$</p>
+                    <p>$$ SQ_{Total}= \sum\sum\sum{y^2}-\frac{y^2...}{IJK}$$</p>
+                    <p>$$ SQ_{Blocos(Locais)}= \sum{SQBlocos(Locais)}$$</p>
+                    <p>$$ SQ_{ResíduoMédio}= SQ_{Total}- SQ_{Bloco(locais)}-SQ_{Locais}-SQ_{Locaisxtrat}$$</p>
+                    <h3> Comparações múltiplas</h3>
+                    
                     <figure>
-                        <img src="figs/grups_files/figure-html/unnamed-chunk-35-1.png">
+                        <img src="figs/grupos/unnamed-chunk-21-1.png">
                     </figure>
                 </div>
+                
                 <section class="atividade">
                     <h2>Atividades</h2>
                 </section>
@@ -594,6 +616,11 @@
         
         
                 </form>
+                <div class="quiz-container">
+                    <div id="quiz"></div>
+                    <button onclick="submitQuiz()">Ver respostas</button>
+                    <div id="result" class="result"></div>
+                </div>
         
             </div>
 
@@ -604,7 +631,7 @@
        
     </section>
 
-
+    <script src="java/grupos.js"></script>
     <script src="java/atividade.js"></script>
     <script src="java/navbar.js"></script>
 </body>

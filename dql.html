@@ -92,11 +92,11 @@
                     <p>[KERR, 2014](https://academic.oup.com/forestscience/article/60/6/1194/4583920) </p>
                     <figure>
                         <figcaption> Experimento em delineamento quadrado latino</figcaption>
-                        <img src="figs/figs/LatinSquareFisher.jpg">
+                        <img src="figs/dql/LatinSquareFisher.jpg">
                     </figure>
                     <h3> Croqui: comparação entre delineamentos</h3>
                     <figure>
-                        <img src="figs/dql_files/figure-html/unnamed-chunk-3-1.png">
+                        <img src="figs/dql/unnamed-chunk-3-1.png">
                     </figure>
                     <h3> Análise dos dados</h3>
                     <h4> Modelo estatístico</h4>
@@ -105,12 +105,12 @@
                     <p> 
                         em que:</p>
 
-                        <p>    * \(y_{ij(k)}\) é o valor observação na \(i-\)ésima linha e na \(j\)-ésima coluna (que recebeu o \(k\)-ésimo tratamento);</p>
-                            <p>    * \(\mu\) é uma constante comum a todas as observações;</p>
-                                <p>   * \(l_i\) é o efeito da \(i\)-ésima linha;</p>
-                                    <p>   * \(c_j\) é o efeito da \(j\)-ésima coluna;</p>
-                                        <p>   * \(\tau_{k(ij)}\) é o efeito do \(k\)-ésimo tratamento, e</p>
-                                            <p>   * \(e_{ijk}\) é o erro experimental, tal que \(e_{ijk} \sim N(0, \sigma^2)\).
+                    <p>    * \(y_{ij(k)}\) é o valor observação na \(i-\)ésima linha e na \(j\)-ésima coluna (que recebeu o \(k\)-ésimo tratamento);</p>
+                    <p>    * \(\mu\) é uma constante comum a todas as observações;</p>
+                    <p>   * \(l_i\) é o efeito da \(i\)-ésima linha;</p>
+                    <p>   * \(c_j\) é o efeito da \(j\)-ésima coluna;</p>
+                    <p>   * \(\tau_{k(ij)}\) é o efeito do \(k\)-ésimo tratamento, e</p>
+                    <p>   * \(e_{ijk}\) é o erro experimental, tal que \(e_{ijk} \sim N(0, \sigma^2)\).
                     </p>
                     <p>
                         <strong>Restrições</strong></p>
@@ -127,11 +127,10 @@
                         
                         <p>\(\hat{\mu} = \bar{y}\)</p>
                         
-                            <p>\(\hat{\tau}_k = \bar{y}_k - \bar{y}\)</p>
+                        <p>\(\hat{\tau}_k = \bar{y}_k - \bar{y}\)</p>
+                        <p> \(\hat{l}_i = \bar{y}_i - \bar{y}\)</p>
                         
-                                <p> \(\hat{l}_i = \bar{y}_i - \bar{y}\)</p>
-                        
-                                    <p>\(\hat{c}_j = \bar{y}_j - \bar{y}\)</p>
+                        <p>\(\hat{c}_j = \bar{y}_j - \bar{y}\)</p>
                             
                        <h4>Hipóteses de interesse</h4>
                         
@@ -574,6 +573,11 @@
         
         
                 </form>
+                <div class="quiz-container">
+                    <div id="quiz"></div>
+                    <button onclick="submitQuiz()">Ver respostas</button>
+                    <div id="result" class="result"></div>
+                </div>
         
             </div>
 
@@ -584,7 +588,7 @@
        
     </section>
 
-
+    <script src="java/dql.js"></script>
     <script src="java/atividade.js"></script>
     <script src="java/navbar.js"></script>
 </body>

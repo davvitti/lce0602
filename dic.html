@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/question.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -813,6 +814,11 @@
         
         
                 </form>
+                <div class="quiz-container">
+                    <div id="quiz"></div>
+                    <button onclick="submitQuiz()">Submeter</button>
+                    <div id="result" class="result"></div>
+                </div>
         
             </div>
 
@@ -825,5 +831,6 @@
     <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="java/atividade.js"></script>
     <script src="java/navbar.js"></script>
+    <script src="java/dic.js"></script>
 </body>
 </html>
