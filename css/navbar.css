@@ -327,3 +327,12 @@ p{
     margin-top: 8px;
 }
 
+.r{
+    background-color: gray;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.code{
+    background-color: gray;
+}
