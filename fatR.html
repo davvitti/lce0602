@@ -111,7 +111,7 @@
                            aes(x = Tratamento, 
                                y = diametro)) +
                       geom_point()</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
                     <pre class="r"><code>with(dados,
                          tapply(diametro, Espacamento, mean))</code></pre>
                     <pre><code>##     3x1.5       3x2 
@@ -126,7 +126,7 @@
                                 fun = mean) +
                       xlab(&quot;espaçamento entre plantas&quot;) +
                       ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
                     <pre class="r"><code>with(dados,
                          tapply(diametro, Especie, mean))</code></pre>
                     <pre><code>##      E. alba   E. grandis E. propinqua   E. saligna 
@@ -141,7 +141,7 @@
                                 fun = mean)+
                       xlab(&quot;espécie de eucalipto&quot;) +
                       ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
                     <pre class="r"><code>with(dados,
                          tapply(diametro, 
                                 list(Espacamento, 
@@ -160,7 +160,7 @@
                                 fun = mean)+
                       xlab(&quot;espaçamento entre plantas&quot;) +
                       ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, 
                            aes(x = Especie, 
                                y = diametro, 
@@ -172,7 +172,7 @@
                                 fun = mean)+
                       xlab(&quot;espécie de eucalipto&quot;) +
                       ylab(&quot;diâmetro médio (cm)&quot;) </code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; ## Ajuste do modelo
                     #&#39;  
@@ -194,7 +194,7 @@
                     <pre class="r"><code>hnp(modelo,
                         print.on = TRUE)</code></pre>
                     <pre><code>## Gaussian model (lm object)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; Teste de normalidade:
                     #&#39; 
@@ -215,12 +215,12 @@
                            aes(x = Tratamento, 
                                y = res_Stud)) +
                       geom_point()</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, 
                            aes(x = Bloco, 
                                y = res_Stud)) +
                       geom_point()</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; Teste de homogeneidade de variâncias
                     #&#39; 
@@ -248,13 +248,13 @@
                            aes(x = fitted(modelo), 
                                y = res_Stud)) +
                       geom_point()</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; Box-Cox
                     #&#39;
                     library(MASS)
                     boxcox(modelo)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; Não há necessidade de transformação dos dados, pois $\lambda = 1$ pertence ao intervalo de confiança.
                     #&#39;
@@ -310,7 +310,7 @@
                     ## attr(,&quot;class&quot;)
                     ## [1] &quot;group&quot;</code></pre>
                     <pre class="r"><code>plot(Tukey.Especie)</code></pre>
-                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+                    <p><img src="/figs/aula8_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
                     <pre class="r"><code>library(ExpDes.pt)</code></pre>
                     <pre><code>## 
                     ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>

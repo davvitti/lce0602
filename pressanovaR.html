@@ -102,7 +102,7 @@
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
                       xlab(&quot;Variedade&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
                     <pre class="r"><code>#&#39; ## Análise de variância - ajuste do modelo
                     
                     modelo &lt;- lm(y ~ trat, dados)
@@ -124,7 +124,7 @@
                     <pre class="r"><code>#&#39; - Observações discrepantes
                     
                     boxplot(res_Stud)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
                     <pre class="r"><code>#&#39; São observados dois valores discrepantes para os resíduos, quando esperada a normalidade dos erros. Logo, não se observa 95\% dos resíduos entre -2 e 2, entretanto 100\% destes estão entre -3 e 3.
                     
                     
@@ -135,7 +135,7 @@
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
                       xlab(&quot;Variedade&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Observa-se que os dois valores discrepantes estão relacionados às variedades C e D. A dispersão dos resíduos por tratamento será discutida posteriormente.
                     #&#39;
                     #&#39; ## Homogeneidade de Variâncias
@@ -147,7 +147,7 @@
                       theme_bw() +
                       ylab(&quot;Resíduos Estudentizados&quot;) +
                       xlab(&quot;Variedade&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Observa-se que as dispersões dos resíduos estudentizados associados às variedades A e B são menores do que as dispersões dos resíduos estudentizados associados às variedades C e D, aparentemente.
                     
                     #&#39;
@@ -171,7 +171,7 @@
                     
                     qqnorm(res_Stud)
                     qqline(res_Stud, col=2)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Observa-se o afastamento de dois pontos da reta que passa pelos pontos ($Q_{1_{esp}}$, $Q_{1_{obs}}$) e ($Q_{3_{esp}}$, $Q_{3_{obs}}$). Desse modo, espera-se que os erros não sigam uma distribuição normal.
                     
                     
@@ -180,7 +180,7 @@
                     <pre class="r"><code>hnp(modelo,
                         print.on = TRUE)</code></pre>
                     <pre><code>## Gaussian model (lm object)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
                     <pre class="r"><code>#&#39; É aceitável que pelo menos 95\% dos pontos pertençam ao intervalo de confiança gerado. Para o exemplo, tem-se mais de 5\% destes foram do intervalo. Assim, é esperado que os erros não sigam uma distribuição normal.
                     #&#39;
                     #&#39; - Teste de hipóteses: Shapiro-Wilk (1965)
@@ -208,7 +208,7 @@
                       geom_hline(yintercept = 0) +
                       ylab(&quot;Resíduos estudentizados&quot;) +
                       xlab(&quot;Valores esperados (médias)&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Observa-se o aumento da dispersão conforme os valores preditos aumentam. Assim, é esperado que uma transformação da família Box-Cox seja necessária.
                     
                     
@@ -218,7 +218,7 @@
                     library(MASS)
                     boxcox(dados$y+0.5 ~ dados$trat,
                            ylab=&quot;logaritmo da verossimilhança&quot;) #lambda=0,5.</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Observe que o valor 1 não pertence ao intervalo de confiança a 95\% para $\lambda$, porém, o valor 0,5 pertence, sendo este o valor indicado de $\lambda$.
                     
                     #&#39;
@@ -232,12 +232,12 @@
                     qqnorm(rstandard(modelot), xlab=&quot;Quantis da distribuição
                            normal&quot;, ylab=&quot;Resíduos estudentizados&quot;)
                     qqline(rstandard(modelot), col=2)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Com os dados transformados e novo modelo ajustado, tem-se que 95\% dos resíduos encontram-se entre -2 e 2 e, os pontos não apresentam grande afastamento da reta, o que indica possível normalidade dos erros.
                     
                     hnp(modelot, print.on = TRUE)</code></pre>
                     <pre><code>## Gaussian model (lm object)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Com os dados transformados e novo modelo ajustado, tem-se que todos os pontos pertencem ao envelope simulado, indicando possível normalidade dos erros.
                     
                     #&#39; $$\begin{array}{l}
@@ -264,7 +264,7 @@
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
                       xlab(&quot;Variedade&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Aparentemente, as dispersões dos resíduos por tratamento são semelhantes.
                     
                     
@@ -293,11 +293,11 @@
                       theme_bw() +
                       ylab(&quot;Resíduos Estudentizados&quot;) +
                       xlab(&quot;Valores esperados (médias)&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-12.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-12.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Agora, aparentemente, há um leve aumento na dispersão dos resíduos conforme o valor predito aumenta.
                     
                     boxcox(modelot, ylab=&quot;logaritmo da verossimilhança&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-13.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-13.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Quando utilizados os dados transformados, verifica-se que o valor 1 pertence ao intervalo de confiança para $\lambda$. Desse modo, nova transformação não é indicada.
                     #&#39;
                     #&#39; ## Análise de Variância
@@ -402,7 +402,7 @@
                       xlab(&quot;Variedade&quot;) +
                       ylab(&quot;número de estacas enraizadas
                            (médias obtidas pela transformação inversa)&quot;)</code></pre>
-                    <p><img src="aula6_files/figure-html/unnamed-chunk-1-14.png" width="672" /></p>
+                    <p><img src="/figs/aula6_files/figure-html/unnamed-chunk-1-14.png" width="672" /></p>
                     
             </div>
         </section>

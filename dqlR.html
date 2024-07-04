@@ -162,7 +162,7 @@
                     ##     summary</code></pre>
                     <pre class="r"><code>plot_latin_square(Planejamento,
                                       factor_name = &quot;Variedades&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
                     <pre class="r"><code># library(ggplot2)
                     # ggplot(Plano, aes(x = col, y = row, label = Variedades)) +
                     #   geom_tile(aes(fill = Variedades), color=&quot;black&quot;) +
@@ -235,12 +235,12 @@
                       geom_text() +
                       xlab(&quot;Colunas&quot;) +
                       ylab(&quot;Linhas&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, 
                            aes(x = trat, 
                                y = prod)) +
                       geom_point()</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
                     <pre class="r"><code>#&#39; ## Ajuste do modelo
                     #&#39; 
                     modelo &lt;- aov(prod ~ linha + coluna + trat,
@@ -264,7 +264,7 @@
                            aes(x=res_stud)) +
                       geom_boxplot() +
                       labs(y = &quot;Resíduos Studentizados&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
                     <pre class="r"><code>#&#39; - Normalidade
                     #&#39;
                     # qqnorm(res_stud,
@@ -276,7 +276,7 @@
                     <pre class="r"><code>hnp(modelo,
                         print.on = TRUE)</code></pre>
                     <pre><code>## Gaussian model (aov object)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
                     <pre class="r"><code>#&#39; $H_0$: Os erros seguem uma distribuição normal *versus* 
                     #&#39; $H_1:$ Os erros não seguem uma distribuição normal.
                     shapiro.test(res_stud)</code></pre>
@@ -294,21 +294,21 @@
                       geom_point() +
                       xlab(&quot;Tratamentos&quot;) +
                       ylab(&quot;Resíduos Studentizados&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, 
                            aes(x = coluna, 
                                y = res_stud)) +
                       geom_point() +
                       xlab(&quot;Colunas&quot;) +
                       ylab(&quot;Resíduos Studentizados&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, 
                            aes(x = linha, 
                                y = res_stud)) +
                       geom_point() +
                       xlab(&quot;Linhas&quot;) +
                       ylab(&quot;Resíduos Studentizados&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
                     <pre class="r"><code>#&#39; $H_0$: Há homogeneidade de variâncias *versus* 
                     #&#39; $H_1:$ Não há homogeneidade de variâncias.
                     
@@ -337,13 +337,13 @@
                       ylab(&quot;Resíduos Studentizados&quot;) +
                       geom_hline(yintercept = 0, 
                                  col = &quot;red&quot;)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
                     <pre class="r"><code>library(MASS)
                     boxcox(modelo)</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
                     <pre class="r"><code>boxcox(modelo,
                            lambda = seq(0, 3, 0.01))</code></pre>
-                    <p><img src="aula7_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+                    <p><img src="/figs/aula7_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
                     <pre class="r"><code>#&#39; Como $\lambda = 1$ pertence ao intervalo de confiança e as 
                     #&#39; pressuposições de normalidade dos erros e homogeneidade de 
                     #&#39; variâncias foram atendidas, não há necessidade de 

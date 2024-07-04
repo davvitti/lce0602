@@ -164,7 +164,7 @@
                         <pre class="r"><code>plot_design_crd(delineamento,
                                     ncols = 4,
                                     nrows = 5)</code></pre>
-                        <p><img src="about_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+                        <p><img src="figs/about_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
                         <pre class="r"><code># Para montar um croqui precisamos de um gride, definido por linhas e colunas
                     delineamento$book$Linha &lt;- rep(1:5, each = 4)
                     delineamento$book$Coluna &lt;- rep(1:4, times = 5)
@@ -204,7 +204,7 @@
                       geom_text() +
                       xlab(&quot;&quot;) +
                       ylab(&quot;&quot;) #+</code></pre>
-                        <p><img src="about_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+                        <p><img src="\figs\about_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
                         <pre class="r"><code>  # guides(fill = guide_legend(title=&quot;tratamentos&quot;))</code></pre>
                         <pre class="r"><code>#&#39; # Análise dos dados
                     #&#39; 
@@ -229,12 +229,12 @@
                                colour = &quot;blue&quot;) +
                       xlab(&quot;tratamentos&quot;) +
                       ylab(&quot;produtividade&quot;)</code></pre>
-                        <p><img src="about_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+                        <p><img src="/figs/about_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
                         <pre class="r"><code>ggplot(dados,
                            aes(x = trat,
                                y = y)) +
                       geom_boxplot()</code></pre>
-                        <p><img src="about_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+                        <p><img src="/figs/about_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
                         <pre class="r"><code>#&#39; ## Estatísticas descritivas
                     n &lt;- with(dados, tapply(y,trat, length))
                     soma &lt;- with(dados, tapply(y,trat,sum))
