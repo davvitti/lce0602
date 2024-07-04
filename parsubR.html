@@ -220,7 +220,7 @@
                             axis.text.x = element_blank(),
                             axis.title.x = element_blank(),
                             legend.position = &quot;bottom&quot;)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
                     <pre class="r"><code>#&#39; 
                     #&#39; ## DBC
                     #&#39; 
@@ -484,7 +484,7 @@
                       xlab(&quot;parcelas&quot;) +
                       ylab(&quot;subparcelas&quot;) +
                       theme(legend.position = &quot;bottom&quot;)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
                     <pre class="r"><code>#&#39; 
                     #&#39; ## DQL (lembrando que r = a*b)
                     #&#39; 
@@ -680,7 +680,7 @@
                             axis.text.x = element_blank(),
                             axis.title.x = element_blank(),
                             legend.position = &quot;bottom&quot;)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
                     <pre class="r"><code>#&#39; #Análise dos dados (exemplo)
                     
                     #&#39; Banzatto e Kronka (1992), apresentaram o ensaio citado por 
@@ -723,7 +723,7 @@
                       ylab(&quot;produção&quot;) +
                       theme_bw() +
                       ylim(25,80)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
                     <pre class="r"><code>with(dados,
                          tapply(prod, Semente, mean))</code></pre>
                     <pre><code>##      B1      B2      B3      B4 
@@ -741,7 +741,7 @@
                       ylab(&quot;produção&quot;) +
                       theme_bw() +
                       ylim(25,80)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
                     <pre class="r"><code>with(dados,
                          tapply(prod, list(Variedade, Semente), mean))</code></pre>
                     <pre><code>##        B1     B2     B3    B4
@@ -761,7 +761,7 @@
                       ylab(&quot;produção&quot;) +
                       theme_bw() +
                       ylim(25,80)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
                     <pre class="r"><code>ggplot(dados, aes(x = Semente, 
                                       y = prod, 
                                       group = Variedade, 
@@ -774,7 +774,7 @@
                       ylab(&quot;produção&quot;) +
                       theme_bw() +
                       ylim(25,80)</code></pre>
-                    <p><img src="/figs/aula9_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <p><img src="figs/aula9_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
                     <pre class="r"><code>#&#39;
                     #&#39; ## Ajuste do modelo
                     #&#39;  
