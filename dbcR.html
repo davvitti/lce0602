@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCE0602</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> <a href="sobre.html"><span>Estatística experimental</span></a></div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="index.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="estgeralR.html"><span>Revisão: estatística geral</span></a></li>
+                            <li><a href="dicR.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cmR.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoliR.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="pressanovaR.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbcR.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dqlR.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fatR.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parsubR.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gruposR.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="dicpt.html"><span>Exercícios</span></a></li>
+
+                        </ul>
+                    </li>
+                   
+                     
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+            
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <pre class="r"><code>#&#39; # Planejamento de um experimento 
+
+                    sample(1:9) </code></pre>
+                    <pre><code>## [1] 4 9 7 8 1 2 3 5 6</code></pre>
+                    <pre class="r"><code>sample(1:9) </code></pre>
+                    <pre><code>## [1] 2 1 7 8 5 6 3 9 4</code></pre>
+                    <pre class="r"><code>sample(1:9) </code></pre>
+                    <pre><code>## [1] 8 9 1 6 2 7 4 5 3</code></pre>
+                    <pre class="r"><code>#&#39; ## Utilizando a biblioteca agricolae
+                    library(agricolae)
+                    (trat &lt;- paste(&quot;T&quot;, 1:9, sep =&quot;&quot;))</code></pre>
+                    <pre><code>## [1] &quot;T1&quot; &quot;T2&quot; &quot;T3&quot; &quot;T4&quot; &quot;T5&quot; &quot;T6&quot; &quot;T7&quot; &quot;T8&quot; &quot;T9&quot;</code></pre>
+                    <pre class="r"><code>Casualizando &lt;- design.rcbd(trt = trat,
+                                                r = 3)
+                    
+                    library(agricolaeplotr)</code></pre>
+                    <pre><code>## 
+                    ## Type &#39;citation(&quot;agricolaeplotr&quot;)&#39; for citing this R package in publications.</code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;agricolaeplotr&#39;</code></pre>
+                    <pre><code>## The following object is masked from &#39;package:base&#39;:
+                    ## 
+                    ##     summary</code></pre>
+                    <pre class="r"><code>plot_rcdb(Casualizando,
+                              factor_name = &quot;trat&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <pre class="r"><code>(Delineamento &lt;-Casualizando$book)</code></pre>
+                    <pre><code>##    plots block trat
+                    ## 1    101     1   T3
+                    ## 2    102     1   T6
+                    ## 3    103     1   T8
+                    ## 4    104     1   T2
+                    ## 5    105     1   T5
+                    ## 6    106     1   T1
+                    ## 7    107     1   T4
+                    ## 8    108     1   T9
+                    ## 9    109     1   T7
+                    ## 10   201     2   T9
+                    ## 11   202     2   T2
+                    ## 12   203     2   T5
+                    ## 13   204     2   T7
+                    ## 14   205     2   T8
+                    ## 15   206     2   T1
+                    ## 16   207     2   T4
+                    ## 17   208     2   T6
+                    ## 18   209     2   T3
+                    ## 19   301     3   T3
+                    ## 20   302     3   T4
+                    ## 21   303     3   T7
+                    ## 22   304     3   T2
+                    ## 23   305     3   T9
+                    ## 24   306     3   T6
+                    ## 25   307     3   T8
+                    ## 26   308     3   T5
+                    ## 27   309     3   T1</code></pre>
+                    <pre class="r"><code>Delineamento$plots &lt;- as.factor(rep(1:9, times = 3))
+                    # 
+                    library(ggplot2)</code></pre>
+                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
+                    <pre class="r"><code>ggplot(Delineamento, 
+                          aes(x = plots,
+                              y = block,
+                              fill = trat,
+                              label = trat)) +
+                       geom_tile(color=&quot;black&quot;) +
+                       geom_text() +
+                         xlab(&quot;Blocos&quot;) +
+                         ylab(&quot;Parcelas&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; # Análise do experimento 
+                    #&#39; ## Leitura dos dados
+                    
+                    rm(list=ls(all=TRUE)) 
+                    # dados &lt;- read.csv2(file.choose())
+                    dados &lt;- read.csv2(&quot;laranja.csv&quot;)
+                    str(dados) </code></pre>
+                    <pre><code>## &#39;data.frame&#39;:    27 obs. of  3 variables:
+                    ##  $ bloco: int  1 1 1 1 1 1 1 1 1 2 ...
+                    ##  $ trat : int  1 2 3 4 5 6 7 8 9 1 ...
+                    ##  $ prod : int  145 200 183 190 180 130 206 250 164 155 ...</code></pre>
+                    <pre class="r"><code>dados &lt;- transform(dados,
+                                       bloco = factor(bloco),
+                                       trat = factor(trat))
+                    
+                    
+                    library(ggplot2)
+                    
+                    #&#39; ## Análise descritiva
+                    #&#39; 
+                    ggplot(dados,
+                           aes(x = trat,
+                               y = prod,
+                               color = trat)) +
+                      geom_point() +
+                      xlab(&quot;porta-enxertos&quot;) +
+                      ylab(&quot;produção&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <pre class="r"><code>#&#39; Destacam-se os porta-enxertos 1 e 6, com menor produção e o porta-enxerto 8 com maior produção. Os porta-enxertos 2 e 3 apresentam uma menor dispersão dos valores observados.
+                    
+                    
+                    #&#39; - média geral
+                    with(dados, mean(prod))</code></pre>
+                    <pre><code>## [1] 182.5556</code></pre>
+                    <pre class="r"><code>#&#39; - média por bloco
+                    with(dados, tapply(prod, bloco, mean))</code></pre>
+                    <pre><code>##        1        2        3 
+                    ## 183.1111 183.5556 181.0000</code></pre>
+                    <pre class="r"><code>#&#39; - média por tratamento
+                    with(dados, tapply(prod, trat, mean)) </code></pre>
+                    <pre><code>##        1        2        3        4        5        6        7        8 
+                    ## 155.3333 193.3333 192.3333 183.6667 165.3333 140.0000 180.3333 250.3333 
+                    ##        9 
+                    ## 182.3333</code></pre>
+                    <pre class="r"><code>#&#39; ## Ajuste do modelo
+                    #&#39; 
+                    #&#39; O modelo ajustado para cada valor observado no $i$-ésimo tratamento e no $j$-ésimo bloco foi
+                    #&#39; $$y_{ij} = \mu + b_j + \tau_i + e_{ij},$$
+                    #&#39; em que $\mu$ é uma constante, $b_j$ é o efeito do $j$-ésimo bloco, $\tau_i$ é o efeito do $i$-ésimo tratamento e $e_{ij}$ é o efeito do acaso. 
+                    #&#39; 
+                    #&#39; 
+                    modelo &lt;- lm(prod ~ bloco + trat, 
+                                 dados,
+                                 contrasts = list(&quot;bloco&quot; = contr.sum,
+                                                  &quot;trat&quot; = contr.sum)) 
+                    dummy.coef(modelo)</code></pre>
+                    <pre><code>## Full coefficients are 
+                    ##                                                                            
+                    ## (Intercept):       182.5556                                                
+                    ## bloco:                    1           2           3                        
+                    ##                   0.5555556   1.0000000  -1.5555556                        
+                    ## trat:                     1           2           3           4           5
+                    ##                 -27.2222222  10.7777778   9.7777778   1.1111111 -17.2222222
+                    ##                                                                
+                    ## (Intercept):                                                   
+                    ## bloco:                                                         
+                    ##                                                                
+                    ## trat:                     6           7           8           9
+                    ##                 -42.5555556  -2.2222222  67.7777778  -0.2222222</code></pre>
+                    <pre class="r"><code># #&#39; ## Análise gráfica dos resíduos 
+                    # 
+                    # #&#39; - Resíduos Studentizados
+                    # 
+                    res_stud&lt;- rstandard(modelo) 
+                    # 
+                    # #&#39; ### Verificando a presença de observações atípicas e a distribuição
+                    # #&#39; 
+                    boxplot(res_stud) </code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <pre class="r"><code># 
+                    library(hnp)</code></pre>
+                    <pre><code>## Carregando pacotes exigidos: MASS</code></pre>
+                    <pre class="r"><code>hnp(modelo, print.on = TRUE)</code></pre>
+                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <pre class="r"><code># 
+                    # #&#39; Aparentemente, não há observações atípicas e os erros apresentam uma 
+                    # #&#39; distribuição normal.
+                    # 
+                    # #&#39;
+                    # #&#39; ### Homogeneidade de variâncias
+                    # #&#39; 
+                    ggplot(dados, 
+                            aes(x = trat, 
+                                y = res_stud)) +
+                       geom_point() +
+                       geom_hline(yintercept=0, color = &quot;red&quot;) +
+                       xlab(&quot;porta enxertos&quot;) +
+                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <pre class="r"><code># 
+                    # 
+                    # #&#39; Os porta-enxertos 2 e 4 apresentam uma menor dispersão dos erros, o porta-enxerto 
+                    # #&#39; 7 apresenta uma maior dispersão. Para os demais a varialibidade dos resíduos 
+                    # #&#39; estudentizados é similar.
+                    # 
+                    ggplot(dados, 
+                            aes(x = bloco, 
+                                y = res_stud)) +
+                       geom_point() +
+                       geom_hline(yintercept=0, color = &quot;red&quot;) +
+                       xlab(&quot;blocos&quot;) +
+                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <pre class="r"><code># #&#39;
+                    # #&#39; ### Relação entre média e variância
+                    # #&#39; 
+                    ggplot(dados, 
+                            aes(x = fitted(modelo), 
+                                y = res_stud))+
+                       geom_point() +
+                       geom_hline(yintercept=0, color = &quot;red&quot;) +
+                       xlab(&quot;valores preditos&quot;) +
+                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+                    <pre class="r"><code># #&#39; Aparentemente não há relação entre média e variância. Destaca-se o porta-enxerto 
+                    # #&#39; 8, com maiores valores preditos.
+                    # 
+                    # #&#39;
+                    # #&#39; ## Teste de normalidade de Shapiro-Wilk 
+                    # #&#39; $H_0:$ os erros seguem uma distribuição normal *versus* $H_1:$ os erros não 
+                    # #&#39; seguem uma distribuição normal.
+                    # #&#39; 
+                    # 
+                    shapiro.test(res_stud) </code></pre>
+                    <pre><code>## 
+                    ##  Shapiro-Wilk normality test
+                    ## 
+                    ## data:  res_stud
+                    ## W = 0.94759, p-value = 0.1873</code></pre>
+                    <pre class="r"><code># 
+                    # #&#39; Assumindo o nível de 5\% de significância, não há evidências para rejeitarmos 
+                    # #&#39; $H_0$. Logo, não podemos afirmar que os erros não seguem a distribuição normal.
+                    # 
+                    # #&#39;
+                    # #&#39; ## Teste de homogeneidade de variâncias de Breusch-Pagan 
+                    # #&#39; 
+                    # #&#39; $H_0:$ Há homogeneidade de variâncias *versus* $H_1:$ Não há homogeneidade de 
+                    # #&#39; variâncias.
+                    # #&#39; 
+                    library(lmtest) </code></pre>
+                    <pre><code>## Carregando pacotes exigidos: zoo</code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;zoo&#39;</code></pre>
+                    <pre><code>## The following objects are masked from &#39;package:base&#39;:
+                    ## 
+                    ##     as.Date, as.Date.numeric</code></pre>
+                    <pre class="r"><code>bptest(modelo) </code></pre>
+                    <pre><code>## 
+                    ##  studentized Breusch-Pagan test
+                    ## 
+                    ## data:  modelo
+                    ## BP = 9.9957, df = 10, p-value = 0.4409</code></pre>
+                    <pre class="r"><code># #&#39; Assumindo o nível de 5\% de significância, não há evidências para rejeitarmos 
+                    # #&#39; $H_0$. Logo, não podemos afirmar que os erros não são homogêneos.
+                    # 
+                    # 
+                    # #&#39;
+                    # #&#39; ## Box-Cox 
+                    # #&#39; 
+                    # 
+                    library(MASS) 
+                    with(dados, boxcox(prod ~ bloco + trat,
+                                        lambda = seq(-2, 3, 0.01)))</code></pre>
+                    <p><img src="aula5_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+                    <pre class="r"><code># #&#39;
+                    # #&#39; Como o valor 1 para $\lambda$ pertence ao intervalo de confiança, não há 
+                    # #&#39; necessidade de tranformarmos os dados.
+                    # #&#39;
+                    # 
+                    
+                    #&#39; ## Análise da variância 
+                    #&#39; $H_0: \mu_1 = \mu_2 = \ldots = \mu_9$ *versus* $H_1:$ pelo menos duas médias diferem entre si. 
+                    #&#39;
+                    anova(modelo) </code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: prod
+                    ##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+                    ## bloco      2    33.6   16.78  0.0666    0.9358    
+                    ## trat       8 22981.3 2872.67 11.4114 2.637e-05 ***
+                    ## Residuals 16  4027.8  251.74                      
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; Assumindo o nível de 5\% de significância, há evidências para rejeitarmos $H_0$. Sendo assim, nem todas as produções médias para os diferentes porta-enxertos são iguais.
+                    
+                    #&#39;
+                    #&#39; ## Testes de comparações de médias de Tukey
+                    #&#39; $H_0: \mu_i - \mu_{i&#39;} = 0$ *versus*  $H_1: \mu_i - \mu_{i&#39;} \neq 0$
+                    #&#39;
+                    #&#39; - Usando as funções da biblioteca ExpDes.pt
+                    library(ExpDes.pt) </code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>
+                    <pre><code>## The following object is masked from &#39;package:MASS&#39;:
+                    ## 
+                    ##     ginv</code></pre>
+                    <pre><code>## The following objects are masked from &#39;package:agricolae&#39;:
+                    ## 
+                    ##     lastC, order.group, tapply.stat</code></pre>
+                    <pre class="r"><code>with(dados, 
+                         dbc(trat, 
+                             bloco, 
+                             prod, 
+                             quali = T) )</code></pre>
+                    <pre><code>## ------------------------------------------------------------------------
+                    ## Quadro da analise de variancia
+                    ## ------------------------------------------------------------------------
+                    ##            GL      SQ      QM      Fc   Pr&gt;Fc
+                    ## Tratamento  8 22981.3 2872.67 11.4114 0.00003
+                    ## Bloco       2    33.6   16.78  0.0666 0.93578
+                    ## Residuo    16  4027.8  251.74                
+                    ## Total      26 27042.7                        
+                    ## ------------------------------------------------------------------------
+                    ## CV = 8.69 %
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de normalidade dos residuos 
+                    ## valor-p:  0.187264 
+                    ## De acordo com o teste de Shapiro-Wilk a 5% de significancia, os residuos podem ser considerados normais.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de homogeneidade de variancia 
+                    ## valor-p:  0.7817409 
+                    ## De acordo com o teste de oneillmathews a 5% de significancia, as variancias podem ser consideradas homogeneas.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Teste de Tukey
+                    ## ------------------------------------------------------------------------
+                    ## Grupos Tratamentos Medias
+                    ## a     8   250.3333 
+                    ##  b    2   193.3333 
+                    ##  b    3   192.3333 
+                    ##  bc   4   183.6667 
+                    ##  bc   9   182.3333 
+                    ##  bc   7   180.3333 
+                    ##  bc   5   165.3333 
+                    ##  bc   1   155.3333 
+                    ##   c   6   140 
+                    ## ------------------------------------------------------------------------</code></pre>
+                    <pre class="r"><code>#&#39;</code></pre>
+                    
+                    
+                    
+            </div>
+        </section>
+    </section>      
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>       

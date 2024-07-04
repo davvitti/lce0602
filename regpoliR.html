@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCE0602</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> <a href="sobre.html"><span>Estatística experimental</span></a></div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="index.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="estgeralR.html"><span>Revisão: estatística geral</span></a></li>
+                            <li><a href="dicR.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cmR.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoliR.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="pressanovaR.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbcR.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dqlR.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fatR.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parsubR.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gruposR.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="dicpt.html"><span>Exercícios</span></a></li>
+
+                        </ul>
+                    </li>
+                   
+                     
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+            
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <pre class="r"><code>#&#39; # Entrada dos dados para análise
+
+                    rm(list=ls(all=TRUE))
+                    dados &lt;- data.frame(dose = rep(seq(0,300,50),each=4),
+                                        peso = c(134.8,139.7,147.6,132.3,
+                                                 161.7,157.7,150.3,144.7,
+                                                 160.7,172.7,163.4,161.3,
+                                                 169.8,168.2,160.7,161.0,
+                                                 165.7,160.0,158.2,151.0,
+                                                 171.8,157.3,150.4,160.4,
+                                                 154.5,160.4,148.8,154.0))
+                    head(dados)</code></pre>
+                    <pre><code>##   dose  peso
+                    ## 1    0 134.8
+                    ## 2    0 139.7
+                    ## 3    0 147.6
+                    ## 4    0 132.3
+                    ## 5   50 161.7
+                    ## 6   50 157.7</code></pre>
+                    <pre class="r"><code>str(dados)</code></pre>
+                    <pre><code>## &#39;data.frame&#39;:    28 obs. of  2 variables:
+                    ##  $ dose: num  0 0 0 0 50 50 50 50 100 100 ...
+                    ##  $ peso: num  135 140 148 132 162 ...</code></pre>
+                    <pre class="r"><code>(media &lt;- with(dados, 
+                                   tapply(peso, dose, mean)))</code></pre>
+                    <pre><code>##       0      50     100     150     200     250     300 
+                    ## 138.600 153.600 164.525 164.925 158.725 159.975 154.425</code></pre>
+                    <pre class="r"><code>#&#39; # Gráfico de dispersão
+                    
+                    library(ggplot2)</code></pre>
+                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
+                    <pre class="r"><code>ggplot(dados,
+                           aes(x = dose,
+                               y = peso)) +
+                      geom_point() +
+                      geom_point(stat = &quot;summary&quot;,
+                                 fun = mean,
+                                 color = 2) +
+                      xlab(&quot;dose de gesso (kg/ha)&quot;) +
+                      ylab(&quot;peso de 1000 sementes de feijão (g)&quot;) +
+                      theme_classic()</code></pre>
+                    <p><img src="aula4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <pre class="r"><code>#&#39; # 1. Ajuste do modelo (dose como variável qualitativa)
+                    #&#39; 
+                    #&#39; $H_0: \mu_{0} = \mu_{50} = \ldots = \mu_{300} = \mu$ versus $H_1:$ pelo menos um contraste de médias difere de zero.
+                    
+                    modelo&lt;- lm(peso ~ as.factor(dose), dados)
+                    anova(modelo)</code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: peso
+                    ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+                    ## as.factor(dose)  6 1941.83  323.64   7.668 0.0001876 ***
+                    ## Residuals       21  886.34   42.21                      
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; Como há evidências de um efeito significativo de doses, 
+                    #&#39; vamos buscar qual modelo polinomial melhor representa o 
+                    #&#39; peso de 1000 sementes de feijão (g) em função das 
+                    #&#39; doses de gesso (Kg/ha)).
+                    #&#39;
+                    #&#39;
+                    #&#39;
+                    #&#39; # 2. ANOVA e regressão polinomial
+                    #&#39;  
+                    #&#39; ## Ajuste de uma reta
+                    #&#39;  
+                    #&#39;  - Desvio de regressão linear ou falta de ajuste (as.factor(dose))
+                    #&#39;  
+                    #&#39;  $H_0: \beta_2 = \beta_3 = \beta_4 = \beta_5 = \beta_6 = 0 \mid \beta_0, \beta_1$ versus $H_1: \beta_i \neq 0 \mid \beta_0, \beta_1$ par algum $i=2,\ldots,6$.
+                    #&#39;  
+                    modelo.RL &lt;- lm(peso ~ poly(dose,1) + as.factor(dose),
+                                    dados)
+                    anova(modelo.RL)</code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: peso
+                    ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+                    ## poly(dose, 1)    1  423.15  423.15 10.0258 0.0046525 ** 
+                    ## as.factor(dose)  5 1518.68  303.74  7.1964 0.0004595 ***
+                    ## Residuals       21  886.34   42.21                      
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; Como há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,0004595 para as.factor(dose) &lt; 0.05) ao nível de 5\% de significância, ajustaremos o modelo quadrático.
+                    #&#39; 
+                    #&#39; ## Ajuste de uma parábola
+                    #&#39;  
+                    #&#39;  - Desvio de regressão quadrática ou falta de ajuste (as.factor(dose))
+                    #&#39;  
+                    #&#39;  $H_0: \beta_3 = \beta_4 = \beta_5 = \beta_6 = 0 \mid \beta_0, \beta_1, \beta_2$ versus $H_1: \beta_i \neq 0 \mid \beta_0, \beta_1, \beta_2$ par algum $i=3,\ldots,6$.
+                    #&#39;  
+                    modelo.RQ &lt;- lm(peso ~ poly(dose,1) + 
+                                      poly(dose,2) + 
+                                      as.factor(dose),
+                                    dados)
+                    anova(modelo.RQ)</code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: peso
+                    ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+                    ## poly(dose, 1)    1  423.15  423.15 10.0258  0.004653 ** 
+                    ## poly(dose, 2)    1 1285.84 1285.84 30.4655 1.777e-05 ***
+                    ## as.factor(dose)  4  232.83   58.21  1.3791  0.275047    
+                    ## Residuals       21  886.34   42.21                      
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; Como não há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,275047 para as.factor(dose)) ao nível de 5\% de significância, avaliaremos o teste de hipóteses para $\beta_2 \mid \beta_0, \beta_1$.
+                    #&#39; 
+                    #&#39; - Adição do termo quadrático ao modelo
+                    #&#39; 
+                    #&#39; $H_0: \beta_2 = 0 \mid \beta_0, \beta_1$ versus $H_1: \beta_2 \neq 0 \mid \beta_0, \beta_1$
+                    
+                    #&#39; Há evidências para rejeitarmos $H_0$, pois Pr(&gt;F) para poly(dose,2) = 1,777e-05 &lt; 0,05, ou seja, há evidências para afirmarmos que o modelo quadrático é adequado para representar o comportamento do peso de 1000 sementes de feijão (g) em função das doses de gesso (kg/ha).
+                    #&#39;
+                    #&#39;
+                    #&#39; - Coeficiente de determinação
+                    #&#39;
+                    (R2 &lt;- sum(anova(modelo.RQ)$`Sum Sq`[1:2])/
+                        sum(anova(modelo.RQ)$`Sum Sq`[1:3]))</code></pre>
+                    <pre><code>## [1] 0.8800954</code></pre>
+                    <pre class="r"><code>#&#39; 
+                    #&#39; # Modelo ajustado.
+                    #&#39; 
+                    
+                    modelo.aj &lt;-  lm(peso ~ dose + I(dose^2), dados)
+                    coef(modelo.aj)</code></pre>
+                    <pre><code>## (Intercept)        dose   I(dose^2) 
+                    ## 140.7839286   0.2736250  -0.0007825</code></pre>
+                    <pre class="r"><code>#&#39; # Gráfico da curva ajustada
+                    library(ggpubr)
+                    ggplot(dados,
+                           aes(x = dose,
+                               y = peso)) +
+                      geom_point() +
+                      geom_point(stat = &quot;summary&quot;,
+                                 fun = mean,
+                                 color = 2) +
+                      geom_smooth(method = lm, 
+                                  formula = y ~ poly(x, 2), 
+                                  se = FALSE) +
+                      stat_regline_equation(
+                        aes(label = ..eq.label..),
+                        formula = y ~ poly(x, 2, raw = TRUE),
+                        label.x = 170,
+                        label.y = 190) +
+                      ylim(120,190) +
+                      theme_classic() +
+                      # colocar o R^2.
+                      annotate(geom = &quot;text&quot;,
+                               x = 182,
+                               y = 185,
+                               label = expression(R^2 == 0.88)) +
+                      xlab(&quot;dose de gesso (kg/ha)&quot;) +
+                      ylab(&quot;peso de 1000 sementes de feijão (g)&quot;)</code></pre>
+                    <pre><code>## Warning: The dot-dot notation (`..eq.label..`) was deprecated in ggplot2 3.4.0.
+                    ## i Please use `after_stat(eq.label)` instead.
+                    ## This warning is displayed once every 8 hours.
+                    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+                    ## generated.</code></pre>
+                    <pre><code>## Warning in is.na(x): is.na() aplicado a um objeto diferente de lista ou vetor
+                    ## de tipo &#39;expression&#39;</code></pre>
+                    <p><img src="aula4_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; # Usando a biblioteca ExpDes.pt
+                    #&#39;  
+                    
+                    library(ExpDes.pt)
+                    with(dados,
+                         dic(trat = dose,
+                             resp = peso,
+                             quali = FALSE,
+                             sigT = 0.05,
+                             sigF = 0.05))</code></pre>
+                    <pre><code>## ------------------------------------------------------------------------
+                    ## Quadro da analise de variancia
+                    ## ------------------------------------------------------------------------
+                    ##            GL      SQ     QM    Fc      Pr&gt;Fc
+                    ## Tratamento  6 1941.83 323.64 7.668 0.00018763
+                    ## Residuo    21  886.34  42.21                 
+                    ## Total      27 2828.17                        
+                    ## ------------------------------------------------------------------------
+                    ## CV = 4.15 %
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de normalidade dos residuos ( Shapiro-Wilk ) 
+                    ## Valor-p:  0.5471519 
+                    ## De acordo com o teste de Shapiro-Wilk a 5% de significancia, os residuos podem ser considerados normais.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de homogeneidade de variancia 
+                    ## valor-p:  0.9358672 
+                    ## De acordo com o teste de bartlett a 5% de significancia, as variancias podem ser consideradas homogeneas.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Ajuste de modelos polinomiais de regressao
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Modelo Linear
+                    ## =========================================
+                    ##    Estimativa Erro.padrao   tc    valor.p
+                    ## -----------------------------------------
+                    ## b0  150.5652    2.2134    68.0255    0   
+                    ## b1   0.0389     0.0123    3.1664  0.0046 
+                    ## -----------------------------------------
+                    ## 
+                    ## R2 do modelo linear
+                    ## --------
+                    ## 0.217915
+                    ## --------
+                    ## 
+                    ## Analise de variancia do modelo linear
+                    ## =========================================================
+                    ##                      GL     SQ        QM     Fc   valor.p
+                    ## ---------------------------------------------------------
+                    ## Efeito linear        1   423.1544  423.1544 10.03 0.00465
+                    ## Desvios de Regressao 5  1,518.6780 303.7356  7.2  0.00046
+                    ## Residuos             21  886.3375  42.2066               
+                    ## ---------------------------------------------------------
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Modelo quadratico
+                    ## =========================================
+                    ##    Estimativa Erro.padrao   tc    valor.p
+                    ## -----------------------------------------
+                    ## b0  140.7839    2.8354    49.6527    0   
+                    ## b1   0.2736     0.0443    6.1812     0   
+                    ## b2  -0.0008     0.0001    -5.5196 0.00002
+                    ## -----------------------------------------
+                    ## 
+                    ## R2 do modelo quadratico
+                    ## --------
+                    ## 0.880095
+                    ## --------
+                    ## 
+                    ## Analise de variancia do modelo quadratico
+                    ## ===========================================================
+                    ##                      GL     SQ         QM      Fc   valor.p
+                    ## -----------------------------------------------------------
+                    ## Efeito linear        1   423.1544   423.1544  10.03 0.00465
+                    ## Efeito quadratico    1  1,285.8430 1,285.8430 30.47  2e-05 
+                    ## Desvios de Regressao 4   232.8346   58.2087   1.38  0.27505
+                    ## Residuos             21  886.3375   42.2066                
+                    ## -----------------------------------------------------------
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Modelo cubico
+                    ## =========================================
+                    ##    Estimativa Erro.padrao   tc    valor.p
+                    ## -----------------------------------------
+                    ## b0  138.2423    3.1302    44.1645    0   
+                    ## b1   0.4431     0.0989    4.4812  0.0002 
+                    ## b2  -0.0023     0.0008    -2.8551 0.0095 
+                    ## b3  0.000003       0      1.9166  0.0690 
+                    ## -----------------------------------------
+                    ## 
+                    ## R2 do modelo cubico
+                    ## --------
+                    ## 0.959938
+                    ## --------
+                    ## 
+                    ## Analise de variancia do modelo cubico
+                    ## ===========================================================
+                    ##                      GL     SQ         QM      Fc   valor.p
+                    ## -----------------------------------------------------------
+                    ## Efeito linear        1   423.1544   423.1544  10.03 0.00465
+                    ## Efeito quadratico    1  1,285.8430 1,285.8430 30.47  2e-05 
+                    ## Efeito cubico        1   155.0417   155.0417  3.67   0.069 
+                    ## Desvios de Regressao 3   77.7930    25.9310   0.61  0.61327
+                    ## Residuos             21  886.3375   42.2066                
+                    ## -----------------------------------------------------------
+                    ## ------------------------------------------------------------------------</code></pre>
+                    
+            </div>
+        </section>
+    </section>      
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>   

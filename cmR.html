@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCE0602</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> <a href="sobre.html"><span>Estatística experimental</span></a></div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="index.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="estgeralR.html"><span>Revisão: estatística geral</span></a></li>
+                            <li><a href="dicR.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cmR.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoliR.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="pressanovaR.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbcR.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dqlR.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fatR.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parsubR.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gruposR.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="dicpt.html"><span>Exercícios</span></a></li>
+
+                        </ul>
+                    </li>
+                   
+                     
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+            
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <pre class="r"><code>dados &lt;- read.csv2(&quot;aula2.csv&quot;)
+
+
+                    #&#39; ## Análise exploratória
+                    library(ggplot2)</code></pre>
+                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
+                    <pre class="r"><code>ggplot(dados, aes(x = trat, y = y)) +
+                      geom_point()</code></pre>
+                    <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <pre class="r"><code>#&#39; # Análise de variância  
+                    modelo = aov(y ~ trat, dados)
+                    anova(modelo)</code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: y
+                    ##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+                    ## trat       3 163.75  54.583  7.7976 0.001976 **
+                    ## Residuals 16 112.00   7.000                    
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; # Comparações múltiplas
+                    
+                    #&#39; ## Teste t com correção de Bonferroni
+                    with(dados, 
+                         pairwise.t.test(y, 
+                                         trat, 
+                                         p.adj = &quot;bonferroni&quot;));</code></pre>
+                    <pre><code>## 
+                    ##  Pairwise comparisons using t tests with pooled SD 
+                    ## 
+                    ## data:  y and trat 
+                    ## 
+                    ##   A      B      C     
+                    ## B 0.1768 -      -     
+                    ## C 0.5515 1.0000 -     
+                    ## D 0.0012 0.1768 0.0522
+                    ## 
+                    ## P value adjustment method: bonferroni</code></pre>
+                    <pre class="r"><code>#&#39; ## Teste de Tukey
+                    library(ExpDes.pt)
+                    ?dic</code></pre>
+                    <pre><code>## starting httpd help server ... done</code></pre>
+                    <pre class="r"><code>with(dados,
+                         dic(trat, 
+                             y, 
+                             quali = TRUE, 
+                             mcomp = &quot;tukey&quot;,
+                             sigF = 0.05, 
+                             sigT = 0.05))</code></pre>
+                    <pre><code>## ------------------------------------------------------------------------
+                    ## Quadro da analise de variancia
+                    ## ------------------------------------------------------------------------
+                    ##            GL     SQ     QM     Fc     Pr&gt;Fc
+                    ## Tratamento  3 163.75 54.583 7.7976 0.0019756
+                    ## Residuo    16 112.00  7.000                 
+                    ## Total      19 275.75                        
+                    ## ------------------------------------------------------------------------
+                    ## CV = 9.89 %
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de normalidade dos residuos ( Shapiro-Wilk ) 
+                    ## Valor-p:  0.2358736 
+                    ## De acordo com o teste de Shapiro-Wilk a 5% de significancia, os residuos podem ser considerados normais.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de homogeneidade de variancia 
+                    ## valor-p:  0.9981235 
+                    ## De acordo com o teste de bartlett a 5% de significancia, as variancias podem ser consideradas homogeneas.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Teste de Tukey
+                    ## ------------------------------------------------------------------------
+                    ## Grupos Tratamentos Medias
+                    ## a     D   31 
+                    ## ab    B   27 
+                    ##  b    C   26 
+                    ##  b    A   23 
+                    ## ------------------------------------------------------------------------</code></pre>
+                    <pre class="r"><code>library(agricolae)</code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;agricolae&#39;
+                    ## 
+                    ## The following objects are masked from &#39;package:ExpDes.pt&#39;:
+                    ## 
+                    ##     lastC, order.group, tapply.stat</code></pre>
+                    <pre class="r"><code>Tukey. &lt;- with(dados,
+                                   HSD.test(y,
+                                            trat,
+                                            16,
+                                            7.00))
+                    Tukey.</code></pre>
+                    <pre><code>## $statistics
+                    ##   MSerror Df  Mean       CV      MSD
+                    ##         7 16 26.75 9.890659 4.787402
+                    ## 
+                    ## $parameters
+                    ##    test name.t ntr StudentizedRange alpha
+                    ##   Tukey   trat   4         4.046093  0.05
+                    ## 
+                    ## $means
+                    ##    y      std r       se Min Max Q25 Q50 Q75
+                    ## A 23 2.549510 5 1.183216  20  26  21  23  25
+                    ## B 27 2.738613 5 1.183216  24  31  25  27  28
+                    ## C 26 2.738613 5 1.183216  22  29  25  26  28
+                    ## D 31 2.549510 5 1.183216  28  34  29  31  33
+                    ## 
+                    ## $comparison
+                    ## NULL
+                    ## 
+                    ## $groups
+                    ##    y groups
+                    ## D 31      a
+                    ## B 27     ab
+                    ## C 26      b
+                    ## A 23      b
+                    ## 
+                    ## attr(,&quot;class&quot;)
+                    ## [1] &quot;group&quot;</code></pre>
+                    <pre class="r"><code>plot(Tukey.)</code></pre>
+                    <p><img src="index_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <pre class="r"><code>#&#39; ## Teste de Duncan
+                    with(dados,
+                         dic(trat, 
+                             y, 
+                             quali = TRUE, 
+                             mcomp = &quot;duncan&quot;,
+                             sigF = 0.05, 
+                             sigT = 0.05))</code></pre>
+                    <pre><code>## ------------------------------------------------------------------------
+                    ## Quadro da analise de variancia
+                    ## ------------------------------------------------------------------------
+                    ##            GL     SQ     QM     Fc     Pr&gt;Fc
+                    ## Tratamento  3 163.75 54.583 7.7976 0.0019756
+                    ## Residuo    16 112.00  7.000                 
+                    ## Total      19 275.75                        
+                    ## ------------------------------------------------------------------------
+                    ## CV = 9.89 %
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de normalidade dos residuos ( Shapiro-Wilk ) 
+                    ## Valor-p:  0.2358736 
+                    ## De acordo com o teste de Shapiro-Wilk a 5% de significancia, os residuos podem ser considerados normais.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de homogeneidade de variancia 
+                    ## valor-p:  0.9981235 
+                    ## De acordo com o teste de bartlett a 5% de significancia, as variancias podem ser consideradas homogeneas.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Teste de Duncan 
+                    ## ------------------------------------------------------------------------
+                    ## Grupos  Tratamentos  Medias
+                    ## a     D       31 
+                    ##  b    B       27 
+                    ##  bc   C       26 
+                    ##   c   A       23 
+                    ## ------------------------------------------------------------------------</code></pre>
+                    <pre class="r"><code># função da biblioteca agricolae
+                    Duncan. &lt;- with(dados,
+                                    duncan.test(y,
+                                                trat,
+                                                16,
+                                                7.00))
+                    Duncan.</code></pre>
+                    <pre><code>## $statistics
+                    ##   MSerror Df  Mean       CV
+                    ##         7 16 26.75 9.890659
+                    ## 
+                    ## $parameters
+                    ##     test name.t ntr alpha
+                    ##   Duncan   trat   4  0.05
+                    ## 
+                    ## $duncan
+                    ##      Table CriticalRange
+                    ## 2 2.997999      3.547280
+                    ## 3 3.143802      3.719797
+                    ## 4 3.234945      3.827638
+                    ## 
+                    ## $means
+                    ##    y      std r       se Min Max Q25 Q50 Q75
+                    ## A 23 2.549510 5 1.183216  20  26  21  23  25
+                    ## B 27 2.738613 5 1.183216  24  31  25  27  28
+                    ## C 26 2.738613 5 1.183216  22  29  25  26  28
+                    ## D 31 2.549510 5 1.183216  28  34  29  31  33
+                    ## 
+                    ## $comparison
+                    ## NULL
+                    ## 
+                    ## $groups
+                    ##    y groups
+                    ## D 31      a
+                    ## B 27      b
+                    ## C 26     bc
+                    ## A 23      c
+                    ## 
+                    ## attr(,&quot;class&quot;)
+                    ## [1] &quot;group&quot;</code></pre>
+                    <pre class="r"><code>plot(Duncan.)</code></pre>
+                    <p><img src="index_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <pre class="r"><code>#&#39; # Teste de Dunnett (sendo B o genótipo de referência)
+                    library(multcomp)</code></pre>
+                    <pre><code>## Carregando pacotes exigidos: mvtnorm
+                    ## Carregando pacotes exigidos: survival
+                    ## Carregando pacotes exigidos: TH.data
+                    ## Carregando pacotes exigidos: MASS
+                    ## 
+                    ## Attaching package: &#39;MASS&#39;
+                    ## 
+                    ## The following object is masked from &#39;package:ExpDes.pt&#39;:
+                    ## 
+                    ##     ginv
+                    ## 
+                    ## 
+                    ## Attaching package: &#39;TH.data&#39;
+                    ## 
+                    ## The following object is masked from &#39;package:MASS&#39;:
+                    ## 
+                    ##     geyser</code></pre>
+                    <pre class="r"><code>dados$trat &lt;- as.factor(dados$trat)
+                    modelo = aov(y ~ trat, dados)
+                    summary(glht(modelo,
+                                 linfct = mcp(trat =c(&quot;A-B == 0&quot;, 
+                                                      &quot;C-B == 0&quot;,
+                                                      &quot;D-B == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##            Estimate Std. Error t value Pr(&gt;|t|)  
+                    ## A - B == 0   -4.000      1.673  -2.390   0.0733 .
+                    ## C - B == 0   -1.000      1.673  -0.598   0.8804  
+                    ## D - B == 0    4.000      1.673   2.390   0.0735 .
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; # Contrastes ortogonais
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;A+B-C-D == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##                    Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## A + B - C - D == 0   -7.000      2.366  -2.958  0.00925 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;A-B == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##            Estimate Std. Error t value Pr(&gt;|t|)  
+                    ## A - B == 0   -4.000      1.673   -2.39   0.0295 *
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;C-D == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##            Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## C - D == 0   -5.000      1.673  -2.988  0.00869 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; # Outro exemplo de contrastes ortogonais
+                    #&#39; 
+                    #&#39; Aqui serão testadas as hipóteses
+                    #&#39; 
+                    #&#39; $H_0: 3\mu_A -\mu_B-\mu_C-\mu_D = 0$ *versus* $H_1: 3\mu_A -\mu_B-\mu_C-\mu_D \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;3*A-B-C-D == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##                        Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## 3 * A - B - C - D == 0  -15.000      4.099   -3.66  0.00212 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; $H_0: \mu_B+\mu_C-2\mu_D = 0$ *versus* $H_1: \mu_B+\mu_C-2\mu_D \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;B+C-2*D == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##                    Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## B + C - 2 * D == 0   -9.000      2.898  -3.105   0.0068 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; $H_0: \mu_B-\mu_C = 0$ *versus* $H_1: \mu_B-\mu_C \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(&quot;B-C == 0&quot;))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##            Estimate Std. Error t value Pr(&gt;|t|)
+                    ## B - C == 0    1.000      1.673   0.598    0.558
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; Ainda, os mesmos contrastes podem ser apresentados em termos dos coeficientes apenas, como segue.
+                    #&#39; 
+                    
+                    #&#39; $H_0: 3\mu_A -\mu_B-\mu_C-\mu_D = 0$ *versus* $H_1: 3\mu_A -\mu_B-\mu_C-\mu_D \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(3,-1,-1,-1))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##        Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## 1 == 0  -15.000      4.099   -3.66  0.00212 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; $H_0: \mu_B+\mu_C-2\mu_D = 0$ *versus* $H_1: \mu_B+\mu_C-2\mu_D \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(0,1,1,-2))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##        Estimate Std. Error t value Pr(&gt;|t|)   
+                    ## 1 == 0   -9.000      2.898  -3.105   0.0068 **
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    <pre class="r"><code>#&#39; $H_0: \mu_B-\mu_C = 0$ *versus* $H_1: \mu_B-\mu_C \neq 0$
+                    summary(glht(modelo,
+                                 linfct = mcp(trat = c(0,1,-1,0))))</code></pre>
+                    <pre><code>## 
+                    ##   Simultaneous Tests for General Linear Hypotheses
+                    ## 
+                    ## Multiple Comparisons of Means: User-defined Contrasts
+                    ## 
+                    ## 
+                    ## Fit: aov(formula = y ~ trat, data = dados)
+                    ## 
+                    ## Linear Hypotheses:
+                    ##        Estimate Std. Error t value Pr(&gt;|t|)
+                    ## 1 == 0    1.000      1.673   0.598    0.558
+                    ## (Adjusted p values reported -- single-step method)</code></pre>
+                    
+                    
+            </div>
+        </section>
+    </section>      
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>   

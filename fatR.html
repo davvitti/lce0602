@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCE0602</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo"> <a href="sobre.html"><span>Estatística experimental</span></a></div>
+            <nav class="menu">
+                <div class="head">
+                    <div class="logo"> </div>
+                    <button type="button" class="close-menu-btn"></button>
+                </div>
+                <ul>
+                    <li><a href="index.html"><span>Sobre este site</span></a></li>
+                    <li><a href="revisao.html"><span>Revisão</span></a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Capítulos</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="intro.html"><span>Introdução</span></a></li>
+                            <li><a href="dic.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cm.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoli.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="atividade.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbc.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dql.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fat.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parcesub.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gupos.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="ref.html"><span>Referências</span></a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><span>Vamos praticar?</span></a>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <ul class="sub-menu">
+                            <li><a href="estgeralR.html"><span>Revisão: estatística geral</span></a></li>
+                            <li><a href="dicR.html"><span>Delineamento inteiramente casualizado</span></a></li>
+                            <li><a href="cmR.html"><span>Comparação de médias</span></a></li>
+                            <li><a href="regpoliR.html"><span>Regressão polinomial</span></a></li>
+                            <li><a href="pressanovaR.html"><span>Pressuposições da Anova</span></a></li>
+                            <li><a href="dbcR.html"><span>Delineamento em blocos casualizdos</span></a></li>
+                            <li><a href="dqlR.html"><span>Delineamento quadrado latino</span></a></li>
+                            <li><a href="fatR.html"><span>Esquema fatorial de tratamentos</span></a></li>
+                            <li><a href="parsubR.html"><span>Parcelas subdivididas</span></a></li>
+                            <li><a href="gruposR.html"><span>Grupos de experimentos</span></a></li>
+                            <li><a href="dicpt.html"><span>Exercícios</span></a></li>
+
+                        </ul>
+                    </li>
+                   
+                     
+                    <li><a href="contato.html"><span>Dúvidas?</span></a></li>
+                </ul>
+
+            </nav>
+            <div class="header-right">
+                
+                <button type="button" class="open-menu-btn">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                
+                </button>
+            </div>
+            
+        </div>
+
+    </header>
+    <section class="hero">
+        <section class="atras">
+            <div class="fundo">
+                <pre class="r"><code>#&#39; # Exemplo Fatorial 2x4
+
+                    #&#39; Os dados a seguir foram obtidos a partir de um experimento  usando o delineamento casualizado em blocos com três repetições e tratamentos no esquema fatorial. Teve como objetivo analisar o efeito de dois espaçamentos de plantio e de quatro espécies de Eucalipto sobre o diâmetro médio de plantas com cinco anos. O experimento foi conduzido por H. A. Mello e colaboradores em Mogi-Guaçu (1966-1971).
+                    
+                    #&#39;
+                    #&#39; ## Entrada dos dados
+                    #&#39; 
+                    rm(list = ls())
+                    dados &lt;- read.csv2(&quot;aula11_fatorial.csv&quot;)
+                    
+                    
+                    
+                    dados &lt;- transform(dados,
+                                       Especie = factor(Especie),
+                                       Espacamento = factor(Espacamento),
+                                       Bloco = factor(Bloco))
+                    
+                    dados$Tratamento &lt;- as.factor(dados$Especie:dados$Espacamento)
+                    
+                    #&#39;
+                    #&#39; ## Gráficos
+                    #&#39; 
+                    library(ggplot2)</code></pre>
+                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Tratamento, 
+                               y = diametro)) +
+                      geom_point()</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                    <pre class="r"><code>with(dados,
+                         tapply(diametro, Espacamento, mean))</code></pre>
+                    <pre><code>##     3x1.5       3x2 
+                    ## 11.245000  9.966667</code></pre>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Espacamento, 
+                               y = diametro, 
+                               group = 1)) +
+                      geom_point(stat = &#39;summary&#39;, 
+                                 fun = mean) +
+                      geom_line(stat = &#39;summary&#39;, 
+                                fun = mean) +
+                      xlab(&quot;espaçamento entre plantas&quot;) +
+                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+                    <pre class="r"><code>with(dados,
+                         tapply(diametro, Especie, mean))</code></pre>
+                    <pre><code>##      E. alba   E. grandis E. propinqua   E. saligna 
+                    ##     9.376667    11.605000    11.343333    10.098333</code></pre>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Especie, 
+                               y = diametro, 
+                               group = 1)) +
+                      geom_point(stat = &#39;summary&#39;, 
+                                 fun = mean)+
+                      geom_line(stat = &#39;summary&#39;, 
+                                fun = mean)+
+                      xlab(&quot;espécie de eucalipto&quot;) +
+                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
+                    <pre class="r"><code>with(dados,
+                         tapply(diametro, 
+                                list(Espacamento, 
+                                     Especie), mean))</code></pre>
+                    <pre><code>##        E. alba E. grandis E. propinqua E. saligna
+                    ## 3x1.5 10.23333   12.10333     12.29333  10.350000
+                    ## 3x2    8.52000   11.10667     10.39333   9.846667</code></pre>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Espacamento, 
+                               y = diametro, 
+                               group = Especie, 
+                               color = Especie)) +
+                      geom_point(stat = &#39;summary&#39;, 
+                                 fun = mean)+
+                      geom_line(stat = &#39;summary&#39;, 
+                                fun = mean)+
+                      xlab(&quot;espaçamento entre plantas&quot;) +
+                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Especie, 
+                               y = diametro, 
+                               group = Espacamento, 
+                               color = Espacamento)) +
+                      geom_point(stat = &#39;summary&#39;, 
+                                 fun = mean)+
+                      geom_line(stat = &#39;summary&#39;, 
+                                fun = mean)+
+                      xlab(&quot;espécie de eucalipto&quot;) +
+                      ylab(&quot;diâmetro médio (cm)&quot;) </code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; ## Ajuste do modelo
+                    #&#39;  
+                    
+                    modelo &lt;- lm(diametro ~ Bloco + Espacamento*Especie, 
+                                 data = dados)
+                    #&#39;
+                    #&#39;
+                    #&#39; ### Verificação das pressuposições da ANOVA
+                    #&#39;
+                    res_Stud &lt;- rstandard(modelo)
+                    #&#39;
+                    #&#39; - Normalidade dos erros
+                    #&#39; 
+                    # qqnorm(res_Stud)
+                    # qqline(res_Stud)
+                    library(hnp)</code></pre>
+                    <pre><code>## Carregando pacotes exigidos: MASS</code></pre>
+                    <pre class="r"><code>hnp(modelo,
+                        print.on = TRUE)</code></pre>
+                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Teste de normalidade:
+                    #&#39; 
+                    #&#39; $H_0$: os erros seguem uma distribuição normal *versus* $H_1$: os erros não seguem uma distribuição normal.
+                    shapiro.test(res_Stud)</code></pre>
+                    <pre><code>## 
+                    ##  Shapiro-Wilk normality test
+                    ## 
+                    ## data:  res_Stud
+                    ## W = 0.96292, p-value = 0.4998</code></pre>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Considerando-se o nível de 5\% de significância não há evidências para rejeitarmos $H_0$. 
+                    #&#39; Logo, não se pode afirmar que os erros não seguem a distribuição normal.
+                    #&#39; 
+                    #&#39; - Homogeneidade de variâncias
+                    #&#39; 
+                    ggplot(dados, 
+                           aes(x = Tratamento, 
+                               y = res_Stud)) +
+                      geom_point()</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
+                    <pre class="r"><code>ggplot(dados, 
+                           aes(x = Bloco, 
+                               y = res_Stud)) +
+                      geom_point()</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Teste de homogeneidade de variâncias
+                    #&#39; 
+                    #&#39; $H_0$: há homogeneidade de variâncias *versus* $H_1$: não há homogeneidade de variâncias.
+                    #&#39;
+                    library(lmtest)</code></pre>
+                    <pre><code>## Carregando pacotes exigidos: zoo</code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;zoo&#39;</code></pre>
+                    <pre><code>## The following objects are masked from &#39;package:base&#39;:
+                    ## 
+                    ##     as.Date, as.Date.numeric</code></pre>
+                    <pre class="r"><code>bptest(modelo)</code></pre>
+                    <pre><code>## 
+                    ##  studentized Breusch-Pagan test
+                    ## 
+                    ## data:  modelo
+                    ## BP = 16.119, df = 9, p-value = 0.06443</code></pre>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Considerando-se o nível de 5\% de significância não há evidências para rejeitarmos $H_0$. 
+                    #&#39; Logo, não se pode afirmar que não há homogeneidade de variâncias.
+                    #&#39; - Relação entre média e variância
+                    #&#39; 
+                    ggplot(dados, 
+                           aes(x = fitted(modelo), 
+                               y = res_Stud)) +
+                      geom_point()</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Box-Cox
+                    #&#39;
+                    library(MASS)
+                    boxcox(modelo)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
+                    <pre class="r"><code>#&#39;
+                    #&#39; Não há necessidade de transformação dos dados, pois $\lambda = 1$ pertence ao intervalo de confiança.
+                    #&#39;
+                    #&#39; Como todas as pressuposições foram atendidas, temos o seguinte quadro da ANOVA.
+                    #&#39;
+                    #&#39;
+                    anova(modelo)</code></pre>
+                    <pre><code>## Analysis of Variance Table
+                    ## 
+                    ## Response: diametro
+                    ##                     Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
+                    ## Bloco                2  1.0634  0.5317  1.6098    0.2348    
+                    ## Espacamento          1  9.8048  9.8048 29.6859 8.580e-05 ***
+                    ## Especie              3 19.8639  6.6213 20.0472 2.457e-05 ***
+                    ## Espacamento:Especie  3  1.8835  0.6278  1.9009    0.1759    
+                    ## Residuals           14  4.6240  0.3303                      
+                    ## ---
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                    <pre class="r"><code>#&#39; # Teste de Tukey para Especie
+                    #&#39;
+                    
+                    library(agricolae)
+                    (Tukey.Especie &lt;- with(dados,
+                                           HSD.test(diametro,
+                                                    Especie,
+                                                    14,
+                                                    0.3303)))</code></pre>
+                    <pre><code>## $statistics
+                    ##   MSerror Df     Mean       CV       MSD
+                    ##    0.3303 14 10.60583 5.418879 0.9644373
+                    ## 
+                    ## $parameters
+                    ##    test  name.t ntr StudentizedRange alpha
+                    ##   Tukey Especie   4         4.110506  0.05
+                    ## 
+                    ## $means
+                    ##               diametro       std r        se   Min   Max     Q25    Q50     Q75
+                    ## E. alba       9.376667 1.1581652 6 0.2346274  7.50 10.58  8.8450  9.540 10.2500
+                    ## E. grandis   11.605000 0.8611562 6 0.2346274 10.89 12.95 10.9750 11.225 12.1425
+                    ## E. propinqua 11.343333 1.1134571 6 0.2346274 10.02 12.82 10.5150 11.245 12.1550
+                    ## E. saligna   10.098333 0.3904058 6 0.2346274  9.59 10.69  9.8475 10.110 10.2750
+                    ## 
+                    ## $comparison
+                    ## NULL
+                    ## 
+                    ## $groups
+                    ##               diametro groups
+                    ## E. grandis   11.605000      a
+                    ## E. propinqua 11.343333      a
+                    ## E. saligna   10.098333      b
+                    ## E. alba       9.376667      b
+                    ## 
+                    ## attr(,&quot;class&quot;)
+                    ## [1] &quot;group&quot;</code></pre>
+                    <pre class="r"><code>plot(Tukey.Especie)</code></pre>
+                    <p><img src="aula8_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
+                    <pre class="r"><code>library(ExpDes.pt)</code></pre>
+                    <pre><code>## 
+                    ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>
+                    <pre><code>## The following objects are masked from &#39;package:agricolae&#39;:
+                    ## 
+                    ##     lastC, order.group, tapply.stat</code></pre>
+                    <pre><code>## The following object is masked from &#39;package:MASS&#39;:
+                    ## 
+                    ##     ginv</code></pre>
+                    <pre class="r"><code>with(dados,
+                         fat2.dbc(Espacamento,
+                                  Especie,
+                                  Bloco,
+                                  diametro,
+                                  quali = c(TRUE, TRUE),
+                                  fac.names = c(&quot;Espaçamento&quot;, 
+                                                &quot;Espécie&quot;)))</code></pre>
+                    <pre><code>## ------------------------------------------------------------------------
+                    ## Legenda:
+                    ## FATOR 1:  Espaçamento 
+                    ## FATOR 2:  Espécie 
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## 
+                    ## Quadro da analise de variancia
+                    ## ------------------------------------------------------------------------
+                    ##                     GL     SQ QM      Fc    Pr&gt;Fc
+                    ## Bloco                2  1.063  3  1.6098 0.234813
+                    ## Espaçamento          1  9.805  6 29.6859 0.000086
+                    ## Espécie              3 19.864  5 20.0472 0.000025
+                    ## Espaçamento*Espécie  3  1.883  4  1.9009 0.175884
+                    ## Residuo             14  4.624  2                 
+                    ## Total               23 37.240  1                 
+                    ## ------------------------------------------------------------------------
+                    ## CV = 5.42 %
+                    ## 
+                    ## ------------------------------------------------------------------------
+                    ## Teste de normalidade dos residuos (Shapiro-Wilk)
+                    ## valor-p:  0.4998395 
+                    ## De acordo com o teste de Shapiro-Wilk a 5% de significancia, os residuos podem ser considerados normais.
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Interacao nao significativa: analisando os efeitos simples
+                    ## ------------------------------------------------------------------------
+                    ## Espaçamento
+                    ## Teste de Tukey
+                    ## ------------------------------------------------------------------------
+                    ## Grupos Tratamentos Medias
+                    ## a     3x1.5   11.245 
+                    ##  b    3x2     9.966667 
+                    ## ------------------------------------------------------------------------
+                    ## 
+                    ## Espécie
+                    ## Teste de Tukey
+                    ## ------------------------------------------------------------------------
+                    ## Grupos Tratamentos Medias
+                    ## a     E. grandis      11.605 
+                    ## a     E. propinqua    11.34333 
+                    ##  b    E. saligna      10.09833 
+                    ##  b    E. alba     9.376667 
+                    ## ------------------------------------------------------------------------</code></pre>
+                    
+                    
+            </div>
+        </section>
+    </section>      
+    <script src="java/atividade.js"></script>
+    <script src="java/navbar.js"></script>
+</body>
+</html>   
