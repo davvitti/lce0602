@@ -674,23 +674,89 @@
                     <h2>Atividades</h2>
                 </section>
                 <form id="form" class="form">
-                    <div class="form-content">
-                        <label for="atividade1">Em um experimento de cana foram analisadas 3 variedades com 5 doses diferentes de vinhaça aplicada. Quantos graus de liberdade esse experimento terá no total?</label>
-                        <input 
-                          type="text"
-                          id="at1"
-                          placeholder="resposta"
-                        />
-                        <a>mensagem</a>
-        
-                    </div>
-        
+                            
                     <div class="form-content">
                         <label for="atividade2">
-                            Em um experimento de competição de dez cultivares de arroz para avaliar a produtividade, instalado em um delineamento inteiramente casualizado, os resultados (parciais) para a ANOVA foram os seguintes:
-                            Complete a tabela abaixo                                              
+                            Em um experimento de competição de variedades de cana-de-açúcar, instalado em um delineamento inteiramente casualizado, os resultados em ton ha-1, foram os seguintes:
+                            <table>
+                                <tr>
+                                    <th> Variedades</th>
+                                    <th colspan="5">Repetições</th>
+                                    <th>Total</th>
+                                    <th>Média</th>
+                                </tr>
+                                <tr>
+                                    <td>CB 5034</td>
+                                    <td>112,3</td>
+                                    <td>121,0</td>
+                                    <td>114,3</td>
+                                    <td>115,8</td>
+                                    <td>117,2</td>
+                                    <td>580,6 </td>
+                                    <td>116,1 </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>CB 6245</td>
+                                    <td>125,3</td>
+                                    <td>119,7</td>
+                                    <td>120,8</td>
+                                    <td>120,5</td>
+                                    <td>122,3 </td>
+                                    <td>608,6 </td>
+                                    <td> 121,7</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>IAC 62-58</td>
+                                    <td>118,4 </td>
+                                    <td>120,5 </td>
+                                    <td>119,7 </td>
+                                    <td>118,3 </td>
+                                    <td>117,8 </td>
+                                    <td>594,7 </td>
+                                    <td>118,9</td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>IAC 65-29</td>
+                                    <td>127,9 </td>
+                                    <td>128,3 </td>
+                                    <td>129,5 </td>
+                                    <td>126,5 </td>
+                                    <td>127,3 </td>
+                                    <td>639,5 </td>
+                                    <td>127,9 </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td>IAC 68-14</td>
+                                    <td>130,1 </td>
+                                    <td>122,4 </td>
+                                    <td>126,7 </td>
+                                    <td>127,3 </td>
+                                    <td>128,9 </td>
+                                    <td>635,4 </td>
+                                    <td> 127,1</td>
+
+                                </tr>
+                                <tr>
+                                    <td>IAC 65-38</td>
+                                    <td>115,2 </td>
+                                    <td> 123,2</td>
+                                    <td>117,8 </td>
+                                    <td>120,8 </td>
+                                    <td>116,4 </td>
+                                    <td>693,4 </td>
+                                    <td>118,1 </td>
+                                    
+                                </tr>
+                            </table>                                             
                                                      
                         </label>
+                        <div>
+                            <p> Com base nos dados acima complete o quadro da ANOVA:</p>
+                        </div>
                         <table class="table">
                             <tr>
                                 <th> Fontes de variação</th>
@@ -701,16 +767,24 @@
                                 <th> Ftab</th>
                             </tr>
                             <tr>
-                                <td> Cultivar</td>
+                                <td> Variedades</td>
                                 <td>
+                                    <input 
+                                        type="text"
+                                        id="at1"
+                                        placeholder="resposta"
+                                    />
+                                    <a>mensagem</a> 
+                                </td>
+                                <td> 
                                     <input 
                                         type="text"
                                         id="at2"
                                         placeholder="resposta"
                                     />
                                     <a>mensagem</a> 
+                                    
                                 </td>
-                                <td> 17564523</td>
                                 <td>
                                     <input 
                                         type="text"
@@ -719,18 +793,13 @@
                                     /> 
                                     <a>mensagem</a>
                                 </td>
-                                <td>9.31</td>
-                                <td>2.39</td>
-                            </tr>
-                            <tr>
-                                <td> Resíduo </td>
                                 <td>
                                     <input 
                                         type="text"
                                         id="at4"
                                         placeholder="resposta"
                                     />
-                                    <a>mensagem</a>
+                                    <a>mensagem</a> 
                                 </td>
                                 <td>
                                     <input 
@@ -738,8 +807,11 @@
                                         id="at5"
                                         placeholder="resposta"
                                     />
-                                    <a>mensagem</a>
+                                    <a>mensagem</a> 
                                 </td>
+                            </tr>
+                            <tr>
+                                <td> Resíduo </td>
                                 <td>
                                     <input 
                                         type="text"
@@ -748,13 +820,7 @@
                                     />
                                     <a>mensagem</a>
                                 </td>
-                                <td></td>
-                                <td></td>
-                                
-                            </tr>
-                            <tr>
-                                <td> 29</td>
-                                <td> 
+                                <td>
                                     <input 
                                         type="text"
                                         id="at7"
@@ -762,25 +828,7 @@
                                     />
                                     <a>mensagem</a>
                                 </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                            </tr>
-
-                        </table>
-                       
-                        <a>mensagem</a>
-        
-                    </div>
-        
-                    <div class="form-content">
-                        <label for="atividade3">Quais são as variáveis correspondentes?</label>
-                        <table>
-                            <tr>
-                                <td> variável resposta</td>
-                                <td> 
+                                <td>
                                     <input 
                                         type="text"
                                         id="at8"
@@ -788,20 +836,19 @@
                                     />
                                     <a>mensagem</a>
                                 </td>
+                                <td></td>
+                                <td></td>
+                                
                             </tr>
                             <tr>
-                                <td> Tratamento</td>
-                                <td> 
+                                <td> Total</td>
+                                <td>
                                     <input 
                                         type="text"
                                         id="at9"
                                         placeholder="resposta"
                                     />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Parcelas</td>
+                                    <a>mensagem</a>  </td>
                                 <td> 
                                     <input 
                                         type="text"
@@ -810,32 +857,26 @@
                                     />
                                     <a>mensagem</a>
                                 </td>
-                            </tr>
-                        </table>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 
-                        
+
+                            </tr>
+
+                        </table>
+                       
                         <a>mensagem</a>
         
-                    </div>
-        
-                    <div class="form-content">
-                        <div class="at3">
-
-                           <label for="email">Qual a conclusão do experimento?</label>
-                           <div>Considerando que a estatística F <input type="radio" value="pertence"  id="at11" placeholder="resposta"> a região de rejeição de H0, há evidências para <input type="text" id="at12" placeholder="resposta"><a>mensagem</a> H0 ao nível de 5% de confiança.    </div>
-                                                   
-                        </div>
+                    </div> 
+                    
                                 
-                    </div>
+                    
                     <button type ="submit"> enviar</button>
         
         
                 </form>
-                <div class="quiz-container">
-                    <div id="quiz"></div>
-                    <button onclick="submitQuiz()">Submeter</button>
-                    <div id="result" class="result"></div>
-                </div>
+                
         
             </div>
 
@@ -846,7 +887,7 @@
        
     </section>
     <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script src="java/atividade.js"></script>
+    
     <script src="java/navbar.js"></script>
     <script src="java/dic.js"></script>
 </body>
