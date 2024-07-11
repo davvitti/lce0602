@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -83,34 +84,61 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
-                <pre class="r"><code>#&#39; # Planejamento de um experimento 
-
-                    sample(1:9) </code></pre>
-                    <pre><code>## [1] 4 9 7 8 1 2 3 5 6</code></pre>
-                    <pre class="r"><code>sample(1:9) </code></pre>
-                    <pre><code>## [1] 2 1 7 8 5 6 3 9 4</code></pre>
-                    <pre class="r"><code>sample(1:9) </code></pre>
-                    <pre><code>## [1] 8 9 1 6 2 7 4 5 3</code></pre>
-                    <pre class="r"><code>#&#39; ## Utilizando a biblioteca agricolae
-                    library(agricolae)
-                    (trat &lt;- paste(&quot;T&quot;, 1:9, sep =&quot;&quot;))</code></pre>
-                    <pre><code>## [1] &quot;T1&quot; &quot;T2&quot; &quot;T3&quot; &quot;T4&quot; &quot;T5&quot; &quot;T6&quot; &quot;T7&quot; &quot;T8&quot; &quot;T9&quot;</code></pre>
-                    <pre class="r"><code>Casualizando &lt;- design.rcbd(trt = trat,
-                                                r = 3)
+                <section class="atividade">
+                    <h2>Delineamento em blocos casualizados</h2>
+                </section>
+                <h4>Planejamento de um experimento</h4>
+                <pre class="code-block"> 
                     
-                    library(agricolaeplotr)</code></pre>
-                    <pre><code>## 
-                    ## Type &#39;citation(&quot;agricolaeplotr&quot;)&#39; for citing this R package in publications.</code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;agricolaeplotr&#39;</code></pre>
-                    <pre><code>## The following object is masked from &#39;package:base&#39;:
-                    ## 
-                    ##     summary</code></pre>
-                    <pre class="r"><code>plot_rcdb(Casualizando,
-                              factor_name = &quot;trat&quot;)</code></pre>
-                    <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-                    <pre class="r"><code>(Delineamento &lt;-Casualizando$book)</code></pre>
-                    <pre><code>##    plots block trat
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">sample(1:9)</span></div>
+                    
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">## [1] 4 9 7 8 1 2 3 5 6 </span></div>
+                </div> 
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">sample(1:9)</span></div>
+                    
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">## [1] 2 1 7 8 5 6 3 9 4</span></div>
+                </div> 
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">sample(1:9)</span></div>
+                    
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">## [1] 8 9 1 6 2 7 4 5 3</span></div>
+                </div> 
+                <h4>Utilizando a biblioteca agricolae</h4>
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(agricolae)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">(trat &lt;- paste(&quot;T&quot;, 1:9, sep =&quot;&quot;))</span></div>
+                                        
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">## [1] &quot;T1&quot; &quot;T2&quot; &quot;T3&quot; &quot;T4&quot; &quot;T5&quot; &quot;T6&quot; &quot;T7&quot; &quot;T8&quot; &quot;T9&quot; </span></div>
+                </div>
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">Casualizando &lt;- design.rcbd(trt = trat,
+                                                r = 3)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(agricolaeplotr)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">plot_rcdb(Casualizando,
+                              factor_name = &quot;trat&quot;)</span></div>
+                                        
+                </pre>
+                <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">(Delineamento &lt;-Casualizando$book)</span></div>
+                                                            
+                </pre>
+                <div class="out">
+                    <div><span class="r-output"> ##    plots block trat
                     ## 1    101     1   T3
                     ## 2    102     1   T6
                     ## 3    103     1   T8
@@ -137,12 +165,18 @@
                     ## 24   306     3   T6
                     ## 25   307     3   T8
                     ## 26   308     3   T5
-                    ## 27   309     3   T1</code></pre>
-                    <pre class="r"><code>Delineamento$plots &lt;- as.factor(rep(1:9, times = 3))
-                    # 
-                    library(ggplot2)</code></pre>
-                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-                    <pre class="r"><code>ggplot(Delineamento, 
+                    ## 27   309     3   T1 </span></div>
+                </div>
+                
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">Delineamento$plots &lt;- as.factor(rep(1:9, times = 3))
+                
+                    library(ggplot2)</span></div></pre>
+                   
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(Delineamento, 
                           aes(x = plots,
                               y = block,
                               fill = trat,
@@ -150,21 +184,26 @@
                        geom_tile(color=&quot;black&quot;) +
                        geom_text() +
                          xlab(&quot;Blocos&quot;) +
-                         ylab(&quot;Parcelas&quot;)</code></pre>
+                         ylab(&quot;Parcelas&quot;)</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; # Análise do experimento 
                     #&#39; ## Leitura dos dados
                     
                     rm(list=ls(all=TRUE)) 
                     # dados &lt;- read.csv2(file.choose())
                     dados &lt;- read.csv2(&quot;laranja.csv&quot;)
-                    str(dados) </code></pre>
-                    <pre><code>## &#39;data.frame&#39;:    27 obs. of  3 variables:
+                    str(dados) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## &#39;data.frame&#39;:    27 obs. of  3 variables:
                     ##  $ bloco: int  1 1 1 1 1 1 1 1 1 2 ...
                     ##  $ trat : int  1 2 3 4 5 6 7 8 9 1 ...
-                    ##  $ prod : int  145 200 183 190 180 130 206 250 164 155 ...</code></pre>
-                    <pre class="r"><code>dados &lt;- transform(dados,
+                    ##  $ prod : int  145 200 183 190 180 130 206 250 164 155 ...</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">dados &lt;- transform(dados,
                                        bloco = factor(bloco),
                                        trat = factor(trat))
                     
@@ -179,25 +218,36 @@
                                color = trat)) +
                       geom_point() +
                       xlab(&quot;porta-enxertos&quot;) +
-                      ylab(&quot;produção&quot;)</code></pre>
+                      ylab(&quot;produção&quot;)</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Destacam-se os porta-enxertos 1 e 6, com menor produção e o porta-enxerto 8 com maior produção. Os porta-enxertos 2 e 3 apresentam uma menor dispersão dos valores observados.
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Destacam-se os porta-enxertos 1 e 6, com menor produção e o porta-enxerto 8 com maior produção. Os porta-enxertos 2 e 3 apresentam uma menor dispersão dos valores observados.
                     
                     
                     #&#39; - média geral
-                    with(dados, mean(prod))</code></pre>
-                    <pre><code>## [1] 182.5556</code></pre>
-                    <pre class="r"><code>#&#39; - média por bloco
-                    with(dados, tapply(prod, bloco, mean))</code></pre>
-                    <pre><code>##        1        2        3 
-                    ## 183.1111 183.5556 181.0000</code></pre>
-                    <pre class="r"><code>#&#39; - média por tratamento
-                    with(dados, tapply(prod, trat, mean)) </code></pre>
-                    <pre><code>##        1        2        3        4        5        6        7        8 
+                    with(dados, mean(prod))</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## [1] 182.5556</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; - média por bloco
+                    with(dados, tapply(prod, bloco, mean))</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ##        1        2        3 
+                    ## 183.1111 183.5556 181.0000</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; - média por tratamento
+                    with(dados, tapply(prod, trat, mean)) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ##        1        2        3        4        5        6        7        8 
                     ## 155.3333 193.3333 192.3333 183.6667 165.3333 140.0000 180.3333 250.3333 
                     ##        9 
-                    ## 182.3333</code></pre>
-                    <pre class="r"><code>#&#39; ## Ajuste do modelo
+                    ## 182.3333</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; ## Ajuste do modelo
                     #&#39; 
                     #&#39; O modelo ajustado para cada valor observado no $i$-ésimo tratamento e no $j$-ésimo bloco foi
                     #&#39; $$y_{ij} = \mu + b_j + \tau_i + e_{ij},$$
@@ -208,8 +258,9 @@
                                  dados,
                                  contrasts = list(&quot;bloco&quot; = contr.sum,
                                                   &quot;trat&quot; = contr.sum)) 
-                    dummy.coef(modelo)</code></pre>
-                    <pre><code>## Full coefficients are 
+                    dummy.coef(modelo)</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Full coefficients are 
                     ##                                                                            
                     ## (Intercept):       182.5556                                                
                     ## bloco:                    1           2           3                        
@@ -221,8 +272,10 @@
                     ## bloco:                                                         
                     ##                                                                
                     ## trat:                     6           7           8           9
-                    ##                 -42.5555556  -2.2222222  67.7777778  -0.2222222</code></pre>
-                    <pre class="r"><code># #&#39; ## Análise gráfica dos resíduos 
+                    ##                 -42.5555556  -2.2222222  67.7777778  -0.2222222</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># #&#39; ## Análise gráfica dos resíduos 
                     # 
                     # #&#39; - Resíduos Studentizados
                     # 
@@ -230,15 +283,23 @@
                     # 
                     # #&#39; ### Verificando a presença de observações atípicas e a distribuição
                     # #&#39; 
-                    boxplot(res_stud) </code></pre>
+                    boxplot(res_stud) </span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
-                    <pre class="r"><code># 
-                    library(hnp)</code></pre>
-                    <pre><code>## Carregando pacotes exigidos: MASS</code></pre>
-                    <pre class="r"><code>hnp(modelo, print.on = TRUE)</code></pre>
-                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># 
+                    library(hnp)</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Carregando pacotes exigidos: MASS</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">hnp(modelo, print.on = TRUE)</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Gaussian model (lm object)</span></div></div>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
-                    <pre class="r"><code># 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># 
                     # #&#39; Aparentemente, não há observações atípicas e os erros apresentam uma 
                     # #&#39; distribuição normal.
                     # 
@@ -251,9 +312,11 @@
                        geom_point() +
                        geom_hline(yintercept=0, color = &quot;red&quot;) +
                        xlab(&quot;porta enxertos&quot;) +
-                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                       ylab(&quot;resíduos studentizados&quot;)</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
-                    <pre class="r"><code># 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># 
                     # 
                     # #&#39; Os porta-enxertos 2 e 4 apresentam uma menor dispersão dos erros, o porta-enxerto 
                     # #&#39; 7 apresenta uma maior dispersão. Para os demais a varialibidade dos resíduos 
@@ -265,9 +328,11 @@
                        geom_point() +
                        geom_hline(yintercept=0, color = &quot;red&quot;) +
                        xlab(&quot;blocos&quot;) +
-                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                       ylab(&quot;resíduos studentizados&quot;)</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
-                    <pre class="r"><code># #&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># #&#39;
                     # #&#39; ### Relação entre média e variância
                     # #&#39; 
                     ggplot(dados, 
@@ -276,9 +341,11 @@
                        geom_point() +
                        geom_hline(yintercept=0, color = &quot;red&quot;) +
                        xlab(&quot;valores preditos&quot;) +
-                       ylab(&quot;resíduos studentizados&quot;)</code></pre>
+                       ylab(&quot;resíduos studentizados&quot;)</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
-                    <pre class="r"><code># #&#39; Aparentemente não há relação entre média e variância. Destaca-se o porta-enxerto 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># #&#39; Aparentemente não há relação entre média e variância. Destaca-se o porta-enxerto 
                     # #&#39; 8, com maiores valores preditos.
                     # 
                     # #&#39;
@@ -287,13 +354,16 @@
                     # #&#39; seguem uma distribuição normal.
                     # #&#39; 
                     # 
-                    shapiro.test(res_stud) </code></pre>
-                    <pre><code>## 
+                    shapiro.test(res_stud) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
                     ##  Shapiro-Wilk normality test
                     ## 
                     ## data:  res_stud
-                    ## W = 0.94759, p-value = 0.1873</code></pre>
-                    <pre class="r"><code># 
+                    ## W = 0.94759, p-value = 0.1873</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># 
                     # #&#39; Assumindo o nível de 5\% de significância, não há evidências para rejeitarmos 
                     # #&#39; $H_0$. Logo, não podemos afirmar que os erros não seguem a distribuição normal.
                     # 
@@ -303,20 +373,28 @@
                     # #&#39; $H_0:$ Há homogeneidade de variâncias *versus* $H_1:$ Não há homogeneidade de 
                     # #&#39; variâncias.
                     # #&#39; 
-                    library(lmtest) </code></pre>
-                    <pre><code>## Carregando pacotes exigidos: zoo</code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;zoo&#39;</code></pre>
-                    <pre><code>## The following objects are masked from &#39;package:base&#39;:
+                    library(lmtest) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Carregando pacotes exigidos: zoo</span></div></div>
+                    <div class="out">
+    <div><span class="r-output"> ## 
+                    ## Attaching package: &#39;zoo&#39;</span></div></div>
+                    <div class="out">
+    <div><span class="r-output"> ## The following objects are masked from &#39;package:base&#39;:
                     ## 
-                    ##     as.Date, as.Date.numeric</code></pre>
-                    <pre class="r"><code>bptest(modelo) </code></pre>
-                    <pre><code>## 
+                    ##     as.Date, as.Date.numeric</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">bptest(modelo) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
                     ##  studentized Breusch-Pagan test
                     ## 
                     ## data:  modelo
-                    ## BP = 9.9957, df = 10, p-value = 0.4409</code></pre>
-                    <pre class="r"><code># #&#39; Assumindo o nível de 5\% de significância, não há evidências para rejeitarmos 
+                    ## BP = 9.9957, df = 10, p-value = 0.4409</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># #&#39; Assumindo o nível de 5\% de significância, não há evidências para rejeitarmos 
                     # #&#39; $H_0$. Logo, não podemos afirmar que os erros não são homogêneos.
                     # 
                     # 
@@ -326,9 +404,11 @@
                     # 
                     library(MASS) 
                     with(dados, boxcox(prod ~ bloco + trat,
-                                        lambda = seq(-2, 3, 0.01)))</code></pre>
+                                        lambda = seq(-2, 3, 0.01)))</span></div></pre>
                     <p><img src="figs/aula5_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
-                    <pre class="r"><code># #&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input"># #&#39;
                     # #&#39; Como o valor 1 para $\lambda$ pertence ao intervalo de confiança, não há 
                     # #&#39; necessidade de tranformarmos os dados.
                     # #&#39;
@@ -337,8 +417,9 @@
                     #&#39; ## Análise da variância 
                     #&#39; $H_0: \mu_1 = \mu_2 = \ldots = \mu_9$ *versus* $H_1:$ pelo menos duas médias diferem entre si. 
                     #&#39;
-                    anova(modelo) </code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelo) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Analysis of Variance Table
                     ## 
                     ## Response: prod
                     ##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -346,29 +427,37 @@
                     ## trat       8 22981.3 2872.67 11.4114 2.637e-05 ***
                     ## Residuals 16  4027.8  251.74                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; Assumindo o nível de 5\% de significância, há evidências para rejeitarmos $H_0$. Sendo assim, nem todas as produções médias para os diferentes porta-enxertos são iguais.
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Assumindo o nível de 5\% de significância, há evidências para rejeitarmos $H_0$. Sendo assim, nem todas as produções médias para os diferentes porta-enxertos são iguais.
                     
                     #&#39;
                     #&#39; ## Testes de comparações de médias de Tukey
                     #&#39; $H_0: \mu_i - \mu_{i&#39;} = 0$ *versus*  $H_1: \mu_i - \mu_{i&#39;} \neq 0$
                     #&#39;
                     #&#39; - Usando as funções da biblioteca ExpDes.pt
-                    library(ExpDes.pt) </code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>
-                    <pre><code>## The following object is masked from &#39;package:MASS&#39;:
+                    library(ExpDes.pt) </span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
+                    ## Attaching package: &#39;ExpDes.pt&#39;</span></div></div>
+                    <div class="out">
+    <div><span class="r-output"> ## The following object is masked from &#39;package:MASS&#39;:
                     ## 
-                    ##     ginv</code></pre>
-                    <pre><code>## The following objects are masked from &#39;package:agricolae&#39;:
+                    ##     ginv</span></div></div>
+                    <div class="out">
+    <div><span class="r-output"> ## The following objects are masked from &#39;package:agricolae&#39;:
                     ## 
-                    ##     lastC, order.group, tapply.stat</code></pre>
-                    <pre class="r"><code>with(dados, 
+                    ##     lastC, order.group, tapply.stat</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">with(dados, 
                          dbc(trat, 
                              bloco, 
                              prod, 
-                             quali = T) )</code></pre>
-                    <pre><code>## ------------------------------------------------------------------------
+                             quali = T) )</span></div></pre>
+                    <div class="out">
+    <div><span class="r-output"> ## ------------------------------------------------------------------------
                     ## Quadro da analise de variancia
                     ## ------------------------------------------------------------------------
                     ##            GL      SQ      QM      Fc   Pr&gt;Fc
@@ -403,8 +492,10 @@
                     ##  bc   5   165.3333 
                     ##  bc   1   155.3333 
                     ##   c   6   140 
-                    ## ------------------------------------------------------------------------</code></pre>
-                    <pre class="r"><code>#&#39;</code></pre>
+                    ## ------------------------------------------------------------------------</span></div></div>
+                
+                    
+    
                     
                     
                     

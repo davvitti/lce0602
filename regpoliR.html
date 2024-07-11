@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -83,8 +84,9 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
-                <pre class="r"><code>#&#39; # Entrada dos dados para análise
-
+                <pre class="code-block">
+                 <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Entrada dos dados para análise
+                  
                     rm(list=ls(all=TRUE))
                     dados &lt;- data.frame(dose = rep(seq(0,300,50),each=4),
                                         peso = c(134.8,139.7,147.6,132.3,
@@ -94,27 +96,33 @@
                                                  165.7,160.0,158.2,151.0,
                                                  171.8,157.3,150.4,160.4,
                                                  154.5,160.4,148.8,154.0))
-                    head(dados)</code></pre>
-                    <pre><code>##   dose  peso
+                    head(dados)</span></div>
+                </pre>
+                <div class="out"><div><span class="r-output">##   dose  peso
                     ## 1    0 134.8
                     ## 2    0 139.7
                     ## 3    0 147.6
                     ## 4    0 132.3
                     ## 5   50 161.7
-                    ## 6   50 157.7</code></pre>
-                    <pre class="r"><code>str(dados)</code></pre>
-                    <pre><code>## &#39;data.frame&#39;:    28 obs. of  2 variables:
+                    ## 6   50 157.7</span></div></div>
+                    <pre class="code-block">
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">str(dados)</span></div>
+                    </pre>
+                    <div class="out"><div><span class="r-output">## &#39;data.frame&#39;:    28 obs. of  2 variables:
                     ##  $ dose: num  0 0 0 0 50 50 50 50 100 100 ...
-                    ##  $ peso: num  135 140 148 132 162 ...</code></pre>
-                    <pre class="r"><code>(media &lt;- with(dados, 
-                                   tapply(peso, dose, mean)))</code></pre>
-                    <pre><code>##       0      50     100     150     200     250     300 
-                    ## 138.600 153.600 164.525 164.925 158.725 159.975 154.425</code></pre>
-                    <pre class="r"><code>#&#39; # Gráfico de dispersão
-                    
-                    library(ggplot2)</code></pre>
-                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-                    <pre class="r"><code>ggplot(dados,
+                    ##  $ peso: num  135 140 148 132 162 ...</span></div></div>
+                    <pre class="code-block">
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">(media &lt;- with(dados, 
+                                   tapply(peso, dose, mean)))</span></div>
+                    </pre>
+                    <div class="out"><div><span class="r-output">##       0      50     100     150     200     250     300 
+                    ## 138.600 153.600 164.525 164.925 158.725 159.975 154.425</span></div></div>
+                    <pre class="code-block">
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Gráfico de dispersão
+                
+                    library(ggplot2)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</span></div></div>
+                    <pre class="code-block">><div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados,
                            aes(x = dose,
                                y = peso)) +
                       geom_point() +
@@ -123,23 +131,23 @@
                                  color = 2) +
                       xlab(&quot;dose de gesso (kg/ha)&quot;) +
                       ylab(&quot;peso de 1000 sementes de feijão (g)&quot;) +
-                      theme_classic()</code></pre>
+                      theme_classic()</span></div></pre>
                     <p><img src="figs/aula4_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; # 1. Ajuste do modelo (dose como variável qualitativa)
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # 1. Ajuste do modelo (dose como variável qualitativa)
                     #&#39; 
                     #&#39; $H_0: \mu_{0} = \mu_{50} = \ldots = \mu_{300} = \mu$ versus $H_1:$ pelo menos um contraste de médias difere de zero.
                     
                     modelo&lt;- lm(peso ~ as.factor(dose), dados)
-                    anova(modelo)</code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelo)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Analysis of Variance Table
                     ## 
                     ## Response: peso
                     ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
                     ## as.factor(dose)  6 1941.83  323.64   7.668 0.0001876 ***
                     ## Residuals       21  886.34   42.21                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; Como há evidências de um efeito significativo de doses, 
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como há evidências de um efeito significativo de doses, 
                     #&#39; vamos buscar qual modelo polinomial melhor representa o 
                     #&#39; peso de 1000 sementes de feijão (g) em função das 
                     #&#39; doses de gesso (Kg/ha)).
@@ -156,8 +164,8 @@
                     #&#39;  
                     modelo.RL &lt;- lm(peso ~ poly(dose,1) + as.factor(dose),
                                     dados)
-                    anova(modelo.RL)</code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelo.RL)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Analysis of Variance Table
                     ## 
                     ## Response: peso
                     ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -165,8 +173,8 @@
                     ## as.factor(dose)  5 1518.68  303.74  7.1964 0.0004595 ***
                     ## Residuals       21  886.34   42.21                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; Como há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,0004595 para as.factor(dose) &lt; 0.05) ao nível de 5\% de significância, ajustaremos o modelo quadrático.
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,0004595 para as.factor(dose) &lt; 0.05) ao nível de 5\% de significância, ajustaremos o modelo quadrático.
                     #&#39; 
                     #&#39; ## Ajuste de uma parábola
                     #&#39;  
@@ -178,8 +186,8 @@
                                       poly(dose,2) + 
                                       as.factor(dose),
                                     dados)
-                    anova(modelo.RQ)</code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelo.RQ)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Analysis of Variance Table
                     ## 
                     ## Response: peso
                     ##                 Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -188,8 +196,8 @@
                     ## as.factor(dose)  4  232.83   58.21  1.3791  0.275047    
                     ## Residuals       21  886.34   42.21                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; Como não há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,275047 para as.factor(dose)) ao nível de 5\% de significância, avaliaremos o teste de hipóteses para $\beta_2 \mid \beta_0, \beta_1$.
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como não há evidências para rejeitarmos a hipótese nula (Pr(&gt;F) = 0,275047 para as.factor(dose)) ao nível de 5\% de significância, avaliaremos o teste de hipóteses para $\beta_2 \mid \beta_0, \beta_1$.
                     #&#39; 
                     #&#39; - Adição do termo quadrático ao modelo
                     #&#39; 
@@ -201,17 +209,17 @@
                     #&#39; - Coeficiente de determinação
                     #&#39;
                     (R2 &lt;- sum(anova(modelo.RQ)$`Sum Sq`[1:2])/
-                        sum(anova(modelo.RQ)$`Sum Sq`[1:3]))</code></pre>
-                    <pre><code>## [1] 0.8800954</code></pre>
-                    <pre class="r"><code>#&#39; 
+                        sum(anova(modelo.RQ)$`Sum Sq`[1:3]))</span></div></pre>
+                    <div class="out"><div><span class="r-output">## [1] 0.8800954</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; 
                     #&#39; # Modelo ajustado.
                     #&#39; 
                     
                     modelo.aj &lt;-  lm(peso ~ dose + I(dose^2), dados)
-                    coef(modelo.aj)</code></pre>
-                    <pre><code>## (Intercept)        dose   I(dose^2) 
-                    ## 140.7839286   0.2736250  -0.0007825</code></pre>
-                    <pre class="r"><code>#&#39; # Gráfico da curva ajustada
+                    coef(modelo.aj)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## (Intercept)        dose   I(dose^2) 
+                    ## 140.7839286   0.2736250  -0.0007825</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Gráfico da curva ajustada
                     library(ggpubr)
                     ggplot(dados,
                            aes(x = dose,
@@ -236,16 +244,16 @@
                                y = 185,
                                label = expression(R^2 == 0.88)) +
                       xlab(&quot;dose de gesso (kg/ha)&quot;) +
-                      ylab(&quot;peso de 1000 sementes de feijão (g)&quot;)</code></pre>
-                    <pre><code>## Warning: The dot-dot notation (`..eq.label..`) was deprecated in ggplot2 3.4.0.
+                      ylab(&quot;peso de 1000 sementes de feijão (g)&quot;)</span></div></pre>
+                      <div class="out"><div><span class="r-output">## Warning: The dot-dot notation (`..eq.label..`) was deprecated in ggplot2 3.4.0.
                     ## i Please use `after_stat(eq.label)` instead.
                     ## This warning is displayed once every 8 hours.
                     ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-                    ## generated.</code></pre>
-                    <pre><code>## Warning in is.na(x): is.na() aplicado a um objeto diferente de lista ou vetor
-                    ## de tipo &#39;expression&#39;</code></pre>
+                    ## generated.</span></div></div>
+                    <div class="out"><div><span class="r-output">## Warning in is.na(x): is.na() aplicado a um objeto diferente de lista ou vetor
+                    ## de tipo &#39;expression&#39;</span></div></div>
                     <p><img src="figs/aula4_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; # Usando a biblioteca ExpDes.pt
                     #&#39;  
                     
@@ -255,8 +263,8 @@
                              resp = peso,
                              quali = FALSE,
                              sigT = 0.05,
-                             sigF = 0.05))</code></pre>
-                    <pre><code>## ------------------------------------------------------------------------
+                             sigF = 0.05))</span></div></pre>
+                             <div class="out"><div><span class="r-output">## ------------------------------------------------------------------------
                     ## Quadro da analise de variancia
                     ## ------------------------------------------------------------------------
                     ##            GL      SQ     QM    Fc      Pr&gt;Fc
@@ -354,7 +362,7 @@
                     ## Desvios de Regressao 3   77.7930    25.9310   0.61  0.61327
                     ## Residuos             21  886.3375   42.2066                
                     ## -----------------------------------------------------------
-                    ## ------------------------------------------------------------------------</code></pre>
+                    ## ------------------------------------------------------------------------</span></div></div>
                     
             </div>
         </section>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -83,49 +84,49 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
-                <pre class="r"><code>#&#39; # Exemplo (Barbin, 1994)
+                <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Exemplo (Barbin, 1994)
                     #&#39; Um pesquisador pretende comparar quatro variedades de pêssego quanto ao enraizamento de estacas. Para tanto, realizou um experimento de acordo com o delineamento inteiramente casualizado com cinco repetições, sendo cada parcela um vaso com vinte estacas. Passado o tempo necessário, o pesquisador anotou o número de estacas enraizadas.
                     
                     library(xlsx)
                     #dados &lt;- read.xlsx(file.choose(), 1)
                     dados &lt;- read.xlsx(&quot;estacas.xlsx&quot;, 1)
-                    str(dados)</code></pre>
-                    <pre><code>## &#39;data.frame&#39;:    20 obs. of  2 variables:
+                    str(dados)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## &#39;data.frame&#39;:    20 obs. of  2 variables:
                     ##  $ trat: chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...
-                    ##  $ y   : num  2 2 1 1 0 1 0 0 1 1 ...</code></pre>
-                    <pre class="r"><code>library(ggplot2)</code></pre>
-                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-                    <pre class="r"><code>ggplot(dados,
+                    ##  $ y   : num  2 2 1 1 0 1 0 0 1 1 ...</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">library(ggplot2)</span></div></pre>
+                    
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados,
                            aes(x = trat,
                                y = y)) +
                       geom_point(position = position_jitter(w = 0.2, h = 0)) +
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
-                      xlab(&quot;Variedade&quot;)</code></pre>
+                      xlab(&quot;Variedade&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; ## Análise de variância - ajuste do modelo
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; ## Análise de variância - ajuste do modelo
                     
                     modelo &lt;- lm(y ~ trat, dados)
                     
                     #&#39; ## Obtenção dos resíduos
                     
-                    (res &lt;- residuals(modelo)) # resíduos simples</code></pre>
-                    <pre><code>##    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16 
+                    (res &lt;- residuals(modelo)) # resíduos simples</span></div></pre>
+                    <div class="out"><div><span class="r-output">##    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16 
                     ##  0.8  0.8 -0.2 -0.2 -1.2  0.4 -0.6 -0.6  0.4  0.4 -0.8 -2.8  1.2  4.2 -1.8 -2.8 
                     ##   17   18   19   20 
-                    ## -0.8  5.2 -1.8  0.2</code></pre>
-                    <pre class="r"><code>(res_Stud &lt;- rstandard(modelo)) # resíduos estudentizados</code></pre>
-                    <pre><code>##          1          2          3          4          5          6          7 
+                    ## -0.8  5.2 -1.8  0.2</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">(res_Stud &lt;- rstandard(modelo)) # resíduos estudentizados</span></div></pre>
+                    <div class="out"><div><span class="r-output">##          1          2          3          4          5          6          7 
                     ##  0.4170288  0.4170288 -0.1042572 -0.1042572 -0.6255432  0.2085144 -0.3127716 
                     ##          8          9         10         11         12         13         14 
                     ## -0.3127716  0.2085144  0.2085144 -0.4170288 -1.4596009  0.6255432  2.1894013 
                     ##         15         16         17         18         19         20 
-                    ## -0.9383149 -1.4596009 -0.4170288  2.7106874 -0.9383149  0.1042572</code></pre>
-                    <pre class="r"><code>#&#39; - Observações discrepantes
+                    ## -0.9383149 -1.4596009 -0.4170288  2.7106874 -0.9383149  0.1042572</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; - Observações discrepantes
                     
-                    boxplot(res_Stud)</code></pre>
+                    boxplot(res_Stud)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; São observados dois valores discrepantes para os resíduos, quando esperada a normalidade dos erros. Logo, não se observa 95\% dos resíduos entre -2 e 2, entretanto 100\% destes estão entre -3 e 3.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; São observados dois valores discrepantes para os resíduos, quando esperada a normalidade dos erros. Logo, não se observa 95\% dos resíduos entre -2 e 2, entretanto 100\% destes estão entre -3 e 3.
                     
                     
                     ggplot(dados,
@@ -134,9 +135,9 @@
                       geom_point(position = position_jitter(w = 0.3, h = 0)) +
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
-                      xlab(&quot;Variedade&quot;)</code></pre>
+                      xlab(&quot;Variedade&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Observa-se que os dois valores discrepantes estão relacionados às variedades C e D. A dispersão dos resíduos por tratamento será discutida posteriormente.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Observa-se que os dois valores discrepantes estão relacionados às variedades C e D. A dispersão dos resíduos por tratamento será discutida posteriormente.
                     #&#39;
                     #&#39; ## Homogeneidade de Variâncias
                     #&#39;
@@ -146,9 +147,9 @@
                       geom_point() +
                       theme_bw() +
                       ylab(&quot;Resíduos Estudentizados&quot;) +
-                      xlab(&quot;Variedade&quot;)</code></pre>
+                      xlab(&quot;Variedade&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Observa-se que as dispersões dos resíduos estudentizados associados às variedades A e B são menores do que as dispersões dos resíduos estudentizados associados às variedades C e D, aparentemente.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Observa-se que as dispersões dos resíduos estudentizados associados às variedades A e B são menores do que as dispersões dos resíduos estudentizados associados às variedades C e D, aparentemente.
                     
                     #&#39;
                     #&#39; - Teste de hipóteses: Teste de Levene (1960)
@@ -158,30 +159,29 @@
                     #&#39; \end{array}$$
                     
                     library(lawstat)
-                    levene.test(res_Stud, dados$trat, location = &quot;mean&quot;)</code></pre>
-                    <pre><code>## 
+                    levene.test(res_Stud, dados$trat, location = &quot;mean&quot;)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## 
                     ##  Classical Levene&#39;s test based on the absolute deviations from the mean
                     ##  ( none not applied because the location is not set to median )
                     ## 
                     ## data:  res_Stud
-                    ## Test Statistic = 2.8895, p-value = 0.06786</code></pre>
-                    <pre class="r"><code>#&#39; Como o valor-p = 0,06786 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância não rejeitamos $H_0$. Logo, não há evidências para afirmarmos que as variâncias não são homogêneas.
+                    ## Test Statistic = 2.8895, p-value = 0.06786</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como o valor-p = 0,06786 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância não rejeitamos $H_0$. Logo, não há evidências para afirmarmos que as variâncias não são homogêneas.
                     
                     #&#39; ## Normalidade dos Erros
                     
                     qqnorm(res_Stud)
-                    qqline(res_Stud, col=2)</code></pre>
+                    qqline(res_Stud, col=2)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Observa-se o afastamento de dois pontos da reta que passa pelos pontos ($Q_{1_{esp}}$, $Q_{1_{obs}}$) e ($Q_{3_{esp}}$, $Q_{3_{obs}}$). Desse modo, espera-se que os erros não sigam uma distribuição normal.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Observa-se o afastamento de dois pontos da reta que passa pelos pontos ($Q_{1_{esp}}$, $Q_{1_{obs}}$) e ($Q_{3_{esp}}$, $Q_{3_{obs}}$). Desse modo, espera-se que os erros não sigam uma distribuição normal.
                     
                     
-                    library(hnp)</code></pre>
-                    <pre><code>## Carregando pacotes exigidos: MASS</code></pre>
-                    <pre class="r"><code>hnp(modelo,
-                        print.on = TRUE)</code></pre>
-                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    library(hnp)</span></div></pre>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">hnp(modelo,
+                        print.on = TRUE)</span></div></pre>
+                    <div><span class="r-output">## Gaussian model (lm object)</span></div>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; É aceitável que pelo menos 95\% dos pontos pertençam ao intervalo de confiança gerado. Para o exemplo, tem-se mais de 5\% destes foram do intervalo. Assim, é esperado que os erros não sigam uma distribuição normal.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; É aceitável que pelo menos 95\% dos pontos pertençam ao intervalo de confiança gerado. Para o exemplo, tem-se mais de 5\% destes foram do intervalo. Assim, é esperado que os erros não sigam uma distribuição normal.
                     #&#39;
                     #&#39; - Teste de hipóteses: Shapiro-Wilk (1965)
                     #&#39;
@@ -190,13 +190,13 @@
                     #&#39; H_a: \mbox{Os erros não seguem uma distribuição normal}
                     #&#39; \end{array}$$
                     
-                    shapiro.test(res_Stud)</code></pre>
-                    <pre><code>## 
+                    shapiro.test(res_Stud)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## 
                     ##  Shapiro-Wilk normality test
                     ## 
                     ## data:  res_Stud
-                    ## W = 0.88533, p-value = 0.02209</code></pre>
-                    <pre class="r"><code>#&#39; Como o valor-p = 0,02209 &lt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, rejeitamos $H_0$. Logo, há evidências para afirmarmos que os erros não seguem uma distribuição normal.
+                    ## W = 0.88533, p-value = 0.02209</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como o valor-p = 0,02209 &lt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, rejeitamos $H_0$. Logo, há evidências para afirmarmos que os erros não seguem uma distribuição normal.
                     
                     #&#39; ## Transformação de dados
                     
@@ -207,9 +207,9 @@
                       theme_bw() +
                       geom_hline(yintercept = 0) +
                       ylab(&quot;Resíduos estudentizados&quot;) +
-                      xlab(&quot;Valores esperados (médias)&quot;)</code></pre>
+                      xlab(&quot;Valores esperados (médias)&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Observa-se o aumento da dispersão conforme os valores preditos aumentam. Assim, é esperado que uma transformação da família Box-Cox seja necessária.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Observa-se o aumento da dispersão conforme os valores preditos aumentam. Assim, é esperado que uma transformação da família Box-Cox seja necessária.
                     
                     
                     
@@ -217,9 +217,9 @@
                     
                     library(MASS)
                     boxcox(dados$y+0.5 ~ dados$trat,
-                           ylab=&quot;logaritmo da verossimilhança&quot;) #lambda=0,5.</code></pre>
+                           ylab=&quot;logaritmo da verossimilhança&quot;) #lambda=0,5.</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Observe que o valor 1 não pertence ao intervalo de confiança a 95\% para $\lambda$, porém, o valor 0,5 pertence, sendo este o valor indicado de $\lambda$.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Observe que o valor 1 não pertence ao intervalo de confiança a 95\% para $\lambda$, porém, o valor 0,5 pertence, sendo este o valor indicado de $\lambda$.
                     
                     #&#39;
                     #&#39; # Análise dos Dados Transformados
@@ -231,27 +231,27 @@
                     #&#39;
                     qqnorm(rstandard(modelot), xlab=&quot;Quantis da distribuição
                            normal&quot;, ylab=&quot;Resíduos estudentizados&quot;)
-                    qqline(rstandard(modelot), col=2)</code></pre>
+                    qqline(rstandard(modelot), col=2)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Com os dados transformados e novo modelo ajustado, tem-se que 95\% dos resíduos encontram-se entre -2 e 2 e, os pontos não apresentam grande afastamento da reta, o que indica possível normalidade dos erros.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Com os dados transformados e novo modelo ajustado, tem-se que 95\% dos resíduos encontram-se entre -2 e 2 e, os pontos não apresentam grande afastamento da reta, o que indica possível normalidade dos erros.
                     
-                    hnp(modelot, print.on = TRUE)</code></pre>
-                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    hnp(modelot, print.on = TRUE)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Gaussian model (lm object)</span></div></div>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Com os dados transformados e novo modelo ajustado, tem-se que todos os pontos pertencem ao envelope simulado, indicando possível normalidade dos erros.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Com os dados transformados e novo modelo ajustado, tem-se que todos os pontos pertencem ao envelope simulado, indicando possível normalidade dos erros.
                     
                     #&#39; $$\begin{array}{l}
                     #&#39; H_0: \mbox{Os erros seguem uma distribuição normal}\\
                     #&#39; H_a: \mbox{Os erros não seguem uma distribuição normal}
                     #&#39; \end{array}$$
                     
-                    shapiro.test(rstandard(modelot))</code></pre>
-                    <pre><code>## 
+                    shapiro.test(rstandard(modelot))</span></div></pre>
+                    <div class="out"><div><span class="r-output">## 
                     ##  Shapiro-Wilk normality test
                     ## 
                     ## data:  rstandard(modelot)
-                    ## W = 0.97048, p-value = 0.765</code></pre>
-                    <pre class="r"><code>#&#39; Como o valor-p = 0,8943 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, não rejeitamos $H_0$. Logo, há evidências para afirmarmos que os erros seguem uma distribuição normal.
+                    ## W = 0.97048, p-value = 0.765</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como o valor-p = 0,8943 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, não rejeitamos $H_0$. Logo, há evidências para afirmarmos que os erros seguem uma distribuição normal.
                     
                     #&#39;
                     #&#39; ## Homogeneidade de variâncias
@@ -263,9 +263,9 @@
                       geom_hline(yintercept = 0) +
                       theme_bw() +
                       ylab(&quot;Resíduos estudentizados&quot;) +
-                      xlab(&quot;Variedade&quot;)</code></pre>
+                      xlab(&quot;Variedade&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Aparentemente, as dispersões dos resíduos por tratamento são semelhantes.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Aparentemente, as dispersões dos resíduos por tratamento são semelhantes.
                     
                     
                     #&#39; $$\begin{array}{l}
@@ -273,14 +273,14 @@
                     #&#39; H_a: \mbox{Não há homogeneidade de variâncias}
                     #&#39; \end{array}$$
                     
-                    levene.test(rstandard(modelot), dados$trat, location = &quot;mean&quot;)</code></pre>
-                    <pre><code>## 
+                    levene.test(rstandard(modelot), dados$trat, location = &quot;mean&quot;)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## 
                     ##  Classical Levene&#39;s test based on the absolute deviations from the mean
                     ##  ( none not applied because the location is not set to median )
                     ## 
                     ## data:  rstandard(modelot)
-                    ## Test Statistic = 0.15361, p-value = 0.9258</code></pre>
-                    <pre class="r"><code>#&#39; Como o valor-p = 0,9258 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, não rejeitamos $H_0$. Logo, há evidências para afirmarmos que há homogeneidade de variâncias dos erros.
+                    ## Test Statistic = 0.15361, p-value = 0.9258</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como o valor-p = 0,9258 &gt; 0,05 = $\alpha$, considerando-se o nível de 5\% de significância, não rejeitamos $H_0$. Logo, há evidências para afirmarmos que há homogeneidade de variâncias dos erros.
                     
                     #&#39;
                     #&#39; ## Transformação de Dados
@@ -292,13 +292,13 @@
                       geom_hline(yintercept = 0) +
                       theme_bw() +
                       ylab(&quot;Resíduos Estudentizados&quot;) +
-                      xlab(&quot;Valores esperados (médias)&quot;)</code></pre>
+                      xlab(&quot;Valores esperados (médias)&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-12.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Agora, aparentemente, há um leve aumento na dispersão dos resíduos conforme o valor predito aumenta.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Agora, aparentemente, há um leve aumento na dispersão dos resíduos conforme o valor predito aumenta.
                     
-                    boxcox(modelot, ylab=&quot;logaritmo da verossimilhança&quot;)</code></pre>
+                    boxcox(modelot, ylab=&quot;logaritmo da verossimilhança&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-13.png" width="672" /></p>
-                    <pre class="r"><code>#&#39; Quando utilizados os dados transformados, verifica-se que o valor 1 pertence ao intervalo de confiança para $\lambda$. Desse modo, nova transformação não é indicada.
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Quando utilizados os dados transformados, verifica-se que o valor 1 pertence ao intervalo de confiança para $\lambda$. Desse modo, nova transformação não é indicada.
                     #&#39;
                     #&#39; ## Análise de Variância
                     #&#39;
@@ -310,16 +310,16 @@
                     #&#39; H_a: \mbox{Pelo menos um constraste de médias difere de zero}
                     #&#39; \end{array}$$
                     
-                    anova(modelot)</code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelot)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## Analysis of Variance Table
                     ## 
                     ## Response: yt
                     ##           Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
                     ## trat       3 26.3394  8.7798  62.644 4.623e-09 ***
                     ## Residuals 16  2.2425  0.1402                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; Como o valor-p = $4,623\times10^{-9} &lt; 0,05 = \alpha$, considerando o nível de 5\% de significância, rejeitamos $H_0$. Desse modo, há evidências para afirmarmos que pelo menos um contraste de médias difere de zero.
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; Como o valor-p = $4,623\times10^{-9} &lt; 0,05 = \alpha$, considerando o nível de 5\% de significância, rejeitamos $H_0$. Desse modo, há evidências para afirmarmos que pelo menos um contraste de médias difere de zero.
                     
                     #&#39;
                     #&#39; ## Teste de Tukey
@@ -331,16 +331,16 @@
                     #&#39;     \end{array}$$
                     
                     
-                    library(ExpDes.pt)</code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>
-                    <pre><code>## The following object is masked from &#39;package:MASS&#39;:
+                    library(ExpDes.pt)</span></div></pre>
+                    <div class="out"><div><span class="r-output">## 
+                    ## Attaching package: &#39;ExpDes.pt&#39;</span></div></div>
+                    <div class="out"><div><span class="r-output">## The following object is masked from &#39;package:MASS&#39;:
                     ## 
-                    ##     ginv</code></pre>
-                    <pre class="r"><code>with(dados,
+                    ##     ginv</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">with(dados,
                          dic(trat,
-                             yt))</code></pre>
-                    <pre><code>## ------------------------------------------------------------------------
+                             yt))</span></div></pre>
+                    <div class="out"><div><span class="r-output">## ------------------------------------------------------------------------
                     ## Quadro da analise de variancia
                     ## ------------------------------------------------------------------------
                     ##            GL      SQ     QM     Fc      Pr&gt;Fc
@@ -369,15 +369,15 @@
                     ## a     D   3.182734 
                     ##  b    A   1.263775 
                     ##  b    B   1.01769 
-                    ## ------------------------------------------------------------------------</code></pre>
-                    <pre class="r"><code>#&#39; A partir do teste de Tukey, ao nível de 5\% de significância, há evidências para afirmarmos que as médias para as variedades C e D diferem das médias paras as variedades A e B, e as demais médias não diferem entre si.
+                    ## ------------------------------------------------------------------------</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; A partir do teste de Tukey, ao nível de 5\% de significância, há evidências para afirmarmos que as médias para as variedades C e D diferem das médias paras as variedades A e B, e as demais médias não diferem entre si.
                     #&#39;
                     #&#39; ## Médias obtidas pela transformação inversa
                     #&#39;
-                    (medias.TI &lt;- round((tapply(dados$yt, dados$trat, mean))^2-0.5,4) )</code></pre>
-                    <pre><code>##       A       B       C       D 
-                    ##  1.0971  0.5357 12.6889  9.6298</code></pre>
-                    <pre class="r"><code>#&#39;
+                    (medias.TI &lt;- round((tapply(dados$yt, dados$trat, mean))^2-0.5,4) )</span></div></pre>
+                    <div><span class="r-output">##       A       B       C       D 
+                    ##  1.0971  0.5357 12.6889  9.6298</span></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; ## Apresentação das médias
                     #&#39;
                     mediasTI &lt;- data.frame(trat = LETTERS[1:4],
@@ -385,13 +385,13 @@
                                            tukey = c(&quot;b&quot;, &quot;b&quot;, &quot;a&quot;, &quot;a&quot;))
                     # atenção a ordem dos tratamentos na saída da ExpDes.pt
                     mediasTI &lt;- mediasTI[order(mediasTI$trat),]
-                    mediasTI</code></pre>
-                    <pre><code>##   trat   media tukey
+                    mediasTI</span></div></pre>
+                    <div class="out"><div><span class="r-output">##   trat   media tukey
                     ## A    A  1.0971     b
                     ## B    B  0.5357     b
                     ## C    C 12.6889     a
-                    ## D    D  9.6298     a</code></pre>
-                    <pre class="r"><code>ggplot(mediasTI,
+                    ## D    D  9.6298     a</span></div></div>
+                    <pre class="code-block"><div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(mediasTI,
                            aes(x = trat,
                                y = media,
                                label = tukey)) +
@@ -401,7 +401,7 @@
                       theme_bw() +
                       xlab(&quot;Variedade&quot;) +
                       ylab(&quot;número de estacas enraizadas
-                           (médias obtidas pela transformação inversa)&quot;)</code></pre>
+                           (médias obtidas pela transformação inversa)&quot;)</span></div></pre>
                     <p><img src="figs/aula6_files/figure-html/unnamed-chunk-1-14.png" width="672" /></p>
                     
             </div>

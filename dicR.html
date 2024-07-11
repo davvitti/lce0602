@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -83,202 +84,231 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
-                <pre class="r"> 
-                    Considere o caso em que se pretende avaliar a produtividade de milho de quatro diferentes variedades. 
-                    #; Para tanto será utilizado o delineamento inteiramente casualizado com cinco repetições.
-                    #&#39; 
-                    #&#39; # Planejamento de um experimento
-                    set.seed(1234)
-                    sample(rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;), 5))</pre>
-                        <pre><code>##  [1] &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot;
-                    ## [20] &quot;C&quot;</code></pre>
-                        <pre class="r"><code>#&#39; ## Usando a biblioteca agricolae
+                <section class="atividade">
+                    <h2>Delineamento inteiramente casualizado</h2>
+                </section>
+                <p>Considere o caso em que se pretende avaliar a produtividade de milho de quatro diferentes variedades. 
+                 Para tanto será utilizado o delineamento inteiramente casualizado com cinco repetições.
+                </p>
+                <h4>Planejamento de um experimento</h4>
+                <pre class="code-block"> 
                     
-                    # Instalando
-                    # install.packages(&quot;agricolae&quot;, 
-                    #                  dependencies = TRUE)
-                    # Habilitando as funções
-                    library(agricolae)
-                    trt = LETTERS[1:4]
-                    delineamento &lt;- design.crd(trt,
-                                               r = 5,
-                                               serie = 0)
-                    delineamento</code></pre>
-                        <pre><code>## $parameters
-                    ## $parameters$design
-                    ## [1] &quot;crd&quot;
-                    ## 
-                    ## $parameters$trt
-                    ## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
-                    ## 
-                    ## $parameters$r
-                    ## [1] 5 5 5 5
-                    ## 
-                    ## $parameters$serie
-                    ## [1] 0
-                    ## 
-                    ## $parameters$seed
-                    ## [1] 1407173775
-                    ## 
-                    ## $parameters$kinds
-                    ## [1] &quot;Super-Duper&quot;
-                    ## 
-                    ## $parameters[[7]]
-                    ## [1] TRUE
-                    ## 
-                    ## 
-                    ## $book
-                    ##    plots r trt
-                    ## 1      1 1   C
-                    ## 2      2 1   B
-                    ## 3      3 1   D
-                    ## 4      4 2   D
-                    ## 5      5 2   B
-                    ## 6      6 2   C
-                    ## 7      7 3   B
-                    ## 8      8 3   D
-                    ## 9      9 4   B
-                    ## 10    10 4   D
-                    ## 11    11 5   B
-                    ## 12    12 1   A
-                    ## 13    13 2   A
-                    ## 14    14 3   C
-                    ## 15    15 3   A
-                    ## 16    16 4   A
-                    ## 17    17 5   D
-                    ## 18    18 4   C
-                    ## 19    19 5   A
-                    ## 20    20 5   C</code></pre>
-                        <pre class="r"><code># Graficamente
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">set.seed(1234)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">sample(rep(c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;), 5))</span></div>
+                                        
+                </pre>
+                <div class="out">
+                    <div><span class="r-output"> ## [1] &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;C&quot; &quot;A&quot; &quot;C&quot; &quot;B&quot; &quot;D&quot; &quot;B&quot; &quot;C&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;A&quot; &quot;D&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; 
+ ## [20] &quot;C&quot;</span></div>
+                </div>
+                <h4>Usando a biblioteca agricolae </h4>
+                <pre class="code-block"> 
                     
-                    # install.packages(&quot;agricolaeplotr&quot;, 
-                    #                  dependencies = TRUE)
-                    library(agricolaeplotr)</code></pre>
-                        <pre><code>## 
-                    ## Type &#39;citation(&quot;agricolaeplotr&quot;)&#39; for citing this R package in publications.</code></pre>
-                        <pre><code>## 
-                    ## Attaching package: &#39;agricolaeplotr&#39;</code></pre>
-                        <pre><code>## The following object is masked from &#39;package:base&#39;:
-                    ## 
-                    ##     summary</code></pre>
-                        <pre class="r"><code>plot_design_crd(delineamento,
-                                    ncols = 4,
-                                    nrows = 5)</code></pre>
-                        <p><img src="figs/about_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-                        <pre class="r"><code># Para montar um croqui precisamos de um gride, definido por linhas e colunas
-                    delineamento$book$Linha &lt;- rep(1:5, each = 4)
-                    delineamento$book$Coluna &lt;- rep(1:4, times = 5)
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">install.packages(&quot;agricolae&quot;, 
+                    dependencies = TRUE)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(agricolae)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">trt = LETTERS[1:4]</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">delineamento &lt;- design.crd(trt,
+                             r = 5,
+                             serie = 0)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">delineamento</span></div>
+                                        
+                </pre>
+                <div class="out">
+                    <div><span class="r-output"> ## $parameters
+ ## $parameters$design
+ ## [1] &quot;crd&quot;
+ ## 
+ ## $parameters$trt
+ ## [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot;
+ ## 
+ ## $parameters$r
+ ## [1] 5 5 5 5
+ ## 
+ ## $parameters$serie
+ ## [1] 0
+ ## 
+ ## $parameters$seed
+ ## [1] 1407173775
+ ## 
+ ## $parameters$kinds
+ ## [1] &quot;Super-Duper&quot;
+ ## 
+ ## $parameters[[7]]
+ ## [1] TRUE
+ ## 
+ ## 
+ ## $book
+ ##    plots r trt
+ ## 1      1 1   C
+ ## 2      2 1   B
+ ## 3      3 1   D
+ ## 4      4 2   D
+ ## 5      5 2   B
+ ## 6      6 2   C
+ ## 7      7 3   B
+ ## 8      8 3   D
+ ## 9      9 4   B
+ ## 10    10 4   D
+ ## 11    11 5   B
+ ## 12    12 1   A
+ ## 13    13 2   A
+ ## 14    14 3   C
+ ## 15    15 3   A
+ ## 16    16 4   A
+ ## 17    17 5   D
+ ## 18    18 4   C
+ ## 19    19 5   A
+ ## 20    20 5   C</span></div>
+                </div>
+                <h4>Graficamente</h4>
+                <pre class="code-block"> 
                     
-                    delineamento$book</code></pre>
-                        <pre><code>##    plots r trt Linha Coluna
-                    ## 1      1 1   C     1      1
-                    ## 2      2 1   B     1      2
-                    ## 3      3 1   D     1      3
-                    ## 4      4 2   D     1      4
-                    ## 5      5 2   B     2      1
-                    ## 6      6 2   C     2      2
-                    ## 7      7 3   B     2      3
-                    ## 8      8 3   D     2      4
-                    ## 9      9 4   B     3      1
-                    ## 10    10 4   D     3      2
-                    ## 11    11 5   B     3      3
-                    ## 12    12 1   A     3      4
-                    ## 13    13 2   A     4      1
-                    ## 14    14 3   C     4      2
-                    ## 15    15 3   A     4      3
-                    ## 16    16 4   A     4      4
-                    ## 17    17 5   D     5      1
-                    ## 18    18 4   C     5      2
-                    ## 19    19 5   A     5      3
-                    ## 20    20 5   C     5      4</code></pre>
-                        <pre class="r"><code># install.packages(&quot;ggplot2&quot;, 
-                    #                  dependencies = TRUE)
-                    library(ggplot2)</code></pre>
-                        <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-                        <pre class="r"><code>ggplot(delineamento$book,
-                           aes(x = Coluna,
-                               y = Linha,
-                               fill = trt,
-                               label = plots)) +
-                      geom_tile(color=&quot;black&quot;) +
-                      geom_text() +
-                      xlab(&quot;&quot;) +
-                      ylab(&quot;&quot;) #+</code></pre>
-                        <p><img src="figs/about_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-                        <pre class="r"><code>  # guides(fill = guide_legend(title=&quot;tratamentos&quot;))</code></pre>
-                        <pre class="r"><code>#&#39; # Análise dos dados
-                    #&#39; 
-                    #&#39; ## Entrada dos dados 
-                    #&#39; Copiar o arquivo aula2.csv para seu computador
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">install.packages(&quot;agricolaeplotr&quot;, 
+                        dependencies = TRUE)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(agricolaeplotr)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">plot_design_crd(delineamento,
+                  ncols = 4,
+                  nrows = 5)</span></div>
+                                        
+                </pre>
+                <p><img src="figs/about_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+                
+                <p>Para montar um croqui precisamos de um gride, definido por linhas e colunas</p>
+                <pre class="code-block"> 
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">delineamento$book$Linha &lt;- rep(1:5, each = 4)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">delineamento$book$Coluna &lt;- rep(1:4, times = 5)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">delineamento$book</span></div>
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">##    plots r trt Linha Coluna
+## 1      1 1   C     1      1
+## 2      2 1   B     1      2
+## 3      3 1   D     1      3
+## 4      4 2   D     1      4
+## 5      5 2   B     2      1
+## 6      6 2   C     2      2
+## 7      7 3   B     2      3
+## 8      8 3   D     2      4
+## 9      9 4   B     3      1
+## 10    10 4   D     3      2
+## 11    11 5   B     3      3
+## 12    12 1   A     3      4
+## 13    13 2   A     4      1
+## 14    14 3   C     4      2
+## 15    15 3   A     4      3
+## 16    16 4   A     4      4
+## 17    17 5   D     5      1
+## 18    18 4   C     5      2
+## 19    19 5   A     5      3
+## 20    20 5   C     5      4 
+                    </span></div>
+                </div>
+                <pre class="code-block"> 
                     
-                    # dados &lt;- read.csv2(choose.files())
-                    # setwd(&quot;G:/Meu Drive/ESALQ/2022/Graduacao/Experimental/R/aula02&quot;)
-                    dados &lt;- read.csv2(&quot;aula2.csv&quot;)</code></pre>
-                        <pre class="r"><code>#&#39; ## Análise exploratória
-                    library(ggplot2)
-                    ggplot(dados, 
-                           aes(x = trat, 
-                               y = y)) +
-                      geom_point() +
-                      geom_point(stat = &quot;summary&quot;,
-                                 fun = mean,
-                                 col = &quot;red&quot;) +
-                      annotate(&quot;point&quot;, 
-                               x = dados$trat, 
-                               y = 26.75, 
-                               colour = &quot;blue&quot;) +
-                      xlab(&quot;tratamentos&quot;) +
-                      ylab(&quot;produtividade&quot;)</code></pre>
-                        <p><img src="figs/about_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-                        <pre class="r"><code>ggplot(dados,
-                           aes(x = trat,
-                               y = y)) +
-                      geom_boxplot()</code></pre>
-                        <p><img src="figs/about_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-                        <pre class="r"><code>#&#39; ## Estatísticas descritivas
-                    n &lt;- with(dados, tapply(y,trat, length))
-                    soma &lt;- with(dados, tapply(y,trat,sum))
-                    media &lt;- with(dados, tapply(y,trat,mean))
-                    variancia &lt;- with(dados, tapply(y,trat,var))
-                    desv.padr &lt;- with(dados, tapply(y,trat,sd))
-                    dist.int &lt;- with(dados, tapply(y,trat,IQR))</code></pre>
-                        <pre class="r"><code>#&#39; Criando uma função que calcula a amplitude
-                    f1 &lt;- function(x) max(x)-min(x)
-                    amplitude &lt;- with(dados, tapply(y,trat,f1))
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">install.packages(&quot;ggplot2&quot;, 
+                  dependencies = TRUE)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(ggplot2)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(delineamento$book,
+         aes(x = Coluna,
+             y = Linha,
+             fill = trt,
+             label = plots)) +
+         geom_tile(color=&quot;black&quot;) +
+         geom_text() +
+         xlab(&quot;&quot;) +
+         ylab(&quot;&quot;) #+</span></div>
+                                        
+                </pre>
+                <p><img src="figs/about_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+                
+                <h4> Análise dos dados</h4>
+                <pre class="code-block"> 
                     
-                    resumo &lt;- rbind(n, soma, media, variancia,
-                                    desv.padr, amplitude,dist.int)
-                    rownames(resumo) &lt;- c(&quot;n&quot;, &quot;Soma&quot;, &quot;Média&quot;, 
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">dados &lt;- read.csv2(&quot;aula2.csv&quot;)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">library(ggplot2)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
+         aes(x = trat, 
+             y = y)) +
+         geom_point() +
+         geom_point(stat = &quot;summary&quot;,
+                    fun = mean,
+                    col = &quot;red&quot;) +
+         annotate(&quot;point&quot;, 
+         x = dados$trat, 
+         y = 26.75, 
+         colour = &quot;blue&quot;) +
+         xlab(&quot;tratamentos&quot;) +
+         ylab(&quot;produtividade&quot;)</span></div>
+                                        
+                </pre>
+                <p><img src="figs/about_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados,
+         aes(x = trat,
+             y = y)) +
+         geom_boxplot()</span></div>
+                   
+                </pre>
+                <p><img src="figs/about_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+                
+                <h4>Estatísticas descritivas </h4>
+
+                <pre class="code-block"> 
+                    
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">n &lt;- with(dados, tapply(y,trat, length))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">soma &lt;- with(dados, tapply(y,trat,sum))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">media &lt;- with(dados, tapply(y,trat,mean))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">variancia &lt;- with(dados, tapply(y,trat,var))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">desv.padr &lt;- with(dados, tapply(y,trat,sd))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">dist.int &lt;- with(dados, tapply(y,trat,IQR))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">f1 &lt;- function(x) max(x)-min(x)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">amplitude &lt;- with(dados, tapply(y,trat,f1))</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">resumo &lt;- rbind(n, soma, media, variancia,
+                                    desv.padr, amplitude,dist.int)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input"> rownames(resumo) &lt;- c(&quot;n&quot;, &quot;Soma&quot;, &quot;Média&quot;, 
                                           &quot;Variância&quot;, &quot;Desvio-padrão&quot;, 
-                                          &quot;Amplitude&quot;, &quot;Amplitude Interquartílica&quot;)
-                    round(resumo,3)</code></pre>
-                        <pre><code>##                                A       B       C      D
-                    ## n                           5.00   5.000   5.000   5.00
-                    ## Soma                      115.00 135.000 130.000 155.00
-                    ## Média                      23.00  27.000  26.000  31.00
-                    ## Variância                   6.50   7.500   7.500   6.50
-                    ## Desvio-padrão               2.55   2.739   2.739   2.55
-                    ## Amplitude                   6.00   7.000   7.000   6.00
-                    ## Amplitude Interquartílica   4.00   3.000   3.000   4.00</code></pre>
-                        <pre class="r"><code>#&#39; ## Análise de variância  
-                    #&#39; 
-                    #&#39; $H_0$: $\mu_1 = \mu_2 = \mu_3 = \mu_4$ *versus* 
-                    #&#39; $H_1:$ Pelo menos duas médias de tratamentos diferem entre si.
-                    #&#39; 
-                    modelo &lt;- aov(y ~ trat, dados)
-                    anova(modelo)</code></pre>
-                        <pre><code>## Analysis of Variance Table
-                    ## 
-                    ## Response: y
-                    ##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   
-                    ## trat       3 163.75  54.583  7.7976 0.001976 **
-                    ## Residuals 16 112.00   7.000                    
-                    ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+                                          &quot;Amplitude&quot;, &quot;Amplitude Interquartílica&quot;)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input"> round(resumo,3)</span></div>
+                                        
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">##                                A       B       C      D
+## n                           5.00   5.000   5.000   5.00
+## Soma                      115.00 135.000 130.000 155.00
+## Média                      23.00  27.000  26.000  31.00
+## Variância                   6.50   7.500   7.500   6.50
+## Desvio-padrão               2.55   2.739   2.739   2.55
+## Amplitude                   6.00   7.000   7.000   6.00
+## Amplitude Interquartílica   4.00   3.000   3.000   4.00 </span></div>
+                </div>
+                    
+                <h4>Análise de variância</h4>
+                <p>\(H_0\): \(\mu_1 = \mu_2 = \mu_3 = \mu_4\) </p>  
+                <p>\(H_1\): Pelo menos duas médias de tratamentos diferem entre si.</p>
+                <pre class="code-block"> 
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">modelo &lt;- aov(y ~ trat, dados)</span></div>
+                    <div><span class="r-prompt">&gt; </span><span class="r-input">anova(modelo)</span></div>
+                </pre>
+                <div class="out">
+                    <div><span class="r-output">## Analysis of Variance Table
+## 
+## Response: y
+##           Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+## trat       3 163.75  54.583  7.7976 0.001976 **
+## Residuals 16 112.00   7.000                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 </span></div>
+                </div>    
+                    
+                   
                 
             </div>
         </section>
-    </section>      
+    </section>  
+    <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
     <script src="java/atividade.js"></script>
     <script src="java/navbar.js"></script>
 </body>

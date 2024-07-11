@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/atividade.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
@@ -83,7 +84,9 @@
     <section class="hero">
         <section class="atras">
             <div class="fundo">
-                <pre class="r"><code>#&#39; # Exemplo Fatorial 2x4
+                <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Exemplo Fatorial 2x4
 
                     #&#39; Os dados a seguir foram obtidos a partir de um experimento  usando o delineamento casualizado em blocos com três repetições e tratamentos no esquema fatorial. Teve como objetivo analisar o efeito de dois espaçamentos de plantio e de quatro espécies de Eucalipto sobre o diâmetro médio de plantas com cinco anos. O experimento foi conduzido por H. A. Mello e colaboradores em Mogi-Guaçu (1966-1971).
                     
@@ -105,18 +108,26 @@
                     #&#39;
                     #&#39; ## Gráficos
                     #&#39; 
-                    library(ggplot2)</code></pre>
-                    <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</code></pre>
-                    <pre class="r"><code>ggplot(dados, 
+                    library(ggplot2)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Warning: package &#39;ggplot2&#39; was built under R version 4.3.3</span></div></div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Tratamento, 
                                y = diametro)) +
-                      geom_point()</code></pre>
+                      geom_point()</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-                    <pre class="r"><code>with(dados,
-                         tapply(diametro, Espacamento, mean))</code></pre>
-                    <pre><code>##     3x1.5       3x2 
-                    ## 11.245000  9.966667</code></pre>
-                    <pre class="r"><code>ggplot(dados, 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">with(dados,
+                         tapply(diametro, Espacamento, mean))</span></div></pre> 
+                    <div class="out">
+    <div><span class="r-output"> ##     3x1.5       3x2 
+                    ## 11.245000  9.966667</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Espacamento, 
                                y = diametro, 
                                group = 1)) +
@@ -125,13 +136,18 @@
                       geom_line(stat = &#39;summary&#39;, 
                                 fun = mean) +
                       xlab(&quot;espaçamento entre plantas&quot;) +
-                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                      ylab(&quot;diâmetro médio (cm)&quot;)</span></div></pre> 
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-                    <pre class="r"><code>with(dados,
-                         tapply(diametro, Especie, mean))</code></pre>
-                    <pre><code>##      E. alba   E. grandis E. propinqua   E. saligna 
-                    ##     9.376667    11.605000    11.343333    10.098333</code></pre>
-                    <pre class="r"><code>ggplot(dados, 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">with(dados,
+                         tapply(diametro, Especie, mean))</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ##      E. alba   E. grandis E. propinqua   E. saligna 
+                    ##     9.376667    11.605000    11.343333    10.098333</span></div></div> 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Especie, 
                                y = diametro, 
                                group = 1)) +
@@ -140,16 +156,21 @@
                       geom_line(stat = &#39;summary&#39;, 
                                 fun = mean)+
                       xlab(&quot;espécie de eucalipto&quot;) +
-                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                      ylab(&quot;diâmetro médio (cm)&quot;)</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-3.png" width="672" /></p>
-                    <pre class="r"><code>with(dados,
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">with(dados,
                          tapply(diametro, 
                                 list(Espacamento, 
-                                     Especie), mean))</code></pre>
-                    <pre><code>##        E. alba E. grandis E. propinqua E. saligna
+                                     Especie), mean))</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ##        E. alba E. grandis E. propinqua E. saligna
                     ## 3x1.5 10.23333   12.10333     12.29333  10.350000
-                    ## 3x2    8.52000   11.10667     10.39333   9.846667</code></pre>
-                    <pre class="r"><code>ggplot(dados, 
+                    ## 3x2    8.52000   11.10667     10.39333   9.846667</span></div></div> 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Espacamento, 
                                y = diametro, 
                                group = Especie, 
@@ -159,9 +180,11 @@
                       geom_line(stat = &#39;summary&#39;, 
                                 fun = mean)+
                       xlab(&quot;espaçamento entre plantas&quot;) +
-                      ylab(&quot;diâmetro médio (cm)&quot;)</code></pre>
+                      ylab(&quot;diâmetro médio (cm)&quot;)</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-4.png" width="672" /></p>
-                    <pre class="r"><code>ggplot(dados, 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Especie, 
                                y = diametro, 
                                group = Espacamento, 
@@ -171,9 +194,11 @@
                       geom_line(stat = &#39;summary&#39;, 
                                 fun = mean)+
                       xlab(&quot;espécie de eucalipto&quot;) +
-                      ylab(&quot;diâmetro médio (cm)&quot;) </code></pre>
+                      ylab(&quot;diâmetro médio (cm)&quot;) </span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-5.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; ## Ajuste do modelo
                     #&#39;  
                     
@@ -189,23 +214,32 @@
                     #&#39; 
                     # qqnorm(res_Stud)
                     # qqline(res_Stud)
-                    library(hnp)</code></pre>
-                    <pre><code>## Carregando pacotes exigidos: MASS</code></pre>
-                    <pre class="r"><code>hnp(modelo,
-                        print.on = TRUE)</code></pre>
-                    <pre><code>## Gaussian model (lm object)</code></pre>
+                    library(hnp)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Carregando pacotes exigidos: MASS</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">hnp(modelo,
+                        print.on = TRUE)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Gaussian model (lm object)</span></div> </div>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-6.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Teste de normalidade:
                     #&#39; 
                     #&#39; $H_0$: os erros seguem uma distribuição normal *versus* $H_1$: os erros não seguem uma distribuição normal.
-                    shapiro.test(res_Stud)</code></pre>
-                    <pre><code>## 
+                    shapiro.test(res_Stud)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
                     ##  Shapiro-Wilk normality test
                     ## 
                     ## data:  res_Stud
-                    ## W = 0.96292, p-value = 0.4998</code></pre>
-                    <pre class="r"><code>#&#39;
+                    ## W = 0.96292, p-value = 0.4998</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Considerando-se o nível de 5\% de significância não há evidências para rejeitarmos $H_0$. 
                     #&#39; Logo, não se pode afirmar que os erros não seguem a distribuição normal.
                     #&#39; 
@@ -214,32 +248,44 @@
                     ggplot(dados, 
                            aes(x = Tratamento, 
                                y = res_Stud)) +
-                      geom_point()</code></pre>
+                      geom_point()</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-7.png" width="672" /></p>
-                    <pre class="r"><code>ggplot(dados, 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">ggplot(dados, 
                            aes(x = Bloco, 
                                y = res_Stud)) +
-                      geom_point()</code></pre>
+                      geom_point()</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-8.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Teste de homogeneidade de variâncias
                     #&#39; 
                     #&#39; $H_0$: há homogeneidade de variâncias *versus* $H_1$: não há homogeneidade de variâncias.
                     #&#39;
-                    library(lmtest)</code></pre>
-                    <pre><code>## Carregando pacotes exigidos: zoo</code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;zoo&#39;</code></pre>
-                    <pre><code>## The following objects are masked from &#39;package:base&#39;:
+                    library(lmtest)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Carregando pacotes exigidos: zoo</span></div> </div>
+                    <div class="out">
+    <div><span class="r-output"> ## 
+                    ## Attaching package: &#39;zoo&#39;</span></div> </div>
+                    <div class="out">
+    <div><span class="r-output"> ## The following objects are masked from &#39;package:base&#39;:
                     ## 
-                    ##     as.Date, as.Date.numeric</code></pre>
-                    <pre class="r"><code>bptest(modelo)</code></pre>
-                    <pre><code>## 
+                    ##     as.Date, as.Date.numeric</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">bptest(modelo)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
                     ##  studentized Breusch-Pagan test
                     ## 
                     ## data:  modelo
-                    ## BP = 16.119, df = 9, p-value = 0.06443</code></pre>
-                    <pre class="r"><code>#&#39;
+                    ## BP = 16.119, df = 9, p-value = 0.06443</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Considerando-se o nível de 5\% de significância não há evidências para rejeitarmos $H_0$. 
                     #&#39; Logo, não se pode afirmar que não há homogeneidade de variâncias.
                     #&#39; - Relação entre média e variância
@@ -247,22 +293,27 @@
                     ggplot(dados, 
                            aes(x = fitted(modelo), 
                                y = res_Stud)) +
-                      geom_point()</code></pre>
+                      geom_point()</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-9.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Box-Cox
                     #&#39;
                     library(MASS)
-                    boxcox(modelo)</code></pre>
+                    boxcox(modelo)</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-10.png" width="672" /></p>
-                    <pre class="r"><code>#&#39;
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39;
                     #&#39; Não há necessidade de transformação dos dados, pois $\lambda = 1$ pertence ao intervalo de confiança.
                     #&#39;
                     #&#39; Como todas as pressuposições foram atendidas, temos o seguinte quadro da ANOVA.
                     #&#39;
                     #&#39;
-                    anova(modelo)</code></pre>
-                    <pre><code>## Analysis of Variance Table
+                    anova(modelo)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## Analysis of Variance Table
                     ## 
                     ## Response: diametro
                     ##                     Df  Sum Sq Mean Sq F value    Pr(&gt;F)    
@@ -272,8 +323,10 @@
                     ## Espacamento:Especie  3  1.8835  0.6278  1.9009    0.1759    
                     ## Residuals           14  4.6240  0.3303                      
                     ## ---
-                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-                    <pre class="r"><code>#&#39; # Teste de Tukey para Especie
+                    ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></div></div> 
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">#&#39; # Teste de Tukey para Especie
                     #&#39;
                     
                     library(agricolae)
@@ -281,8 +334,9 @@
                                            HSD.test(diametro,
                                                     Especie,
                                                     14,
-                                                    0.3303)))</code></pre>
-                    <pre><code>## $statistics
+                                                    0.3303)))</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## $statistics
                     ##   MSerror Df     Mean       CV       MSD
                     ##    0.3303 14 10.60583 5.418879 0.9644373
                     ## 
@@ -308,27 +362,37 @@
                     ## E. alba       9.376667      b
                     ## 
                     ## attr(,&quot;class&quot;)
-                    ## [1] &quot;group&quot;</code></pre>
-                    <pre class="r"><code>plot(Tukey.Especie)</code></pre>
+                    ## [1] &quot;group&quot;</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">plot(Tukey.Especie)</span></div> </pre>
                     <p><img src="figs/aula8_files/figure-html/unnamed-chunk-1-11.png" width="672" /></p>
-                    <pre class="r"><code>library(ExpDes.pt)</code></pre>
-                    <pre><code>## 
-                    ## Attaching package: &#39;ExpDes.pt&#39;</code></pre>
-                    <pre><code>## The following objects are masked from &#39;package:agricolae&#39;:
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">library(ExpDes.pt)</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## 
+                    ## Attaching package: &#39;ExpDes.pt&#39;</span></div> </div>
+                    <div class="out">
+    <div><span class="r-output"> ## The following objects are masked from &#39;package:agricolae&#39;:
                     ## 
-                    ##     lastC, order.group, tapply.stat</code></pre>
-                    <pre><code>## The following object is masked from &#39;package:MASS&#39;:
+                    ##     lastC, order.group, tapply.stat</span></div></div> 
+                    <div class="out">
+    <div><span class="r-output"> ## The following object is masked from &#39;package:MASS&#39;:
                     ## 
-                    ##     ginv</code></pre>
-                    <pre class="r"><code>with(dados,
+                    ##     ginv</span></div> </div>
+                    <pre class="code-block"> 
+                    
+    <div><span class="r-prompt">&gt; </span><span class="r-input">with(dados,
                          fat2.dbc(Espacamento,
                                   Especie,
                                   Bloco,
                                   diametro,
                                   quali = c(TRUE, TRUE),
                                   fac.names = c(&quot;Espaçamento&quot;, 
-                                                &quot;Espécie&quot;)))</code></pre>
-                    <pre><code>## ------------------------------------------------------------------------
+                                                &quot;Espécie&quot;)))</span></div> </pre>
+                    <div class="out">
+    <div><span class="r-output"> ## ------------------------------------------------------------------------
                     ## Legenda:
                     ## FATOR 1:  Espaçamento 
                     ## FATOR 2:  Espécie 
@@ -371,7 +435,7 @@
                     ## a     E. propinqua    11.34333 
                     ##  b    E. saligna      10.09833 
                     ##  b    E. alba     9.376667 
-                    ## ------------------------------------------------------------------------</code></pre>
+                    ## ------------------------------------------------------------------------</span></div> </div>
                     
                     
             </div>
