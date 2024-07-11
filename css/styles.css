@@ -1,0 +1,47 @@
+/* Estilo para o bloco de código R */
+.code-block {
+  background-color: #a1a1a1;
+  border: 1px solid #d2d2d2;
+  padding: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1;
+  white-space: pre;
+  color: #333;
+  border-radius: 14px;
+  margin: 8px;
+}
+  
+/* Estilo para o prompt de entrada R */
+.r-prompt {
+  color: #555;
+  font-weight: bold;
+}
+  
+/* Estilo para o texto de entrada do usuário */
+.r-input {
+  color: #0000ff;
+}
+  
+.out{
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  line-height: 1;
+  white-space: pre;
+  color: #333;
+  border-radius: 14px;
+  margin: 8px;
+}
+
+/* Estilo para a saída do R */
+.r-output {
+  color: #008000;
+  
+}
+
+h4{
+  margin: 14px;
+}
