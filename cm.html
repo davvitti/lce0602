@@ -983,160 +983,140 @@
                 <form id="form" class="form">
                     <div class="form-content">
                         <label for="atividade1">
-                            Um experimento foi instalado de acordo com o delineamento inteiramente casualizado para avaliar o número de cochonilhas mortas em cada parcela (média de 3 plantas), 8 dias após a aplicação de 5 inseticidas e um controle: A – FOLIDOL ;  B – MALATOL;  C – TRIONA;  D – DIMETOATO;  E – CYPROLANE; O tratamento F corresponde a um controle (sem aplicação de inseticida). A seguir são apresentadas as médias observadas por tratamento.
-                            <table>
-                                <tr>
-                                    <td>A </td>
-                                    <td> B</td>
-                                    <td>C </td>
-                                    <td> D</td>
-                                    <td>E</td>
-                                    <td> F</td>
-
-                                </tr>
-                                <tr>
-                                    <td>37,22 </td>
-                                    <td> 24,30</td>
-                                    <td>29,65</td>
-                                    <td> 23,75</td>
-                                    <td>33,23</td>
-                                    <td> 6,57</td>
-
-                                </tr>
-                            </table>
-                            Quais são as hipóteses do teste F para comparar a média do tratamento controle com a média das médias dos demais tratamentos, ou seja, a média do controle versus a média do grupo tratado?
+                           Com base nos dados acima o quadro na ANOVA gerado foi: 
+                        <table class="tabela2">
+                            <tr>
+                                <th> Fontes de variação</th>
+                                <th> gl</th>
+                                <th> Soma de quadrados</th>
+                                <th> Quadrado médio</th>
+                                <th> Fcal</th>
+                                <th> Ftab</th>
+                            </tr>
+                            <tr> 
+                                <td> Tratamentos </td>
+                                <td> 3</td>
+                                <td> 163,75</td>
+                                <td> 54,5833</td>
+                                <td> 7,80</td>
+                                <td> 3,28</td>
+                            </tr>
+                            <tr> 
+                                <td> Resíduo</td>
+                                <td> 16 </td>
+                                <td> 112,00</td>
+                                <td> 7,00</td>
+                                <td> </td>
+                                <td> </td>
+                                
+                            </tr>
+                            <tr> 
+                                <td> Total</td>
+                                <td> 19</td>
+                                <td> 275,75</td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                            </tr>
+                        </table>
+                            
                         </label>
+                        <div>Qual a diferença mínima significativa pelo teste de Tukey?
                         <input 
                           type="text"
                           id="at1"
                           placeholder="resposta"
                         />
                         <a>mensagem</a>
-        
-                    </div>
-        
+                        </div>
+                        <div> 
+                            Complete a tabela com os resultados: 
+                            <table>
+                                <tr>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at2"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at3"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at4"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at5"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at6"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at7"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at8"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                    <td> 
+                                        <input 
+                                           type="text"
+                                           id="at9"
+                                           placeholder="resposta"
+                                         />
+                                         <a>mensagem</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
                     
         
-                    <div class="form-content">
-                        <label for="atividade3">Sabendo-se que o coeficiente de variação foi 8.70% e que o valor tabelado de referência é F(5%,1,18)=4.41
-                            .</label>
-                        <table>
-                            <tr>
-                                <td>Qual é o número de repetições por tratamento? </td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at8"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Calcule a média geral </td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> Calcule o Quadrado Médio do Resíduo.</td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at10"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                        </table>
-                                
-                        
-                        <a>mensagem</a>
-        
-                    </div>
-                    <div class="form-content">
-                        <label for="atividade3">Apresente a estimativa do contraste de interesse e verifique se a diferença é significativa</label>
-                        <table>
-                            <tr>
-                                <td>Estimativa do contraste </td>
-                                <td>SQ do contraste </td>
-                                <td> QM do contraste</td>
-                                <td>F</td>
-                            </tr>
-                            <tr>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                                <td> 
-                                    <input 
-                                        type="text"
-                                        id="at9"
-                                        placeholder="resposta"
-                                    />
-                                    <a>mensagem</a>
-                                </td>
-                            </tr>
-                            
-                        </table>
-                                
-                        
-                        <a>mensagem</a>
-        
                     </div>
         
-                    <div class="form-content">
-                        <div class="at3">
-
-                           <label for="email">Considerando o valor tabelado de  F(5%,1,18)=4.41
-                            , há evidências para rejeitar a hipótese nula considerando o nível de 5% de significância?</label>
-                           <input type="text" id="at11" placeholder="resposta">                                             
-                        </div>
-                                
-                    </div>
-                    <div class="form-content">
-                        <div class="at3">
-
-                           <label for="email">Qual grupo você indicaria?</label>
-                           <input type="text" id="at11" placeholder="resposta">                                             
-                        </div>
-                                
-                    </div>
+                                      
                     <button type ="submit"> enviar</button>
         
         
                 </form>
-                <div class="quiz-container">
-                    <div id="quiz"></div>
-                    <button onclick="submitQuiz()">Ver respostas</button>
-                    <div id="result" class="result"></div>
-                </div>
+                
         
             </div>
 
